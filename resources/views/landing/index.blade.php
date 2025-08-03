@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Homepage</title>
+    <title>Landing Page</title>
+    <link rel="icon" type="x-icon" href="{{ asset('images/Logo.png') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite(['resources/css/app.css', 'resources/js/app.js']) 
 </head>
 <body>
     
 <header class="flex justify-center mt-8">
-   <nav class="fixed left-1/2 -translate-x-1/2 w-[95%] max-w-7xl rounded-xl bg-[#F2F2F7] backdrop-blur-md shadow-md px-4 py-3 flex items-center justify-between lg:px-8 z-[100]" aria-label="Global">
+   <nav class="fixed left-1/2 -translate-x-1/2 w-[95%] max-w-7xl rounded-xl px-4 py-3 flex items-center justify-between lg:px-8 z-[100] transition-all duration-300">
         <!-- Logo -->
         <div class="flex items-center">
             <img src="{{ asset('images/Logo.png') }}" alt="Logo" class="h-14 w-auto" />
@@ -35,29 +36,32 @@
         </div>
 
         <div class="hidden lg:flex items-center">
-            <button class="bg-[#7B4B36] hover:bg-[#5e3929] text-white font-light py-2 px-4 rounded-xl transition duration-300">
+            <a href="">
+              <button class="bg-[#7B4B36] hover:bg-[#5e3929] text-white font-light py-2 px-4 rounded-xl transition duration-300">
                 Daftar Member
-            </button>
+              </button>
+            </a>
         </div>
     </nav>
 
     <!-- Mobile menu -->
-    <div id="mobileMenu" class="hidden lg:hidden absolute top-[90px] w-[90%] left-1/2 -translate-x-1/2 rounded-md bg-[#F2F2F7] backdrop-blur-3xl shadow-md py-7 text-center z-[99]">
+    <div id="mobileMenu" class="hidden lg:hidden top-[110px] w-[90%] left-1/2 -translate-x-1/2 rounded-md bg-[#F2F2F7] backdrop-blur-3xl shadow-md py-7 text-center z-[99] fixed">
         <a href="#home" class="nav-link block py-4 text-black font-bold hover:text-[#5e3929] transition duration-200">Home</a>
         <a href="#aboutus" class="nav-link block py-4 text-black font-bold hover:text-[#5e3929] transition duration-200">About us</a>
         <a href="#event" class="nav-link block py-4 text-black font-bold hover:text-[#5e3929] transition duration-200">Event</a>
         <a href="#blog" class="nav-link block py-4 text-black font-bold hover:text-[#5e3929] transition duration-200">Blog</a>
         
         <div class="mt-6 px-6">
+          <a href="">
             <button class="w-80 bg-[#7B4B36] hover:bg-[#5e3929] text-white font-light py-2 px-4 rounded-xl transition duration-200">
                 Daftar Member
             </button>
+          </a>
         </div>
     </div>
 </header>
 
 <!-- start Hero Section -->
-
 <section class="w-full px-6 md:px-12 py-28">
   <div class="max-w-full mx-auto text-left ml-0 md:ml-28 mt-10">
     <h1 class="text-4xl md:text-8xl font-extralight text-black leading-tight ">
@@ -104,20 +108,155 @@
       <!-- box 1 -->
       <div class="flex flex-col items-center text-center">
         <img src="{{ asset('icons/Experience.png') }}" alt="icon" class="w-12 h-12 md:w-16 md:h-16 mb-2" />
-        <h3 class="text-xl md:text-2xl font-bold text-black italic">100+</h3>
+        <h3 class="text-xl md:text-2xl font-bold text-[#82896E] italic">100+</h3>
         <p class="text-sm md:text-base text-gray-700">Partner Organizations</p>
       </div>
 
       <!-- box 2 -->
       <div class="flex flex-col items-center text-center">
         <img src="{{ asset('icons/Partner Organizations.png') }}" alt="icon" class="w-12 h-12 md:w-16 md:h-16 mb-2" />
-        <h3 class="text-xl md:text-2xl font-bold text-black italic">100,000+</h3>
+        <h3 class="text-xl md:text-2xl font-bold text-[#82896E] italic">100,000+</h3>
         <p class="text-sm md:text-base text-gray-700">Experience Every Year</p>
       </div>
 
     </div>
   </div>
 </section>
+
+<!-- Section card BPH Start-->
+<section>
+  <section class="w-full py-10 overflow-x-auto px-10 md:px-6 scrollbar-hide">
+    <div class="flex gap-6 w-max">
+
+      <div class="flex flex-col md:flex-row bg-white rounded-3xl shadow-lg overflow-hidden w-[350px] md:w-[700px] ease-in-out transition duration-500 hover:shadow-lg hover:shadow-gray-600">
+        <img src="{{ asset('images/dummyphoto.png') }}" alt="" class="w-full md:w-1/2 h-80 object-cover" />
+          <div class="bg-[#DDCBB7] p-6 flex flex-col justify-center md:w-1/2">
+            <span class="w-6 h-6 text-[#264025] mb-2 font-semibold font ts text-4xl">"</span>
+              <p class="text-lg mb-3 text-white">
+                The experience changed my perspective and helped me become more confident.
+              </p>
+            <p class="font-bold text-sm text-[#82896E] pt-16">Nanda Aliefira </p>
+            <p class="text-sm text-gray-500">Chairman Green Generation Surabaya</p>
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row bg-white rounded-3xl shadow-lg overflow-hidden w-[350px] md:w-[700px] ease-in-out transition duration-500 hover:shadow-lg hover:shadow-gray-600">
+        <img src="{{ asset('images/dummyphoto.png') }}" alt="" class="w-full md:w-1/2 h-80 object-cover" />
+          <div class="bg-[#DDCBB7] p-6 flex flex-col justify-center md:w-1/2">
+            <span class="w-6 h-6 text-[#264025] mb-2 font-semibold font ts text-4xl">"</span>
+              <p class="text-lg mb-3 text-white">
+                The experience changed my perspective and helped me become more confident.
+              </p>
+            <p class="font-bold text-sm text-[#82896E] pt-16">Najma Mei </p>
+            <p class="text-sm text-gray-500">Vice Chairman Green Generation Surabaya</p>
+        </div>
+    </div>
+    <!-- <div class="flex flex-col md:flex-row bg-white rounded-3xl shadow-lg overflow-hidden w-[350px] md:w-[700px] ease-in-out transition duration-500 hover:shadow-lg hover:shadow-gray-600">
+        <img src="" alt="" class="w-full md:w-1/2 h-80 object-cover" />
+          <div class="bg-[#DDCBB7] p-6 flex flex-col justify-center md:w-1/2">
+            <span class="w-6 h-6 text-[#264025] mb-2 font-semibold font ts text-4xl">"</span>
+              <p class="text-lg mb-3 text-white">
+                The experience changed my perspective and helped me become more confident.
+              </p>
+            <p class="font-bold text-sm text-[#82896E] pt-16"></p>
+            <p class="text-sm text-gray-500"></p>
+        </div>
+    </div> -->
+  </div>
+</section>
+<!-- Section card BPH end-->
+
+
+<!-- Section our Partner Start-->
+<section class="pt-24 px-6">
+
+  <div class="flex flex-col lg:flex-row md:items-center justify-center gap-10">
+    <div class="text-left lg:text-left">
+      <h2 class="text-5xl font-bold text-[#AD6B4B]">
+        our <span class="font-bold">Partners</span>
+      </h2>
+      <p class="text-gray-500">Green Generation Surabaya</p>
+    </div>
+    <div class="hidden lg:block w-80 h-0.5 bg-gray-300"></div>
+  </div>
+
+  <!-- logo partner -->
+  <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-7 gap-y-8 px-4 max-w-6xl mx-auto mt-14">
+      <img  src="{{ asset('images/Logo.png') }}" alt="" class="h-24"/>
+      <img  src="{{ asset('images/cnn.png') }}" alt="" class="h-20"/>
+      <img  src="{{ asset('images/Logo.png') }}" alt="" class="h-24"/>
+      <img  src="{{ asset('images/Logo.png') }}" alt="" class="h-24"/>
+      <img  src="{{ asset('images/Logo.png') }}" alt="" class="h-24"/>
+      <img  src="{{ asset('images/Logo.png') }}" alt="" class="h-24"/>
+      <img  src="{{ asset('images/Logo.png') }}" alt="" class="h-24"/>
+      <img  src="{{ asset('images/Logo.png') }}" alt="" class="h-24"/>
+      <img  src="{{ asset('images/Logo.png') }}" alt="" class="h-24"/>
+      <img  src="{{ asset('images/Logo.png') }}" alt="" class="h-24"/>
+      <!-- <img  src="" alt="" class="bg-gray-300 rounded-md h-20 flex items-center justify-center text-sm"/> -->
+      
+  </div>
+</section>
+<!-- Section our Partner end-->
+
+<!-- Section Footer Start -->
+<footer class="bg-white pt-20 pb-6 px-6 md:px-12 lg:px-20 border-t mt-20">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- logo -->
+   <div class="flex flex-col md:flex-row md:items-start  md:gap-12 gap-6 mb-10">
+      <img src="{{ asset('images/Logo.png') }}" alt="Green Generation Logo" class="h-16 w-16 ml-8"/>
+
+      <!-- nav menu -->
+      <div class="flex flex-col sm:flex-row gap-10 sm:text-left lg:ml-20 ml-10">
+        <div>
+          <h4 class="font-semibold mb-2">Organizations</h4>
+          <ul class="space-y-1 text-sm text-gray-600">
+            <li><a href="#" class="hover:text-[#5e3929] transition duration-300">About us</a></li>
+            <li><a href="#" class="hover:text-[#5e3929] transition duration-300">Event</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-2">Resources</h4>
+          <ul class="space-y-1 text-sm text-gray-600">
+            <li><a href="#" class="hover:text-[#5e3929] transition duration-300">Home</a></li>
+            <li><a href="#" class="hover:text-[#5e3929] transition duration-300">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- sosmed icon -->
+    <div class="flex justify-center gap-5 mb-6 pt-20">
+      <a href="#" class="hover:text-pink-600 transition duration-300">
+       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256"><path fill="#0a0a08" d="M128 23.064c34.177 0 38.225.13 51.722.745c12.48.57 19.258 2.655 23.769 4.408c5.974 2.322 10.238 5.096 14.717 9.575s7.253 8.743 9.575 14.717c1.753 4.511 3.838 11.289 4.408 23.768c.615 13.498.745 17.546.745 51.723s-.13 38.226-.745 51.723c-.57 12.48-2.655 19.257-4.408 23.768c-2.322 5.974-5.096 10.239-9.575 14.718s-8.743 7.253-14.717 9.574c-4.511 1.753-11.289 3.839-23.769 4.408c-13.495.616-17.543.746-51.722.746s-38.228-.13-51.723-.746c-12.48-.57-19.257-2.655-23.768-4.408c-5.974-2.321-10.239-5.095-14.718-9.574c-4.479-4.48-7.253-8.744-9.574-14.718c-1.753-4.51-3.839-11.288-4.408-23.768c-.616-13.497-.746-17.545-.746-51.723s.13-38.225.746-51.722c.57-12.48 2.655-19.258 4.408-23.769c2.321-5.974 5.095-10.238 9.574-14.717c4.48-4.48 8.744-7.253 14.718-9.575c4.51-1.753 11.288-3.838 23.768-4.408c13.497-.615 17.545-.745 51.723-.745M128 0C93.237 0 88.878.147 75.226.77c-13.625.622-22.93 2.786-31.071 5.95c-8.418 3.271-15.556 7.648-22.672 14.764S9.991 35.738 6.72 44.155C3.555 52.297 1.392 61.602.77 75.226C.147 88.878 0 93.237 0 128s.147 39.122.77 52.774c.622 13.625 2.785 22.93 5.95 31.071c3.27 8.417 7.647 15.556 14.763 22.672s14.254 11.492 22.672 14.763c8.142 3.165 17.446 5.328 31.07 5.95c13.653.623 18.012.77 52.775.77s39.122-.147 52.774-.77c13.624-.622 22.929-2.785 31.07-5.95c8.418-3.27 15.556-7.647 22.672-14.763s11.493-14.254 14.764-22.672c3.164-8.142 5.328-17.446 5.95-31.07c.623-13.653.77-18.012.77-52.775s-.147-39.122-.77-52.774c-.622-13.624-2.786-22.929-5.95-31.07c-3.271-8.418-7.648-15.556-14.764-22.672S220.262 9.99 211.845 6.72c-8.142-3.164-17.447-5.328-31.071-5.95C167.122.147 162.763 0 128 0m0 62.27c-36.302 0-65.73 29.43-65.73 65.73s29.428 65.73 65.73 65.73c36.301 0 65.73-29.428 65.73-65.73c0-36.301-29.429-65.73-65.73-65.73m0 108.397c-23.564 0-42.667-19.103-42.667-42.667S104.436 85.333 128 85.333s42.667 19.103 42.667 42.667s-19.103 42.667-42.667 42.667m83.686-110.994c0 8.484-6.876 15.36-15.36 15.36s-15.36-6.876-15.36-15.36s6.877-15.36 15.36-15.36s15.36 6.877 15.36 15.36"/></svg>
+          <path fill="currentColor" d="..." />
+        </svg>
+      </a>
+      <a href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 251 256"><path d="M149.079 108.399L242.33 0h-22.098l-80.97 94.12L74.59 0H0l97.796 142.328L0 256h22.1l85.507-99.395L175.905 256h74.59L149.073 108.399zM118.81 143.58l-9.909-14.172l-78.84-112.773h33.943l63.625 91.011l9.909 14.173l82.705 118.3H186.3l-67.49-96.533z"/></svg>
+      </a>
+      <a href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256"><path fill="#000" d="M218.123 218.127h-37.931v-59.403c0-14.165-.253-32.4-19.728-32.4c-19.756 0-22.779 15.434-22.779 31.369v60.43h-37.93V95.967h36.413v16.694h.51a39.91 39.91 0 0 1 35.928-19.733c38.445 0 45.533 25.288 45.533 58.186zM56.955 79.27c-12.157.002-22.014-9.852-22.016-22.009s9.851-22.014 22.008-22.016c12.157-.003 22.014 9.851 22.016 22.008A22.013 22.013 0 0 1 56.955 79.27m18.966 138.858H37.95V95.967h37.97zM237.033.018H18.89C8.58-.098.125 8.161-.001 18.471v219.053c.122 10.315 8.576 18.582 18.89 18.474h218.144c10.336.128 18.823-8.139 18.966-18.474V18.454c-.147-10.33-8.635-18.588-18.966-18.453"/></svg>
+      </a>
+      <a href="#">
+       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 180"><path fill="#000" d="M250.346 28.075A32.18 32.18 0 0 0 227.69 5.418C207.824 0 127.87 0 127.87 0S47.912.164 28.046 5.582A32.18 32.18 0 0 0 5.39 28.24c-6.009 35.298-8.34 89.084.165 122.97a32.18 32.18 0 0 0 22.656 22.657c19.866 5.418 99.822 5.418 99.822 5.418s79.955 0 99.82-5.418a32.18 32.18 0 0 0 22.657-22.657c6.338-35.348 8.291-89.1-.164-123.134"/><path fill="#fff" d="m102.421 128.06l66.328-38.418l-66.328-38.418z"/></svg>
+      </a>
+      <a href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256"><path fill="#000" d="M256 128C256 57.308 198.692 0 128 0S0 57.308 0 128c0 63.888 46.808 116.843 108 126.445V165H75.5v-37H108V99.8c0-32.08 19.11-49.8 48.348-49.8C170.352 50 185 52.5 185 52.5V84h-16.14C152.959 84 148 93.867 148 103.99V128h35.5l-5.675 37H148v89.445c61.192-9.602 108-62.556 108-126.445"/><path fill="#fff" d="m177.825 165l5.675-37H148v-24.01C148 93.866 152.959 84 168.86 84H185V52.5S170.352 50 156.347 50C127.11 50 108 67.72 108 99.8V128H75.5v37H108v89.445A129 129 0 0 0 128 256a129 129 0 0 0 20-1.555V165z"/></svg>
+      </a>
+    </div>
+
+    <!-- Footer Text -->
+    <div class="text-center border-t pt-6 text-sm text-gray-600 px-4">
+      <p class="mb-1">© GREEN GENERATION 2025</p>
+      <p class="text-xs">Green Generation is a Independent Organizations<br>
+        Working on the #Environment in Indonesia. Let’s Create <br> Generation with Environmental Culture <br>
+        “It’s Easy to be Green”🍃
+      </p>
+    </div>
+  </div>
+</footer>
+<!-- Section Footer End -->
+
 
 </body>
 </html>
