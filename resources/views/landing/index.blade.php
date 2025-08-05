@@ -11,12 +11,12 @@
     
 <header class="flex justify-center mt-8">
    <nav class="fixed left-1/2 -translate-x-1/2 w-[95%] max-w-7xl rounded-xl px-4 py-3 flex items-center justify-between lg:px-8 z-[100] transition-all duration-300">
-        <!-- Logo -->
+        <!-- logo -->
         <div class="flex items-center">
             <img src="{{ asset('images/Logo.png') }}" alt="Logo" class="h-14 w-auto" />
         </div>
 
-        <!-- Hamburger -->
+        <!-- hamburger -->
         <div class="lg:hidden">
             <button id="hamburgerBtn" type="button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 transition-colors duration-300">
                 <span class="sr-only">Buka menu</span>
@@ -27,7 +27,7 @@
             </button>
         </div>
 
-        <!-- Desktop menu -->
+        <!-- desktop menu -->
         <div class="hidden lg:flex flex-1 justify-center gap-x-10 items-center">
             <a href="#home" class="nav-link text-black font-bold hover:text-[#5e3929] transition duration-200">Home</a>
             <a href="#aboutus" class="nav-link text-black font-bold hover:text-[#5e3929] transition duration-200">About us</a>
@@ -44,7 +44,7 @@
         </div>
     </nav>
 
-    <!-- Mobile menu -->
+    <!-- mobile menu -->
     <div id="mobileMenu" class="hidden lg:hidden top-[110px] w-[90%] left-1/2 -translate-x-1/2 rounded-md bg-[#F2F2F7] backdrop-blur-3xl shadow-md py-7 text-center z-[99] fixed">
         <a href="#home" class="nav-link block py-4 text-black font-bold hover:text-[#5e3929] transition duration-200">Home</a>
         <a href="#aboutus" class="nav-link block py-4 text-black font-bold hover:text-[#5e3929] transition duration-200">About us</a>
@@ -61,7 +61,7 @@
     </div>
 </header>
 
-<!-- start Hero Section -->
+<!-- start hero Section -->
 <section class="w-full px-6 md:px-12 py-28">
   <div class="max-w-full mx-auto text-left ml-0 md:ml-28 mt-10">
     <h1 class="text-4xl md:text-8xl font-extralight text-black leading-tight ">
@@ -75,7 +75,7 @@
       innovate, and act for the environment.
     </p>
 
-    <!-- button Mobile -->
+    <!-- button mobile -->
     <div class="mt-6 md:hidden">
       <button class="bg-[#AD6B4B] hover:bg-[#935d3d] text-white font-extralight py-2 px-5 rounded-xl transition duration-200 flex items-center gap-2">
         <span class="text-sm">View Event</span>
@@ -192,7 +192,6 @@
       <img  src="{{ asset('images/Logo.png') }}" alt="" class="h-24"/>
       <img  src="{{ asset('images/Logo.png') }}" alt="" class="h-24"/>
       <!-- <img  src="" alt="" class="bg-gray-300 rounded-md h-20 flex items-center justify-center text-sm"/> -->
-      
   </div>
 </section>
 <!-- Section our Partner end-->
