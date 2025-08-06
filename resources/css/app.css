@@ -9,3 +9,45 @@
   -ms-overflow-style: none; 
   scrollbar-width: none; 
 }
+
+/* infinite ccroll kanan ke kiri */
+.animate-infinite-scroll {
+  display: flex;
+  animation: infinite-scroll 20s linear infinite;
+  will-change: transform;
+}
+
+.animate-infinite-scroll:hover {
+  animation-play-state: paused;
+}
+
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* infinite scroll kiri ke kanan */
+.animate-infinite-scroll-reverse {
+  display: flex;
+  animation: infinite-scroll-reverse 20s linear infinite;
+  will-change: transform;
+}
+
+.animate-infinite-scroll-reverse:hover {
+  animation-play-state: paused;
+}
+
+@keyframes infinite-scroll-reverse {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Optional untuk transisi lebih halus jika ingin tambah efek kustom */
