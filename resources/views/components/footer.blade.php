@@ -6,7 +6,7 @@
    <div class="flex flex-col md:flex-row md:items-start  md:gap-12 gap-6 mb-10">
       <img src="{{ asset('images/Logo.png') }}" alt="Green Generation Logo" class="h-16 w-16 ml-8"/>
 
-      <!-- nav menu -->
+      <!-- nav menu footer -->
       <div class="flex flex-col sm:flex-row gap-10 sm:text-left lg:ml-20 ml-10">
         <div>
           <h4 class="font-semibold mb-2">Organizations</h4>
