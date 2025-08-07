@@ -19,3 +19,13 @@ Route::get('/register', [AuthController::class, 'showRegister'])->name('register
 Route::post('/register', [AuthController::class, 'register']);
 
 Route::get('/about', [AboutController::class, 'index'])->name('about');
+
+
+// BLOG ROUTES
+Route::view('/blog', 'blog.blog')->name('blog.index');
+Route::view('/blog/detailblog', 'blog.detail')->name('blog.detail');
+
+
+
+
+
