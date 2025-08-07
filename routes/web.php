@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\EventController;
 
 // Route::get('/', function () {
 //     return view('landing.index');
@@ -25,7 +26,8 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::view('/blog', 'blog.blog')->name('blog.index');
 Route::view('/blog/detailblog', 'blog.detail')->name('blog.detail');
 
+//route event 
+Route:: get ('/event', [EventController::class, 'index'])->name('events.event');
 
-
-
+Route::view('/DashMember', 'pages.dashMember')->name('pages.dashMember');
 

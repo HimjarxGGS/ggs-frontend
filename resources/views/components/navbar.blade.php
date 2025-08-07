@@ -19,14 +19,14 @@
 
         <!-- desktop menu -->
         <div class="hidden lg:flex flex-1 justify-center gap-x-10 items-center">
-            <a href="#home" class="nav-link text-black font-bold hover:text-[#5e3929] transition duration-200">Home</a>
-            <a href="#aboutus" class="nav-link text-black font-bold hover:text-[#5e3929] transition duration-200">About us</a>
-            <a href="#event" class="nav-link text-black font-bold hover:text-[#5e3929] transition duration-200">Event</a>
-            <a href="#blog" class="nav-link text-black font-bold hover:text-[#5e3929] transition duration-200">Blog</a>
+            <a href="/" class="nav-link text-black font-bold hover:text-[#5e3929] transition duration-200">Home</a>
+            <a href="/about" class="nav-link text-black font-bold hover:text-[#5e3929] transition duration-200">About us</a>
+            <a href="/event" class="nav-link text-black font-bold hover:text-[#5e3929] transition duration-200">Event</a>
+            <a href="/blog" class="nav-link text-black font-bold hover:text-[#5e3929] transition duration-200">Blog</a>
         </div>
 
         <div class="hidden lg:flex items-center">
-            <a href="">
+            <a href="/login">
               <button class="bg-[#7B4B36] hover:bg-[#5e3929] text-white font-light py-2 px-4 rounded-xl transition duration-300">
                 Daftar Member
               </button>

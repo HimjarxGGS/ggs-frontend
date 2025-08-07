@@ -18,4 +18,9 @@ class AuthController extends Controller
     {
         return view('auth.register');
     }
+
+    public function login()
+    {
+        return redirect()->route('pages.dashMember');
+    }
 }
