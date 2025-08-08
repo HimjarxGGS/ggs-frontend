@@ -29,5 +29,5 @@ Route::view('/blog/detailblog', 'blog.detail')->name('blog.detail');
 //route event 
 Route:: get ('/event', [EventController::class, 'index'])->name('events.event');
 
-Route::view('/DashMember', 'pages.dashMember')->name('pages.dashMember');
-
+Route::view('/dashboard-member', 'member.pages.dashboard')->name('member.pages.dashboard') ;
+Route::view('/member-event', 'member.events.event')->name('member.events.event');

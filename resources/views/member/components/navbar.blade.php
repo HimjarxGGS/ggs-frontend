@@ -18,8 +18,8 @@
 
         <!-- desktop menu -->
         <div class="hidden lg:flex flex-1 justify-center gap-x-10 items-center">
-            <a href="/DashMember" class="nav-link text-black font-bold hover:text-[#5e3929] transition duration-200">Home</a>
-            <a href="/event " class="nav-link text-black font-bold hover:text-[#5e3929] transition duration-200">Event</a>
+            <a href="/dashboard-member" class="nav-link text-black font-bold hover:text-[#5e3929] transition duration-200">Home</a>
+            <a href="/member-event" class="nav-link text-black font-bold hover:text-[#5e3929] transition duration-200">Event</a>
             <a href="#" class="nav-link text-black font-bold hover:text-[#5e3929] transition duration-200">History</a>
             <a href="#" class="nav-link text-black font-bold hover:text-[#5e3929] transition duration-200">Data Diri</a>
         </div>

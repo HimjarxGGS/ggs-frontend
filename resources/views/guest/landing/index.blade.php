@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('guest.layouts.app')
 
 @section('title', 'Home - Green Generation Surabaya')
 

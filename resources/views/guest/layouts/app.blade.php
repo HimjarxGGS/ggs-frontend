@@ -10,13 +10,13 @@
 </head>
 <body>
 <!-- navbar -->
-  @include('components.member')
+  @include('guest.components.navbar')
 
 <!-- content  -->
   @yield('content')
 
 <!-- footer -->
-  @include('components.footer')
+  @include('guest.components.footer')
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>

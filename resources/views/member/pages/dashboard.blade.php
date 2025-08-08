@@ -1,4 +1,4 @@
-@extends('layouts.member-app')
+@extends('member.layouts.app')
 
 @section('title', 'home-member')
 

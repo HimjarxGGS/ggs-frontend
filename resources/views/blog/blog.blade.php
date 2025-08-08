@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('guest.layouts.app')
 
 @section('content')
 <div class="min-h-screen flex flex-col">
@@ -33,7 +33,7 @@
         <div class="flex items-start space-x-6 border-b pb-6">
             {{-- Blog Text --}}
             <div class="flex-1">
-                <h2 class="font-bold text-lg mb-1 hover:text-green-600 cursor-pointer">
+                <h2  class="font-bold text-lg mb-1 hover:text-green-600 cursor-pointer">
                     Lorem Ipsum Blog Post {{ $i }}
                 </h2>
                 <p class="text-sm text-gray-500 mb-2">

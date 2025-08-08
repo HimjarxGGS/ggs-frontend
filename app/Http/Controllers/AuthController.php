@@ -21,6 +21,6 @@ class AuthController extends Controller
 
     public function login()
     {
-        return redirect()->route('pages.dashMember');
+        return redirect()->route('member.pages.dashboard');
     }
 }
