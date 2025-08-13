@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container mx-auto px-4 py-10">
-    {{-- Greeting --}}
+   
    <div class="flex justify-center items-center space-x-6 mb-12 mt-16">
     <img src="{{ asset('images/dashboard page.png') }}"
          alt="Dashboard Page" 
@@ -18,11 +18,11 @@
 
 
 
-    {{-- Event Section --}}
+   
     <section>
         <h3 class="text-2xl font-bold mb-4">Event</h3>
         
-        {{-- Search & Sort --}}
+     
         <div class="flex flex-col md:flex-row md:items-center md:space-x-6 mb-8 space-y-4 md:space-y-0">
             <input type="text" placeholder="Search Event" class="border border-gray-300 rounded-lg px-4 py-2 w-full md:flex-grow" />
             <select class="border border-gray-300 rounded-lg px-4 py-2 w-full md:w-auto">
@@ -31,7 +31,7 @@
             </select>
         </div>
 
-        {{-- Event Cards Grid --}}
+       
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             @for ($i = 0; $i < 6; $i++)
             <div class="border border-gray-200 rounded-xl p-4 shadow-sm bg-white flex flex-col">
@@ -52,7 +52,7 @@
             @endfor
         </div>
 
-        {{-- Pagination --}}
+       
         <div class="mt-10 flex justify-center space-x-3 text-sm text-gray-600">
             <button class="px-3 py-1 rounded bg-yellow-300 font-semibold">1</button>
             <button class="px-3 py-1 rounded hover:bg-gray-200">2</button>

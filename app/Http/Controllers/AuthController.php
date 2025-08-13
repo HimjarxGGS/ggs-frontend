@@ -43,7 +43,7 @@ class AuthController extends Controller
 
     public function logout(Request $request)
 {
-    // Hapus sesi user
+    
     auth()->logout();
 
     // Invalidasi session
