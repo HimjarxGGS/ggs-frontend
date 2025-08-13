@@ -22,12 +22,15 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 
-// BLOG ROUTES
+// route vlog
 Route::view('/blog', 'blog.blog')->name('blog.index');
 Route::view('/blog/detailblog', 'blog.detail')->name('blog.detail');
 
 //route event 
 Route:: get ('/event', [EventController::class, 'index'])->name('events.event');
 
+// route member
 Route::view('/dashboard-member', 'member.pages.dashboard')->name('member.pages.dashboard') ;
 Route::view('/member-event', 'member.events.event')->name('member.events.event');
+
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

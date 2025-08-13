@@ -26,7 +26,7 @@
 
         <!-- tombol logout -->
         <div class="hidden lg:flex items-center">
-            <form action="/" method="POST">
+            <form action="{{ route('logout') }}" method="POST">
                 @csrf
                 <button type="submit" class="bg-[#7B4B36] hover:bg-[#5e3929] text-white font-light py-2 px-4 rounded-xl transition duration-300">
                     Logout
