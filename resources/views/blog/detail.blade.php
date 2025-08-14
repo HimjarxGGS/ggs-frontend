@@ -18,44 +18,48 @@
             <img 
                 src="{{ asset('images/blog.png') }}" 
                 alt="Detail Blog Image"
-                class="w-full h-80 object-cover rounded-lg shadow">
+                class="w-full h-48 md:h-80 object-cover rounded-lg shadow">
         </div>
 
         {{-- Blog Title & Info --}}
         <div class="mb-6">
-            <h1 class="text-3xl font-bold mb-2">Judul Blog Lorem Ipsum Dolor</h1>
+            <h1 class="text-2xl md:text-3xl font-bold mb-2">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            </h1>
             <p class="text-sm text-gray-500">
-                Green Generation Surabaya | {{ now()->format('d M Y') }} | Environment
+                Lorem Ipsum | 8 Juli 2025 | Category
             </p>
         </div>
 
         {{-- Blog Content --}}
-        <div class="text-gray-700 leading-relaxed space-y-4 text-justify">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="text-gray-700 leading-relaxed space-y-4">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a fermentum mauris. Nulla facilisi. Curabitur luctus nisi ut eros luctus, vitae gravida magna semper.</p>
 
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. 
-            Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.</p>
+            <p><strong>1. Lorem ipsum dolor sit amet</strong><br>
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
 
-            <p>Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. 
-            Nulla facilisi. Ut fringilla. Suspendisse potenti.</p>
+            <p><strong>2. Lorem ipsum dolor sit amet</strong><br>
+            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+
+            <p><strong>3. Lorem ipsum dolor sit amet</strong><br>
+            Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
+
+            <p><strong>4. Lorem ipsum dolor sit amet</strong><br>
+            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p>
         </div>
 
-      {{-- Green Message Section (from uploaded image) --}}
-<div class="mb-16 mt-16">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <img src="{{ asset('images/blog.png') }}" alt="Ilustrasi Plastik Laut 1" class="rounded-lg w-full">
-        <img src="{{ asset('images/blog.png') }}" alt="Ilustrasi Plastik Laut 2" class="rounded-lg w-full">
-    </div>
-    <p class="text-gray-700 text-sm md:text-base text-center">
-        Dengan memulai dari hal kecil, kamu bisa menjadi bagian dari perubahan besar. Ingat, bumi ini rumah kita bersama. 
-        Yuk, bergerak bersama Green Generation untuk masa depan yang lebih hijau!
-    </p>
-</div>
-
+        {{-- Green Message Section --}}
+        <div class="mb-16 mt-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <img src="{{ asset('images/blog.png') }}" alt="Image 1" class="rounded-lg w-full">
+                <img src="{{ asset('images/blog.png') }}" alt="Image 2" class="rounded-lg w-full">
+            </div>
+            <p class="text-gray-700 text-sm md:text-base text-center">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus finibus, sapien at blandit suscipit, risus lorem vulputate lorem, in feugiat neque mi ut nulla.
+            </p>
+        </div>
 
         {{-- Related Posts Section --}}
         <div class="mt-16">
@@ -66,13 +70,13 @@
                     <img 
                         src="{{ asset('images/blog.png') }}" 
                         alt="Related Blog Image" 
-                        class="w-full h-40 object-cover rounded-lg">
+                        class="w-full h-32 md:h-40 object-cover rounded-lg">
                     <h3 class="text-sm font-semibold leading-tight">
-                        5 Cara Mudah Mengurangi Sampah Plastik di Kehidupan Sehari-hari
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
                     </h3>
                     <p class="text-xs text-gray-500">
                         8 Juli 2025<br>
-                        Green Generation Surabaya
+                        Lorem Ipsum
                     </p>
                 </div>
                 @endfor
@@ -82,22 +86,21 @@
         {{-- Comment Section --}}
         <div class="mt-12">
             <h2 class="text-xl font-semibold mb-4">Submit Comment</h2>
-            <p class="text-gray-500 text-sm mb-4">Your email address will not be published. Required fields are marked *</p>
+            <p class="text-gray-500 text-sm mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
             <form class="space-y-4 max-w-xl">
                 <div>
                     <input type="email" placeholder="Enter email*" 
-                           class="w-full border px-4 py-2 rounded 
-                                  focus:outline-none focus:ring focus:ring-green-300">
+                           class="w-full border px-4 py-2 rounded focus:outline-none focus:ring focus:ring-green-300">
                 </div>
                 <div>
                     <input type="text" placeholder="Enter name*" 
-                           class="w-full border px-4 py-2 rounded 
-                                  focus:outline-none focus:ring focus:ring-green-300">
+                           class="w-full border px-4 py-2 rounded focus:outline-none focus:ring focus:ring-green-300">
                 </div>
                 <div>
                     <textarea placeholder="Enter comment*" 
-                              class="w-full border px-4 py-2 rounded 
-                                     focus:outline-none focus:ring focus:ring-green-300 h-28"></textarea>
+                              class="w-full border px-4 py-2 rounded focus:outline-none focus:ring focus:ring-green-300 h-28"></textarea>
                 </div>
                 <button type="submit"
                         class="bg-green-600 text-white px-5 py-2 rounded hover:bg-green-700">
@@ -114,7 +117,7 @@
                 <h2 class="text-5xl font-bold text-palette-5">
                     our <span class="font-bold">Partners</span>
                 </h2>
-                <p class="text-gray-500">Green Generation Surabaya</p>
+                <p class="text-gray-500">Lorem Ipsum</p>
             </div>
             <div class="hidden lg:block w-80 h-0.5 bg-gray-300"></div>
         </div>

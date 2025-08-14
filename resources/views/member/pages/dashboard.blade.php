@@ -14,10 +14,6 @@
         <h1 class="text-2xl font-bold">Welcome to Dashboard Member!</h1>
     </div>
 </div>
-
-
-
-
    
     <section>
         <h3 class="text-2xl font-bold mb-4">Event</h3>

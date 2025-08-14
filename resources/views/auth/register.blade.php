@@ -13,11 +13,11 @@
   <!-- header -->
   <div class="text-center mt-5 px-4">
     <h1 class="text-2xl md:text-3xl font-bold text-slate-800">Green Generation Surabaya</h1>
-    <p class="text-xs md:text-sm text-slate-600">Welcome to Register Page! Enter a valid data.</p>
+    
   </div>
 
   <!-- content -->
-  <div class="flex flex-col md:flex-row items-center justify-center md:justify-between md:gap-0 gap-12 mt-12  flex-grow px-4">
+  <div class="flex flex-col md:flex-row items-center justify-center md:justify-between md:gap-0 gap-12 mt-12 flex-grow px-4">
 
     <!-- image -->
     <div class="flex justify-center md:justify-center w-full md:w-1/2 mt-5">
@@ -27,74 +27,93 @@
     <!-- form -->
     <form action="{{ route('register') }}" method="POST" class="w-full max-w-sm space-y-4 mx-auto">
       @csrf
+
+      @if(session('success'))
+        <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-2 rounded relative">
+          {{ session('success') }}
+        </div>
+      @endif
+
+      <!-- @if ($errors->any())
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded relative">
+          <ul class="list-disc pl-4 text-sm">
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+          </ul>
+        </div>
+      @endif -->
+
       <div>
         <h2 class="text-xl font-bold text-slate-800 text-left">Register Page</h2>
         <p class="text-xs text-slate-600 text-left">Masukkan data valid anda!</p>
       </div>
 
-      <!-- no.telfon -->
+      <!-- No.Telepon -->
       <div class="w-full space-y-1 pt-5">
-        <label for="notelfon" class="font-sans antialiased text-sm text-slate-800 font-semibold">
+        <label for="notelfon" class="text-sm text-slate-800 font-semibold">
           No.Telepon
         </label>
-        <div class="relative w-full">
-          <input 
-            id="notelfon" 
-            name="notelfon"
-            placeholder="Masukkan No.Telepon valid." 
-            type="text" 
-            required
-            class="w-full aria-disabled:cursor-not-allowed outline-none focus:outline-none text-slate-800 placeholder:text-slate-600/60 bg-transparent ring-transparent border border-slate-200 transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none data-[error=true]:border-red-500 data-[success=true]:border-green-500 text-sm rounded-md py-2 px-2.5 ring shadow-sm hover:border-slate-800 hover:ring-slate-800/10 focus:border-slate-800 focus:ring-slate-800/10 peer" 
-            data-error="false" 
-            data-success="false" 
-          />
-        </div>
+        <input 
+          id="notelfon" 
+          name="notelfon"
+          placeholder="Masukkan No.Telepon valid." 
+          type="text" 
+          value="{{ old('notelfon') }}"
+          class="w-full border text-sm rounded-md py-2 px-2.5 shadow-sm 
+                 @error('notelfon') border-red-500 @else border-slate-200 @enderror
+                 focus:border-slate-800 focus:outline-none"
+        />
+        @error('notelfon')
+          <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+        @enderror
       </div>
 
-      <!-- username -->
+      <!-- Username -->
       <div class="w-full space-y-1">
-        <label for="username" class="font-sans antialiased text-sm text-slate-800 font-semibold">
+        <label for="username" class="text-sm text-slate-800 font-semibold">
           Username
         </label>
-        <div class="relative w-full">
-          <input 
-            id="username" 
-            name="username"
-            placeholder="Masukkan username anda." 
-            type="text" 
-            required
-            class="w-full aria-disabled:cursor-not-allowed outline-none focus:outline-none text-slate-800 placeholder:text-slate-600/60 bg-transparent ring-transparent border border-slate-200 transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none data-[error=true]:border-red-500 data-[success=true]:border-green-500 text-sm rounded-md py-2 px-2.5 ring shadow-sm hover:border-slate-800 hover:ring-slate-800/10 focus:border-slate-800 focus:ring-slate-800/10 peer" 
-            data-error="false" 
-            data-success="false" 
-          />
-        </div>
+        <input 
+          id="username" 
+          name="username"
+          placeholder="Masukkan username anda." 
+          type="text" 
+          value="{{ old('username') }}"
+          class="w-full border text-sm rounded-md py-2 px-2.5 shadow-sm 
+                 @error('username') border-red-500 @else border-slate-200 @enderror
+                 focus:border-slate-800 focus:outline-none"
+        />
+        @error('username')
+          <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+        @enderror
       </div>
 
-      <!-- password -->
+      <!-- Password -->
       <div class="w-full space-y-1">
-        <label for="password" class="font-sans antialiased text-sm text-slate-800 font-semibold">
+        <label for="password" class="text-sm text-slate-800 font-semibold">
           Password
         </label>
-        <div class="relative w-full">
-          <input 
-            id="password" 
-            name="password"
-            placeholder="Masukkan password anda." 
-            type="password" 
-            required
-            class="w-full aria-disabled:cursor-not-allowed outline-none focus:outline-none text-slate-800 placeholder:text-slate-600/60 bg-transparent ring-transparent border border-slate-200 transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none data-[error=true]:border-red-500 data-[success=true]:border-green-500 text-sm rounded-md py-2 px-2.5 ring shadow-sm hover:border-slate-800 hover:ring-slate-800/10 focus:border-slate-800 focus:ring-slate-800/10 peer" 
-            data-error="false" 
-            data-success="false" 
-          />
-        </div>
+        <input 
+          id="password" 
+          name="password"
+          placeholder="Masukkan password anda." 
+          type="password" 
+          class="w-full border text-sm rounded-md py-2 px-2.5 shadow-sm 
+                 @error('password') border-red-500 @else border-slate-200 @enderror
+                 focus:border-slate-800 focus:outline-none"
+        />
+        @error('password')
+          <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+        @enderror
       </div>
 
-      <!-- registrasi -->
-      <button type="submit" class="w-full bg-[#9b5d3c] hover:bg-[#874c2c] text-white font-semibold py-2 rounded-md transition ">
+      <!-- Submit -->
+      <button type="submit" class="w-full bg-[#9b5d3c] hover:bg-[#874c2c] text-white font-semibold py-2 rounded-md transition">
         Registrasi
       </button>
 
-      <!-- link to login -->
+      <!-- Link ke login -->
       <p class="text-sm text-slate-600 text-center">
         Memiliki akun member? <a href="{{ route('login') }}" class="text-[#9b5d3c]">Login</a>
       </p>

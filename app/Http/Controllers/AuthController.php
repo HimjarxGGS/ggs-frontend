@@ -19,6 +19,33 @@ class AuthController extends Controller
         return view('auth.register');
     }
 
+   public function register(Request $request)
+{
+    $request->validate([
+        'notelfon' => 'required|string|max:15',
+        'username' => 'required|string|unique:users,username',
+        'password' => 'required|string|min:6',
+    ], [
+        'notelfon.required' => 'No. Telepon harus diisi.',
+        'username.required' => 'Username harus diisi.',
+        'username.unique' => 'Username sudah digunakan.',
+        'password.required' => 'Password harus diisi.',
+        'password.min' => 'Password minimal 6 karakter.',
+    ]);
+
+    // tak benerin besok
+    $email = $request->username . '@example.com';
+
+    User::create([
+        'name' => $request->notelfon,
+        'username' => $request->username,
+        'email' => $email,
+        'password' => Hash::make($request->password),
+    ]);
+
+    return redirect()->route('login')->with('success', 'Registrasi berhasil! Silakan login.');
+}
+
    public function login(Request $request)
 {
     // Validasi input
@@ -47,7 +74,7 @@ class AuthController extends Controller
         ])->onlyInput('username'); // biar username tetap terisi
     }
 
-    // Kalau username & password benar → login
+    // Kalau username & password benar 
     Auth::login($user);
     $request->session()->regenerate();
 

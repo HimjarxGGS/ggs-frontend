@@ -32,5 +32,7 @@ Route:: get ('/event', [EventController::class, 'index'])->name('events.event');
 // route member
 Route::view('/dashboard-member', 'member.pages.dashboard')->name('member.pages.dashboard') ;
 Route::view('/member-event', 'member.events.event')->name('member.events.event');
+Route::view('/history', 'member.pages.history')->name('member.pages.history');
+
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
