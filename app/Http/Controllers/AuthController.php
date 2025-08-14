@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -17,30 +19,40 @@ class AuthController extends Controller
         return view('auth.register');
     }
 
-    public function login(Request $request)
-    {
-        // Validasi input
-        $request->validate([
-            'username' => 'required|string',
-            'password' => 'required|string',
-        ], [
-            'username.required' => 'Username harus diisi.',
-            'password.required' => 'Password harus diisi.',
-        ]);
+   public function login(Request $request)
+{
+    // Validasi input
+    $request->validate([
+        'username' => 'required|string',
+        'password' => 'required|string',
+    ], [
+        'username.required' => 'Username harus diisi.',
+        'password.required' => 'Password harus diisi.',
+    ]);
 
-        // Cek login
-        if (Auth::attempt($request->only('username', 'password'))) {
-            $request->session()->regenerate();
-            return redirect()->route('member.pages.dashboard');
-        }
+    // Cari user berdasarkan username
+    $user = User::where('username', $request->username)->first();
 
-        // Jika gagal login
+    // Jika username tidak ditemukan
+    if (!$user) {
         return back()->withErrors([
             'username' => 'Username salah.',
-            'password' => 'password salah.',
         ])->onlyInput('username');
     }
 
+    // Jika password salah
+    if (!Hash::check($request->password, $user->password)) {
+        return back()->withErrors([
+            'password' => 'Password salah.',
+        ])->onlyInput('username'); // biar username tetap terisi
+    }
+
+    // Kalau username & password benar → login
+    Auth::login($user);
+    $request->session()->regenerate();
+
+    return redirect()->route('member.pages.dashboard');
+}
     public function logout(Request $request)
 {
     
