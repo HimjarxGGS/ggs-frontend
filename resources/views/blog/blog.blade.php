@@ -1,7 +1,9 @@
 @extends('guest.layouts.app')
 
+@section('title', 'Blog - Green Generation Surabaya')
+
 @section('content')
-<div class="min-h-screen flex flex-col bg-gray-50"> {{-- tambahan bg --}}
+<div class="min-h-screen flex flex-col"> {{-- tambahan bg --}}
 
     {{-- Blog Section --}}
     <section class="max-w-5xl mx-auto py-10 px-5 flex-1">
@@ -11,7 +13,7 @@
             <h1 class="text-3xl font-bold text-gray-800">Blog</h1> {{-- tambahan ukuran --}}
 
             {{-- Search Bar with Icon --}}
-            <div class="relative w-full md:w-64">
+            <div class="relative w-full md:w-80">
                 <span class="absolute inset-y-0 left-3 flex items-center text-gray-400">
                     <!-- Search Icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" 
@@ -23,66 +25,66 @@
                 </span>
                 <input type="text" placeholder="Search"
                     class="w-full border border-gray-300 rounded-full pl-10 pr-4 py-2 
-                           focus:outline-none focus:ring focus:ring-green-300 text-sm">
+                           focus:outline-none focus:ring focus:ring-pallete-5 text-sm transition duration-300">
             </div>
         </div>
 
        {{-- Blog List --}}
-<div class="space-y-8">
-    @for ($i = 1; $i <= 4; $i++)
-        <div class="flex flex-col md:flex-row items-start gap-6 border-b pb-6">
-            {{-- Blog Text --}}
-            <div class="flex-1">
-                <h2  class="font-bold text-lg mb-1 hover:text-green-600 cursor-pointer leading-snug">
-                    Lorem Ipsum Blog Post {{ $i }}
-                </h2>
-                <p class="text-sm text-gray-500 mb-2">
-                    Green Generation Surabaya | {{ now()->format('d M Y') }} | Environment
-                </p>
-                <p class="text-gray-600 text-sm leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt 
-                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                    laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-            </div>
+        <div class="space-y-8 mt-20">
+            @for ($i = 1; $i <= 4; $i++)
+                <div class="flex flex-col md:flex-row items-start gap-6 border-b pb-6">
+                    {{-- Blog Text --}}
+                    <div class="flex-1">
+                        <h2  class="font-bold text-lg mb-1 hover:text-palette-2 cursor-pointer leading-snug transition duration-300">
+                            Lorem Ipsum Blog Post {{ $i }}
+                        </h2>
+                        <p class="text-sm text-gray-500 mb-2">
+                            Green Generation Surabaya | {{ now()->format('d M Y') }} | Environment
+                        </p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt 
+                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                            laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
 
-            {{-- Blog Thumbnail --}}
-            <img 
-                src="{{ asset('images/blog.png') }}" 
-                alt="Blog Thumbnail {{ $i }}" 
-                class="w-full md:w-48 h-48 md:h-28 rounded-lg object-cover shadow-md">
+                    {{-- Blog Thumbnail --}}
+                    <img 
+                        src="{{ asset('images/blog.png') }}" 
+                        alt="Blog Thumbnail {{ $i }}" 
+                        class="w-full md:w-48 h-48 md:h-28 rounded-lg object-cover shadow-md">
+                </div>
+            @endfor
         </div>
-    @endfor
-</div>
 
         {{-- Pagination --}}
         <div class="flex justify-between items-center text-gray-400 mt-6 text-sm">
-            <a href="#" class="hover:text-green-600 flex items-center gap-1">&lt; Older Blog</a>
-            <a href="#" class="hover:text-green-600 flex items-center gap-1">Next Blog &gt;</a>
+            <a href="#" class="hover:text-palette-3 flex items-center gap-1 transition duration-300">&lt; Older Blog</a>
+            <a href="#" class="hover:text-palette-3 flex items-center gap-1 transition duration-300">Next Blog &gt;</a>
         </div>
 
         {{-- Comment Form --}}
         <div class="mt-12 bg-white shadow-md rounded-lg p-6"> {{-- tambahan styling --}}
-            <h2 class="text-xl font-semibold mb-4">Submit Comment</h2>
-            <p class="text-gray-500 text-sm mb-4">Your email address will not be published. Required fields are marked *</p>
+            <h2 class="text-4xl font-normal mb-3 text-palette-3">Submit Comment</h2>
+            <p class="text-gray-500 text-sm mb-8">Your email address will not be published. Required fields are marked *</p>
             <form class="space-y-4 max-w-xl">
                 <div>
                     <input type="email" placeholder="Enter email*" 
-                           class="w-full border px-4 py-2 rounded 
-                                  focus:outline-none focus:ring focus:ring-green-300 text-sm">
+                           class="w-80 border px-4 py-2 rounded 
+                                  focus:outline-none focus:ring focus:ring-palette-3 text-sm transition duration-300">
                 </div>
                 <div>
                     <input type="text" placeholder="Enter name*" 
-                           class="w-full border px-4 py-2 rounded 
-                                  focus:outline-none focus:ring focus:ring-green-300 text-sm">
+                           class="w-80 border px-4 py-2 rounded 
+                                  focus:outline-none focus:ring focus:ring-palette-3 text-sm transition duration-300">
                 </div>
                 <div>
                     <textarea placeholder="Enter comment*" 
                               class="w-full border px-4 py-2 rounded 
-                                     focus:outline-none focus:ring focus:ring-green-300 h-28 text-sm"></textarea>
+                                     focus:outline-none focus:ring focus:ring-palette-3 text-sm transition duration-300"></textarea>
                 </div>
                 <button type="submit"
-                        class="bg-green-600 text-white px-5 py-2 rounded hover:bg-green-700 transition">
+                        class="bg-palette-5 text-white px-24 py-2 rounded-lg ease-in-out transition duration-300 hover:shadow-lg hover:shadow-gray-600">
                     Submit
                 </button>
             </form>

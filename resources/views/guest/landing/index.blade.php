@@ -19,7 +19,7 @@
 
     <!-- button mobile -->
     <div class="mt-6 md:hidden">
-      <button class="bg-palette-5 hover:bg-[#935d3d] text-white font-extralight py-2 px-5 rounded-xl transition duration-200 flex items-center gap-2">
+      <button class="bg-palette-5 hover:bg-palette-1 text-white font-extralight py-2 px-5 rounded-xl transition duration-200 flex items-center gap-2">
         <span class="text-sm">View Event</span>
       </button>
     </div>
@@ -27,7 +27,7 @@
 
   <!-- button Desktop -->
   <div class="hidden lg:flex items-center mt-6 ml-28">
-    <button class="bg-palette-5 text-white font-normal py-2 px-20 rounded-xl flex items-center gap-2 ease-in-out transition duration-500 hover:shadow-lg hover:shadow-gray-600">
+    <button class="bg-palette-5 text-white font-normal py-2 px-20 rounded-xl flex items-center gap-2 ease-in-out transition duration-300 hover:shadow-lg hover:shadow-gray-600">
       <span>View Event</span>
     </button>
   </div>
