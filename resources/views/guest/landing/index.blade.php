@@ -19,7 +19,7 @@
 
     <!-- button mobile -->
     <div class="mt-6 md:hidden">
-      <button class="bg-palette-5 hover:bg-palette-1 text-white font-extralight py-2 px-5 rounded-xl transition duration-200 flex items-center gap-2">
+      <button class="bg-palette-5 hover:bg-palette-1 text-white font-extralight py-2 px-5 rounded-xl ease-in-out transition duration-200 flex items-center gap-2">
         <span class="text-sm">View Event</span>
       </button>
     </div>

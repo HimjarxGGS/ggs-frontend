@@ -5,6 +5,8 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\BlogController;
+
 
 // Route::get('/', function () {
 //     return view('landing.index');
@@ -22,9 +24,13 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 
-// route vlog
+//route blog
 Route::view('/blog', 'blog.blog')->name('blog.index');
 Route::view('/blog/detailblog', 'blog.detail')->name('blog.detail');
+
+// Route::get('/blog', [BlogController::class, 'showBlog'])->name('blog.index');
+// Route::get('/blog/{slug}', [BlogController::class, 'showDetail'])->name('blog.detail');
+
 
 //route event 
 Route:: get ('/event', [EventController::class, 'index'])->name('events.event');

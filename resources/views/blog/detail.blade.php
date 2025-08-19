@@ -8,8 +8,8 @@
 
         {{-- Breadcrumb --}}
         <div class="mt-20 mb-5 text-sm text-gray-500">
-            <a href="/" class="hover:underline text-green-600">Home</a> /
-            <a href="/blog" class="hover:underline text-green-600">Blog</a> /
+            <a href="/" class="hover:underline text-palette-5 transition duration-300">Home</a> /
+            <a href="/blog" class="hover:underline text-palette-5 transition duration-300">Blog</a> /
             <span class="text-gray-800">Detail Blog</span>
         </div>
 
@@ -23,7 +23,7 @@
 
         {{-- Blog Title & Info --}}
         <div class="mb-6">
-            <h1 class="text-2xl md:text-3xl font-bold mb-2">
+            <h1 class="text-2xl md:text-3xl font-bold mb-2 text-palette-3">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
             </h1>
             <p class="text-sm text-gray-500">
@@ -32,7 +32,7 @@
         </div>
 
         {{-- Blog Content --}}
-        <div class="text-gray-700 leading-relaxed space-y-4">
+        <div class="text-palette-2 leading-relaxed space-y-4">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a fermentum mauris. Nulla facilisi. Curabitur luctus nisi ut eros luctus, vitae gravida magna semper.</p>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
@@ -56,7 +56,7 @@
                 <img src="{{ asset('images/blog.png') }}" alt="Image 1" class="rounded-lg w-full">
                 <img src="{{ asset('images/blog.png') }}" alt="Image 2" class="rounded-lg w-full">
             </div>
-            <p class="text-gray-700 text-sm md:text-base text-center">
+            <p class="text-palette-2 text-sm md:text-base">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus finibus, sapien at blandit suscipit, risus lorem vulputate lorem, in feugiat neque mi ut nulla.
             </p>
         </div>
@@ -71,7 +71,7 @@
                         src="{{ asset('images/blog.png') }}" 
                         alt="Related Blog Image" 
                         class="w-full h-32 md:h-40 object-cover rounded-lg">
-                    <h3 class="text-sm font-semibold leading-tight">
+                    <h3 class="text-sm font-semibold leading-tight text-palette-3">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit
                     </h3>
                     <p class="text-xs text-gray-500">
@@ -84,26 +84,27 @@
         </div>
 
         {{-- Comment Section --}}
-        <div class="mt-12">
-            <h2 class="text-xl font-semibold mb-4">Submit Comment</h2>
-            <p class="text-gray-500 text-sm mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-            <form class="space-y-4 max-w-xl">
+       <div class="mt-16 bg-white shadow-md rounded-2xl p-20">
+            <h2 class="text-4xl font-semibold mb-2">Submit Comment</h2>
+            <p class="text-gray-500 text-sm mb-4">Your email address will not be published. Required fields are marked *</p>
+            <form class="space-y-4 max-w-xl mt-10">
                 <div>
                     <input type="email" placeholder="Enter email*" 
-                           class="w-full border px-4 py-2 rounded focus:outline-none focus:ring focus:ring-green-300">
+                           class="w-80 border px-4 py-2 rounded 
+                                  focus:outline-none focus:ring focus:ring-palette-4 text-sm transition duration-300">
                 </div>
                 <div>
                     <input type="text" placeholder="Enter name*" 
-                           class="w-full border px-4 py-2 rounded focus:outline-none focus:ring focus:ring-green-300">
+                           class="w-80 border px-4 py-2 rounded 
+                                  focus:outline-none focus:ring focus:ring-palette-4 text-sm transition duration-300">
                 </div>
                 <div>
                     <textarea placeholder="Enter comment*" 
-                              class="w-full border px-4 py-2 rounded focus:outline-none focus:ring focus:ring-green-300 h-28"></textarea>
+                              class="w-full border px-4 py-2 rounded 
+                                     focus:outline-none focus:ring focus:ring-palette-4 h-28 text-sm transition duration-300"></textarea>
                 </div>
                 <button type="submit"
-                        class="bg-green-600 text-white px-5 py-2 rounded hover:bg-green-700">
+                        class=" bg-palette-2 text-white px-40 py-2 rounded-xl hover:bg-palette-2 transition ease-in-out duration-300 hover:shadow-lg hover:shadow-gray-600">
                     Submit
                 </button>
             </form>
