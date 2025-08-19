@@ -1,6 +1,6 @@
-@extends('member.layouts.app')
+@extends('guest.layouts.app')
 
-@section('title', 'Event')
+@section('title', 'Detail Event - Green Generation Surabaya')
 
 @section('content')
 <section class="py-16 bg-gray-100">

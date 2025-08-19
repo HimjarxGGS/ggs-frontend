@@ -1,4 +1,4 @@
-<!-- @extends('member.layouts.app')
+@extends('member.layouts.app')
 
 @section('title', 'History Pendaftaran')
 
@@ -61,4 +61,4 @@
 
 {{-- Footer --}}
 @include('member.components.footer')
-@endsection -->
+@endsection
