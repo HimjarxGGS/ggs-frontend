@@ -19,7 +19,7 @@
 
         <!-- desktop menu -->
         <div class="hidden lg:flex flex-1 justify-center gap-x-10 items-center">
-            <a href="/" class="nav-link text-black font-bold hover:text-[#5e3929] transition duration-200">Home</a>
+            <a href="/home" class="nav-link text-black font-bold hover:text-[#5e3929] transition duration-200">Home</a>
             <a href="/about" class="nav-link text-black font-bold hover:text-[#5e3929] transition duration-200">About us</a>
             <a href="/event" class="nav-link text-black font-bold hover:text-[#5e3929] transition duration-200">Event</a>
             <a href="/blog" class="nav-link text-black font-bold hover:text-[#5e3929] transition duration-200">Blog</a>
@@ -27,8 +27,8 @@
 
         <div class="hidden lg:flex items-center">
             <a href="/login">
-              <button class="bg-[#7B4B36] hover:bg-[#5e3929] text-white font-light py-2 px-4 rounded-xl transition duration-300">
-                Daftar Member
+              <button class="bg-[#7B4B36] hover:bg-[#5e3929] text-white font-light py-2 px-10 rounded-lg transition duration-300">
+                Sign in
               </button>
             </a>
         </div>
@@ -36,10 +36,10 @@
 
     <!-- mobile menu -->
     <div id="mobileMenu" class="hidden lg:hidden top-[110px] w-[90%] left-1/2 -translate-x-1/2 rounded-md bg-[#F2F2F7] backdrop-blur-3xl shadow-md py-7 text-center z-[99] fixed">
-        <a href="#home" class="nav-link block py-4 text-black font-bold hover:text-[#5e3929] transition duration-200">Home</a>
-        <a href="#aboutus" class="nav-link block py-4 text-black font-bold hover:text-[#5e3929] transition duration-200">About us</a>
-        <a href="#event" class="nav-link block py-4 text-black font-bold hover:text-[#5e3929] transition duration-200">Event</a>
-        <a href="#blog" class="nav-link block py-4 text-black font-bold hover:text-[#5e3929] transition duration-200">Blog</a>
+        <a href="/home" class="nav-link block py-4 text-black font-bold hover:text-[#5e3929] transition duration-200">Home</a>
+        <a href="/aboutus" class="nav-link block py-4 text-black font-bold hover:text-[#5e3929] transition duration-200">About us</a>
+        <a href="/event" class="nav-link block py-4 text-black font-bold hover:text-[#5e3929] transition duration-200">Event</a>
+        <a href="/blog" class="nav-link block py-4 text-black font-bold hover:text-[#5e3929] transition duration-200">Blog</a>
         
         <div class="mt-6 px-6">
           <a href="">

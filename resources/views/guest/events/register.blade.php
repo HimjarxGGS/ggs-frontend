@@ -11,9 +11,8 @@
             <div class="max-w-md w-full bg-white rounded-lg shadow-lg overflow-hidden">
                 <img class="w-full h-48 object-cover" src="https://via.placeholder.com/600x300" alt="Event Image">
                 <div class="p-6">
-                    <a href="" class="text-xl font-semibold text-gray-800 mb-2">Judul Event</a>
-                    <p class="text-gray-600 mb-4">
-                        lorem ipsum blabla blebleble blublublu </p>
+                    <a href="" class="text-xl font-semibold text-gray-800 mb-2">Halaman Regist event</a>
+                    
                     <!-- <a href="#" class="inline-block bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-all">
                         Lihat Detail
                     </a> -->

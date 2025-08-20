@@ -11,15 +11,15 @@
         <div>
           <h4 class="font-semibold mb-2">Organizations</h4>
           <ul class="space-y-1 text-sm text-gray-600">
-            <li><a href="#" class="hover:text-[#5e3929] transition duration-300">About us</a></li>
-            <li><a href="#" class="hover:text-[#5e3929] transition duration-300">Event</a></li>
+            <li><a href="/dashboard-member" class="hover:text-[#5e3929] transition duration-300">Dashboard</a></li>
+            <li><a href="/riwayat-pendaftaran" class="hover:text-[#5e3929] transition duration-300">History</a></li>
+            <li><a href="/data-diri" class="hover:text-[#5e3929] transition duration-300">Data Diri</a></li>
           </ul>
         </div>
         <div>
           <h4 class="font-semibold mb-2">Resources</h4>
           <ul class="space-y-1 text-sm text-gray-600">
-            <li><a href="#" class="hover:text-[#5e3929] transition duration-300">Home</a></li>
-            <li><a href="#" class="hover:text-[#5e3929] transition duration-300">Blog</a></li>
+            <li><a href="/home" class="hover:text-[#5e3929] transition duration-300">Home</a></li>
           </ul>
         </div>
       </div>

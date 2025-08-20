@@ -15,7 +15,7 @@ class BlogController extends Controller
             ->orderByDesc('published_at')
             ->paginate(6);
 
-        return view('blog.blog', compact('blogs'));
+        return view('guest.blog.blog', compact('blogs'));
     }
 
     // Halaman detail blog (slug digunakan untuk SEO-friendly URL)

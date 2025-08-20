@@ -14,31 +14,32 @@ use App\Http\Controllers\BlogController;
 
 // Route::get('/', [LandingController::class, 'index']);
 
-Route::get('/', [LandingController::class, 'index'])->name('landing.index');
-
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
 
+Route::get('/home', [LandingController::class, 'index'])->name('landing.index');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 
-
 //route blog
-Route::view('/blog', 'blog.blog')->name('blog.index');
-Route::view('/blog/detailblog', 'blog.detail')->name('blog.detail');
+Route::view('/blog', 'guest.blog.blog')->name('blog.index');
+Route::view('/blog/detailblog', 'guest.blog.detail')->name('blog.detail');
 
 // Route::get('/blog', [BlogController::class, 'showBlog'])->name('blog.index');
 // Route::get('/blog/{slug}', [BlogController::class, 'showDetail'])->name('blog.detail');
 
-
 //route event 
-Route:: get ('/event', [EventController::class, 'index'])->name('events.event');
+Route::get ('/event', [EventController::class, 'index'])->name('events.event');
+Route::view('/event/list-event', 'guest.events.list');
+Route::view('/event/detail-event', 'guest.events.detail');
+Route::view('/event/registrasi-event','guest.events.register');
+Route::view('/event/success-registrasi','guest.events.success');
 
 // route member
-Route::view('/dashboard-member', 'member.pages.dashboard')->name('member.pages.dashboard') ;
-Route::view('/member-event', 'member.events.event')->name('member.events.event');
-Route::view('/history', 'member.pages.history')->name('member.pages.history');
-
+Route::view('/dashboard-member', 'member.dashboard.index')->name('member.dashboard.index');
+Route::view('/riwayat-pendaftaran', 'member.history.index')->name('member.history.index');
+// Route::view('/history', 'member.history.index')->name('member.history.index');
+Route::view('/data-diri', 'member.profile.index')->name('member.profile.index');
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

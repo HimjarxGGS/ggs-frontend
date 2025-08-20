@@ -1,6 +1,6 @@
 @extends('member.layouts.app')
 
-@section('title', 'Dashboard Member')
+@section('title', 'Dashboard Member - Green Generation Surabaya')
 
 @section('content')
 <div class="container mx-auto px-4 py-10">

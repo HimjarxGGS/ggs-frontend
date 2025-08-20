@@ -1,6 +1,6 @@
 @extends('member.layouts.app')
 
-@section('title', 'History Pendaftaran')
+@section('title', 'History Pendaftaran - Green Generation Surabaya')
 
 @section('content')
 <div class="container mx-auto px-6 py-12"> {{-- px lebih kecil, py lebih besar --}}
