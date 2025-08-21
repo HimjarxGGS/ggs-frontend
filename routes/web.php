@@ -19,7 +19,7 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
 
-Route::get('/home', [LandingController::class, 'index'])->name('landing.index');
+Route::get('/', [LandingController::class, 'index'])->name('landing.index');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 //route blog
@@ -37,9 +37,11 @@ Route::view('/event/registrasi-event','guest.events.register');
 Route::view('/event/success-registrasi','guest.events.success');
 
 // route member
-Route::view('/dashboard-member', 'member.dashboard.index')->name('member.dashboard.index');
-Route::view('/riwayat-pendaftaran', 'member.history.index')->name('member.history.index');
-// Route::view('/history', 'member.history.index')->name('member.history.index');
-Route::view('/data-diri', 'member.profile.index')->name('member.profile.index');
+Route::middleware('auth')->group(function () {
+    Route::view('/dashboard-member', 'member.dashboard.index')->name('member.dashboard.index');
+    Route::view('/riwayat-pendaftaran', 'member.history.index')->name('member.history.index');
+    Route::view('/data-diri', 'member.profile.index')->name('member.profile.index');
+});
+
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

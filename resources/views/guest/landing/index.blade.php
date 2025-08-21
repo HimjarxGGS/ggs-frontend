@@ -4,7 +4,7 @@
 
 @section('content')
 <!-- start hero Section -->
-<section class="w-full px-6 md:px-12 py-28">
+<section class="w-full px-6 md:px-12 py-28 mt-10">
   <div class="max-w-full mx-auto text-left ml-0 md:ml-28 mt-10">
     <h1 class="text-4xl md:text-8xl font-extralight text-black leading-tight ">
       Change Begins with You(th)<br/>
