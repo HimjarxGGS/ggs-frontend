@@ -64,13 +64,13 @@
     </div>
 
     <!-- cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        @for ($i = 0; $i < 3; $i++)
+    <div class="flex flex-wrap justify-center gap-6">
+        @for ($i = 0; $i < 2; $i++)
         <a href="" class="block group">
-            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500">
                 <div class="relative">
                     <!-- cover -->
-                    <img src="{{ asset('images/gambar-event.png') }}" alt="Event Cover" class="w-full h-52 object-scale-down">
+                    <img src="{{ asset('images/gambar-event.png') }}" alt="Event Cover" class="w-full h-52 object-scale-down pt-10">
                     <!-- status -->
                     <span class="absolute top-7 left-7 bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
                         Active
@@ -82,12 +82,12 @@
                     <!-- default penerbit -->
                     <p class="text-gray-500 text-xs">Green Generation Surabaya</p>
                     <!-- tanggal event -->
-                    <div class="flex items-center text-xs text-gray-500 gap-2">
-                        <img src="{{ asset('images/calendar-icon.png') }}" alt="Calendar" class="w-4 h-4">
+                    <div class="flex items-center text-xs text-gray-400 gap-2">
+                        <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-4 h-4">
                         <span>12 Juli 2025</span>
                     </div>
                     <!-- deskripsi -->
-                    <p class="text-xs text-gray-600">
+                    <p class="text-xs text-gray-600 pb-14">
                         Mari edukasi seluruh warga Surabaya supaya bisa mengelola sampah secara efektif!
                     </p>
                 </div>
@@ -122,13 +122,13 @@
     </div>
 
     <!-- cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        @for ($i = 0; $i < 3; $i++)
-        <a href="" class="block group">
-            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+    <div class="flex flex-wrap justify-center gap-6">
+        @for ($i = 0; $i < 2; $i++)
+        <a href="" class="block group ">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500">
                 <div class="relative">
                     <!-- cover -->
-                    <img src="{{ asset('images/gambar-event.png') }}" alt="Event Cover" class="w-full h-52 object-scale-down">
+                    <img src="{{ asset('images/gambar-event.png') }}" alt="Event Cover" class="w-full h-52 object-scale-down mt-10">
                     <!-- status -->
                     <span class="absolute top-7 left-7 bg-orange-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
                         Finished
@@ -141,10 +141,10 @@
                     <p class="text-gray-500 text-xs">Green Generation Surabaya</p>
                     <!-- tanggal -->
                     <div class="flex items-center text-xs text-gray-500 gap-2">
-                        <img src="{{ asset('images/calendar-icon.png') }}" alt="Calendar" class="w-4 h-4">
+                        <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-4 h-4">
                         <span>12 Juli 2025</span>
                     </div>
-                    <p class="text-xs text-gray-600">
+                    <p class="text-xs text-gray-600 pb-14">
                         Mari edukasi seluruh warga Surabaya supaya bisa mengelola sampah secara efektif!
                     </p>
                 </div>
@@ -167,5 +167,39 @@
     </div>
 </section>
 <!-- succesfull event end -->
+
+<section class="bg-[#F5F5F9] py-12">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 text-center">
+        <!-- Heading -->
+        <h2 class="text-2xl md:text-3xl font-bold text-palette-2 mb-10">
+            Dampak Green Generation Surabaya
+        </h2>
+
+        <!-- Cards -->
+        <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+            <!-- Card 1 -->
+            <div class="flex items-center justify-between bg-gray-200 rounded-2xl px-6 py-4 w-80 md:w-80">
+                <div class="text-left">
+                    <p class="text-xl md:text-2xl font-bold text-palette-2">1.000</p>
+                    <p class="text-xs md:text-sm text-palette-4">Bibit Pohon Ditanam</p>
+                </div>
+                <img src="{{ asset('icons/tree.svg') }}" 
+                     alt="Tree" 
+                     class="w-8 h-8 md:w-10 md:h-10">
+            </div>
+
+            <!-- Card 2 -->
+            <div class="flex items-center justify-between bg-gray-200 rounded-2xl px-6 py-4 w-80 md:w-80">
+                <div class="text-left">
+                    <p class="text-xl md:text-2xl font-bold text-palette-2">8.765 <span class="text-sm">kg</span></p>
+                    <p class="text-xs md:text-sm text-palette-4">Sampah Dikelola</p>
+                </div>
+                <img src="{{ asset('icons/recycle.svg') }}" 
+                     alt="Recycle" 
+                     class="w-8 h-8 md:w-10 md:h-10">
+            </div>
+        </div>
+    </div>
+</section>
 
 @endsection
