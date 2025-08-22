@@ -1,64 +1,87 @@
 @extends('member.layouts.app')
 
-@section('title', 'History Pendaftaran - Green Generation Surabaya')
+@section('title', 'History Pendaftaran')
 
 @section('content')
-<div class="container mx-auto px-6 py-12"> {{-- px lebih kecil, py lebih besar --}}
+<div class="max-w-5xl mx-auto px-4 py-12 mt-20">
     
     {{-- Judul Halaman --}}
-    <h1 class="text-2xl font-bold text-gray-900 mb-6 mt-6">History Pendaftaran</h1>
+    <h1 class="text-2xl font-semibold text-gray-900 mb-8">History Pendaftaran</h1>
 
-    {{-- Filter Form --}}
-    <div class="bg-white border border-gray-200 rounded-xl p-5 flex flex-wrap gap-4 items-end mb-8">
-        <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Date</label>
-            <input type="date" class="border border-gray-300 rounded-lg p-2 w-48">
+    {{-- Filter Section --}}
+    <div class="grid grid-cols-3 gap-8 items-end bg-white border border-gray-300 rounded-xl px-6 py-5 mb-6">
+        
+        {{-- Date --}}
+        <div class="flex flex-col">
+            <label class="text-sm font-medium text-gray-700 mb-1">Tanggal</label>
+            <input type="date" class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-[#A56B46] focus:border-[#A56B46]" />
         </div>
-        <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Status</label>
-            <select class="border border-gray-300 rounded-lg p-2 w-48">
-                <option>Please Select Status</option>
+
+        {{-- Status --}}
+        <div class="flex flex-col">
+            <label class="text-sm font-medium text-gray-700 mb-1">Status</label>
+            <select class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-[#A56B46] focus:border-[#A56B46]">
+                <option value="">Semua</option>
+                <option value="success">Success</option>
+                <option value="pending">Pending</option>
             </select>
         </div>
-        <div class="flex gap-2">
-            <button class="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg">Clear</button>
-            <button class="bg-[#A56B46] text-white px-4 py-2 rounded-lg">Search</button>
+
+        {{-- Buttons --}}
+        <div class="flex flex-col items-end">
+            <div class="flex gap-3">
+                <button class="bg-[#A56B46] text-white px-5 py-2 rounded-lg hover:bg-[#8a5738] transition">Search</button>
+                <button class="bg-gray-200 text-black px-5 py-2 rounded-lg hover:bg-gray-300 transition">Clear</button>
+            </div>
         </div>
+
     </div>
 
-  
-    <div class="space-y-4">
-        @foreach (range(1, 4) as $i)
-        <div class="flex justify-between items-center bg-white border border-gray-200 rounded-xl px-4 py-3">
-            <div>
-                <p class="text-sm text-gray-500">#123 <span class="font-semibold text-gray-900">Pelatihan Daur Ulang Organik</span></p>
-                <p class="text-sm text-gray-500">8 Juli 2025</p>
-            </div>
-            <div class="flex items-center gap-4">
-                @if($i == 1)
+
+    {{-- List History --}}
+<div class="space-y-4">
+    @foreach ($histories as $item)
+    <div class="grid grid-cols-3 items-center bg-white border border-gray-300 rounded-xl px-6 py-4">
+        
+        {{-- Kiri: Nomor & Judul --}}
+        <div>
+            <p class="text-sm text-gray-500">
+                #{{ $item['id'] }} <span class="font-semibold text-gray-900">{{ $item['title'] }}</span>
+            </p>
+        </div>
+
+        {{-- Tengah: Tanggal & Status --}}
+        <div class="flex justify-center w-full">
+            <div class="flex items-center justify-between w-72">
+                <p class="text-sm text-gray-500">{{ $item['date'] }}</p>
+                @if($item['status'] === 'pending')
                     <span class="text-yellow-500 text-sm font-medium">Pending</span>
                 @else
                     <span class="text-green-500 text-sm font-medium">Success</span>
                 @endif
-                <button class="bg-[#A56B46] text-white px-4 py-1.5 rounded-lg">Detail</button>
             </div>
         </div>
-        @endforeach
-    </div>
 
-   
-    <div class="flex justify-center mt-6">
-        <nav class="inline-flex items-center space-x-1">
-            <a href="#" class="px-3 py-1 rounded-lg bg-[#A56B46] text-white">1</a>
-            <a href="#" class="px-3 py-1 rounded-lg bg-gray-100 text-gray-700">2</a>
-            <a href="#" class="px-3 py-1 rounded-lg bg-gray-100 text-gray-700">3</a>
-            <span class="px-3 py-1">...</span>
-            <a href="#" class="px-3 py-1 rounded-lg bg-gray-100 text-gray-700">20</a>
-        </nav>
+        {{-- Kanan: Tombol --}}
+        <div class="flex justify-end pr-4">
+            <a href="{{ route('member.history.show', $item['id']) }}" 
+               class="bg-[#A56B46] text-white px-6 py-1.5 rounded-lg hover:bg-[#8a5738] transition">
+                Detail
+            </a>
+        </div>
     </div>
-
+    @endforeach
 </div>
 
-{{-- Footer --}}
-@include('member.components.footer')
+{{-- Pagination --}}
+<div class="flex justify-center mt-10">
+    {{ $histories->links() }}
+</div>
+
+    {{-- Footer --}}
+    <footer class="text-center text-sm text-gray-500 mt-10">
+        powered by <span class="font-medium">greencomunitionsurabaya</span> &amp; <span class="font-medium">himse.telkomsurabaya</span>
+    </footer>
+
+</div>
 @endsection
