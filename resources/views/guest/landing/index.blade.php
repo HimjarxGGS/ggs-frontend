@@ -5,29 +5,29 @@
 @section('content')
 <!-- start hero Section -->
 <section class="w-full px-6 md:px-12 py-28 mt-10">
-  <div class="max-w-full mx-auto text-left ml-0 md:ml-28 mt-10">
-    <h1 class="text-4xl md:text-8xl font-extralight text-black leading-tight ">
+  <div class="max-w-full mx-auto text-left ml-0 md:ml-20 mt-10">
+    <h1 class="text-4xl md:text-8xl font-extralight text-black leading-tight">
       Change Begins with You(th)<br/>
       Building a <span style="color: #82896E">Greener World</span><br/>
       One Step at a Time.
     </h1>
 
-    <p class="text-gray-500 text-base md:text-lg mt-7">
+    <p class="text-gray-500 text-base md:text-lg mt-7 ">
       Green Generation empowers youth to lead,<br />
       innovate, and act for the environment.
     </p>
 
     <!-- button mobile -->
     <div class="mt-6 md:hidden">
-      <button class="bg-palette-5 hover:bg-palette-1 text-white font-extralight py-2 px-5 rounded-xl ease-in-out transition duration-200 flex items-center gap-2">
+      <button class="bg-palette-5 hover:bg-palette-1 text-white font-extralight py-2 px-14 rounded-3xl ease-in-out transition duration-200 flex items-center gap-2">
         <span class="text-sm">View Event</span>
       </button>
     </div>
   </div>
 
   <!-- button Desktop -->
-  <div class="hidden lg:flex items-center mt-6 ml-28">
-    <button class="bg-palette-5 text-white font-normal py-2 px-20 rounded-xl flex items-center gap-2 ease-in-out transition duration-300 hover:shadow-lg hover:shadow-gray-600">
+  <div class="hidden lg:flex items-center mt-6 ml-20">
+    <button class="bg-palette-5 text-white font-normal py-2 px-20 rounded-3xl flex items-center gap-2 ease-in-out transition duration-300 hover:shadow-lg hover:shadow-gray-600">
       <span>View Event</span>
     </button>
   </div>

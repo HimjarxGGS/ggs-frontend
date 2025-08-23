@@ -6,7 +6,7 @@
 <!-- start hero Section -->
 <section class="w-full px-6 md:px-12 py-28">
   <div class="max-w-full mx-auto text-left ml-0 md:ml-28 mt-28">
-    <h1 class="text-4xl md:text-6xl font-extralight text-black leading-tight">
+    <h1 class="text-3xl md:text-6xl font-extralight text-black leading-tight">
       Change Begins with <span class="font-semibold text-palette-2">You(th)</span>
     </h1>
 

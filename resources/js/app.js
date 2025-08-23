@@ -31,9 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Scroll behavior
     window.addEventListener("scroll", () => {
         if (window.scrollY > 10) {
-            navbar.classList.add("bg-[#F2F2F7]", "backdrop-blur-md", "shadow-md");
+            navbar.classList.add("backdrop-blur-3xl");
+            navbar.classList.remove("bg-[#F2F2F7]", "shadow-md"); 
         } else {
-            navbar.classList.remove("bg-[#F2F2F7]", "backdrop-blur-md", "shadow-md");
+            navbar.classList.remove("backdrop-blur-md");
         }
     });
 });

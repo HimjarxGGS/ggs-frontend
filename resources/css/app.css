@@ -33,7 +33,7 @@
 /* infinite scroll kiri ke kanan */
 .animate-infinite-scroll-reverse {
   display: flex;
-  animation: infinite-scroll-reverse 20s linear infinite;
+  animation: infinite-scroll-reverse 25s linear infinite;
   will-change: transform;
 }
 
@@ -47,5 +47,19 @@
   }
   100% {
     transform: translateX(0);
+  }
+}
+
+/* animate scroll mobile duration */
+@media (max-width: 768px) {
+  .animate-infinite-scroll,
+  .animate-infinite-scroll-reverse {
+    animation-duration: 8s; 
+  }
+}
+
+@layer base {
+  html {
+    font-family: 'Geist', sans-serif;
   }
 }

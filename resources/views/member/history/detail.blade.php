@@ -1,5 +1,7 @@
 @extends('member.layouts.app')
 
+@section('title', 'Detail Pendaftaran')
+
 @section('content')
 <div class="container mx-auto px-4 py-6">
 
