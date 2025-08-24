@@ -25,10 +25,10 @@ Route::get('/', [LandingController::class, 'index'])->name('landing.index');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 //route blog
-Route::view('/blog', 'guest.blog.blog')->name('blog.index');
+// Route::view('/blog', 'guest.blog.blog')->name('blog.index');
 Route::view('/blog/detailblog', 'guest.blog.detail')->name('blog.detail');
 
-// Route::get('/blog', [BlogController::class, 'showBlog'])->name('blog.index');
+Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 // Route::get('/blog/{slug}', [BlogController::class, 'showDetail'])->name('blog.detail');
 
 //route event 

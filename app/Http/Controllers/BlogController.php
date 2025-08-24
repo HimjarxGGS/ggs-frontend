@@ -8,23 +8,22 @@ use App\Models\Blog;
 class BlogController extends Controller
 {
     // Halaman list blog
-    public function showBlog()
+    public function index()
     {
-        $blogs = Blog::with(['categories:id,category_name'])
-            ->select('id', 'title', 'published_at', 'author', 'img', 'slug')
+        $blogs = Blog::query()
+            ->select('id', 'title', 'published_at', 'author', 'img', 'slug', 'content')
             ->orderByDesc('published_at')
             ->paginate(6);
 
         return view('guest.blog.blog', compact('blogs'));
     }
 
-    // Halaman detail blog (slug digunakan untuk SEO-friendly URL)
-    public function showDetail($slug)
-    {
-        $blog = Blog::with(['categories:id,category_name'])
-            ->where('slug', $slug)
-            ->firstOrFail();
+    // public function showDetail($slug)
+    // {
+    //     $blog = Blog::with(['categories:id,category_name'])
+    //         ->where('slug', $slug)
+    //         ->firstOrFail();
 
-        return view('blog.detail', compact('blog'));
-    }
+    //     return view('blog.detail', compact('blog'));
+    // }
 }
