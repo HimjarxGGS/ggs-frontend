@@ -8,6 +8,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\DashboardController; 
+use App\Http\Controllers\DataDiriController;
 
 
 
@@ -49,9 +50,14 @@ Route::get('/dashboard-member', [DashboardController::class, 'index'])
     Route::get('/riwayat-pendaftaran', [HistoryController::class, 'index'])->name('history.index');
     Route::get('/riwayat-pendaftaran/{id}', [HistoryController::class, 'show'])->name('history.show');
 
-    Route::view('/data-diri', 'member.profile.index')->name('member.profile.index');
+    // Route::view('/data-diri', 'member.profile.index')->name('member.profile.index');
     
 });
+// Menampilkan form Data Diri
+Route::get('/data-diri', [DataDiriController::class, 'index'])->name('datadiri.index');
+// Submit Data Diri
+// Route::post('/data-diri/store', [DataDiriController::class, 'store'])->name('datadiri.store');
+
 
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
