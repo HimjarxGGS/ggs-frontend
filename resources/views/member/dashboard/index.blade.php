@@ -28,25 +28,43 @@
         </div>
 
        
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            @for ($i = 0; $i < 6; $i++)
-            <div class="border border-gray-200 rounded-xl p-4 shadow-sm bg-white flex flex-col">
-                <div class="mb-3 relative">
-                    <span class="absolute top-2 left-2 bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Active</span>
-                  <img src="{{ asset('images/gambar-event.png') }}" 
-     alt="Volunteer Greenovation Batch 2" 
-          class="rounded-lg w-40 h-auto object-contain mx-auto">
-
-
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+    @forelse ($events as $event)
+        <a href="" class="block group">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500">
+                <div class="relative">
+                    <!-- cover -->
+                    <img src="{{ asset($event->cover ?? 'images/gambar-event.png') }}" 
+                         alt="Event Cover" 
+                         class="w-full h-52 object-scale-down mt-10">
+                    <!-- status -->
+                    <span class="absolute top-7 left-7 bg-orange-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                        {{ ucfirst($event->status) }}
+                    </span>
                 </div>
-                <h4 class="font-semibold mb-1">Volunteer Greenovation Batch 2</h4>
-                <p class="text-gray-500 text-sm mb-3">Green Generation Surabaya</p>
-                <p class="text-gray-700 text-sm flex-grow">
-                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium ut sunt, aperiam voluptates sed, porro provident reiciendis architecto vitae, consequatur harum! Obcaecati numquam a quia, cumque voluptate quo veritatis provident?
-                </p>
+                <div class="p-4 space-y-2">
+                    <!-- judul -->
+                    <h3 class="text-lg font-semibold">{{ $event->name}}</h3>
+                    <!-- default penerbit -->
+                    <p class="text-gray-500 text-xs">{{ $event->penerbit ?? 'Green Generation Surabaya' }}</p>
+                    <!-- tanggal -->
+                    <div class="flex items-center text-xs text-gray-500 gap-2">
+                        <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-4 h-4">
+                        <span>{{ \Carbon\Carbon::parse($event->tanggal ?? now())->translatedFormat('d F Y') }}</span>
+                    </div>
+                    <p class="text-xs text-gray-600 pb-14">
+                        {{ $event->description }}
+                    </p>
+                </div>
             </div>
-            @endfor
-        </div>
+        </a>
+    @empty
+        <p class="col-span-3 text-center text-gray-500 py-10">
+            Belum ada event yang tersedia.
+        </p>
+    @endforelse
+</div>
+
 
        
         <div class="mt-10 flex justify-center space-x-3 text-sm text-gray-600">

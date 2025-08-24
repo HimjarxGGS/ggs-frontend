@@ -7,6 +7,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\DashboardController; 
 
 
 
@@ -41,7 +42,9 @@ Route::view('/event/success-registrasi','guest.events.success');
 
 // route member
 Route::middleware('auth')->group(function () {
-    Route::view('/dashboard-member', 'member.dashboard.index')->name('member.dashboard.index');
+Route::get('/member/dashboard', [DashboardController::class, 'index'])
+     ->name('member.dashboard.index');
+
    // History event
     Route::get('/riwayat-pendaftaran', [HistoryController::class, 'index'])->name('history.index');
     Route::get('/riwayat-pendaftaran/{id}', [HistoryController::class, 'show'])->name('history.show');
