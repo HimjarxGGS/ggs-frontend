@@ -54,7 +54,7 @@
 </section>
 
 <!-- upcoming event start -->
-<section class="max-w-7xl mx-auto px-4 md:px-8 py-12 mt-16">
+<section class="max-w-6xl mx-auto px-4 md:px-8 py-12 mt-16">
     <!-- heading -->
     <div class="text-center md:text-left mb-8">
         <h2 class="text-2xl md:text-3xl font-bold font-geist">Upcoming Event</h2>
@@ -64,9 +64,9 @@
     </div>
 
     <!-- cards -->
-    <div class="flex flex-wrap justify-center gap-6">
-        @for ($i = 0; $i < 2; $i++)
-        <a href="" class="block group">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+        @for ($i = 0; $i < 3; $i++)
+        <a href="" class="block group {{ $i >= 1 ? 'hidden sm:block' : '' }}">
             <div class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500">
                 <div class="relative">
                     <!-- cover -->
@@ -112,7 +112,7 @@
 <!-- upcoming event end -->
 
 <!-- succesfull event start -->
-<section class="max-w-7xl mx-auto px-4 md:px-8 py-12">
+<section class="max-w-6xl mx-auto px-4 md:px-8 py-12">
     <!-- heading -->
     <div class="text-center md:text-right mb-8">
         <h2 class="text-2xl md:text-3xl font-bold">Succesfull Event</h2>
@@ -122,9 +122,9 @@
     </div>
 
     <!-- cards -->
-    <div class="flex flex-wrap justify-center gap-6">
-        @for ($i = 0; $i < 2; $i++)
-        <a href="" class="block group ">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+        @for ($i = 0; $i < 3; $i++)
+        <a href="" class="block group {{ $i >= 1 ? 'hidden sm:block' : '' }}">
             <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500">
                 <div class="relative">
                     <!-- cover -->

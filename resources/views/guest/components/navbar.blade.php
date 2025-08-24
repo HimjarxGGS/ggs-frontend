@@ -8,13 +8,11 @@
 
         <!-- hamburger -->
         <div class="lg:hidden">
-            <button id="hamburgerBtn" type="button" class="inline-flex items-center justify-center rounded-md p-5 text-gray-700">
-                <span class="sr-only">Buka menu</span>
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                          d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
-            </button>
+        <button id="hamburgerBtn" type="button" class="relative w-8 h-8 flex flex-col justify-between items-center p-1">
+            <span class="block w-7 h-0.5 bg-gray-700 transition-all duration-300"></span>
+            <span class="block w-7 h-0.5 bg-gray-700 transition-all duration-300"></span>
+            <span class="block w-7 h-0.5 bg-gray-700 transition-all duration-300"></span>
+        </button>
         </div>
 
         <!-- desktop menu -->

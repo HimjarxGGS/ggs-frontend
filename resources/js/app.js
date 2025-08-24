@@ -5,16 +5,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const mobileMenu = document.getElementById("mobileMenu");
     const navbar = document.querySelector("nav");
 
-    // Toggle mobile menu
-    if (toggleBtn && mobileMenu) {
-        toggleBtn.addEventListener("click", (event) => {
-            event.stopPropagation(); // Biar tidak langsung tertutup karena event bubbling
-            mobileMenu.classList.toggle("hidden");
-            document.body.classList.toggle("overflow-hidden");
-        });
-    }
+    // toggle mobile menu
+    toggleBtn.addEventListener("click", () => {
+        toggleBtn.classList.toggle("hamburger-active");
+        mobileMenu.classList.toggle("hidden");
+    });
 
-    // Close mobile menu outside
+
+    // close mobile menu outside
     document.addEventListener("click", (event) => {
         const isClickInsideMenu = mobileMenu.contains(event.target);
         const isClickToggle = toggleBtn.contains(event.target);
@@ -24,11 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
             !isClickToggle
         ) {
             mobileMenu.classList.add("hidden");
+            toggleBtn.classList.remove("hamburger-active");
             document.body.classList.remove("overflow-hidden");
         }
     });
 
-    // Scroll behavior
+    // scroll behavior
     window.addEventListener("scroll", () => {
         if (window.scrollY > 10) {
             navbar.classList.add("backdrop-blur-3xl");

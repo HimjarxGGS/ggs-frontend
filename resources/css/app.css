@@ -63,3 +63,16 @@
     font-family: 'Geist', sans-serif;
   }
 }
+
+.hamburger-active > span:nth-child(1) {
+  @apply rotate-45 translate-y-3;
+}
+
+.hamburger-active > span:nth-child(2) {
+  @apply scale-0;
+}
+
+.hamburger-active > span:nth-child(3) {
+  @apply -rotate-45 -translate-y-2.5;
+}
+
