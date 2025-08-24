@@ -30,7 +30,6 @@
                    focus:outline-none focus:ring focus:ring-green-300 text-sm">
                 </form>
             </div>
-
         </div>
 
         {{-- Blog List --}}
@@ -39,9 +38,13 @@
             <div class="flex flex-col md:flex-row items-start gap-6 border-b pb-6">
                 {{-- Blog Text --}}
                 <div class="flex-1">
-                    <h2 class="font-bold text-lg mb-1 hover:text-green-600 cursor-pointer leading-snug">
-                        {{ $blog->title }}
+                    <h2 class="font-bold text-lg mb-1 leading-snug">
+                        <a href="{{ route('blog.detail', $blog->slug) }}"
+                            class="hover:text-green-600 transition duration-300">
+                            {{ $blog->title }}
+                        </a>
                     </h2>
+
                     <p class="text-sm text-gray-500 mb-2">
                         {{ $blog->author }} |
                         {{ \Carbon\Carbon::parse($blog->published_at)->format('d M Y') }}
