@@ -41,36 +41,32 @@
     {{-- List History --}}
 <div class="space-y-4">
     @foreach ($histories as $item)
-    <div class="grid grid-cols-3 items-center bg-white border border-gray-300 rounded-xl px-6 py-4">
-        
-        {{-- Kiri: Nomor & Judul --}}
-        <div>
-            <p class="text-sm text-gray-500">
-                #{{ $item['id'] }} <span class="font-semibold text-gray-900">{{ $item['title'] }}</span>
-            </p>
-        </div>
-
-        {{-- Tengah: Tanggal & Status --}}
-        <div class="flex justify-center w-full">
-            <div class="flex items-center justify-between w-72">
-                <p class="text-sm text-gray-500">{{ $item['date'] }}</p>
-                @if($item['status'] === 'pending')
-                    <span class="text-yellow-500 text-sm font-medium">Pending</span>
-                @else
-                    <span class="text-green-500 text-sm font-medium">Success</span>
-                @endif
-            </div>
-        </div>
-
-        {{-- Kanan: Tombol --}}
-        <div class="flex justify-end pr-4">
-            <a href="{{ route('member.history.show', $item['id']) }}" 
-               class="bg-[#A56B46] text-white px-6 py-1.5 rounded-lg hover:bg-[#8a5738] transition">
-                Detail
-            </a>
+<div class="grid grid-cols-3 items-center bg-white border border-gray-300 rounded-xl px-6 py-4">
+    <div>
+        <p class="text-sm text-gray-500">
+            #{{ $item->id }} 
+            <span class="font-semibold text-gray-900">{{ $item->name }}</span>
+        </p>
+    </div>
+    <div class="flex justify-center w-full">
+        <div class="flex items-center justify-between w-72">
+            <p class="text-sm text-gray-500">{{ \Carbon\Carbon::parse($item->tanggal)->format('d M Y') }}</p>
+            @if($item->status === 'pending')
+                <span class="text-yellow-500 text-sm font-medium">Pending</span>
+            @else
+                <span class="text-green-500 text-sm font-medium">Success</span>
+            @endif
         </div>
     </div>
-    @endforeach
+    <div class="flex justify-end pr-4">
+        <a href="{{ route('history.show', $item->id) }}" 
+           class="bg-[#A56B46] text-white px-6 py-1.5 rounded-lg hover:bg-[#8a5738] transition">
+            Detail
+        </a>
+    </div>
+</div>
+@endforeach
+
 </div>
 
 {{-- Pagination --}}

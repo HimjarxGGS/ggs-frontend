@@ -42,8 +42,10 @@ Route::view('/event/success-registrasi','guest.events.success');
 // route member
 Route::middleware('auth')->group(function () {
     Route::view('/dashboard-member', 'member.dashboard.index')->name('member.dashboard.index');
-    Route::get('/riwayat-pendaftaran', [HistoryController::class, 'index'])->name('member.history.index');
-    Route::get('/riwayat-pendaftaran/{id}', [HistoryController::class, 'show'])->name('member.history.show');
+   // History event
+    Route::get('/riwayat-pendaftaran', [HistoryController::class, 'index'])->name('history.index');
+    Route::get('/riwayat-pendaftaran/{id}', [HistoryController::class, 'show'])->name('history.show');
+
     Route::view('/data-diri', 'member.profile.index')->name('member.profile.index');
     
 });
