@@ -50,7 +50,7 @@
                     <!-- tanggal -->
                     <div class="flex items-center text-xs text-gray-500 gap-2">
                         <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-4 h-4">
-                        <span>{{ \Carbon\Carbon::parse($event->tanggal ?? now())->translatedFormat('d F Y') }}</span>
+                       <span>{{ \Carbon\Carbon::parse($event->event_date)->translatedFormat('d F Y') }}</span>
                     </div>
                     <p class="text-xs text-gray-600 pb-14">
                         {{ $event->description }}

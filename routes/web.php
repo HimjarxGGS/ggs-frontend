@@ -42,7 +42,7 @@ Route::view('/event/success-registrasi','guest.events.success');
 
 // route member
 Route::middleware('auth')->group(function () {
-Route::get('/member/dashboard', [DashboardController::class, 'index'])
+Route::get('/dashboard-member', [DashboardController::class, 'index'])
      ->name('member.dashboard.index');
 
    // History event
