@@ -29,6 +29,7 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::view('/blog/detailblog', 'guest.blog.detail')->name('blog.detail');
 
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
+Route::get('/blog/search', [BlogController::class, 'search'])->name('blog.search');
 // Route::get('/blog/{slug}', [BlogController::class, 'showDetail'])->name('blog.detail');
 
 //route event 
