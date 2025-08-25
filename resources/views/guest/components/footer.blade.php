@@ -17,7 +17,7 @@
         </div>
         <div>
           <h4 class="font-semibold mb-2">Resources</h4>
-          <ul class="space-y-1 text-sm text-gray-600">
+          <ul class="space-y-1 text-sm text-gray-600 ">
             <li><a href="/home" class="hover:text-[#5e3929] transition duration-300">Home</a></li>
             <li><a href="/blog" class="hover:text-[#5e3929] transition duration-300">Blog</a></li>
           </ul>

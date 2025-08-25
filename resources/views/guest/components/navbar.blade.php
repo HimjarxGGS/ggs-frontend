@@ -17,15 +17,15 @@
 
         <!-- desktop menu -->
         <div class="hidden lg:flex flex-1 justify-center gap-x-10 items-center">
-            <a href="/" class="nav-link text-gray-500 font-semibold hover:text-[#5e3929] transition duration-200">Home</a>
-            <a href="/about" class="nav-link text-gray-500 font-semibold hover:text-[#5e3929] transition duration-200">About us</a>
-            <a href="/event" class="nav-link text-gray-500 font-semibold hover:text-[#5e3929] transition duration-200">Event</a>
-            <a href="/blog" class="nav-link text-gray-500 font-semibold hover:text-[#5e3929] transition duration-200">Blog</a>
+            <a href="/" class="nav-link text-gray-500 font-semibold hover:text-palette-5 transition-transform duration-300 transform hover:scale-[1.3]">Home</a>
+            <a href="/about" class="nav-link text-gray-500 font-semibold hover:text-palette-5 transition-transform duration-300 transform hover:scale-[1.3]">About us</a>
+            <a href="/event" class="nav-link text-gray-500 font-semibold hover:text-palette-5 transition-transform duration-300 transform hover:scale-[1.3]">Event</a>
+            <a href="/blog" class="nav-link text-gray-500 font-semibold hover:text-palette-5 transition-transform duration-300 transform hover:scale-[1.3]">Blog</a>
         </div>
 
         <div class="hidden lg:flex items-center">
             <a href="/login">
-              <button class="bg-[#7B4B36] hover:bg-[#5e3929] text-white font-light py-2 px-10 rounded-full transition duration-300">
+              <button class="bg-[#7B4B36] text-white font-light py-2 px-10 rounded-full hover:bg-[#5e3929] transition duration-300">
                 Sign in
               </button>
             </a>
