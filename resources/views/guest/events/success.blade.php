@@ -1,7 +1,57 @@
-@extends('guest.layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Success Registrasi</title>
+  <link rel="icon" type="image/x-icon" href="{{ asset('images/Logo.png') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  @vite(['resources/css/app.css', 'resources/js/app.js']) 
+</head>
 
-@section('title', 'Success - Green Generation Surabaya')
+<body>
+    <section class="md:mt-60 mt-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center text-center md:text-left">
 
-@section('content')
+                    <div class="flex justify-center" data-aos="zoom-in-right" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="500">
+                        <img src="{{ asset('images/success.png') }}" alt="Success Illustration" class="max-w-sm w-full h-auto">
+                    </div>
 
-@endsection
+                    <div>
+                        <!-- Judul -->
+                        <h2 class="text-xl md:text-3xl font-bold text-gray-900 mb-2">
+                        Congrats! Registrasi event berhasil.
+                        </h2>
+                        <!-- Sub text -->
+                        <p class="text-gray-600 text-xs md:text-sm mb-6">
+                        Anda akan segera menerima pesan berhasil daftar di email!
+                        </p>
+
+                        <!-- Button group -->
+                        <div class="flex flex-col md:flex-row gap-3 md:gap-4 justify-center md:justify-start md:mt-0 mt-20">
+                        <!-- Button Event -->
+                        <a href="/event" 
+                            class="w-full md:w-52 px-6 py-3 rounded-full bg-[#A16446] text-white font-medium hover:bg-[#8b5339] transition text-sm md:text-base text-center">
+                            Event Lainnya
+                        </a>
+
+                        <!-- Button Contact Person -->
+                        <a href="https://wa.me/628123456789"
+                            class="w-full md:w-52 px-6 py-3 rounded-full border border-gray-300 flex items-center justify-center gap-2 text-gray-800 font-medium hover:bg-gray-100 transition text-sm md:text-base">
+                            <img src="{{ asset('icons/contact.svg') }}" alt="Icon" class="w-4 h-4">
+                            Contact Person
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</html>
+

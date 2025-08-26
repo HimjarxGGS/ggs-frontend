@@ -37,3 +37,23 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    function countUp(el, target, duration) {
+        let start = 0;
+        let increment = target / (duration / 50); 
+        let interval = setInterval(() => {
+            start += increment;
+            if (start >= target) {
+                start = target;
+                clearInterval(interval);
+                el.textContent = Math.floor(start) + "+";
+            } else {
+                el.textContent = Math.floor(start);
+            }
+        }, 70);
+    }
+
+    countUp(document.getElementById("volunteerCount"), 100, 3000); 
+    countUp(document.getElementById("eventCount"), 50, 3000);
+});

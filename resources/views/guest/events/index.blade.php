@@ -17,40 +17,42 @@
         <h1 class="text-2xl md:text-6xl font-semibold">
             Act Today, Sustain Tomorrow
         </h1>
-        <p class="md:mt-2 text-sm md:text-2xl font-light">
-            Bertindak Hari Ini, Menjaga Esok Hari.
-        </p>
+       <div class="text-center">
+            <p class="md:mt-2 text-sm md:text-2xl font-light inline-block overflow-hidden whitespace-nowrap animate-typewriter">
+                Bertindak Hari Ini, Menjaga Esok Hari.
+            </p>
+        </div>
     </div>
 
     <!-- stats -->
     <div class="absolute bottom-[-50px] w-full flex justify-center">
-    <div class="bg-white shadow-lg rounded-2xl px-12 md:px-24 py-4 flex gap-8">
+        <div class="bg-white shadow-lg rounded-2xl px-12 md:px-24 py-4 flex gap-8">
         
-        <!-- Item 1 -->
-        <div class="flex items-center md:gap-10 gap-4">
-            <!-- Icon pakai img -->
-            <img src="{{ asset('icons/person.svg')}}" alt="Volunteer Icon" class="w-7 h-7 md:w-7 md:h-7 object-contain" />
-            
-            <!-- Text -->
-            <div class="text-left">
-                <h2 class="text-xl md:text-2xl font-bold text-palette-4">100+</h2>
-                <p class="text-gray-600 text-xs md:text-xs">Volunteer</p>
+            <!-- Item 1 -->
+            <div class="flex items-center md:gap-10 gap-4">
+                <!-- Icon pakai img -->
+                <img src="{{ asset('icons/person.svg')}}" alt="Volunteer Icon" class="w-7 h-7 md:w-7 md:h-7 object-contain" />
+                
+                <!-- Text -->
+                <div class="text-left">
+                    <h2 id="volunteerCount" class="text-xl md:text-2xl font-bold text-palette-4" data-target="100">0</h2>
+                    <p class="text-gray-600 text-xs md:text-xs">Volunteer</p>
+                </div>
             </div>
-        </div>
 
-        <!-- Item 2 -->
-        <div class="flex items-center md:gap-10 gap-4 pl-10 md:ml-10">
-            <!-- Icon pakai img -->
-            <img src="{{ asset('icons/events.svg')}}" alt="Event Icon" class="w-8 h-8 md:w-10 md:h-10 object-contain" />
-            
-            <!-- Text -->
-            <div class="text-left">
-                <h2 class="text-xl md:text-2xl font-bold text-palette-4">50+</h2>
-                <p class="text-gray-600 text-xs md:text-xs">Event</p>
+            <!-- Item 2 -->
+            <div class="flex items-center md:gap-10 gap-4 pl-10 md:ml-10">
+                <!-- Icon pakai img -->
+                <img src="{{ asset('icons/events.svg')}}" alt="Event Icon" class="w-8 h-8 md:w-10 md:h-10 object-contain" />
+                
+                <!-- Text -->
+                <div class="text-left">
+                    <h2 id="eventCount" class="text-xl md:text-2xl font-bold text-palette-4" data-target="50">0</h2>
+                    <p class="text-gray-600 text-xs md:text-xs">Event</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </section>
 
 <!-- upcoming event start -->

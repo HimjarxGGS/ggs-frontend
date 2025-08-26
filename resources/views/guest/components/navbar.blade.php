@@ -25,7 +25,7 @@
 
         <div class="hidden lg:flex items-center">
             <a href="/login">
-              <button class="bg-[#7B4B36] text-white font-light py-2 px-10 rounded-full hover:bg-[#5e3929] transition duration-300">
+              <button class="bg-palette-5 text-white font-light py-2 px-10 rounded-full hover:bg-[#5e3929] transition duration-300">
                 Sign in
               </button>
             </a>
@@ -33,15 +33,15 @@
     </nav>
 
     <!-- mobile menu -->
-    <div id="mobileMenu" class="hidden lg:hidden top-[113px] w-[80%] left-1/2 -translate-x-1/2 rounded-3xl backdrop-blur-3xl shadow-md py-7 text-center z-[99] fixed">
+    <div id="mobileMenu" class="hidden lg:hidden top-[113px] w-[85%] left-1/2 -translate-x-1/2 rounded-3xl backdrop-blur-3xl shadow-md py-7 text-center z-[99] fixed">
         <a href="/" class="nav-link block py-4 text-gray-500 font-semibold hover:text-[#5e3929] transition duration-200">Home</a>
         <a href="/about" class="nav-link block py-4 text-gray-500 font-semibold hover:text-[#5e3929] transition duration-200">About us</a>
         <a href="/event" class="nav-link block py-4 text-gray-500 font-semibold hover:text-[#5e3929] transition duration-200">Event</a>
         <a href="/blog" class="nav-link block py-4 text-gray-500 font-semibold hover:text-[#5e3929] transition duration-200">Blog</a>
         
-        <div class="mt-6 px-6">
+        <div class="mt-6">
           <a href="">
-            <button class="w-80 bg-[#7B4B36] hover:bg-[#5e3929] text-white font-light py-2 px-4 rounded-3xl transition duration-200">
+            <button class="w-72 bg-palette-5 hover:bg-[#5e3929] text-white font-light py-2 rounded-3xl transition duration-200">
                 Sign in
             </button>
           </a>
