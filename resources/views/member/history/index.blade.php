@@ -74,10 +74,10 @@
     {{ $histories->links() }}
 </div>
 
-    {{-- Footer --}}
+    <!-- {{-- Footer --}}
     <footer class="text-center text-sm text-gray-500 mt-10">
         powered by <span class="font-medium">greencomunitionsurabaya</span> &amp; <span class="font-medium">himse.telkomsurabaya</span>
-    </footer>
+    </footer> -->
 
 </div>
 @endsection

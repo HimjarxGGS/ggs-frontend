@@ -30,34 +30,35 @@
            </div>
 
            {{-- Personal Data --}}
-           <div class="bg-white rounded-lg shadow p-6">
-               <h3 class="text-lg font-semibold mb-4">Personal Data</h3>
+<div class="bg-white rounded-lg shadow p-6">
+    <h3 class="text-lg font-semibold mb-4">Personal Data</h3>
 
-               <div class="mb-3">
-                   <span class="font-semibold">Email:</span>
-                   <p>{{ $user->email }}</p>
-               </div>
-               <div class="mb-3">
-                   <span class="font-semibold">Nama Lengkap:</span>
-                   <p>{{ $user->name }}</p>
-               </div>
-               <div class="mb-3">
-                   <span class="font-semibold">Asal Instansi:</span>
-                   <p>{{ $user->instansi }}</p>
-               </div>
-               <div class="mb-3">
-                   <span class="font-semibold">Usia:</span>
-                   <p>{{ $user->usia }}</p>
-               </div>
-               <div class="mb-3">
-                   <span class="font-semibold">No Telepon:</span>
-                   <p>{{ $user->telepon }}</p>
-               </div>
-               <div class="mb-3">
-                   <span class="font-semibold">Riwayat Penyakit:</span>
-                   <p>{{ $user->penyakit }}</p>
-               </div>
-           </div>
+    <div class="mb-3">
+        <span class="font-semibold">Email:</span>
+        <p>{{ $pendaftar->email ?? '-' }}</p>
+    </div>
+    <div class="mb-3">
+        <span class="font-semibold">Nama Lengkap:</span>
+        <p>{{ $pendaftar->nama_lengkap ?? '-' }}</p>
+    </div>
+    <div class="mb-3">
+        <span class="font-semibold">Asal Instansi:</span>
+        <p>{{ $pendaftar->asal_instansi ?? '-' }}</p>
+    </div>
+    <div class="mb-3">
+        <span class="font-semibold">Usia:</span>
+        <p>{{ $pendaftar->date_of_birth ? \Carbon\Carbon::parse($pendaftar->date_of_birth)->age : '-' }}</p>
+    </div>
+    <div class="mb-3">
+        <span class="font-semibold">No Telepon:</span>
+        <p>{{ $pendaftar->no_telepon ?? '-' }}</p>
+    </div>
+    <div class="mb-3">
+        <span class="font-semibold">Riwayat Penyakit:</span>
+        <p>{{ $pendaftar->riwayat_penyakit ?? '-' }}</p>
+    </div>
+</div>
+
        </div>
 
        {{-- Bagian Kanan --}}

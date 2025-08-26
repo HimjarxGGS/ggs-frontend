@@ -58,7 +58,7 @@
 
                         {{-- Kolom kanan (foto) --}}
                         <div class="flex flex-col gap-6 items-start w-full">
-                            <label for="fotoInput" class="border rounded px-3 py-2 w-full h-11 flex items-center cursor-pointer bg-[#A47C65] text-white justify-center">
+                            <label for="fotoInput" class="border rounded px-3 py-2 w-full h-11 flex items-center cursor-pointer bg-[#7B4B36] hover:bg-[#5e3929] text-white justify-center">
                                 Tambah Foto
                             </label>
                             <input type="file" name="foto" id="fotoInput" class="hidden" accept="image/*">
@@ -75,7 +75,7 @@
 
                     {{-- Tombol --}}
                     <div class="flex gap-8 mt-8">
-                        <button type="submit" class="bg-[#A47C65] text-white px-6 py-2 rounded">Simpan</button>
+                        <button type="submit" class="bg-[#7B4B36] hover:bg-[#5e3929] text-white px-6 py-2 rounded">Simpan</button>
                         <a href="{{ route('logout') }}" 
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();" 
                            class="border px-6 py-2 rounded">Log out</a>
@@ -86,10 +86,10 @@
         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">@csrf</form>
     </div>
 </div>
-
+<!-- 
 <footer class="text-center text-sm text-gray-500 mt-16 py-6">
     powered by greencomunitionsurabaya & himse.telkomsurabaya
-</footer>
+</footer> -->
 
 {{-- Script Preview Foto --}}
 <script>

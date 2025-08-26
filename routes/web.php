@@ -54,9 +54,11 @@ Route::get('/dashboard-member', [DashboardController::class, 'index'])
     
 });
 // Menampilkan form Data Diri
-Route::get('/data-diri', [DataDiriController::class, 'index'])->name('datadiri.index');
-// Submit Data Diri
+Route::get('/data-diri', [DataDiriController::class, 'index'])->name('member.datadiri.index');
+// Simpan Data Diri
 Route::post('/data-diri/store', [DataDiriController::class, 'store'])->name('datadiri.store');
+// Update Data Diri
+Route::post('/data-diri/update/{id}', [DataDiriController::class, 'update'])->name('datadiri.update');
 
 
 
