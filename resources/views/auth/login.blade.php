@@ -47,7 +47,7 @@
 
       <!-- username -->
       <div class="w-full space-y-1 pt-5">
-        <label for="username" class="block text-sm font-semibold text-slate-800">
+        <label for="username" class="block text-sm font-semibold text-slate-800 pl-2">
           Username
         </label>
         <input 
@@ -56,7 +56,7 @@
           value="{{ old('username') }}"
           placeholder="Masukkan username yang terdaftar!" 
           type="text" 
-          class="w-full outline-none text-slate-800 placeholder:text-slate-600/60 bg-transparent border @error('username') border-red-500 @else border-slate-200 @enderror rounded-md py-2 px-2.5 shadow-sm hover:border-slate-800 focus:border-slate-800 focus:ring-1 focus:ring-slate-800 text-sm" 
+          class="w-full outline-none text-slate-800 placeholder:text-slate-600/60 bg-transparent border @error('username') border-red-500 @else border-slate-200 @enderror rounded-3xl py-2 px-2.5 shadow-sm hover:border-slate-800 focus:border-slate-800 focus:ring-1 focus:ring-slate-800 text-sm pl-5" 
         />
         @error('username')
           <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
@@ -65,7 +65,7 @@
 
       <!-- password -->
       <div class="w-full space-y-1">
-        <label for="password" class="block text-sm font-semibold text-slate-800">
+        <label for="password" class="block text-sm font-semibold text-slate-800 pl-2">
           Password
         </label>
         <input 
@@ -73,7 +73,7 @@
           name="password"
           placeholder="Masukkan password yang terdaftar!" 
           type="password" 
-          class="w-full outline-none text-slate-800 placeholder:text-slate-600/60 bg-transparent border @error('password') border-red-500 @else border-slate-200 @enderror rounded-md py-2 px-2.5 shadow-sm hover:border-slate-800 focus:border-slate-800 focus:ring-1 focus:ring-slate-800 text-sm" 
+          class="w-full outline-none text-slate-800 placeholder:text-slate-600/60 bg-transparent border @error('password') border-red-500 @else border-slate-200 @enderror rounded-3xl py-2 px-2.5 shadow-sm hover:border-slate-800 focus:border-slate-800 focus:ring-1 focus:ring-slate-800 text-sm pl-5" 
         />
         @error('password')
           <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
@@ -81,7 +81,7 @@
       </div>
 
       <!-- login button -->
-      <button type="submit" class="w-full bg-[#9b5d3c] hover:bg-[#874c2c] text-white font-semibold py-2 rounded-md transition mt-10">
+      <button type="submit" class="w-full bg-[#9b5d3c] hover:bg-[#874c2c] text-white font-semibold py-2 rounded-full transition mt-10">
         Login
       </button>
 

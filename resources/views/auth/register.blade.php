@@ -62,9 +62,9 @@
           placeholder="Masukkan No.Telepon valid." 
           type="text" 
           value="{{ old('notelfon') }}"
-          class="w-full border text-sm rounded-md py-2 px-2.5 shadow-sm 
+          class="w-full border text-sm rounded-3xl py-2 px-2.5 shadow-sm 
                  @error('notelfon') border-red-500 @else border-slate-200 @enderror
-                 focus:border-slate-800 focus:outline-none"
+                 focus:border-slate-800 focus:outline-none pl-7"
         />
         @error('notelfon')
           <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
@@ -82,9 +82,9 @@
           placeholder="Masukkan username anda." 
           type="text" 
           value="{{ old('username') }}"
-          class="w-full border text-sm rounded-md py-2 px-2.5 shadow-sm 
+          class="w-full border text-sm rounded-3xl py-2 px-2.5 shadow-sm 
                  @error('username') border-red-500 @else border-slate-200 @enderror
-                 focus:border-slate-800 focus:outline-none"
+                 focus:border-slate-800 focus:outline-none pl-7"
         />
         @error('username')
           <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
@@ -101,9 +101,9 @@
           name="password"
           placeholder="Masukkan password anda." 
           type="password" 
-          class="w-full border text-sm rounded-md py-2 px-2.5 shadow-sm 
+          class="w-full border text-sm rounded-3xl py-2 px-2.5 shadow-sm 
                  @error('password') border-red-500 @else border-slate-200 @enderror
-                 focus:border-slate-800 focus:outline-none"
+                 focus:border-slate-800 focus:outline-none pl-7"
         />
         @error('password')
           <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
@@ -111,7 +111,7 @@
       </div>
 
       <!-- Submit -->
-      <button type="submit" class="w-full bg-[#9b5d3c] hover:bg-[#874c2c] text-white font-semibold py-2 rounded-md transition">
+      <button type="submit" class="w-full bg-[#9b5d3c] hover:bg-[#874c2c] text-white font-semibold py-2 rounded-3xl transition">
         Registrasi
       </button>
 

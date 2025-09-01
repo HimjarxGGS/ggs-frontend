@@ -57,3 +57,30 @@ document.addEventListener("DOMContentLoaded", () => {
     countUp(document.getElementById("volunteerCount"), 100, 3000); 
     countUp(document.getElementById("eventCount"), 50, 3000);
 });
+
+const dropPoster = document.getElementById("dropPoster");
+const fileInput = document.getElementById("poster");
+
+  
+  dropPoster.addEventListener("click", () => fileInput.click());
+
+  
+  dropPoster.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    dropPoster.classList.add("bg-gray-200");
+  });
+
+  dropPoster.addEventListener("dragleave", () => {
+    dropPoster.classList.remove("bg-gray-200");
+  });
+
+
+  dropPoster.addEventListener("drop", (e) => {
+    e.preventDefault();
+    dropPoster.classList.remove("bg-gray-200");
+
+    if (e.dataTransfer.files.length > 0) {
+      fileInput.files = e.dataTransfer.files;
+      console.log("File dropped:", fileInput.files[0]);
+    }
+  });
