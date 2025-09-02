@@ -3,21 +3,27 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Event extends Model
 {
-    protected $table = 'events'; 
+    use SoftDeletes;
+
+    protected $table = 'events';
 
     protected $fillable = [
-        'judul',
-        'cover',
+        'name',
+        'description',
+        'event_date',
         'status',
-        'penerbit',
-        'tanggal',
-        'deskripsi',
+        'event_format',
+        'location',
+        'poster',
+        'need_registrant_picture',
     ];
 
     protected $casts = [
-        'tanggal' => 'date',
+        'event_date' => 'date',
+        'need_registrant_picture' => 'boolean',
     ];
 }

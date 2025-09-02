@@ -56,119 +56,90 @@
 </section>
 
 <!-- upcoming event start -->
-<section class="max-w-6xl mx-auto px-4 md:px-8 py-12 mt-16">
-    <!-- heading -->
-    <div class="text-center md:text-left mb-8">
-        <h2 class="text-2xl md:text-3xl font-bold font-geist">Upcoming Event</h2>
-        <p class="text-gray-500 text-xs md:text-sm pt-1">
-            Event-event yang akan datang dari Green Generation Surabaya!
-        </p>
-    </div>
-
-    <!-- cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
-        @for ($i = 0; $i < 3; $i++)
-        <a href="" class="block group {{ $i >= 1 ? 'hidden sm:block' : '' }}">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+    @forelse ($upcoming as $event)
+        <a href="{{ route('events.index', $event->id) }}" class="block group">
             <div class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500">
                 <div class="relative">
-                    <!-- cover -->
-                    <img src="{{ asset('images/gambar-event.png') }}" alt="Event Cover" class="w-full h-52 object-scale-down pt-10">
-                    <!-- status -->
+                    <img src="{{ $event->poster ? asset('storage/'.$event->poster) : asset('images/gambar-event.png') }}"
+                         alt="Event Cover"
+                         class="w-full h-52 object-cover">
+
                     <span class="absolute top-7 left-7 bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                        Active
+                        {{ ucfirst($event->status) }}
                     </span>
                 </div>
                 <div class="p-4 space-y-2">
-                    <!-- judul -->
-                    <h3 class="text-lg font-semibold pt-10">Volunteer Greenovation Batch 2</h3>
-                    <!-- default penerbit -->
+                    <h3 class="text-lg font-semibold">{{ $event->name }}</h3>
                     <p class="text-gray-500 text-xs">Green Generation Surabaya</p>
-                    <!-- tanggal event -->
                     <div class="flex items-center text-xs text-gray-400 gap-2">
                         <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-4 h-4">
-                        <span>12 Juli 2025</span>
+                        <span>{{ $event->event_date->translatedFormat('d F Y') }}</span>
                     </div>
-                    <!-- deskripsi -->
                     <p class="text-xs text-gray-600 pb-14">
-                        Mari edukasi seluruh warga Surabaya supaya bisa mengelola sampah secara efektif!
+                        {{ Str::limit($event->description, 100) }}
                     </p>
                 </div>
             </div>
         </a>
-        <!-- BACAAAA: nyalakan empty ini ketika sudah connect ke db okeee?? -->
-        <!-- @ empty
+    @empty
         <p class="col-span-3 text-center text-gray-500 py-10">
             Belum ada event terbaru.
-        </p> -->
-        @endfor
-    </div>
-
-    <!-- button -->
-    <div class="flex justify-center mt-8">
-        <a href="/event/list-event" 
-        class="bg-[#7B4B36] hover:bg-[#5e3929] text-white px-10 py-3 rounded-3xl text-sm md:text-base transition duration-300">
-            Event Lainnya
-        </a>
-    </div>
-</section>
+        </p>
+    @endforelse
+</div>
 <!-- upcoming event end -->
 
-<!-- succesfull event start -->
-<section class="max-w-6xl mx-auto px-4 md:px-8 py-12">
-    <!-- heading -->
-    <div class="text-center md:text-right mb-8">
-        <h2 class="text-2xl md:text-3xl font-bold">Succesfull Event</h2>
-        <p class="text-gray-600 text-xs md:text-sm pt-1">
-            Event-event sukses yang diadakan oleh Green Generation Surabaya
-        </p>
-    </div>
+<div class="text-center mt-6">
+    <a href="{{ route('events.upcoming') }}"
+       class="inline-block bg-palette-2 text-white px-6 py-2 rounded-xl 
+              hover:bg-palette-3 transition ease-in-out duration-300 hover:shadow-lg">
+        Lihat Semua Upcoming Event
+    </a>
+</div>
 
-    <!-- cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
-        @for ($i = 0; $i < 3; $i++)
-        <a href="" class="block group {{ $i >= 1 ? 'hidden sm:block' : '' }}">
+<!-- succesfull event start -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+    @forelse ($finished as $event)
+        <a href="{{ route('events.index', $event->id) }}" class="block group">
             <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500">
                 <div class="relative">
-                    <!-- cover -->
-                    <img src="{{ asset('images/gambar-event.png') }}" alt="Event Cover" class="w-full h-52 object-scale-down mt-10">
-                    <!-- status -->
+                    <img src="{{ $event->poster ? asset('storage/'.$event->poster) : asset('images/gambar-event.png') }}"
+                         alt="Event Cover"
+                         class="w-full h-52 object-cover">
                     <span class="absolute top-7 left-7 bg-orange-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
                         Finished
                     </span>
                 </div>
                 <div class="p-4 space-y-2">
-                    <!-- judul -->
-                    <h3 class="text-lg font-semibold">Volunteer Greenovation Batch 2</h3>
-                    <!-- default penerbit -->
+                    <h3 class="text-lg font-semibold">{{ $event->name }}</h3>
                     <p class="text-gray-500 text-xs">Green Generation Surabaya</p>
-                    <!-- tanggal -->
                     <div class="flex items-center text-xs text-gray-500 gap-2">
                         <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-4 h-4">
-                        <span>12 Juli 2025</span>
+                        <span>{{ $event->event_date->translatedFormat('d F Y') }}</span>
                     </div>
                     <p class="text-xs text-gray-600 pb-14">
-                        Mari edukasi seluruh warga Surabaya supaya bisa mengelola sampah secara efektif!
+                        {{ Str::limit($event->description, 100) }}
                     </p>
                 </div>
             </div>
         </a>
-        <!-- BACAAAA: nyalakan empty ini ketika sudah connect ke db okeee?? -->
-        <!-- @ empty
+    @empty
         <p class="col-span-3 text-center text-gray-500 py-10">
             Belum ada event yang selesai.
-        </p> -->
-        @endfor
-    </div>
+        </p>
+    @endforelse
+</div>
 
-    <!-- button -->
-    <div class="flex justify-center mt-8">
-        <a href="/event/list-event" 
-        class="border border-palette-2 text-palette-2 hover:bg-palette-2 hover:text-white px-10 py-3 rounded-3xl text-sm md:text-base transition duration-300">
-            Event Lainnya
-        </a>
-    </div>
-</section>
 <!-- succesfull event end -->
+
+<div class="text-center mt-6">
+    <a href="{{ route('events.finished') }}"
+       class="inline-block bg-palette-2 text-white px-6 py-2 rounded-xl 
+              hover:bg-palette-3 transition ease-in-out duration-300 hover:shadow-lg">
+        Lihat Semua Successful Event
+    </a>
+</div>
 
 <!-- start section dampak -->
 <section class="bg-[#F5F5F9] py-12">
