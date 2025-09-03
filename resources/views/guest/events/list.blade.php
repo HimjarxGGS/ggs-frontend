@@ -27,37 +27,33 @@
         <div x-data="{ open: false, selected: 'Event Terbaru' }" class="w-96 md:w-1/4 relative ml-10 lg:ml-0">
             <label for="sort" class="block text-sm text-gray-600 mb-1">Urut Berdasarkan:</label>
 
-        <!-- Trigger button -->
-            <button 
-                @click="open = !open" 
-                class="w-full flex justify-between items-center border rounded-full px-8 py-2 text-sm md:text-base font-medium text-gray-800 focus:outline-none focus:ring-2 focus:ring-palette-4 transition duration-200"
-            >
+            <!-- Trigger button -->
+            <button
+                @click="open = !open"
+                class="w-full flex justify-between items-center border rounded-full px-8 py-2 text-sm md:text-base font-medium text-gray-800 focus:outline-none focus:ring-2 focus:ring-palette-4 transition duration-200">
                 <span x-text="selected"></span>
                 <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
             </button>
 
             <!-- Dropdown list -->
-            <div 
-                x-show="open" 
-                x-transition 
+            <div
+                x-show="open"
+                x-transition
                 @click.outside="open = false"
-                class="absolute z-10 w-full mt-2 bg-white border rounded-lg shadow-lg"
-            >
+                class="absolute z-10 w-full mt-2 bg-white border rounded-lg shadow-lg">
                 <ul class="py-1 text-sm text-gray-700">
-                <li>
-                    <button 
-                    @click="selected = 'Event Terbaru'; open = false" 
-                    class="block w-full text-left px-4 py-2 hover:bg-gray-100"
-                    >Event Terbaru</button>
-                </li>
-                <li>
-                    <button 
-                    @click="selected = 'Event Terlama'; open = false" 
-                    class="block w-full text-left px-4 py-2 hover:bg-gray-100"
-                    >Event Terlama</button>
-                </li>
+                    <li>
+                        <button
+                            @click="selected = 'Event Terbaru'; open = false"
+                            class="block w-full text-left px-4 py-2 hover:bg-gray-100">Event Terbaru</button>
+                    </li>
+                    <li>
+                        <button
+                            @click="selected = 'Event Terlama'; open = false"
+                            class="block w-full text-left px-4 py-2 hover:bg-gray-100">Event Terlama</button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -65,57 +61,49 @@
 
     <!-- Card Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-6">
-        @for ($i = 0; $i < 6; $i++)
-            <a href="" class="block group {{ $i >= 3 ? 'hidden sm:block' : '' }}">
-                <div
-                    class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500">
-                    <div class="relative">
-                        <!-- cover -->
-                        <img src="{{ asset('images/gambar-event.png') }}" alt="Event Cover"
-                            class="w-full h-52 object-scale-down pt-10">
-                        <!-- status -->
-                        <span
-                            class="absolute top-7 left-7 bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                            Active
-                        </span>
-                    </div>
-                    <div class="p-4 space-y-2">
-                        <!-- judul -->
-                        <h3 class="text-lg font-semibold pt-10">Volunteer Greenovation Batch 2</h3>
-                        <!-- default penerbit -->
-                        <p class="text-gray-500 text-xs">Green Generation Surabaya</p>
-                        <!-- tanggal event -->
-                        <div class="flex items-center text-xs text-gray-400 gap-2">
-                            <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-4 h-4">
-                            <span>12 Juli 2025</span>
-                        </div>
-                        <!-- deskripsi -->
-                        <p class="text-xs text-gray-600 pb-14">
-                            Mari edukasi seluruh warga Surabaya supaya bisa mengelola sampah secara efektif!
-                        </p>
-                    </div>
+        @forelse ($events as $event)
+        <a href="{{ route('guest.events.detail', ['id' => $event->id]) }}" class="block group">
+            <div
+                class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500">
+                <div class="relative">
+                    <!-- cover -->
+                    <img src="{{ $event->cover ? asset('storage/'.$event->cover) : asset('images/gambar-event.png') }}"
+                        alt="Event Cover"
+                        class="w-full h-52 object-cover">
+
+                    <!-- status -->
+                    <span
+                        class="absolute top-7 left-7 {{ $event->status === 'active' ? 'bg-green-500' : 'bg-gray-400' }} text-white text-xs font-semibold px-3 py-1 rounded-full">
+                        {{ ucfirst($event->status) }}
+                    </span>
                 </div>
-            </a>
-        <!-- BACAAAA: nyalakan empty ini ketika sudah connect ke db okeee?? -->
-        <!-- @ empty
+                <div class="p-4 space-y-2">
+                    <!-- judul -->
+                    <h3 class="text-lg font-semibold">{{ $event->name }}</h3>
+                    <!-- default penerbit -->
+                    <p class="text-gray-500 text-xs">Green Generation Surabaya</p>
+                    <!-- tanggal event -->
+                    <div class="flex items-center text-xs text-gray-400 gap-2">
+                        <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-4 h-4">
+                        <span>{{ \Carbon\Carbon::parse($event->event_date)->translatedFormat('d F Y') }}</span>
+                    </div>
+                    <!-- deskripsi -->
+                    <p class="text-xs text-gray-600 pb-6">
+                        {{ Str::limit($event->description, 100) }}
+                    </p>
+                </div>
+            </div>
+        </a>
+        @empty
         <p class="col-span-3 text-center text-gray-500 py-10">
             Belum ada event.
-        </p> -->
-        @endfor
+        </p>
+        @endforelse
+    </div>
+
+    <!-- Pagination -->
+    <div class="mt-10 flex justify-center">
+        {{ $events->links() }}
     </div>
 </section>
-
-
-
-<div class="mt-10 flex justify-center space-x-3 text-sm text-black">
-    <button class="px-3 py-1 rounded bg-palette-1 font-semibold transition duration-200">1</button>
-    <button class="px-3 py-1 rounded hover:bg-gray-200 transition duration-200">2</button>
-    <button class="px-3 py-1 rounded hover:bg-gray-200 transition duration-200">3</button>
-    <span class="px-3 py-1">...</span>
-    <button class="px-3 py-1 rounded hover:bg-gray-200 transition duration-200">19</button>
-    <button class="px-3 py-1 rounded hover:bg-gray-200 transition duration-200">20</button>
-    <button class="px-3 py-1 rounded hover:bg-gray-200 transition duration-200">&gt;</button>
-</div>
-
-
 @endsection

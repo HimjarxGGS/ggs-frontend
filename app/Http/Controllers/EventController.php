@@ -23,11 +23,30 @@ class EventController extends Controller
             return view('guest.events.index', compact('upcoming', 'finished'));
     }
 
-    // public function upcoming(){
-    //     $events = Event::where('status', 'upcoming')->get();
+    public function upcoming(){
+        $events = Event::where('status', 'active')
+        -> orderBy('event_date', 'asc')
+        -> paginate(6);
 
-    //     return view()
-    // }
+        return view('guest.events.list', 
+        ['title' => 'Upcoming Event', 
+        'subtitles' => 'Daftar event yang akan datang',
+        'events' => $events]);
+
+    }
+
+    public function finished(){
+        $events = Event::where('status', 'finished')
+        -> orderBy('event_date', 'desc')
+        -> paginate(6);
+
+        return view('guest.events.list', 
+        ['title' => 'Succesfull Event', 
+        'subtitles' => 'Daftar event yang sudah selesai', 
+        'events' => $events]);
+        
+    }
+
     public function list(){
         $events = Event::orderBy('event_date', 'desc')
         ->paginate(9);
