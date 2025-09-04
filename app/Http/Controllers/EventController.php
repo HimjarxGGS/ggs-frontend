@@ -54,9 +54,9 @@ class EventController extends Controller
         return view('guest.event.list', compact('events'));
     }
 
-    public function show($id){
+    public function show( $id){
         $event = Event::findOrFail($id);
 
-        return view('guest.event.detail', compact('event'));
+        return view('guest.events.detail', compact('event'));
     }
 }

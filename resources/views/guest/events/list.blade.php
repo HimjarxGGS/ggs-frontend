@@ -62,7 +62,7 @@
     <!-- Card Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-6">
         @forelse ($events as $event)
-        <a href="{{ route('guest.events.detail', ['id' => $event->id]) }}" class="block group">
+        <a href="{{ route('events.show', ['id' => $event->id]) }}" class="block group">
             <div
                 class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500">
                 <div class="relative">

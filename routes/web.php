@@ -37,7 +37,7 @@ Route::get('/blog/{slug}', [BlogController::class, 'detailBlog'])->name('blog.de
 //route event 
 Route::get ('/event', [EventController::class, 'index'])->name('events.index');
 Route::get('/event/list-event',[EventController::class, 'list'])->name('guest.events.list');
-Route::get('/event/detail-event', [EventController::class, 'show'])->name('guest.events.detail');
+Route::get('/events/{id}', [EventController::class, 'show'])->name('events.show');
 
 Route::get('/event/upcoming', [EventController::class, 'upcoming'])->name('events.upcoming');
 Route::get('/event/finished', [EventController::class, 'finished'])->name('events.finished');

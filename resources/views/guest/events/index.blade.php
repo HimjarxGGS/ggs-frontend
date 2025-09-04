@@ -6,9 +6,9 @@
 <section class="relative w-full h-[80vh] flex items-center justify-center font-geist">
     <!-- background -->
     <div class="absolute inset-0">
-        <img src="{{ asset('images/eventlanding.png') }}" 
-             alt="Event Background" 
-             class="w-full h-full object-cover">
+        <img src="{{ asset('images/eventlanding.png') }}"
+            alt="Event Background"
+            class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-black/40"></div>
     </div>
 
@@ -17,7 +17,7 @@
         <h1 class="text-2xl md:text-6xl font-semibold">
             Act Today, Sustain Tomorrow
         </h1>
-       <div class="text-center">
+        <div class="text-center">
             <p class="md:mt-2 text-sm md:text-2xl font-light inline-block overflow-hidden whitespace-nowrap animate-typewriter">
                 Bertindak Hari Ini, Menjaga Esok Hari.
             </p>
@@ -27,12 +27,12 @@
     <!-- stats -->
     <div class="absolute bottom-[-50px] w-full flex justify-center">
         <div class="bg-white shadow-lg rounded-2xl px-12 md:px-24 py-4 flex gap-8">
-        
+
             <!-- Item 1 -->
             <div class="flex items-center md:gap-10 gap-4">
                 <!-- Icon pakai img -->
                 <img src="{{ asset('icons/person.svg')}}" alt="Volunteer Icon" class="w-7 h-7 md:w-7 md:h-7 object-contain" />
-                
+
                 <!-- Text -->
                 <div class="text-left">
                     <h2 id="volunteerCount" class="text-xl md:text-2xl font-bold text-palette-4" data-target="100">0</h2>
@@ -44,7 +44,7 @@
             <div class="flex items-center md:gap-10 gap-4 pl-10 md:ml-10">
                 <!-- Icon pakai img -->
                 <img src="{{ asset('icons/events.svg')}}" alt="Event Icon" class="w-8 h-8 md:w-10 md:h-10 object-contain" />
-                
+
                 <!-- Text -->
                 <div class="text-left">
                     <h2 id="eventCount" class="text-xl md:text-2xl font-bold text-palette-4" data-target="50">0</h2>
@@ -58,41 +58,41 @@
 <!-- upcoming event start -->
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
     @forelse ($upcoming as $event)
-        <a href="{{ route('events.index', $event->id) }}" class="block group">
-            <div class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500">
-                <div class="relative">
-                    <img src="{{ $event->poster ? asset('storage/'.$event->poster) : asset('images/gambar-event.png') }}"
-                         alt="Event Cover"
-                         class="w-full h-52 object-cover">
+    <a href="{{ route('events.show', $event->id) }}" class="block group">
+        <div class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500">
+            <div class="relative">
+                <img src="{{ $event->poster ? asset('storage/'.$event->poster) : asset('images/gambar-event.png') }}"
+                    alt="Event Cover"
+                    class="w-full h-52 object-cover">
 
-                    <span class="absolute top-7 left-7 bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                        {{ ucfirst($event->status) }}
-                    </span>
-                </div>
-                <div class="p-4 space-y-2">
-                    <h3 class="text-lg font-semibold">{{ $event->name }}</h3>
-                    <p class="text-gray-500 text-xs">Green Generation Surabaya</p>
-                    <div class="flex items-center text-xs text-gray-400 gap-2">
-                        <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-4 h-4">
-                        <span>{{ $event->event_date->translatedFormat('d F Y') }}</span>
-                    </div>
-                    <p class="text-xs text-gray-600 pb-14">
-                        {{ Str::limit($event->description, 100) }}
-                    </p>
-                </div>
+                <span class="absolute top-7 left-7 bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    {{ ucfirst($event->status) }}
+                </span>
             </div>
-        </a>
+            <div class="p-4 space-y-2">
+                <h3 class="text-lg font-semibold">{{ $event->name }}</h3>
+                <p class="text-gray-500 text-xs">Green Generation Surabaya</p>
+                <div class="flex items-center text-xs text-gray-400 gap-2">
+                    <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-4 h-4">
+                    <span>{{ $event->event_date->translatedFormat('d F Y') }}</span>
+                </div>
+                <p class="text-xs text-gray-600 pb-14">
+                    {{ Str::limit($event->description, 100) }}
+                </p>
+            </div>
+        </div>
+    </a>
     @empty
-        <p class="col-span-3 text-center text-gray-500 py-10">
-            Belum ada event terbaru.
-        </p>
+    <p class="col-span-3 text-center text-gray-500 py-10">
+        Belum ada event terbaru.
+    </p>
     @endforelse
 </div>
 <!-- upcoming event end -->
 
 <div class="text-center mt-6">
     <a href="{{ route('events.upcoming') }}"
-       class="inline-block bg-palette-2 text-white px-6 py-2 rounded-xl 
+        class="inline-block bg-palette-2 text-white px-6 py-2 rounded-xl 
               hover:bg-palette-3 transition ease-in-out duration-300 hover:shadow-lg">
         Lihat Semua Upcoming Event
     </a>
@@ -101,7 +101,7 @@
 <!-- succesfull event start -->
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
     @forelse ($finished as $event)
-        <a href="{{ route('events.index', $event->id) }}" class="block group">
+     <a href="{{ route('events.show', $event->id) }}" class="block group">
             <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500">
                 <div class="relative">
                     <img src="{{ $event->poster ? asset('storage/'.$event->poster) : asset('images/gambar-event.png') }}"
@@ -135,7 +135,7 @@
 
 <div class="text-center mt-6">
     <a href="{{ route('events.finished') }}"
-       class="inline-block bg-palette-2 text-white px-6 py-2 rounded-xl 
+        class="inline-block bg-palette-2 text-white px-6 py-2 rounded-xl 
               hover:bg-palette-3 transition ease-in-out duration-300 hover:shadow-lg">
         Lihat Semua Successful Event
     </a>
@@ -157,9 +157,9 @@
                     <p class="text-xl md:text-2xl font-bold text-palette-2">1.000</p>
                     <p class="text-xs md:text-sm text-palette-4">Bibit Pohon Ditanam</p>
                 </div>
-                <img src="{{ asset('icons/tree.svg') }}" 
-                     alt="Tree" 
-                     class="w-8 h-8 md:w-10 md:h-10">
+                <img src="{{ asset('icons/tree.svg') }}"
+                    alt="Tree"
+                    class="w-8 h-8 md:w-10 md:h-10">
             </div>
 
             <!-- Card 2 -->
@@ -168,9 +168,9 @@
                     <p class="text-xl md:text-2xl font-bold text-palette-2">8.765 <span class="text-sm">kg</span></p>
                     <p class="text-xs md:text-sm text-palette-4">Sampah Dikelola</p>
                 </div>
-                <img src="{{ asset('icons/recycle.svg') }}" 
-                     alt="Recycle" 
-                     class="w-8 h-8 md:w-10 md:h-10">
+                <img src="{{ asset('icons/recycle.svg') }}"
+                    alt="Recycle"
+                    class="w-8 h-8 md:w-10 md:h-10">
             </div>
         </div>
     </div>
@@ -200,21 +200,21 @@
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             <!-- line 1 -->
             <ul class="space-y-8">
-               <li class="text-sm leading-6">
+                <li class="text-sm leading-6">
                     <div class="relative group" data-aos="zoom-in-right">
                         <div
-                        class="absolute transition rounded-3xl opacity-25 -inset-1 bg-gradient-to-r from-palette-4 to-palette-2 blur duration-400 group-hover:opacity-100 group-hover:duration-500">
+                            class="absolute transition rounded-3xl opacity-25 -inset-1 bg-gradient-to-r from-palette-4 to-palette-2 blur duration-400 group-hover:opacity-100 group-hover:duration-500">
                         </div>
                         <div class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
-                          <div class="flex items-center space-x-4">
-                            <img
-                                src="https://pbs.twimg.com/profile_images/1276461929934942210/cqNhNk6v_400x400.jpg"
-                                class="w-12 h-12 bg-center bg-cover border rounded-full"
-                                alt="Kanye West">
-                            <div>
-                                <h3 class="text-lg font-semibold text-gray-800">Ayu Lestari</h3>
-                                <p class="text-palette-4 text-md">Koordinator lingkungan</p>
-                            </div>
+                            <div class="flex items-center space-x-4">
+                                <img
+                                    src="https://pbs.twimg.com/profile_images/1276461929934942210/cqNhNk6v_400x400.jpg"
+                                    class="w-12 h-12 bg-center bg-cover border rounded-full"
+                                    alt="Kanye West">
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-800">Ayu Lestari</h3>
+                                    <p class="text-palette-4 text-md">Koordinator lingkungan</p>
+                                </div>
                             </div>
                             <p class="leading-normal text-gray-700 text-md"> Program penghijauan ini membuat lingkungan terasa lebih segar dan nyaman. Saya bangga bisa ikut berkontribusi menanam pohon bersama. </p>
                         </div>
@@ -226,20 +226,20 @@
                         <div
                             class="absolute transition rounded-3xl opacity-25 -inset-1 bg-gradient-to-r from-palette-4 to-palette-2 blur duration-400 group-hover:opacity-100 group-hover:duration-500">
                         </div>
-                            <div
-                                class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
-                                <div class="flex items-center space-x-4"><img
-                                        src="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook">
-                                    <div>
-                                        <h3 class="text-lg font-semibold text-gray-800">Tim Cook</h3>
-                                        <p class="text-palette-4 text-md">CEO of Apple</p>
-                                    </div>
+                        <div
+                            class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
+                            <div class="flex items-center space-x-4"><img
+                                    src="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg"
+                                    class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook">
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-800">Tim Cook</h3>
+                                    <p class="text-palette-4 text-md">CEO of Apple</p>
                                 </div>
-                                <p class="leading-normal text-gray-700 text-md">Diam quis enim lobortis scelerisque
-                                    fermentum dui faucibus in ornare. Donec pretium vulputate sapien nec sagittis
-                                    aliquam malesuada bibendum.</p>
                             </div>
+                            <p class="leading-normal text-gray-700 text-md">Diam quis enim lobortis scelerisque
+                                fermentum dui faucibus in ornare. Donec pretium vulputate sapien nec sagittis
+                                aliquam malesuada bibendum.</p>
+                        </div>
                     </div>
                 </li>
 
@@ -274,20 +274,20 @@
                         <div
                             class="absolute transition rounded-3xl opacity-25 -inset-1 bg-gradient-to-r from-palette-4 to-palette-2 blur duration-400 group-hover:opacity-100 group-hover:duration-500">
                         </div>
-                            <div
-                                class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
-                                <div class="flex items-center space-x-4"><img
-                                        src="https://pbs.twimg.com/profile_images/1375285353146327052/y6jeByyD_400x400.jpg"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal">
-                                    <div>
-                                        <h3 class="text-lg font-semibold text-gray-800">Parag Agrawal</h3>
-                                        <p class="text-palette-4 text-md">CEO of Twitter</p>
-                                    </div>
+                        <div
+                            class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
+                            <div class="flex items-center space-x-4"><img
+                                    src="https://pbs.twimg.com/profile_images/1375285353146327052/y6jeByyD_400x400.jpg"
+                                    class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal">
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-800">Parag Agrawal</h3>
+                                    <p class="text-palette-4 text-md">CEO of Twitter</p>
                                 </div>
-                                <p class="leading-normal text-gray-700 text-md">Enim neque volutpat ac tincidunt vitae
-                                    semper. Mattis aliquam faucibus purus in massa tempor. Neque vitae tempus quam
-                                    pellentesque nec. Turpis cursus in hac habitasse platea dictumst.</p>
                             </div>
+                            <p class="leading-normal text-gray-700 text-md">Enim neque volutpat ac tincidunt vitae
+                                semper. Mattis aliquam faucibus purus in massa tempor. Neque vitae tempus quam
+                                pellentesque nec. Turpis cursus in hac habitasse platea dictumst.</p>
+                        </div>
                     </div>
                 </li>
                 <li class="text-sm leading-6">
@@ -295,20 +295,20 @@
                         <div
                             class="absolute transition rounded-3xl opacity-25 -inset-1 bg-gradient-to-r from-palette-4 to-palette-2 blur duration-400 group-hover:opacity-100 group-hover:duration-500">
                         </div>
-                            <div
-                                class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
-                                <div class="flex items-center space-x-4"><img
-                                        src="https://pbs.twimg.com/profile_images/1375285353146327052/y6jeByyD_400x400.jpg"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal">
-                                    <div>
-                                        <h3 class="text-lg font-semibold text-gray-800">Parag Agrawal</h3>
-                                        <p class="text-palette-4 text-md">CEO of Twitter</p>
-                                    </div>
+                        <div
+                            class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
+                            <div class="flex items-center space-x-4"><img
+                                    src="https://pbs.twimg.com/profile_images/1375285353146327052/y6jeByyD_400x400.jpg"
+                                    class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal">
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-800">Parag Agrawal</h3>
+                                    <p class="text-palette-4 text-md">CEO of Twitter</p>
                                 </div>
-                                <p class="leading-normal text-gray-700 text-md">Enim neque volutpat ac tincidunt vitae
-                                    semper. Mattis aliquam faucibus purus in massa tempor. Neque vitae tempus quam
-                                    pellentesque nec. Turpis cursus in hac habitasse platea dictumst.</p>
                             </div>
+                            <p class="leading-normal text-gray-700 text-md">Enim neque volutpat ac tincidunt vitae
+                                semper. Mattis aliquam faucibus purus in massa tempor. Neque vitae tempus quam
+                                pellentesque nec. Turpis cursus in hac habitasse platea dictumst.</p>
+                        </div>
                     </div>
                 </li>
             </ul>
@@ -320,18 +320,18 @@
                         <div
                             class="absolute transition rounded-3xl opacity-25 -inset-1 bg-gradient-to-r from-palette-4 to-palette-2 blur duration-400 group-hover:opacity-100 group-hover:duration-500">
                         </div>
-                            <div
-                                class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
-                                <div class="flex items-center space-x-4"><img
-                                        src="https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Satya Nadella">
-                                    <div>
-                                        <h3 class="text-lg font-semibold text-gray-800">Satya Nadella</h3>
-                                        <p class="text-palette-4 text-md">CEO of Microsoft</p>
-                                    </div>
+                        <div
+                            class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
+                            <div class="flex items-center space-x-4"><img
+                                    src="https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg"
+                                    class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Satya Nadella">
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-800">Satya Nadella</h3>
+                                    <p class="text-palette-4 text-md">CEO of Microsoft</p>
                                 </div>
-                                <p class="leading-normal text-gray-700 text-md">Tortor dignissim convallis aenean et.</p>
                             </div>
+                            <p class="leading-normal text-gray-700 text-md">Tortor dignissim convallis aenean et.</p>
+                        </div>
                     </div>
                 </li>
                 <li class="text-sm leading-6">
@@ -339,21 +339,21 @@
                         <div
                             class="absolute transition rounded-3xl opacity-25 -inset-1 bg-gradient-to-r from-palette-4 to-palette-2 blur duration-400 group-hover:opacity-100 group-hover:duration-500">
                         </div>
-                            <div
-                                class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
-                                <div class="flex items-center space-x-4"><img
-                                        src="https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Satya Nadella">
-                                    <div>
-                                        <h3 class="text-lg font-semibold text-gray-800">Satya Nadella</h3>
-                                        <p class="text-palette-4 text-md">CEO of Microsoft</p>
-                                    </div>
+                        <div
+                            class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
+                            <div class="flex items-center space-x-4"><img
+                                    src="https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg"
+                                    class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Satya Nadella">
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-800">Satya Nadella</h3>
+                                    <p class="text-palette-4 text-md">CEO of Microsoft</p>
                                 </div>
-                                <p class="leading-normal text-gray-700 text-md">Tortor dignissim convallis aenean et.</p>
                             </div>
+                            <p class="leading-normal text-gray-700 text-md">Tortor dignissim convallis aenean et.</p>
+                        </div>
                     </div>
                 </li>
-          </div>
+        </div>
     </div>
 </section>
 <!-- section testimoni end -->
