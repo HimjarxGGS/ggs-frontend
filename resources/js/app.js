@@ -56,6 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     countUp(document.getElementById("volunteerCount"), 100, 3000); 
     countUp(document.getElementById("eventCount"), 50, 3000);
+    countUp(document.getElementById("dampak1"), 1000, 3000);
+    countUp(document.getElementById("dampak2"), 8000, 5000);
 });
 
 const dropPoster = document.getElementById("dropPoster");

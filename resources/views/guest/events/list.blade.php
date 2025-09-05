@@ -3,11 +3,11 @@
 @section('title', 'List Event - Green Generation Surabaya')
 
 @section('content')
-<section class="px-4 md:px-12 lg:px-20 py-10 mt-32">
+<section class="px-4 md:px-12 lg:px-20 py-10 mt-28">
     <!-- Header Section -->
-    <div class="mb-5 ml-10">
-        <h1 class="text-2xl md:text-3xl font-semibold text-black">List Event</h1>
-        <p class="text-sm md:text-base text-gray-600">
+    <div class="mb-10">
+        <h1 class="text-2xl md:text-3xl font-bold text-black text-center">List Event</h1>
+        <p class="text-sm md:text-base text-gray-600 text-center">
             Seluruh event yang ada pada Green Generation Surabaya
         </p>
     </div>
@@ -60,26 +60,31 @@
     </div>
 
     <!-- Card Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-6">
-        @forelse ($events as $event)
-        <a href="{{ route('events.show', ['id' => $event->id]) }}" class="block group">
-            <div
-                class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500">
-                <div class="relative">
-                    <!-- cover -->
-                    <img src="{{ $event->cover ? asset('storage/'.$event->cover) : asset('images/gambar-event.png') }}"
-                        alt="Event Cover"
-                        class="w-full h-52 object-cover">
+    <!-- Card Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    @forelse ($events as $event)
+    <a href="{{ route('events.show', ['id' => $event->id]) }}" class="block group w-full">
+        <div
+            class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500 flex flex-col h-full">
+            
+            <!-- cover -->
+            <div class="relative">
+                <img src="{{ $event->cover ? asset('storage/'.$event->cover) : asset('images/posterggs.png') }}"
+                    alt="Event Cover"
+                    class="w-full h-52 object-cover">
 
-                    <!-- status -->
-                    <span
-                        class="absolute top-7 left-7 {{ $event->status === 'active' ? 'bg-green-500' : 'bg-gray-400' }} text-white text-xs font-semibold px-3 py-1 rounded-full">
-                        {{ ucfirst($event->status) }}
-                    </span>
-                </div>
-                <div class="p-4 space-y-2">
+                <!-- status -->
+                <span
+                    class="absolute top-7 left-7 {{ $event->status === 'active' ? 'bg-green-500' : 'bg-gray-400' }} text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    {{ ucfirst($event->status) }}
+                </span>
+            </div>
+
+            <!-- konten -->
+            <div class="p-4 flex flex-col justify-between flex-1">
+                <div class="space-y-2">
                     <!-- judul -->
-                    <h3 class="text-lg font-semibold">{{ $event->name }}</h3>
+                    <h3 class="text-lg font-semibold line-clamp-2">{{ $event->name }}</h3>
                     <!-- default penerbit -->
                     <p class="text-gray-500 text-xs">Green Generation Surabaya</p>
                     <!-- tanggal event -->
@@ -88,18 +93,20 @@
                         <span>{{ \Carbon\Carbon::parse($event->event_date)->translatedFormat('d F Y') }}</span>
                     </div>
                     <!-- deskripsi -->
-                    <p class="text-xs text-gray-600 pb-6">
-                        {{ Str::limit($event->description, 100) }}
+                    <p class="text-xs text-gray-600 line-clamp-3">
+                        {{ Str::limit($event->description, 120) }}
                     </p>
                 </div>
             </div>
-        </a>
-        @empty
-        <p class="col-span-3 text-center text-gray-500 py-10">
-            Belum ada event.
-        </p>
-        @endforelse
-    </div>
+        </div>
+    </a>
+    @empty
+    <p class="col-span-3 text-center text-gray-500 py-10">
+        Belum ada event.
+    </p>
+    @endforelse
+</div>
+
 
     <!-- Pagination -->
     <div class="mt-10 flex justify-center">
