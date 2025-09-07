@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Event;
+use Illuminate\Support\Facades\Auth; // <- jangan lupa import
 
 class DashboardController extends Controller
 {
     public function index()
     {
-        
-        $events = Event::latest()->paginate(6);
+        // Ambil event terbaru berdasarkan tanggal event
+        $events = Event::orderBy('event_date', 'desc')->paginate(6);
 
-      
-        return view('member.dashboard.index', compact('events'));
+        // Ambil user yang sedang login
+        $users = Auth::user();
+
+        // kirim events dan users ke view
+        return view('member.dashboard.index', compact('events', 'users'));
     }
 }
