@@ -24,78 +24,87 @@
     <!-- card -->
       <div class="inline-block p-[1px]">
         <div class="relative rounded-[16px] overflow-hidden w-[320px] h-[220px] group">
-          <img src="{{ asset('images/dummyphoto.png') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 1">
+          <img src="{{ asset('dokum/ggberaksi1.JPG') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 1" loading="lazy">
           <div class="absolute bottom-0 left-0 w-full h-0 bg-gradient-to-t from-palette-4 to-transparent opacity-0 group-hover:h-32 group-hover:opacity-100 transition-all duration-500"></div>
           <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 z-10">
-            <span class="text-white text-xs font-medium">Judul Foto</span>
+            <span class="text-white text-xs font-medium">GG-Beraksi</span>
           </div>
         </div>
       </div>
       <div class="inline-block p-[1px]">
         <div class="relative rounded-[16px] overflow-hidden w-[320px] h-[220px] group">
-          <img src="{{ asset('images/dummyphoto.png') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 1">
+          <img src="{{ asset('dokum/ggberaksi2.JPG') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 2" loading="lazy">
           <div class="absolute bottom-0 left-0 w-full h-0 bg-gradient-to-t from-palette-4 to-transparent opacity-0 group-hover:h-32 group-hover:opacity-100 transition-all duration-500"></div>
           <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 z-10">
-            <span class="text-white text-xs font-medium">Judul Foto</span>
+            <span class="text-white text-xs font-medium">GG-Beraksi</span>
           </div>
         </div>
       </div>
       <div class="inline-block p-[1px]">
         <div class="relative rounded-[16px] overflow-hidden w-[320px] h-[220px] group">
-          <img src="{{ asset('images/dummyphoto.png') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 1">
+          <img src="{{ asset('dokum/ggberaksi3.JPG') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 3" loading="lazy">
           <div class="absolute bottom-0 left-0 w-full h-0 bg-gradient-to-t from-palette-4 to-transparent opacity-0 group-hover:h-32 group-hover:opacity-100 transition-all duration-500"></div>
           <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 z-10">
-            <span class="text-white text-xs font-medium">Judul Foto</span>
+            <span class="text-white text-xs font-medium">GG-Beraksi</span>
           </div>
         </div>
       </div>
       <div class="inline-block p-[1px]">
         <div class="relative rounded-[16px] overflow-hidden w-[320px] h-[220px] group">
-          <img src="{{ asset('images/dummyphoto.png') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 1">
+          <img src="{{ asset('dokum/ggberaksi4.JPG') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 4" loading="lazy">
           <div class="absolute bottom-0 left-0 w-full h-0 bg-gradient-to-t from-palette-4 to-transparent opacity-0 group-hover:h-32 group-hover:opacity-100 transition-all duration-500"></div>
           <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 z-10">
-            <span class="text-white text-xs font-medium">Judul Foto</span>
+            <span class="text-white text-xs font-medium">GG-Beraksi</span>
           </div>
         </div>
       </div>
       <div class="inline-block p-[1px]">
         <div class="relative rounded-[16px] overflow-hidden w-[320px] h-[220px] group">
-          <img src="{{ asset('images/dummyphoto.png') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 1">
+          <img src="{{ asset('dokum/greenovation_batch1_1.JPG') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 5" loading="lazy">
           <div class="absolute bottom-0 left-0 w-full h-0 bg-gradient-to-t from-palette-4 to-transparent opacity-0 group-hover:h-32 group-hover:opacity-100 transition-all duration-500"></div>
           <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 z-10">
-            <span class="text-white text-xs font-medium">Judul Foto</span>
+            <span class="text-white text-xs font-medium">Greenovation</span>
           </div>
         </div>
       </div>
       <div class="inline-block p-[1px]">
         <div class="relative rounded-[16px] overflow-hidden w-[320px] h-[220px] group">
-          <img src="{{ asset('images/dummyphoto.png') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 1">
+          <img src="{{ asset('dokum/greenovation_batch1_2.JPG') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 6" loading="lazy">
           <div class="absolute bottom-0 left-0 w-full h-0 bg-gradient-to-t from-palette-4 to-transparent opacity-0 group-hover:h-32 group-hover:opacity-100 transition-all duration-500"></div>
           <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 z-10">
-            <span class="text-white text-xs font-medium">Judul Foto</span>
+            <span class="text-white text-xs font-medium">Greenovation</span>
           </div>
         </div>
       </div>
       <div class="inline-block p-[1px]">
         <div class="relative rounded-[16px] overflow-hidden w-[320px] h-[220px] group">
-          <img src="{{ asset('images/dummyphoto.png') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 1">
+          <img src="{{ asset('dokum/growave1.JPG') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 7" loading="lazy">
           <div class="absolute bottom-0 left-0 w-full h-0 bg-gradient-to-t from-palette-4 to-transparent opacity-0 group-hover:h-32 group-hover:opacity-100 transition-all duration-500"></div>
           <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 z-10">
-            <span class="text-white text-xs font-medium">Judul Foto</span>
+            <span class="text-white text-xs font-medium">Growave</span>
           </div>
         </div>
       </div>
       <div class="inline-block p-[1px]">
         <div class="relative rounded-[16px] overflow-hidden w-[320px] h-[220px] group">
-          <img src="{{ asset('images/dummyphoto.png') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 1">
+          <img src="{{ asset('dokum/trashformerpart1-1.JPG') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 8" loading="lazy">
           <div class="absolute bottom-0 left-0 w-full h-0 bg-gradient-to-t from-palette-4 to-transparent opacity-0 group-hover:h-32 group-hover:opacity-100 transition-all duration-500"></div>
           <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 z-10">
-            <span class="text-white text-xs font-medium">Judul Foto</span>
+            <span class="text-white text-xs font-medium">Trashformer Part 1</span>
           </div>
         </div>
       </div>
+      <div class="inline-block p-[1px]">
+        <div class="relative rounded-[16px] overflow-hidden w-[320px] h-[220px] group">
+          <img src="{{ asset('dokum/trashformerpart1-2.JPG') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 9" loading="lazy">
+          <div class="absolute bottom-0 left-0 w-full h-0 bg-gradient-to-t from-palette-4 to-transparent opacity-0 group-hover:h-32 group-hover:opacity-100 transition-all duration-500"></div>
+          <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 z-10">
+            <span class="text-white text-xs font-medium">Trashformer Part 1</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 
 <!-- Baris scroll kiri ke kanan -->
 <div class="w-full overflow-x-hidden">
@@ -104,82 +113,82 @@
   <!-- card -->
      <div class="inline-block p-[1px]">
         <div class="relative rounded-[16px] overflow-hidden w-[320px] h-[220px] group">
-          <img src="{{ asset('images/imageggs.png') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 1">
+          <img src="{{ asset('dokum/trashformerpart1-2.JPG') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 9" loading="lazy">
           <div class="absolute bottom-0 left-0 w-full h-0 bg-gradient-to-t from-palette-4 to-transparent opacity-0 group-hover:h-32 group-hover:opacity-100 transition-all duration-500"></div>
           <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 z-10">
-            <span class="text-white text-xs font-medium">Judul Foto</span>
+            <span class="text-white text-xs font-medium">Trashformer Part 1</span>
           </div>
         </div>
       </div>
      <div class="inline-block p-[1px]">
         <div class="relative rounded-[16px] overflow-hidden w-[320px] h-[220px] group">
-          <img src="{{ asset('images/imageggs.png') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 1">
+          <img src="{{ asset('dokum/trashformerpart1-3.JPG') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 10" loading="lazy">
           <div class="absolute bottom-0 left-0 w-full h-0 bg-gradient-to-t from-palette-4 to-transparent opacity-0 group-hover:h-32 group-hover:opacity-100 transition-all duration-500"></div>
           <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 z-10">
-            <span class="text-white text-xs font-medium">Judul Foto</span>
+            <span class="text-white text-xs font-medium">Trashformer Part 1</span>
           </div>
         </div>
       </div>
      <div class="inline-block p-[1px]">
         <div class="relative rounded-[16px] overflow-hidden w-[320px] h-[220px] group">
-          <img src="{{ asset('images/imageggs.png') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 1">
+          <img src="{{ asset('dokum/trashformerpart2-1.JPG') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 11" loading="lazy">
           <div class="absolute bottom-0 left-0 w-full h-0 bg-gradient-to-t from-palette-4 to-transparent opacity-0 group-hover:h-32 group-hover:opacity-100 transition-all duration-500"></div>
           <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 z-10">
-            <span class="text-white text-xs font-medium">Judul Foto</span>
+            <span class="text-white text-xs font-medium">Trashformer Part 2</span>
           </div>
         </div>
       </div>
      <div class="inline-block p-[1px]">
         <div class="relative rounded-[16px] overflow-hidden w-[320px] h-[220px] group">
-          <img src="{{ asset('images/imageggs.png') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 1">
+          <img src="{{ asset('dokum/trashformerpart2-2.JPG') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 12" loading="lazy">
           <div class="absolute bottom-0 left-0 w-full h-0 bg-gradient-to-t from-palette-4 to-transparent opacity-0 group-hover:h-32 group-hover:opacity-100 transition-all duration-500"></div>
           <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 z-10">
-            <span class="text-white text-xs font-medium">Judul Foto</span>
+            <span class="text-white text-xs font-medium">Trashformer Part 2</span>
           </div>
         </div>
       </div>
      <div class="inline-block p-[1px]">
         <div class="relative rounded-[16px] overflow-hidden w-[320px] h-[220px] group">
-          <img src="{{ asset('images/imageggs.png') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 1">
+          <img src="{{ asset('dokum/trashformerpart2-3.JPG') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 13" loading="lazy">
           <div class="absolute bottom-0 left-0 w-full h-0 bg-gradient-to-t from-palette-4 to-transparent opacity-0 group-hover:h-32 group-hover:opacity-100 transition-all duration-500"></div>
           <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 z-10">
-            <span class="text-white text-xs font-medium">Judul Foto</span>
+            <span class="text-white text-xs font-medium">Trashformer Part 2</span>
           </div>
         </div>
       </div>
      <div class="inline-block p-[1px]">
         <div class="relative rounded-[16px] overflow-hidden w-[320px] h-[220px] group">
-          <img src="{{ asset('images/imageggs.png') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 1">
+          <img src="{{ asset('dokum/trashformerpart1-2.JPG') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 14" loading="lazy">
           <div class="absolute bottom-0 left-0 w-full h-0 bg-gradient-to-t from-palette-4 to-transparent opacity-0 group-hover:h-32 group-hover:opacity-100 transition-all duration-500"></div>
           <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 z-10">
-            <span class="text-white text-xs font-medium">Judul Foto</span>
+            <span class="text-white text-xs font-medium">Trashformer Part 1</span>
           </div>
         </div>
       </div>
      <div class="inline-block p-[1px]">
         <div class="relative rounded-[16px] overflow-hidden w-[320px] h-[220px] group">
-          <img src="{{ asset('images/imageggs.png') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 1">
+          <img src="{{ asset('dokum/trashformerpart1-3.JPG') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 15" loading="lazy">
           <div class="absolute bottom-0 left-0 w-full h-0 bg-gradient-to-t from-palette-4 to-transparent opacity-0 group-hover:h-32 group-hover:opacity-100 transition-all duration-500"></div>
           <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 z-10">
-            <span class="text-white text-xs font-medium">Judul Foto</span>
+            <span class="text-white text-xs font-medium">Trashformer Part 1</span>
           </div>
         </div>
       </div>
      <div class="inline-block p-[1px]">
         <div class="relative rounded-[16px] overflow-hidden w-[320px] h-[220px] group">
-          <img src="{{ asset('images/imageggs.png') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 1">
+          <img src="{{ asset('dokum/trashformerpart2-1.JPG') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 16" loading="lazy">
           <div class="absolute bottom-0 left-0 w-full h-0 bg-gradient-to-t from-palette-4 to-transparent opacity-0 group-hover:h-32 group-hover:opacity-100 transition-all duration-500"></div>
           <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 z-10">
-            <span class="text-white text-xs font-medium">Judul Foto</span>
+            <span class="text-white text-xs font-medium">Trashformer Part 2</span>
           </div>
         </div>
       </div>
        <div class="inline-block p-[1px]">
         <div class="relative rounded-[16px] overflow-hidden w-[320px] h-[220px] group">
-          <img src="{{ asset('images/imageggs.png') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 1">
+          <img src="{{ asset('dokum/trashformerpart2-2.JPG') }}" class="w-full h-full object-cover transition duration-300" alt="Foto 17" loading="lazy">
           <div class="absolute bottom-0 left-0 w-full h-0 bg-gradient-to-t from-palette-4 to-transparent opacity-0 group-hover:h-32 group-hover:opacity-100 transition-all duration-500"></div>
           <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 z-10">
-            <span class="text-white text-xs font-medium">Judul Foto</span>
+            <span class="text-white text-xs font-medium">Trashformer Part 2</span>
           </div>
         </div>
       </div>
@@ -204,41 +213,192 @@
       <ol class="relative border-s border-gray-200">
 
         <!-- timeline -->
-        <li class="mb-12 ms-6">
+         <li class="mb-12 ms-6">
           <span class="absolute flex items-center justify-center w-6 h-6 bg-palette-1 rounded-full -start-3 ring-8 ring-white">
             <svg class="w-2.5 h-2.5 text-palette-5" fill="currentColor" viewBox="0 0 20 20">
               <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
             </svg>
           </span>
-          <h3 class="text-xl font-semibold text-gray-900" data-aos="fade-left">Growave</h3>
-          <time class="block mb-4 text-sm text-gray-500" data-aos="fade-left">Released on June 4th, 2025</time>
-          <p class="mb-3 text-sm text-gray-600" data-aos="fade-left">Grow Action for Volunteer Engagement in Mangrove Planting</p>
-          <img src="{{ asset('images/imageggs.png') }}" class="rounded-md w-52 max-w-sm" alt="Growave Event" data-aos="fade-left">
+          <h3 class="text-xl font-bold text-gray-900" data-aos="fade-left">GG Beraksi</h3>
+          <time class="block mb-4 text-sm text-gray-500" data-aos="fade-left">Released on Januari, 2025</time>
+          <p class="mb-3 text-sm text-gray-600" data-aos="fade-left">Grow Action for Volunteer Engagement in Taman Absari Surabaya</p>
+
+          <!-- Foto Utama + Foto Tambahan -->
+          <div class="flex items-start gap-4 mt-4">
+            <!-- Foto Utama -->
+            <a href="{{ asset('dokum/ggberaksi1.jpg') }}" target="_blank">
+              <img src="{{ asset('dokum/ggberaksi1.jpg') }}" 
+                  class="rounded-md w-56 max-w-sm" 
+                  loading="lazy"
+                  alt="GG Beraksi" 
+                  data-aos="fade-left"
+                  data-aos-delay="0"
+                  data-aos-duration="800"
+                  >
+            </a>
+            <div class="hidden sm:flex flex-row gap-4">
+              <a href="{{ asset('dokum/ggberaksi3.jpg') }}" target="_blank">
+                <img src="{{ asset('dokum/ggberaksi3.jpg') }}" 
+                    loading="lazy"
+                    class="rounded-md w-56 max-w-sm" 
+                    alt="GG Beraksi 2" 
+                    data-aos="fade-left"
+                    data-aos-delay="500"
+                    data-aos-duration="800"
+                >
+              </a>
+
+              <a href="{{ asset('dokum/ggberaksi4.jpg') }}" target="_blank">
+                <img src="{{ asset('dokum/ggberaksi4.jpg') }}" 
+                    loading="lazy"
+                    class="rounded-md w-56 max-w-sm" 
+                    alt="GG Beraksi 3" 
+                    data-aos="fade-left"
+                    data-aos-delay="1000"
+                    data-aos-duration="800"
+                >
+              </a>
+            </div>
+          </div>
         </li>
 
+        <!-- journey 2 -->
         <li class="mb-12 ms-6">
           <span class="absolute flex items-center justify-center w-6 h-6 bg-palette-1 rounded-full -start-3 ring-8 ring-white">
             <svg class="w-2.5 h-2.5 text-palette-5" fill="currentColor" viewBox="0 0 20 20">
               <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
             </svg>
           </span>
-          <h3 class="text-xl font-semibold text-gray-900" data-aos="fade-left">Growave</h3>
-          <time class="block mb-4 text-sm text-gray-500" data-aos="fade-left">Released on June 4th, 2025</time>
-          <p class="mb-3 text-sm text-gray-600" data-aos="fade-left">Grow Action for Volunteer Engagement in Mangrove Planting</p>
-          <img src="{{ asset('images/imageggs.png') }}" class="rounded-md w-52 max-w-sm" alt="Growave Event" data-aos="fade-left">
-        </li>
+          <h3 class="text-xl font-bold text-gray-900" data-aos="fade-left" >Trashformer</h3>
+          <time class="block mb-4 text-sm text-gray-500" data-aos="fade-left">Released on Februari, 2025</time>
+          <p class="mb-3 text-sm text-gray-600" data-aos="fade-left">An environmental movement to transform waste into something more meaningful.</p>
 
-        <li class="mb-12 ms-6">
-          <span class="absolute flex items-center justify-center w-6 h-6 bg-palette-1 rounded-full -start-3 ring-8 ring-white">
-            <svg class="w-2.5 h-2.5 text-palette-5" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
-            </svg>
-          </span>
-          <h3 class="text-xl font-semibold text-gray-900" data-aos="fade-left">Growave</h3>
-          <time class="block mb-4 text-sm text-gray-500" data-aos="fade-left">Released on June 4th, 2025</time>
-          <p class="mb-3 text-sm text-gray-600" data-aos="fade-left">Grow Action for Volunteer Engagement in Mangrove Planting</p>
-          <img src="{{ asset('images/imageggs.png') }}" class="rounded-md w-52 max-w-sm" alt="Growave Event" data-aos="fade-left">
-        </li>
+            <!-- Foto Utama + Foto Tambahan -->
+          <div class="flex items-start gap-4 mt-4">
+            <!-- Foto Utama -->
+            <img src="{{ asset('dokum/trashformerpart1-1.jpg') }}" 
+                loading="lazy"
+                class="rounded-md w-56 max-w-sm" 
+                alt="trashformer" 
+                data-aos="fade-left"
+                data-aos-delay="0"
+                data-aos-duration="800"
+                >
+
+            <!-- Foto Tambahan (hanya tampil di desktop) -->
+            <div class="hidden sm:flex flex-row gap-4">
+              <img src="{{ asset('dokum/trashformerpart2-1.jpg') }}" 
+                  class="rounded-md w-56 max-w-sm" 
+                  loading="lazy"
+                  alt="trashformer 2" 
+                  data-aos="fade-left"
+                  data-aos-delay="500"
+                  data-aos-duration="800"
+                  >
+
+              <img src="{{ asset('dokum/trashformerpart2-2.jpg') }}" 
+                  class="rounded-md w-56 max-w-sm" 
+                  loading="lazy"
+                  alt="trashformer 3" 
+                  data-aos="fade-left"
+                  data-aos-delay="1000"
+                  data-aos-duration="800"
+                  >
+            </div>
+          </div>
+         </li>
+        
+         <!-- journey 3 -->
+         <li class="mb-12 ms-6">
+            <span class="absolute flex items-center justify-center w-6 h-6 bg-palette-1 rounded-full -start-3 ring-8 ring-white">
+              <svg class="w-2.5 h-2.5 text-palette-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+              </svg>
+            </span>
+            <h3 class="text-xl font-semibold text-gray-900" data-aos="fade-left">Growave</h3>
+            <time class="block mb-4 text-sm text-gray-500" data-aos="fade-left">Released on Juni, 2025</time>
+            <p class="mb-3 text-sm text-gray-600" data-aos="fade-left">Volunteer Engagement in Mangrove Planting</p>
+
+                <!-- Foto Utama + Foto Tambahan -->
+            <div class="flex items-start gap-4 mt-4">
+              <!-- Foto Utama -->
+              <img src="{{ asset('dokum/growave1.jpg') }}" 
+                  class="rounded-md w-56 max-w-sm" 
+                  loading="lazy"
+                  alt="Growave1" 
+                  data-aos="fade-left"
+                  data-aos-delay="0"
+                  data-aos-duration="800"
+                  >
+
+              <!-- Foto Tambahan (hanya tampil di desktop) -->
+              <div class="hidden sm:flex flex-row gap-4">
+                <img src="{{ asset('dokum/growave2.jpg') }}" 
+                    class="rounded-md w-56 max-w-sm"
+                    loading="lazy" 
+                    alt="Growave2" 
+                    data-aos="fade-left"
+                    data-aos-delay="500"
+                    data-aos-duration="800"
+                    >
+
+                <img src="{{ asset('dokum/growave3.jpg') }}" 
+                    class="rounded-md w-56 max-w-sm" 
+                    loading="lazy"
+                    alt="Growave3" 
+                    data-aos="fade-left"
+                    data-aos-delay="1000"
+                    data-aos-duration="800"
+                    >
+              </div>
+            </div>
+          </li>   
+
+          <!-- journey 4 -->
+          <li class="mb-12 ms-6">
+            <span class="absolute flex items-center justify-center w-6 h-6 bg-palette-1 rounded-full -start-3 ring-8 ring-white">
+              <svg class="w-2.5 h-2.5 text-palette-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+              </svg>
+            </span>
+            <h3 class="text-xl font-semibold text-gray-900" data-aos="fade-left">Greenovation</h3>
+            <time class="block mb-4 text-sm text-gray-500" data-aos="fade-left">Released on Juni, 2025</time>
+            <p class="mb-3 text-sm text-gray-600" data-aos="fade-left">Grow Action for Volunteer Engagement in Mangrove Planting</p>
+
+                <!-- Foto Utama + Foto Tambahan -->
+            <div class="flex items-start gap-4 mt-4">
+              <!-- Foto Utama -->
+              <img src="{{ asset('dokum/greenovation_batch1_2.jpg') }}" 
+                  class="rounded-md w-56 max-w-sm"
+                  loading="lazy" 
+                  alt="Greenovation1" 
+                  data-aos="fade-left"
+                  data-aos-delay="0"
+                  data-aos-duration="800"
+                  >
+
+              <!-- Foto Tambahan (hanya tampil di desktop) -->
+              <div class="hidden sm:flex flex-row gap-4">
+                <img src="{{ asset('dokum/greenovation_batch1_1.jpg') }}" 
+                    class="rounded-md w-56 max-w-sm" 
+                    loading="lazy"
+                    alt="Greenovation2" 
+                    data-aos="fade-left"
+                    data-aos-delay="500"
+                    data-aos-duration="800"
+                    >
+
+                <img src="{{ asset('dokum/greenovation_batch3_3.jpg') }}" 
+                    class="rounded-md w-56 max-w-sm" 
+                    loading="lazy"
+                    alt="Greenovation3" 
+                    data-aos="fade-left"
+                    data-aos-delay="1000"
+                    data-aos-duration="800"
+                    >
+              </div>
+            </div>
+          </li>   
       </ol>
     </div>
   </div>
@@ -309,7 +469,7 @@
     <div class="lg:w-1/2 space-y-4" x-data>
       
       <!-- accordion 1 -->
-      <div class="border-b pb-4" x-data="{ open: false }" data-aos="zoom-out-down">
+      <div class="border-b pb-4" x-data="{ open: false }" data-aos="zoom-out-down"  data-aos-delay="0" data-aos-duration="800">
         <button @click="open = !open" class="flex justify-between w-full text-left text-sm md:text-base font-medium text-gray-800">
           What is Green Generation?
           <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -322,7 +482,7 @@
       </div>
 
       <!-- accordion 2 -->
-      <div class="border-b pb-4" x-data="{ open: false }" data-aos="zoom-out-down">
+      <div class="border-b pb-4" x-data="{ open: false }" data-aos="zoom-out-down" data-aos-delay="500" data-aos-duration="800">
         <button @click="open = !open" class="flex justify-between w-full text-left text-sm md:text-base font-medium text-gray-800">
           How to join event Green Generation Surabaya?
           <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -331,6 +491,19 @@
         </button>
         <div x-show="open" x-transition class="mt-3 text-gray-600 text-sm">
           You can follow our social media and register during our open recruitment period, which is announced periodically.
+        </div>
+      </div>
+
+      <!-- accordion 3 -->
+      <div class="border-b pb-4" x-data="{ open: false }" data-aos="zoom-out-down" data-aos-delay="1000" data-aos-duration="800">
+        <button @click="open = !open" class="flex justify-between w-full text-left text-sm md:text-base font-medium text-gray-800">
+          How do I know if my registration is successful?
+          <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div x-show="open" x-transition class="mt-3 text-gray-600 text-sm">
+          After you register, you will receive a confirmation email with further details.
         </div>
       </div>
 

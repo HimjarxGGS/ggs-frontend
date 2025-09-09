@@ -40,7 +40,7 @@
         <a href="/blog" class="nav-link block py-4 text-gray-500 font-semibold hover:text-[#5e3929] transition duration-200">Blog</a>
         
         <div class="mt-6">
-          <a href="">
+          <a href="/login">
             <button class="w-72 bg-palette-5 hover:bg-[#5e3929] text-white font-light py-2 rounded-3xl transition duration-200">
                 Sign in
             </button>

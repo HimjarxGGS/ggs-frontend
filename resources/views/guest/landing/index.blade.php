@@ -19,24 +19,28 @@
 
     <!-- button mobile -->
     <div class="mt-6 md:hidden">
-      <button class="bg-palette-5 hover:bg-palette-1 text-white font-extralight py-2 px-14 rounded-3xl ease-in-out transition duration-200 flex items-center gap-2">
-        <span class="text-sm">View Event</span>
-      </button>
+      <a href="/event">
+        <button class="bg-palette-5 hover:bg-palette-1 text-white font-extralight py-2 px-14 rounded-3xl ease-in-out transition duration-200 flex items-center gap-2">
+          <span class="text-sm">View Event</span>
+        </button>
+      </a>
     </div>
   </div>
 
   <!-- button Desktop -->
   <div class="hidden lg:flex items-center mt-6 ml-20">
-    <button class="bg-palette-5 text-white font-normal py-2 px-20 rounded-3xl flex items-center gap-2 ease-in-out transition duration-300 hover:shadow-lg hover:shadow-gray-600">
-      <span>View Event</span>
-    </button>
+    <a href="/event">
+      <button class="bg-palette-5 text-white font-normal py-2 px-20 rounded-3xl flex items-center gap-2 ease-in-out transition duration-300 hover:shadow-lg hover:shadow-gray-600">
+        <span>View Event</span>
+      </button>
+    </a>
   </div>
 </section>
 
 <!-- end Hero Section -->
 
 <!-- start Section -->
-<section class="w-full px-10 md:px-24 py-16">
+<section class="w-full px-7 md:px-24 py-16">
   <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10">
 
     <!-- gambar kiri -->
@@ -49,15 +53,15 @@
       
       <!-- box 1 -->
       <div class="flex flex-col items-center text-center">
-        <img src="{{ asset('icons/Experience.png') }}" alt="icon" class="w-12 h-12 md:w-16 md:h-16 mb-2" />
+        <img src="{{ asset('icons/Experience.png') }}" alt="icon" class="w-10 h-10 md:w-16 md:h-16 mb-2" />
         <h3 class="text-xl md:text-2xl font-bold text-palette-4 italic">100+</h3>
         <p class="text-sm md:text-base text-gray-700">Partner Organizations</p>
       </div>
 
       <!-- box 2 -->
       <div class="flex flex-col items-center text-center">
-        <img src="{{ asset('icons/Partner Organizations.png') }}" alt="icon" class="w-12 h-12 md:w-16 md:h-16 mb-2" />
-        <h3 class="text-xl md:text-2xl font-bold text-palette-4 italic">100,000+</h3>
+        <img src="{{ asset('icons/Partner Organizations.png') }}" alt="icon" class="w-10 h-10 md:w-16 md:h-16 mb-2" />
+        <h3 class="text-xl md:text-2xl font-bold text-palette-4 italic">50+</h3>
         <p class="text-sm md:text-base text-gray-700">Experience Every Year</p>
       </div>
 
@@ -66,9 +70,8 @@
 </section>
 
 <!-- Section card BPH Start-->
-<section>
-  <section class="w-full py-10 overflow-x-auto px-10 md:px-6 scrollbar-hide">
-    <div class="flex gap-6 w-max">
+  <section class="w-full py-10 overflow-x-auto px-5 md:px-10 scrollbar-hide">
+    <div class="flex gap-3 w-max">
 
       <div class="flex flex-col md:flex-row bg-white rounded-3xl shadow-lg overflow-hidden w-[350px] md:w-[700px] ease-in-out transition duration-500 hover:shadow-lg hover:shadow-gray-600">
         <img src="{{ asset('images/dummyphoto.png') }}" alt="" class="w-full md:w-1/2 h-80 object-cover" />
