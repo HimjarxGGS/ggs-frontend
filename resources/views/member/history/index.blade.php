@@ -16,7 +16,7 @@
             <div class="flex flex-col">
                 <label class="text-sm font-medium text-gray-700 mb-1">Tanggal</label>
                 <input type="date" name="tanggal" value="{{ request('tanggal') }}" 
-                    class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-[#A56B46] focus:border-[#A56B46]" />
+                    class="border border-gray-300 rounded-3xl px-5 py-2 text-sm focus:ring-[#A56B46] focus:border-[#A56B46]" />
             </div>
 
             {{-- Status --}}
@@ -34,10 +34,10 @@
             <div class="flex flex-col items-end">
                 <div class="flex gap-3">
                     <button type="submit" 
-                        class="bg-[#A56B46] text-white px-5 py-2 rounded-lg hover:bg-[#8a5738] transition">Search</button>
+                        class="bg-[#A56B46] text-white px-10 py-2 rounded-3xl hover:bg-[#8a5738] transition">Search</button>
                     
                     <a href="{{ route('history.index') }}" 
-                       class="bg-gray-200 text-black px-5 py-2 rounded-lg hover:bg-gray-300 transition">Clear</a>
+                       class="bg-gray-200 text-black px-10 py-2 rounded-3xl hover:bg-gray-300 transition">Clear</a>
                 </div>
             </div>
         </div>
@@ -66,7 +66,7 @@
             </div>
             <div class="flex justify-end pr-4">
                 <a href="{{ route('history.show', $item->id) }}" 
-                class="bg-[#A56B46] text-white px-6 py-1.5 rounded-lg hover:bg-[#8a5738] transition">
+                class="bg-[#A56B46] text-white px-6 py-1.5 rounded-3xl hover:bg-[#8a5738] transition">
                     Detail
                 </a>
             </div>
@@ -75,9 +75,70 @@
     </div>
 
     {{-- Pagination --}}
-    <div class="flex justify-center mt-10">
-        {{ $histories->links() }}
+   <!-- Pagination -->
+@if ($histories->hasPages())
+    <div class="flex justify-center mt-10 space-x-2">
+        <!-- link ke hal pertama -->
+        @if ($histories->onFirstPage())
+            <span class="px-4 py-2 text-gray-400 bg-gray-100 rounded-lg cursor-not-allowed shadow">
+                First
+            </span>
+        @else
+            <a href="{{ $histories->url(1) }}" 
+            class="px-4 py-2 bg-white text-gray-700 rounded-lg shadow hover:bg-gray-200 transition duration-200">
+                First
+            </a>
+        @endif
+
+        <!-- link paginate ke hal sebelumnya -->
+        @if ($histories->onFirstPage())
+            <span class="px-4 py-2 text-gray-400 bg-gray-100 rounded-lg cursor-not-allowed shadow">
+                Prev
+            </span>
+        @else
+            <a href="{{ $histories->previousPageUrl() }}" 
+            class="px-4 py-2 bg-white text-gray-700 rounded-lg shadow hover:bg-gray-200 transition duration-200">
+                Prev
+            </a>
+        @endif
+
+        <!-- elemen paginate -->
+        @foreach ($histories->getUrlRange(1, $histories->lastPage()) as $page => $url)
+            @if ($page == $histories->currentPage())
+                <span class="px-4 py-2 bg-palette-3 text-white rounded-lg shadow">{{ $page }}</span>
+            @else
+                <a href="{{ $url }}" 
+                class="px-4 py-2 bg-white text-gray-700 rounded-lg shadow hover:bg-gray-200 transition duration-200">
+                    {{ $page }}
+                </a>
+            @endif
+        @endforeach
+
+        <!-- paginate ke hal selanjutnya -->
+        @if ($histories->hasMorePages())
+            <a href="{{ $histories->nextPageUrl() }}" 
+            class="px-4 py-2 bg-white text-gray-700 rounded-lg shadow hover:bg-gray-200 transition duration-200">
+                Next
+            </a>
+        @else
+            <span class="px-4 py-2 text-gray-400 bg-gray-100 rounded-lg cursor-not-allowed shadow">
+                Next
+            </span>
+        @endif
+
+        <!-- paginate ke hal akhir -->
+        @if ($histories->currentPage() == $histories->lastPage())
+            <span class="px-4 py-2 text-gray-400 bg-gray-100 rounded-lg cursor-not-allowed shadow">
+                Last
+            </span>
+        @else
+            <a href="{{ $histories->url($histories->lastPage()) }}" 
+            class="px-4 py-2 bg-white text-gray-700 rounded-lg shadow hover:bg-gray-200 transition duration-200">
+                Last
+            </a>
+        @endif
     </div>
+@endif
 
 </div>
 @endsection
