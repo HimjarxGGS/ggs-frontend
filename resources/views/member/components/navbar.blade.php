@@ -17,7 +17,7 @@
 
         <!-- desktop menu -->
         <div class="hidden lg:flex flex-1 justify-center gap-x-10 items-center">
-            <a href="/" class="nav-link text-gray-500 font-semibold hover:text-palette-5 transition-transform duration-300 transform hover:scale-[1.3]">Home</a>
+            <!-- <a href="/" class="nav-link text-gray-500 font-semibold hover:text-palette-5 transition-transform duration-300 transform hover:scale-[1.3]">Home</a> -->
             <a href="/dashboard-member" class="nav-link text-gray-500 font-semibold hover:text-palette-5 transition-transform duration-300 transform hover:scale-[1.3]">Dashboard</a>
             <a href="/riwayat-pendaftaran" class="nav-link text-gray-500 font-semibold hover:text-palette-5 transition-transform duration-300 transform hover:scale-[1.3]">History</a>
             <a href="/data-diri" class="nav-link text-gray-500 font-semibold hover:text-palette-5 transition-transform duration-300 transform hover:scale-[1.3]">Data Diri</a>
@@ -35,7 +35,7 @@
 
     <!-- mobile menu -->
     <div id="mobileMenu" class="hidden lg:hidden top-[113px] w-[85%] left-1/2 -translate-x-1/2 rounded-3xl backdrop-blur-3xl shadow-md py-7 text-center z-[99] fixed">
-        <a href="/" class="nav-link block py-4 text-gray-500 font-semibold hover:text-[#5e3929] transition duration-200">Home</a>
+        <!-- <a href="/" class="nav-link block py-4 text-gray-500 font-semibold hover:text-[#5e3929] transition duration-200">Home</a> -->
         <a href="/dashboard-member" class="nav-link block py-4 text-gray-500 font-semibold hover:text-[#5e3929] transition duration-200">Dashboard</a>
         <a href="/riwayat-pendaftaran" class="nav-link block py-4 text-gray-500 font-semibold hover:text-[#5e3929] transition duration-200">History</a>
         <a href="/data-diri" class="nav-link block py-4 text-gray-500 font-semibold hover:text-[#5e3929] transition duration-200">Data Diri</a>

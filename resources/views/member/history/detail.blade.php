@@ -11,7 +11,7 @@
      </h2>
    </div>
 
-   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
 
        <!-- align left -->
        <div class="space-y-9">

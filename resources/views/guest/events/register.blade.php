@@ -82,7 +82,7 @@
                             <input type="text" id="telepon" name="telepon" placeholder="Enter your phone number"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-palette-2 focus:border-palette-2 block w-full p-2.5 transition ease-in-out duration-300 pl-5">
                         </div>
-
+                        
                         <!-- riwayat penyakit -->
                         <div class="mb-4">
                             <label for="penyakit" class="block mb-2 text-sm font-medium text-gray-900 ml-4">Riwayat Penyakit</label>
@@ -90,6 +90,7 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-palette-2 focus:border-palette-2 block w-full p-2.5 transition ease-in-out duration-300 pl-5">
                         </div>
 
+                        <!-- form untuk guest dimulai dari sini -->
                         <!-- bukti share poster -->
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2 ml-4">Bukti Share Poster</label>
@@ -130,6 +131,7 @@
                             </div>
                         </div>
 
+                        <!-- ini member gausa upload foto -->
                         <!-- upload foto -->
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2 ml-4">Upload Foto</label>
