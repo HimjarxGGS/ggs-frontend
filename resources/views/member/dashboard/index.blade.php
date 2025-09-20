@@ -49,7 +49,8 @@
         <!-- Event List -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
             @forelse ($events as $event)
-                <a href="" class="block group">
+                <a href="{{ route('member.events.show', $event->id) }}" class="block group">
+
                     <div class="bg-white rounded-xl cent shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500">
                         <div class="relative">
                             <!-- Cover -->
