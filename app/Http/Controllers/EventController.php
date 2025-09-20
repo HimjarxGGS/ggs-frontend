@@ -57,6 +57,13 @@ class EventController extends Controller
     public function show( $id){
         $event = Event::findOrFail($id);
 
-        return view('guest.events.detail', compact('event'));
+        // Ambil 3 event lain
+        $moreEvents = Event::where('id', '!=', $event->id)
+                        ->where('status', 'active')
+                       ->latest()
+                       ->take(3)
+                       ->get();
+
+        return view('guest.events.detail', compact('event', 'moreEvents'));
     }
 }

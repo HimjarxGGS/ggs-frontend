@@ -60,7 +60,6 @@
     </div>
 
     <!-- Card Grid -->
-    <!-- Card Grid -->
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
     @forelse ($events as $event)
     <a href="{{ route('events.show', ['id' => $event->id]) }}" class="block group w-full">
@@ -106,7 +105,6 @@
     </p>
     @endforelse
 </div>
-
 
     <!-- Pagination -->
     <div class="mt-10 flex justify-center">
