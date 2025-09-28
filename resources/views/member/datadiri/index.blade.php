@@ -63,10 +63,18 @@
                             </label>
                             <input type="file" name="foto" id="fotoInput" class="hidden" accept="image/*">
 
-                           <img id="previewImage" 
+                     <img id="previewImage" 
      src="{{ asset('images/default-photo.png') }}" 
      alt="Preview" 
-     class="rounded shadow w-96 h-60 object-cover">
+     class="rounded shadow object-cover
+            w-[420px]      
+            max-h-[350px]  
+            mt-2           
+            ml-4           
+            z-10
+            overflow-visible">
+
+
 
 
 

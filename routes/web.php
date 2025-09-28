@@ -50,6 +50,11 @@ Route::middleware('auth')->group(function () {
 Route::get('/dashboard-member', [DashboardController::class, 'index'])
      ->name('member.dashboard.index');
 
+     // detail event untuk member
+    Route::get('/dashboard-member/events/{id}', [EventController::class, 'showMember'])
+        ->name('member.events.show');
+
+
    // History event
     Route::get('/riwayat-pendaftaran', [HistoryController::class, 'index'])->name('history.index');
     Route::get('/riwayat-pendaftaran/{id}', [HistoryController::class, 'show'])->name('history.show');
