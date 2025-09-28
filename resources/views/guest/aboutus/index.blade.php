@@ -223,12 +223,11 @@
           <time class="block mb-4 text-sm text-gray-500" data-aos="fade-left">Released on Januari, 2025</time>
           <p class="mb-3 text-sm text-gray-600" data-aos="fade-left">Grow Action for Volunteer Engagement in Taman Absari Surabaya</p>
 
-          <!-- Foto Utama + Foto Tambahan -->
+          <!-- foto -->
           <div class="flex items-start gap-4 mt-4">
-            <!-- Foto Utama -->
             <a href="{{ asset('dokum/ggberaksi1.jpg') }}" target="_blank">
               <img src="{{ asset('dokum/ggberaksi1.jpg') }}" 
-                  class="rounded-md w-56 max-w-sm" 
+                  class="rounded-3xl w-56 max-w-sm" 
                   loading="lazy"
                   alt="GG Beraksi" 
                   data-aos="fade-left"
@@ -236,22 +235,22 @@
                   data-aos-duration="800"
                   >
             </a>
+
             <div class="hidden sm:flex flex-row gap-4">
               <a href="{{ asset('dokum/ggberaksi3.jpg') }}" target="_blank">
                 <img src="{{ asset('dokum/ggberaksi3.jpg') }}" 
                     loading="lazy"
-                    class="rounded-md w-56 max-w-sm" 
+                    class="rounded-3xl w-56 max-w-sm" 
                     alt="GG Beraksi 2" 
                     data-aos="fade-left"
                     data-aos-delay="500"
                     data-aos-duration="800"
                 >
               </a>
-
               <a href="{{ asset('dokum/ggberaksi4.jpg') }}" target="_blank">
                 <img src="{{ asset('dokum/ggberaksi4.jpg') }}" 
                     loading="lazy"
-                    class="rounded-md w-56 max-w-sm" 
+                    class="rounded-3xl w-56 max-w-sm" 
                     alt="GG Beraksi 3" 
                     data-aos="fade-left"
                     data-aos-delay="1000"
@@ -273,40 +272,45 @@
           <time class="block mb-4 text-sm text-gray-500" data-aos="fade-left">Released on Februari, 2025</time>
           <p class="mb-3 text-sm text-gray-600" data-aos="fade-left">An environmental movement to transform waste into something more meaningful.</p>
 
-            <!-- Foto Utama + Foto Tambahan -->
+          <!-- foto -->
           <div class="flex items-start gap-4 mt-4">
-            <!-- Foto Utama -->
-            <img src="{{ asset('dokum/trashformerpart1-1.jpg') }}" 
-                loading="lazy"
-                class="rounded-md w-56 max-w-sm" 
-                alt="trashformer" 
-                data-aos="fade-left"
-                data-aos-delay="0"
-                data-aos-duration="800"
-                >
-
-            <!-- Foto Tambahan (hanya tampil di desktop) -->
-            <div class="hidden sm:flex flex-row gap-4">
-              <img src="{{ asset('dokum/trashformerpart2-1.jpg') }}" 
-                  class="rounded-md w-56 max-w-sm" 
-                  loading="lazy"
-                  alt="trashformer 2" 
-                  data-aos="fade-left"
-                  data-aos-delay="500"
-                  data-aos-duration="800"
+            
+              <a href="{{ asset('dokum/trashformerpart1-1.jpg') }}" target="_blank">
+                <img src="{{ asset('dokum/trashformerpart1-1.jpg') }}" 
+                    loading="lazy"
+                    class="rounded-3xl w-56 max-w-sm" 
+                    alt="trashformer" 
+                    data-aos="fade-left"
+                    data-aos-delay="0"
+                    data-aos-duration="800"
                   >
+              </a>
 
-              <img src="{{ asset('dokum/trashformerpart2-2.jpg') }}" 
-                  class="rounded-md w-56 max-w-sm" 
-                  loading="lazy"
-                  alt="trashformer 3" 
-                  data-aos="fade-left"
-                  data-aos-delay="1000"
-                  data-aos-duration="800"
+              <div class="hidden sm:flex flex-row gap-4">
+              <a href="{{ asset('dokum/trashformerpart2-1.jpg') }}" target="_blank">
+                  <img src="{{ asset('dokum/trashformerpart2-1.jpg') }}" 
+                      class="rounded-3xl w-56 max-w-sm" 
+                      loading="lazy"
+                      alt="trashformer 2" 
+                      data-aos="fade-left"
+                      data-aos-delay="500"
+                      data-aos-duration="800"
                   >
+              </a>
+                      
+              <a href="{{ asset('dokum/trashformerpart2-2.jpg') }}" target="_blank">
+                  <img src="{{ asset('dokum/trashformerpart2-2.jpg') }}" 
+                      class="rounded-3xl w-56 max-w-sm" 
+                      loading="lazy"
+                      alt="trashformer 3" 
+                      data-aos="fade-left"
+                      data-aos-delay="1000"
+                      data-aos-duration="800"
+                  >
+              </a>
             </div>
           </div>
-         </li>
+        </li>
         
          <!-- journey 3 -->
          <li class="mb-12 ms-6">
@@ -319,37 +323,43 @@
             <time class="block mb-4 text-sm text-gray-500" data-aos="fade-left">Released on Juni, 2025</time>
             <p class="mb-3 text-sm text-gray-600" data-aos="fade-left">Volunteer Engagement in Mangrove Planting</p>
 
-                <!-- Foto Utama + Foto Tambahan -->
+            <!-- foto -->
             <div class="flex items-start gap-4 mt-4">
-              <!-- Foto Utama -->
-              <img src="{{ asset('dokum/growave1.jpg') }}" 
-                  class="rounded-md w-56 max-w-sm" 
-                  loading="lazy"
-                  alt="Growave1" 
-                  data-aos="fade-left"
-                  data-aos-delay="0"
-                  data-aos-duration="800"
-                  >
-
-              <!-- Foto Tambahan (hanya tampil di desktop) -->
-              <div class="hidden sm:flex flex-row gap-4">
-                <img src="{{ asset('dokum/growave2.jpg') }}" 
-                    class="rounded-md w-56 max-w-sm"
-                    loading="lazy" 
-                    alt="Growave2" 
-                    data-aos="fade-left"
-                    data-aos-delay="500"
-                    data-aos-duration="800"
+              
+                <a href="{{ asset('dokum/growave1.jpg') }}" target="_blank">
+                  <img src="{{ asset('dokum/growave1.jpg') }}" 
+                      class="rounded-3xl w-56 max-w-sm" 
+                      loading="lazy"
+                      alt="Growave1" 
+                      data-aos="fade-left"
+                      data-aos-delay="0"
+                      data-aos-duration="800"
                     >
+                </a>
 
-                <img src="{{ asset('dokum/growave3.jpg') }}" 
-                    class="rounded-md w-56 max-w-sm" 
-                    loading="lazy"
-                    alt="Growave3" 
-                    data-aos="fade-left"
-                    data-aos-delay="1000"
-                    data-aos-duration="800"
-                    >
+                <div class="hidden sm:flex flex-row gap-4">
+
+                <a href="{{ asset('dokum/growave2.jpg') }}" target="_blank">
+                    <img src="{{ asset('dokum/growave2.jpg') }}" 
+                        class="rounded-3xl w-56 max-w-sm"
+                        loading="lazy" 
+                        alt="Growave2" 
+                        data-aos="fade-left"
+                        data-aos-delay="500"
+                        data-aos-duration="800"
+                      >
+                </a>
+
+                <a href="{{ asset('dokum/growave3.jpg') }}" target="_blank">
+                    <img src="{{ asset('dokum/growave3.jpg') }}" 
+                        class="rounded-3xl w-56 max-w-sm" 
+                        loading="lazy"
+                        alt="Growave3" 
+                        data-aos="fade-left"
+                        data-aos-delay="1000"
+                        data-aos-duration="800"
+                        >
+                  </a>
               </div>
             </div>
           </li>   
@@ -365,37 +375,42 @@
             <time class="block mb-4 text-sm text-gray-500" data-aos="fade-left">Released on Juni, 2025</time>
             <p class="mb-3 text-sm text-gray-600" data-aos="fade-left">Grow Action for Volunteer Engagement in Mangrove Planting</p>
 
-                <!-- Foto Utama + Foto Tambahan -->
+            <!-- foto -->
             <div class="flex items-start gap-4 mt-4">
-              <!-- Foto Utama -->
-              <img src="{{ asset('dokum/greenovation_batch1_2.jpg') }}" 
-                  class="rounded-md w-56 max-w-sm"
-                  loading="lazy" 
-                  alt="Greenovation1" 
-                  data-aos="fade-left"
-                  data-aos-delay="0"
-                  data-aos-duration="800"
+              
+              <a href="{{ asset('dokum/greenovation_batch1_2.jpg') }}" target="_blank">
+                <img src="{{ asset('dokum/greenovation_batch1_2.jpg') }}" 
+                    class="rounded-3xl w-56 max-w-sm"
+                    loading="lazy" 
+                    alt="Greenovation1" 
+                    data-aos="fade-left"
+                    data-aos-delay="0"
+                    data-aos-duration="800"
                   >
+              </a>
 
-              <!-- Foto Tambahan (hanya tampil di desktop) -->
               <div class="hidden sm:flex flex-row gap-4">
-                <img src="{{ asset('dokum/greenovation_batch1_1.jpg') }}" 
-                    class="rounded-md w-56 max-w-sm" 
-                    loading="lazy"
-                    alt="Greenovation2" 
-                    data-aos="fade-left"
-                    data-aos-delay="500"
-                    data-aos-duration="800"
-                    >
+              <a href="{{ asset('dokum/greenovation_batch1_1.jpg') }}" target="_blank">
+                  <img src="{{ asset('dokum/greenovation_batch1_1.jpg') }}" 
+                      class="rounded-3xl w-56 max-w-sm" 
+                      loading="lazy"
+                      alt="Greenovation2" 
+                      data-aos="fade-left"
+                      data-aos-delay="500"
+                      data-aos-duration="800"
+                      >
+              </a>
 
-                <img src="{{ asset('dokum/greenovation_batch3_3.jpg') }}" 
-                    class="rounded-md w-56 max-w-sm" 
-                    loading="lazy"
-                    alt="Greenovation3" 
-                    data-aos="fade-left"
-                    data-aos-delay="1000"
-                    data-aos-duration="800"
-                    >
+              <a href="{{ asset('dokum/greenovation_batch3_3.jpg') }}" target="_blank">
+                  <img src="{{ asset('dokum/greenovation_batch3_3.jpg') }}" 
+                      class="rounded-3xl w-64 max-w-sm" 
+                      loading="lazy"
+                      alt="Greenovation3" 
+                      data-aos="fade-left"
+                      data-aos-delay="1000"
+                      data-aos-duration="800"
+                      >
+              </a>
               </div>
             </div>
           </li>   
