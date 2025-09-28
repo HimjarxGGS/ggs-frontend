@@ -27,9 +27,10 @@
 
         <!-- search and short -->
         <form method="GET" 
-              action="{{ route('member.dashboard.index') }}" 
-              class="flex flex-col md:flex-row md:items-center md:space-x-6 mb-8 space-y-4 md:space-y-0">
+            action="{{ route('member.dashboard.index') }}" 
+            class="flex flex-col md:flex-row md:items-center md:space-x-6 mb-8 space-y-4 md:space-y-0">
             
+            <!-- input search -->
             <input 
                 type="text" 
                 name="search" 
@@ -38,32 +39,38 @@
                 class="border border-gray-300 rounded-lg px-4 py-2 w-80 md:w-96" 
             />
 
-            <!-- dropdown -->
-            <div x-data="{ open: false }" class="relative w-full md:w-auto">
-                <button type="button" 
-                        @click="open = !open"
-                        class="border border-gray-300 rounded-lg px-4 py-2 w-full md:w-auto flex justify-between items-center">
-                    {{ request('sort') == 'oldest' ? 'Event Terlama' : 'Event Terbaru' }}
-                    <svg class="w-4 h-4 ml-2 transform transition-transform duration-200" 
-                         :class="{ 'rotate-180': open }" 
-                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
+            <!-- label + dropdown -->
+            <div class="flex items-center space-x-3">
+                <span class="text-gray-600 text-sm font-medium whitespace-nowrap">
+                    Urut berdasarkan:
+                </span>
 
-                <div x-show="open"
-                     @click.away="open = false"
-                     x-transition:enter="transition ease-out duration-200"
-                     x-transition:enter-start="opacity-0 scale-95"
-                     x-transition:enter-end="opacity-100 scale-100"
-                     x-transition:leave="transition ease-in duration-150"
-                     x-transition:leave-start="opacity-100 scale-100"
-                     x-transition:leave-end="opacity-0 scale-95"
-                     class="absolute z-10 mt-2 w-full md:w-48 bg-white border border-gray-200 rounded-lg shadow-lg">
-                    <a href="{{ route('member.dashboard.index', ['sort' => 'latest']) }}"
-                       class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Event Terbaru</a>
-                    <a href="{{ route('member.dashboard.index', ['sort' => 'oldest']) }}"
-                       class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Event Terlama</a>
+                <div x-data="{ open: false }" class="relative w-full md:w-auto">
+                    <button type="button" 
+                            @click="open = !open"
+                            class="border border-gray-300 rounded-lg px-4 py-2 w-full md:w-auto flex justify-between items-center">
+                        {{ request('sort') == 'oldest' ? 'Event Terlama' : 'Event Terbaru' }}
+                        <svg class="w-4 h-4 ml-2 transform transition-transform duration-200" 
+                            :class="{ 'rotate-180': open }" 
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+
+                    <div x-show="open"
+                        @click.away="open = false"
+                        x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 scale-95"
+                        x-transition:enter-end="opacity-100 scale-100"
+                        x-transition:leave="transition ease-in duration-150"
+                        x-transition:leave-start="opacity-100 scale-100"
+                        x-transition:leave-end="opacity-0 scale-95"
+                        class="absolute z-10 mt-2 w-full md:w-48 bg-white border border-gray-200 rounded-lg shadow-lg">
+                        <a href="{{ route('member.dashboard.index', ['sort' => 'latest']) }}"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Event Terbaru</a>
+                        <a href="{{ route('member.dashboard.index', ['sort' => 'oldest']) }}"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Event Terlama</a>
+                    </div>
                 </div>
             </div>
         </form>
