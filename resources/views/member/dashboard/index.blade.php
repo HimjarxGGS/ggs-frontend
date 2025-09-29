@@ -120,65 +120,129 @@
             @endforelse
         </div>
 
-        <!-- paginate -->
+       <!-- paginate -->
         @if ($events->hasPages())
-            <div class="flex justify-center mt-10 space-x-2">
+            <div class="flex justify-center mt-10">
+                <div class="flex space-x-2">
 
-                
-                @if ($events->onFirstPage())
-                    <span class="px-4 py-2 text-gray-400 bg-gray-100 rounded-lg cursor-not-allowed shadow">
-                        First
-                    </span>
-                @else
-                    <a href="{{ $events->url(1) }}" 
-                       class="px-4 py-2 bg-white text-gray-700 rounded-lg shadow hover:bg-gray-200 transition duration-200">
-                        First
-                    </a>
-                @endif
+                    <!-- mobile -->
+                    <div class="flex md:hidden space-x-2 text-sm">
 
-                @if ($events->onFirstPage())
-                    <span class="px-4 py-2 text-gray-400 bg-gray-100 rounded-lg cursor-not-allowed shadow">
-                        Prev
-                    </span>
-                @else
-                    <a href="{{ $events->previousPageUrl() }}" 
-                       class="px-4 py-2 bg-white text-gray-700 rounded-lg shadow hover:bg-gray-200 transition duration-200">
-                        Prev
-                    </a>
-                @endif
+                        <!-- first -->
+                        @if ($events->onFirstPage())
+                            <span class="px-3 py-2 text-gray-400 bg-gray-100 rounded-lg cursor-not-allowed shadow">First</span>
+                        @else
+                            <a href="{{ $events->url(1) }}"
+                            class="px-3 py-2 bg-white text-gray-700 rounded-lg shadow hover:bg-gray-200">First</a>
+                        @endif
 
-                @foreach ($events->getUrlRange(1, $events->lastPage()) as $page => $url)
-                    @if ($page == $events->currentPage())
-                        <span class="px-4 py-2 bg-palette-3 text-white rounded-lg shadow">{{ $page }}</span>
-                    @else
-                        <a href="{{ $url }}" 
-                           class="px-4 py-2 bg-white text-gray-700 rounded-lg shadow hover:bg-gray-200 transition duration-200">
-                            {{ $page }}
-                        </a>
-                    @endif
-                @endforeach
+                        <!-- prev -->
+                        @if ($events->onFirstPage())
+                            <span class="px-3 py-2 text-gray-400 bg-gray-100 rounded-lg cursor-not-allowed shadow">Prev</span>
+                        @else
+                            <a href="{{ $events->previousPageUrl() }}"
+                            class="px-3 py-2 bg-white text-gray-700 rounded-lg shadow hover:bg-gray-200">Prev</a>
+                        @endif
 
-                @if ($events->hasMorePages())
-                    <a href="{{ $events->nextPageUrl() }}" 
-                       class="px-4 py-2 bg-white text-gray-700 rounded-lg shadow hover:bg-gray-200 transition duration-200">
-                        Next
-                    </a>
-                @else
-                    <span class="px-4 py-2 text-gray-400 bg-gray-100 rounded-lg cursor-not-allowed shadow">
-                        Next
-                    </span>
-                @endif
+                        <!-- current -->
+                        <span class="px-3 py-2 bg-palette-3 text-white rounded-lg shadow">
+                            {{ $events->currentPage() }}
+                        </span>
 
-                @if ($events->currentPage() == $events->lastPage())
-                    <span class="px-4 py-2 text-gray-400 bg-gray-100 rounded-lg cursor-not-allowed shadow">
-                        Last
-                    </span>
-                @else
-                    <a href="{{ $events->url($events->lastPage()) }}" 
-                       class="px-4 py-2 bg-white text-gray-700 rounded-lg shadow hover:bg-gray-200 transition duration-200">
-                        Last
-                    </a>
-                @endif
+                        <!-- next page number -->
+                        @if ($events->currentPage() < $events->lastPage())
+                            <a href="{{ $events->url($events->currentPage() + 1) }}"
+                            class="px-3 py-2 bg-white text-gray-700 rounded-lg shadow hover:bg-gray-200">
+                                {{ $events->currentPage() + 1 }}
+                            </a>
+                        @endif
+
+                        <!-- next -->
+                        @if ($events->hasMorePages())
+                            <a href="{{ $events->nextPageUrl() }}"
+                            class="px-3 py-2 bg-white text-gray-700 rounded-lg shadow hover:bg-gray-200">Next</a>
+                        @else
+                            <span class="px-3 py-2 text-gray-400 bg-gray-100 rounded-lg cursor-not-allowed shadow">Next</span>
+                        @endif
+
+                        <!-- last -->
+                        @if ($events->currentPage() == $events->lastPage())
+                            <span class="px-3 py-2 text-gray-400 bg-gray-100 rounded-lg cursor-not-allowed shadow">Last</span>
+                        @else
+                            <a href="{{ $events->url($events->lastPage()) }}"
+                            class="px-3 py-2 bg-white text-gray-700 rounded-lg shadow hover:bg-gray-200">Last</a>
+                        @endif
+                    </div>
+
+                    <!-- desktop -->
+                    <div class="hidden md:flex space-x-2">
+                        <!-- first -->
+                        @if ($events->onFirstPage())
+                            <span class="px-4 py-2 text-gray-400 bg-gray-100 rounded-lg cursor-not-allowed shadow">First</span>
+                        @else
+                            <a href="{{ $events->url(1) }}" 
+                            class="px-4 py-2 bg-white text-gray-700 rounded-lg shadow hover:bg-gray-200">First</a>
+                        @endif
+
+                        <!-- prev -->
+                        @if ($events->onFirstPage())
+                            <span class="px-4 py-2 text-gray-400 bg-gray-100 rounded-lg cursor-not-allowed shadow">Prev</span>
+                        @else
+                            <a href="{{ $events->previousPageUrl() }}" 
+                            class="px-4 py-2 bg-white text-gray-700 rounded-lg shadow hover:bg-gray-200">Prev</a>
+                        @endif
+
+                        <!-- no page with ellipsis -->
+                        @php
+                            $start = max(1, $events->currentPage() - 2);
+                            $end = min($events->lastPage(), $events->currentPage() + 2);
+                        @endphp
+
+                        <!-- jika halaman lebih besar dari 1 -->
+                        @if ($start > 1)
+                            <a href="{{ $events->url(1) }}" 
+                            class="px-4 py-2 bg-white text-gray-700 rounded-lg shadow hover:bg-gray-200">1</a>
+                            @if ($start > 2)
+                                <span class="px-3 py-2">…</span>
+                            @endif
+                        @endif
+
+                        <!-- halaman aktif -+ 2 -->
+                        @for ($i = $start; $i <= $end; $i++)
+                            @if ($i == $events->currentPage())
+                                <span class="px-4 py-2 bg-palette-3 text-white rounded-lg shadow">{{ $i }}</span>
+                            @else
+                                <a href="{{ $events->url($i) }}" 
+                                class="px-4 py-2 bg-white text-gray-700 rounded-lg shadow hover:bg-gray-200">{{ $i }}</a>
+                            @endif
+                        @endfor
+
+                        <!-- jika halaman terakhir lebih besar dari end -->
+                        @if ($end < $events->lastPage())
+                            @if ($end < $events->lastPage() - 1)
+                                <span class="px-3 py-2">…</span>
+                            @endif
+                            <a href="{{ $events->url($events->lastPage()) }}" 
+                            class="px-4 py-2 bg-white text-gray-700 rounded-lg shadow hover:bg-gray-200">{{ $events->lastPage() }}</a>
+                        @endif
+
+                        <!-- next -->
+                        @if ($events->hasMorePages())
+                            <a href="{{ $events->nextPageUrl() }}" 
+                            class="px-4 py-2 bg-white text-gray-700 rounded-lg shadow hover:bg-gray-200">Next</a>
+                        @else
+                            <span class="px-4 py-2 text-gray-400 bg-gray-100 rounded-lg cursor-not-allowed shadow">Next</span>
+                        @endif
+
+                        <!-- last -->
+                        @if ($events->currentPage() == $events->lastPage())
+                            <span class="px-4 py-2 text-gray-400 bg-gray-100 rounded-lg cursor-not-allowed shadow">Last</span>
+                        @else
+                            <a href="{{ $events->url($events->lastPage()) }}" 
+                            class="px-4 py-2 bg-white text-gray-700 rounded-lg shadow hover:bg-gray-200">Last</a>
+                        @endif
+                    </div>
+                </div>
             </div>
         @endif
     </section>

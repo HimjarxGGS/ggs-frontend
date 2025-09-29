@@ -16,12 +16,6 @@
             <li><a href="/data-diri" class="hover:text-[#5e3929] transition duration-300">Data Diri</a></li>
           </ul>
         </div>
-        <div>
-          <h4 class="font-semibold mb-2">Resources</h4>
-          <ul class="space-y-1 text-sm text-gray-600">
-            <li><a href="/" class="hover:text-[#5e3929] transition duration-300">Home</a></li>
-          </ul>
-        </div>
       </div>
     </div>
 
@@ -46,7 +40,7 @@
       </a>
     </div>
 
-    <!-- Footer Text -->
+    <!-- footer -->
     <div class="text-center border-t pt-6 text-sm text-gray-600 px-4">
       <p class="mb-1">© GREEN GENERATION 2025</p>
       <p class="text-xs">Green Generation is a Independent Organizations<br>
