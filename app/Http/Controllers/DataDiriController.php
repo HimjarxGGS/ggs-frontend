@@ -47,7 +47,9 @@ class DataDiriController extends Controller
             'registrant_picture'=> $picturePath,
         ]);
 
-        return redirect()->route('member.datadiri.index')->with('success', 'Data diri berhasil disimpan!');
+        return view('member.layouts.succes', [
+    'message' => 'Data diri berhasil disimpan!'
+]);
     }
 
     public function update(Request $request, $id)
@@ -85,6 +87,9 @@ class DataDiriController extends Controller
             'registrant_picture'=> $pendaftar->registrant_picture,
         ]);
 
-        return redirect()->route('member.datadiri.index')->with('success', 'Data diri berhasil diperbarui!');
+        return view('member.layouts.succes', [
+    'message' => 'Data diri berhasil disimpan!'
+]);
+
     }
 }

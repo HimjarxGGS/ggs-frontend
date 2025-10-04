@@ -84,4 +84,11 @@ class EventController extends Controller
    
 }
 
+public function register($id)
+{
+    $event = Event::findOrFail($id);
+    return view('member.dashboard.register', compact('event'));
+}
+
+
 }

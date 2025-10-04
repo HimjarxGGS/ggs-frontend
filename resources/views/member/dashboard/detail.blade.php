@@ -71,7 +71,7 @@
         <!-- cta -->
         <div class="p-4 border rounded-xl shadow-md flex justify-center gap-4 mt-6">
             <!-- button daftar -->
-            <a href="{{ $event->registration_link ?? '#' }}"
+           <a href="{{ route('dashboard.register', ['id' => $event->id]) }}"
             class="px-5 md:px-6 py-3 bg-palette-5 text-white rounded-2xl shadow-md hover:bg-gray-500 transition duration-300 ease-in-out md:text-lg text-sm">
             Daftar Sekarang
             </a>

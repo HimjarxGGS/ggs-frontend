@@ -9,6 +9,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\DashboardController; 
 use App\Http\Controllers\DataDiriController;
+use App\Http\Controllers\MemberEventRegisterController;
 
 
 
@@ -42,8 +43,8 @@ Route::get('/events/{id}', [EventController::class, 'show'])->name('events.show'
 Route::get('/event/upcoming', [EventController::class, 'upcoming'])->name('events.upcoming');
 Route::get('/event/finished', [EventController::class, 'finished'])->name('events.finished');
 
-// Route::view('/event/registrasi-event','guest.events.register');
-// Route::view('/event/success-registrasi','guest.events.success');
+ Route::view('/event/registrasi-event','guest.events.register');
+ Route::view('/event/success-registrasi','guest.events.success');
 
 // route member
 Route::middleware('auth')->group(function () {
@@ -53,6 +54,15 @@ Route::get('/dashboard-member', [DashboardController::class, 'index'])
      // detail event untuk member
     Route::get('/dashboard-member/events/{id}', [EventController::class, 'showMember'])
         ->name('member.events.show');
+   
+    Route::get('/event/registrasi-event/{id}', [EventController::class, 'register'])->name('dashboard.register');
+
+    Route::middleware('auth')->group(function () {
+    Route::post('/event/{eventId}/register/member', [MemberEventRegisterController::class, 'store'])
+        ->name('member.dashboard.register');});
+
+// halaman success setelah registrasi
+Route::view('/event/success', 'member.dashboard.successEvent')->name('member.dashboard.successEvent');
 
 
    // History event
@@ -68,6 +78,11 @@ Route::get('/data-diri', [DataDiriController::class, 'index'])->name('member.dat
 Route::post('/data-diri/store', [DataDiriController::class, 'store'])->name('datadiri.store');
 // Update Data Diri
 Route::post('/data-diri/update/{id}', [DataDiriController::class, 'update'])->name('datadiri.update');
+
+Route::get('/data-diri/success', function () {
+    return view('member.layouts.succes');
+})->name('layouts.success');
+
 
 
 
