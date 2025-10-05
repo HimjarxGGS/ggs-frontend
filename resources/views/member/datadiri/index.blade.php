@@ -32,65 +32,117 @@
 
         {{-- Kolom Kanan: Form --}}
         <form action="{{ route('datadiri.store') }}" method="POST" enctype="multipart/form-data" class="w-full">
-            @csrf
+    @csrf
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8"> {{-- gap diperlebar --}}
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="md:col-span-2 space-y-8">
+            
+            {{-- Nama & Email --}}
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <input type="text" name="nama" placeholder="Nama Lengkap"
+                        value="{{ old('nama') }}"
+                        class="border rounded px-3 py-2 w-full h-11 @error('nama') border-red-500 @enderror">
+                    @error('nama')
+                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    @enderror
+                </div>
 
-                {{-- Kolom form kiri (span 2) --}}
-                <div class="md:col-span-2 space-y-8"> {{-- jarak antar field lebih lega --}}
-                    
-                    {{-- Nama & Email --}}
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <input type="text" name="nama" placeholder="Nama Lengkap" class="border rounded px-3 py-2 w-full h-11">
-                        <input type="email" name="email" placeholder="Email" class="border rounded px-3 py-2 w-full h-11">
-                    </div>
-
-                    {{-- Asal Instansi + Usia + Telepon + Penyakit + Foto dalam grid --}}
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-                        {{-- Kolom kiri (form fields) --}}
-                        <div class="md:col-span-2 space-y-8">
-                            <input type="text" name="asal_instansi" placeholder="Asal Instansi" class="border rounded px-3 py-2 w-full h-11">
-                            <input type="number" name="usia" placeholder="Usia" class="border rounded px-3 py-2 w-full h-11">
-                            <input type="text" name="telepon" placeholder="No. Telepon" class="border rounded px-3 py-2 w-full h-11">
-                            <input type="text" name="riwayat_penyakit" placeholder="Riwayat Penyakit" class="border rounded px-3 py-2 w-full h-11">
-                        </div>
-
-                        {{-- Kolom kanan (foto) --}}
-                        <div class="flex flex-col gap-6 items-start w-full">
-                            <label for="fotoInput" class="border rounded px-3 py-2 w-full h-11 flex items-center cursor-pointer bg-[#7B4B36] hover:bg-[#5e3929] text-white justify-center">
-                                Tambah Foto
-                            </label>
-                            <input type="file" name="foto" id="fotoInput" class="hidden" accept="image/*">
-
-                     <img id="previewImage" 
-     src="{{ asset('images/default-photo.png') }}" 
-     alt="Preview" 
-     class="rounded shadow object-cover
-            w-[420px]      
-            max-h-[350px]  
-            mt-2           
-            ml-4           
-            z-10
-            overflow-visible">
-
-
-
-
-
-                        </div>
-                    </div>
-
-                    {{-- Tombol --}}
-                    <div class="flex gap-8 mt-8">
-                        <button type="submit" class="bg-[#7B4B36] hover:bg-[#5e3929] text-white px-6 py-2 rounded">Simpan</button>
-                        <a href="{{ route('logout') }}" 
-                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();" 
-                           class="border px-6 py-2 rounded">Log out</a>
-                    </div>
+                <div>
+                    <input type="email" name="email" placeholder="Email"
+                        value="{{ old('email') }}"
+                        class="border rounded px-3 py-2 w-full h-11 @error('email') border-red-500 @enderror">
+                    @error('email')
+                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    @enderror
                 </div>
             </div>
-        </form>
+
+            {{-- Asal Instansi + Usia + Telepon + Penyakit --}}
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="md:col-span-2 space-y-8">
+                    
+                    <div>
+                        <input type="text" name="asal_instansi" placeholder="Asal Instansi"
+                            value="{{ old('asal_instansi') }}"
+                            class="border rounded px-3 py-2 w-full h-11 @error('asal_instansi') border-red-500 @enderror">
+                        @error('asal_instansi')
+                            <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                    <div>
+                        <input type="number" name="usia" placeholder="Usia"
+                            value="{{ old('usia') }}"
+                            class="border rounded px-3 py-2 w-full h-11 @error('usia') border-red-500 @enderror">
+                        @error('usia')
+                            <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                    <div>
+                        <input type="text" name="telepon" placeholder="No. Telepon"
+                            value="{{ old('telepon') }}"
+                            class="border rounded px-3 py-2 w-full h-11 @error('telepon') border-red-500 @enderror">
+                        @error('telepon')
+                            <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                    <div>
+                        <input type="text" name="riwayat_penyakit" placeholder="Riwayat Penyakit"
+                            value="{{ old('riwayat_penyakit') }}"
+                            class="border rounded px-3 py-2 w-full h-11 @error('riwayat_penyakit') border-red-500 @enderror">
+                        @error('riwayat_penyakit')
+                            <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                        @enderror
+                    </div>
+                </div>
+
+                {{-- Kolom kanan (foto) --}}
+                <div class="flex flex-col gap-6 items-start w-full">
+                    <label for="fotoInput"
+                        class="border rounded px-3 py-2 w-full h-11 flex items-center cursor-pointer bg-[#7B4B36] hover:bg-[#5e3929] text-white justify-center">
+                        Tambah Foto
+                    </label>
+                    <input type="file" name="foto" id="fotoInput" class="hidden" accept="image/*">
+
+                   <img id="previewImage"
+    src="{{ asset('images/default-photo.png') }}"
+    alt="Preview"
+    class="rounded shadow object-cover
+        w-full
+        sm:w-[400px]
+        md:w-[500px]
+        lg:w-[600px]
+        max-h-[400px]
+        object-cover
+        mt-2
+        ml-0
+        sm:ml-4
+        z-10
+        overflow-hidden">
+
+                    @error('foto')
+                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    @enderror
+                </div>
+            </div>
+
+            {{-- Tombol --}}
+            <div class="flex gap-8 mt-8">
+                <button type="submit"
+                    class="bg-[#7B4B36] hover:bg-[#5e3929] text-white px-6 py-2 rounded">Simpan</button>
+                <a href="{{ route('logout') }}" 
+                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();" 
+                   class="border px-6 py-2 rounded">Log out</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+        
+        
         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">@csrf</form>
     </div>
 </div>

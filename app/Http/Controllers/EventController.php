@@ -67,28 +67,7 @@ class EventController extends Controller
         return view('guest.events.detail', compact('event', 'moreEvents'));
     }
 
-    public function showMember($id)
-{
-    $event = Event::findOrFail($id);
 
-    // Ambil 3 event lain
-    $moreEvents = Event::where('id', '!=', $event->id)
-                        ->where('status', 'active')
-                        ->latest()
-                        ->take(3)
-                        ->get();
-
-    // kalau mau pakai view khusus member:
-     return view('member.dashboard.detail', compact('event', 'moreEvents'));
-
-   
-}
-
-public function register($id)
-{
-    $event = Event::findOrFail($id);
-    return view('member.dashboard.register', compact('event'));
-}
 
 
 }

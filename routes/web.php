@@ -52,10 +52,10 @@ Route::get('/dashboard-member', [DashboardController::class, 'index'])
      ->name('member.dashboard.index');
 
      // detail event untuk member
-    Route::get('/dashboard-member/events/{id}', [EventController::class, 'showMember'])
+    Route::get('/dashboard-member/events/{id}', [DashboardController::class, 'showMember'])
         ->name('member.events.show');
    
-    Route::get('/event/registrasi-event/{id}', [EventController::class, 'register'])->name('dashboard.register');
+    Route::get('/event/registrasi-event/{id}', [DashboardController::class, 'register'])->name('dashboard.register');
 
     Route::middleware('auth')->group(function () {
     Route::post('/event/{eventId}/register/member', [MemberEventRegisterController::class, 'store'])
