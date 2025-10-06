@@ -22,7 +22,7 @@
     <div class="grid md:grid-cols-2 gap-6 items-start">
 
         <!-- poster -->
-        <div>
+        <div class="bg-transparent">
             <img src="{{ $event->poster ? asset('storage/'.$event->poster) : asset('images/posterggs.png') }}"
                 alt="Poster Event"
                 class="w-full h-auto max-h-[900px] object-contain rounded-lg bg-transparent">
