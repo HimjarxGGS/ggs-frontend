@@ -86,6 +86,7 @@
 
     <!-- dokumentasi -->
     <section id="dokumentasi" class="mt-12 md:mt-20">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/aJR8EATME-c?si=4YACJAO5zggP1N_D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <h2 class="text-2xl md:text-3xl font-bold text-center mb-6">Dokumentasi Kegiatan</h2>
 
         <div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 overflow-hidden md:overflow-visible">
