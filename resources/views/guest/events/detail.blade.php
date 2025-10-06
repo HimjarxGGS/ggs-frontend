@@ -39,7 +39,7 @@
                     <div>
                         <h3 class="text-gray-500">Jadwal Event</h3>
                         <p class="text-lg text-black font-semibold">
-                            {{ \Carbon\Carbon::parse($event->event_date)->translatedFormat('d F Y, H:i') }}
+                            {{ \Carbon\Carbon::parse($event->event_date)->translatedFormat('d F Y') }}
                         </p>
                     </div>
                 </div>
