@@ -133,7 +133,7 @@
             </div>
         @endif
 
-        {{-- Comment Form (opsional, bisa kamu simpan kalau memang ada di figma) --}}
+        {{-- Submit Blog Form (opsional, bisa kamu simpan kalau memang ada di figma) --}}
         <div class="mt-12 bg-white shadow-md rounded-lg p-10">
             <h2 class="text-4xl font-semibold mb-2">Submit your blog!</h2>
             <p class="text-gray-500 text-sm mb-7">Required fields are marked *</p>
