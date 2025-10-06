@@ -58,7 +58,7 @@
 
                     {{-- Blog Thumbnail --}}
                     <img
-                        src="{{ asset('storage/' . $blog->img) }}"
+                        src="{{ Storage::url($blog->img) }}"
                         alt="Blog Thumbnail"
                         class="w-full md:w-48 h-48 md:h-28 rounded-lg object-cover shadow-md">
                 </a>
