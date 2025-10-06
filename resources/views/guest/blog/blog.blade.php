@@ -35,7 +35,7 @@
 
         <!-- BLOG MAIN HEADER -->
         @if ($highlightedBlog)
-        <section class="max-w-5xl mx-auto mb-4 mt-10">
+        <section class="max-w-5xl mx-auto mb-4 mt-10 px-8 py-8">
             <a href="{{ route('blog.detail', $highlightedBlog->slug) }}"
                 class="group block relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition duration-500">
                 <img
