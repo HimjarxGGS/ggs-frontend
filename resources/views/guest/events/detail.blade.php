@@ -97,12 +97,25 @@
             @endforelse
         </div>
     </section>
-    <section id="dokumentasi" class="mt-12 md:mt-20">
+
+    <section id="aftermovie" class="mt-12 md:mt-20">
         <h2 class="text-2xl md:text-3xl font-bold text-center mb-6">After Movie</h2>
-        <div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 overflow-hidden md:overflow-visible">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/aJR8EATME-c?si=4YACJAO5zggP1N_D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        <div class="flex justify-center">
+            <div class="w-full max-w-4xl aspect-video overflow-hidden rounded-lg shadow-lg">
+                <iframe
+                    class="w-full h-full"
+                    src="https://www.youtube.com/embed/KmOVNVZEP9o"
+                    title="After Movie"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
         </div>
     </section>
+
 
 
     <!-- more event -->
