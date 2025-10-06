@@ -26,37 +26,34 @@
             <img src="{{ $event->poster ? asset('storage/'.$event->poster) : asset('images/posterggs.png') }}"
                 alt="Poster Event"
                 class="w-full h-auto max-h-[600px] object-contain rounded-lg shadow-lg">
-            <img src="{{ $event->poster ? asset('storage/'.$event->poster) : asset('images/posterggs.png') }}"
-                alt="Poster Event"
-                class="w-full h-auto max-h-[600px] object-contain rounded-lg shadow-lg">
         </div>
 
         <div class="space-y-4">
 
-                <!-- card 1, jadwal dan lokasi -->
-                <div class="p-4 border rounded-xl shadow-md bg-white text-sm ring-1 ring-palette-1 space-y-3">
-                    <!-- jadwal -->
-                    <div class="flex items-center gap-3">
-                        <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-5 h-5">
-                        <div>
-                            <h3 class="text-gray-500">Jadwal Event</h3>
-                            <p class="text-lg text-black font-semibold">
-                                {{ \Carbon\Carbon::parse($event->event_date)->translatedFormat('d F Y, H:i') }}
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- lokasi -->
-                    <div class="flex items-center gap-3">
-                        <img src="{{ asset('icons/location.svg') }}" alt="Location" class="w-5 h-5">
-                        <div>
-                            <h3 class="text-gray-500">Lokasi</h3>
-                            <p class="text-lg text-black font-semibold">
-                                {{ $event->location ?? 'Lokasi belum ditentukan' }}
-                            </p>
-                        </div>
+            <!-- card 1, jadwal dan lokasi -->
+            <div class="p-4 border rounded-xl shadow-md bg-white text-sm ring-1 ring-palette-1 space-y-3">
+                <!-- jadwal -->
+                <div class="flex items-center gap-3">
+                    <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-5 h-5">
+                    <div>
+                        <h3 class="text-gray-500">Jadwal Event</h3>
+                        <p class="text-lg text-black font-semibold">
+                            {{ \Carbon\Carbon::parse($event->event_date)->translatedFormat('d F Y, H:i') }}
+                        </p>
                     </div>
                 </div>
+
+                <!-- lokasi -->
+                <div class="flex items-center gap-3">
+                    <img src="{{ asset('icons/location.svg') }}" alt="Location" class="w-5 h-5">
+                    <div>
+                        <h3 class="text-gray-500">Lokasi</h3>
+                        <p class="text-lg text-black font-semibold">
+                            {{ $event->location ?? 'Lokasi belum ditentukan' }}
+                        </p>
+                    </div>
+                </div>
+            </div>
 
             <!-- desc -->
             <div class="p-4 border rounded-xl shadow-md ring-palette-1 ring-1">
@@ -71,21 +68,21 @@
                 </div>
             </div>
 
-                <!-- cta -->
-                <div class="p-4 border rounded-xl shadow-md flex justify-center gap-4 mt-6">
-                    <!-- button daftar -->
-                    <a href="{{ $event->registration_link ?? '#' }}"
-                            class="px-5 md:px-6 py-3 bg-palette-5 text-white rounded-2xl shadow-md hover:bg-gray-500 transition duration-300 ease-in-out md:text-lg text-sm">
-                            Daftar Sekarang
-                    </a>
-                    <!-- button contact person -->
-                    <a href="https://wa.me/{{ $event->contact_person ?? '628123456789' }}"
-                            class="px-5 md:px-6 py-3 border border-black text-black rounded-2xl shadow-md hover:bg-gray-200 transition duration-300 ease-in-out md:text-lg text-sm">
-                            Contact Person
-                    </a>
-                </div>
+            <!-- cta -->
+            <div class="p-4 border rounded-xl shadow-md flex justify-center gap-4 mt-6">
+                <!-- button daftar -->
+                <a href="{{ $event->registration_link ?? '#' }}"
+                    class="px-5 md:px-6 py-3 bg-palette-5 text-white rounded-2xl shadow-md hover:bg-gray-500 transition duration-300 ease-in-out md:text-lg text-sm">
+                    Daftar Sekarang
+                </a>
+                <!-- button contact person -->
+                <a href="https://wa.me/{{ $event->contact_person ?? '628123456789' }}"
+                    class="px-5 md:px-6 py-3 border border-black text-black rounded-2xl shadow-md hover:bg-gray-200 transition duration-300 ease-in-out md:text-lg text-sm">
+                    Contact Person
+                </a>
             </div>
         </div>
+    </div>
 
     <!-- dokumentasi -->
     <section id="dokumentasi" class="mt-12 md:mt-20">
@@ -148,42 +145,42 @@
                             {{ ucfirst($event->status) }}
                         </span>
                     </div>
-                        <!-- status -->
-                        <span
-                            class="absolute top-7 left-7 {{ $event->status === 'active' ? 'bg-green-500' : 'bg-gray-400' }} text-white text-xs font-semibold px-3 py-1 rounded-full">
-                            {{ ucfirst($event->status) }}
-                        </span>
-                    </div>
+                    <!-- status -->
+                    <span
+                        class="absolute top-7 left-7 {{ $event->status === 'active' ? 'bg-green-500' : 'bg-gray-400' }} text-white text-xs font-semibold px-3 py-1 rounded-full">
+                        {{ ucfirst($event->status) }}
+                    </span>
+                </div>
 
-                    <!-- konten -->
-                    <div class="p-4 flex flex-col justify-between flex-1">
-                        <div class="space-y-2">
-                            <!-- judul -->
-                            <h3 class="text-lg font-semibold line-clamp-2">{{ $event->name }}</h3>
-                            <!-- default penerbit -->
-                            <p class="text-gray-500 text-xs">Green Generation Surabaya</p>
-                            <!-- tanggal event -->
-                            <div class="flex items-center text-xs text-gray-400 gap-2">
-                                <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-4 h-4">
-                                <span>{{ \Carbon\Carbon::parse($event->event_date)->translatedFormat('d F Y') }}</span>
-                            </div>
-                            <!-- deskripsi -->
-                            <p class="text-xs text-wrap text-gray-600 line-clamp-3">
-                                {!! Str::limit($event->description, 100) !!}
-                            </p>
+                <!-- konten -->
+                <div class="p-4 flex flex-col justify-between flex-1">
+                    <div class="space-y-2">
+                        <!-- judul -->
+                        <h3 class="text-lg font-semibold line-clamp-2">{{ $event->name }}</h3>
+                        <!-- default penerbit -->
+                        <p class="text-gray-500 text-xs">Green Generation Surabaya</p>
+                        <!-- tanggal event -->
+                        <div class="flex items-center text-xs text-gray-400 gap-2">
+                            <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-4 h-4">
+                            <span>{{ \Carbon\Carbon::parse($event->event_date)->translatedFormat('d F Y') }}</span>
                         </div>
+                        <!-- deskripsi -->
+                        <p class="text-xs text-wrap text-gray-600 line-clamp-3">
+                            {!! Str::limit($event->description, 100) !!}
+                        </p>
                     </div>
                 </div>
-            </a>
-            @empty
-            <p class="col-span-3 text-center text-gray-500 py-10">
-                Belum ada event lain.
-            </p>
-            <p class="col-span-3 text-center text-gray-500 py-10">
-                Belum ada event lain.
-            </p>
-            @endforelse
         </div>
-    </section>
+        </a>
+        @empty
+        <p class="col-span-3 text-center text-gray-500 py-10">
+            Belum ada event lain.
+        </p>
+        <p class="col-span-3 text-center text-gray-500 py-10">
+            Belum ada event lain.
+        </p>
+        @endforelse
+</div>
+</section>
 </div>
 @endsection
