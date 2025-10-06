@@ -59,7 +59,7 @@
         </div>
 </div>
 
-{{-- Comment Section (dummy) --}}
+<!-- {{-- Comment Section (dummy) --}}
 <div class="mt-16 bg-white shadow-md rounded-2xl p-20">
     <h2 class="text-4xl font-semibold mb-2">Submit Comment</h2>
     <p class="text-gray-500 text-sm mb-4">Your email address will not be published. Required fields are marked *</p>
@@ -84,7 +84,7 @@
             Submit
         </button>
     </form>
-</div>
+</div> -->
 </section>
 
 {{-- Our Partners (dummy) --}}
