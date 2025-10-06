@@ -98,6 +98,7 @@
         </div>
     </section>
 
+    @if($event->after_movie_url)
     <section id="aftermovie" class="mt-12 md:mt-20">
         <h2 class="text-2xl md:text-3xl font-bold text-center mb-6">After Movie</h2>
 
@@ -105,7 +106,7 @@
             <div class="w-full max-w-4xl aspect-video overflow-hidden rounded-lg shadow-lg">
                 <iframe
                     class="w-full h-full"
-                    src="https://www.youtube.com/embed/KmOVNVZEP9o"
+                    src="{{ $event->getEmbedAfterMovieURL() }}"
                     title="After Movie"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -115,7 +116,7 @@
             </div>
         </div>
     </section>
-
+    @endif
 
 
     <!-- more event -->
