@@ -62,7 +62,7 @@
                 <div>
                     <h3 class="text-sm text-gray-500">Deskripsi</h3>
                     <p class="text-lg text-gray-700 font-semibold">
-                        {{ !! $event->description !!}}
+                        {!! $event->description !!}
                     </p>
                 </div>
             </div>
