@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\HtmlString;
 
 class Event extends Model
 {
@@ -26,4 +27,9 @@ class Event extends Model
         'event_date' => 'date',
         'need_registrant_picture' => 'boolean',
     ];
+
+    public function getEventDescription()
+    {
+        return new HtmlString($this->description);
+    }
 }
