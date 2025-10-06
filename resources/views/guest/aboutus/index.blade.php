@@ -225,8 +225,8 @@
 
           <!-- foto -->
           <div class="flex items-start gap-4 mt-4">
-            <a href="{{ asset('dokum/ggberaksi1.JPG') }}" target="_blank">
-              <img src="{{ asset('dokum/ggberaksi1.JPG') }}" 
+            <a href="{{ asset('dokum/ggberaksi1.jpg') }}" target="_blank">
+              <img src="{{ asset('dokum/ggberaksi1.jpg') }}" 
                   class="rounded-3xl w-56 max-w-sm" 
                   loading="lazy"
                   alt="GG Beraksi" 
@@ -237,8 +237,8 @@
             </a>
 
             <div class="hidden sm:flex flex-row gap-4">
-              <a href="{{ asset('dokum/ggberaksi3.JPG') }}" target="_blank">
-                <img src="{{ asset('dokum/ggberaksi3.JPG') }}" 
+              <a href="{{ asset('dokum/ggberaksi3.jpg') }}" target="_blank">
+                <img src="{{ asset('dokum/ggberaksi3.jpg') }}" 
                     loading="lazy"
                     class="rounded-3xl w-56 max-w-sm" 
                     alt="GG Beraksi 2" 
@@ -247,8 +247,8 @@
                     data-aos-duration="800"
                 >
               </a>
-              <a href="{{ asset('dokum/ggberaksi4.JPG') }}" target="_blank">
-                <img src="{{ asset('dokum/ggberaksi4.JPG') }}" 
+              <a href="{{ asset('dokum/ggberaksi4.jpg') }}" target="_blank">
+                <img src="{{ asset('dokum/ggberaksi4.jpg') }}" 
                     loading="lazy"
                     class="rounded-3xl w-56 max-w-sm" 
                     alt="GG Beraksi 3" 
@@ -275,8 +275,8 @@
           <!-- foto -->
           <div class="flex items-start gap-4 mt-4">
             
-              <a href="{{ asset('dokum/trashformerpart1-1.JPG') }}" target="_blank">
-                <img src="{{ asset('dokum/trashformerpart1-1.JPG') }}" 
+              <a href="{{ asset('dokum/trashformerpart1-1.jpg') }}" target="_blank">
+                <img src="{{ asset('dokum/trashformerpart1-1.jpg') }}" 
                     loading="lazy"
                     class="rounded-3xl w-56 max-w-sm" 
                     alt="trashformer" 
@@ -287,8 +287,8 @@
               </a>
 
               <div class="hidden sm:flex flex-row gap-4">
-              <a href="{{ asset('dokum/trashformerpart2-1.JPG') }}" target="_blank">
-                  <img src="{{ asset('dokum/trashformerpart2-1.JPG') }}" 
+              <a href="{{ asset('dokum/trashformerpart2-1.jpg') }}" target="_blank">
+                  <img src="{{ asset('dokum/trashformerpart2-1.jpg') }}" 
                       class="rounded-3xl w-56 max-w-sm" 
                       loading="lazy"
                       alt="trashformer 2" 
@@ -298,8 +298,8 @@
                   >
               </a>
                       
-              <a href="{{ asset('dokum/trashformerpart2-2.JPG') }}" target="_blank">
-                  <img src="{{ asset('dokum/trashformerpart2-2.JPG') }}" 
+              <a href="{{ asset('dokum/trashformerpart2-2.jpg') }}" target="_blank">
+                  <img src="{{ asset('dokum/trashformerpart2-2.jpg') }}" 
                       class="rounded-3xl w-56 max-w-sm" 
                       loading="lazy"
                       alt="trashformer 3" 
@@ -326,8 +326,8 @@
             <!-- foto -->
             <div class="flex items-start gap-4 mt-4">
               
-                <a href="{{ asset('dokum/growave1.JPG') }}" target="_blank">
-                  <img src="{{ asset('dokum/growave1.JPG') }}" 
+                <a href="{{ asset('dokum/growave1.jpg') }}" target="_blank">
+                  <img src="{{ asset('dokum/growave1.jpg') }}" 
                       class="rounded-3xl w-56 max-w-sm" 
                       loading="lazy"
                       alt="Growave1" 
@@ -339,8 +339,8 @@
 
                 <div class="hidden sm:flex flex-row gap-4">
 
-                <a href="{{ asset('dokum/growave2.JPG') }}" target="_blank">
-                    <img src="{{ asset('dokum/growave2.JPG') }}" 
+                <a href="{{ asset('dokum/growave2.jpg') }}" target="_blank">
+                    <img src="{{ asset('dokum/growave2.jpg') }}" 
                         class="rounded-3xl w-56 max-w-sm"
                         loading="lazy" 
                         alt="Growave2" 
@@ -350,8 +350,8 @@
                       >
                 </a>
 
-                <a href="{{ asset('dokum/growave3.JPG') }}" target="_blank">
-                    <img src="{{ asset('dokum/growave3.JPG') }}" 
+                <a href="{{ asset('dokum/growave3.jpg') }}" target="_blank">
+                    <img src="{{ asset('dokum/growave3.jpg') }}" 
                         class="rounded-3xl w-56 max-w-sm" 
                         loading="lazy"
                         alt="Growave3" 
@@ -378,8 +378,8 @@
             <!-- foto -->
             <div class="flex items-start gap-4 mt-4">
               
-              <a href="{{ asset('dokum/greenovation_batch1_2.JPG') }}" target="_blank">
-                <img src="{{ asset('dokum/greenovation_batch1_2.JPG') }}" 
+              <a href="{{ asset('dokum/greenovation_batch1_2.jpg') }}" target="_blank">
+                <img src="{{ asset('dokum/greenovation_batch1_2.jpg') }}" 
                     class="rounded-3xl w-56 max-w-sm"
                     loading="lazy" 
                     alt="Greenovation1" 
@@ -390,8 +390,8 @@
               </a>
 
               <div class="hidden sm:flex flex-row gap-4">
-              <a href="{{ asset('dokum/greenovation_batch1_1.JPG') }}" target="_blank">
-                  <img src="{{ asset('dokum/greenovation_batch1_1.JPG') }}" 
+              <a href="{{ asset('dokum/greenovation_batch1_1.jpg') }}" target="_blank">
+                  <img src="{{ asset('dokum/greenovation_batch1_1.jpg') }}" 
                       class="rounded-3xl w-56 max-w-sm" 
                       loading="lazy"
                       alt="Greenovation2" 
@@ -401,8 +401,8 @@
                       >
               </a>
 
-              <a href="{{ asset('dokum/greenovation_batch3_3.JPG') }}" target="_blank">
-                  <img src="{{ asset('dokum/greenovation_batch3_3.JPG') }}" 
+              <a href="{{ asset('dokum/greenovation_batch3_3.jpg') }}" target="_blank">
+                  <img src="{{ asset('dokum/greenovation_batch3_3.jpg') }}" 
                       class="rounded-3xl w-64 max-w-sm" 
                       loading="lazy"
                       alt="Greenovation3" 
