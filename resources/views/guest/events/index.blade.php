@@ -56,11 +56,12 @@
 </section>
 
 <!-- upcoming event start -->
-<div class="max-w-7xl mx-auto mt-32 mb-12 px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
-    @forelse ($upcoming as $i => $event)
-        <a href="{{ route('events.show', $event->id) }}" 
-           class="block group {{ $i >= 1 ? 'hidden sm:block' : '' }}">
-            <div class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500">
+<div class="flex justify-items-center max-w-7xl mx-auto">
+    <div class="mt-32 mb-12 px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        @forelse ($upcoming as $i => $event)
+        <a href="{{ route('events.show', $event->id) }}"
+            class="block group {{ $i >= 1 ? 'hidden sm:block' : '' }}">
+            <div class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500 flex flex-col h-full">
                 <div class="relative">
                     <img src="{{ $event->poster ? asset('storage/'.$event->poster) : asset('images/gambar-event.png') }}"
                         alt="Event Cover"
@@ -70,25 +71,33 @@
                         {{ ucfirst($event->status) }}
                     </span>
                 </div>
-                <div class="p-4 space-y-2">
-                    <h3 class="text-lg font-semibold">{{ $event->name }}</h3>
-                    <p class="text-gray-500 text-xs">Green Generation Surabaya</p>
-                    <div class="flex items-center text-xs text-gray-400 gap-2">
-                        <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-4 h-4">
-                        <span>{{ $event->event_date->translatedFormat('d F Y') }}</span>
+                <div class="p-4 flex flex-col justify-between flex-1">
+                    <div class="space-y-2">
+                        <!-- judul -->
+                        <h3 class="text-lg font-semibold line-clamp-2">{{ $event->name }}</h3>
+                        <!-- default penerbit -->
+                        <p class="text-gray-500 text-xs">Green Generation Surabaya</p>
+                        <!-- tanggal event -->
+                        <div class="flex items-center text-xs text-gray-400 gap-2">
+                            <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-4 h-4">
+                            <span>{{ \Carbon\Carbon::parse($event->event_date)->translatedFormat('d F Y') }}</span>
+                        </div>
+                        <!-- deskripsi -->
+                        <p class="text-xs text-wrap text-gray-600 line-clamp-3">
+                            {!! Str::limit($event->description, 100) !!}
+                        </p>
                     </div>
-                    <p class="text-xs text-gray-600 pb-14">
-                        {{ Str::limit($event->description, 100) }}
-                    </p>
                 </div>
             </div>
         </a>
-    @empty
+        @empty
         <p class="col-span-3 text-center text-gray-500 py-10">
             Belum ada event terbaru.
         </p>
-    @endforelse
+        @endforelse
+    </div>
 </div>
+
 
 <div class="text-center mt-6">
     <a href="{{ route('events.upcoming') }}"
@@ -102,34 +111,34 @@
 <!-- succesfull event start -->
 <div class="max-w-7xl mx-auto mt-14 mb-12 px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
     @forelse ($finished as $i => $event)
-        <a href="{{ route('events.show', $event->id) }}" 
-           class="block group {{ $i >= 1 ? 'hidden sm:block' : '' }}">
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500">
-                <div class="relative">
-                    <img src="{{ $event->poster ? asset('storage/'.$event->poster) : asset('images/gambar-event.png') }}"
-                         alt="Event Cover"
-                         class="w-full h-52 object-cover">
-                    <span class="absolute top-7 left-7 bg-orange-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                        Finished
-                    </span>
-                </div>
-                <div class="p-4 space-y-2">
-                    <h3 class="text-lg font-semibold">{{ $event->name }}</h3>
-                    <p class="text-gray-500 text-xs">Green Generation Surabaya</p>
-                    <div class="flex items-center text-xs text-gray-500 gap-2">
-                        <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-4 h-4">
-                        <span>{{ $event->event_date->translatedFormat('d F Y') }}</span>
-                    </div>
-                    <p class="text-xs text-gray-600 pb-14">
-                        {{ Str::limit($event->description, 100) }}
-                    </p>
-                </div>
+    <a href="{{ route('events.show', $event->id) }}"
+        class="block group {{ $i >= 1 ? 'hidden sm:block' : '' }}">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500">
+            <div class="relative">
+                <img src="{{ $event->poster ? asset('storage/'.$event->poster) : asset('images/gambar-event.png') }}"
+                    alt="Event Cover"
+                    class="w-full h-52 object-cover">
+                <span class="absolute top-7 left-7 bg-orange-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    Finished
+                </span>
             </div>
-        </a>
+            <div class="p-4 space-y-2">
+                <h3 class="text-lg font-semibold">{{ $event->name }}</h3>
+                <p class="text-gray-500 text-xs">Green Generation Surabaya</p>
+                <div class="flex items-center text-xs text-gray-500 gap-2">
+                    <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-4 h-4">
+                    <span>{{ $event->event_date->translatedFormat('d F Y') }}</span>
+                </div>
+                <p class="text-xs text-gray-600 pb-14">
+                    {{ Str::limit($event->description, 100) }}
+                </p>
+            </div>
+        </div>
+    </a>
     @empty
-        <p class="col-span-3 text-center text-gray-500 py-10">
-            Belum ada event yang selesai.
-        </p>
+    <p class="col-span-3 text-center text-gray-500 py-10">
+        Belum ada event yang selesai.
+    </p>
     @endforelse
 </div>
 
@@ -170,7 +179,7 @@
                         <h2 class="text-xl md:text-2xl font-bold text-palette-2" id="dampak2" data-target="5000">0</h2>
                         <span class="text-sm ml-1 pt-2">kg</span>
                     </div>
-                    <p class="text-xs md:text-sm text-palette-4">Sampah Dikelola</p> 
+                    <p class="text-xs md:text-sm text-palette-4">Sampah Dikelola</p>
                 </div>
 
                 <img src="{{ asset('icons/recycle.svg') }}"
