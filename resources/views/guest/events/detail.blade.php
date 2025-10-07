@@ -62,8 +62,10 @@
                     <img src="{{ asset('icons/desc.svg') }}" alt="Description" class="w-5 h-5 mt-1">
                     <div>
                         <h3 class="text-sm text-gray-500">Deskripsi</h3>
+                        <p class="text-wrap">
+                            {!! $event->description !!}
+                        </p>
 
-                        {!! $event->getEventDescription() !!}
 
                     </div>
                 </div>
