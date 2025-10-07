@@ -35,7 +35,7 @@
 
         <!-- BLOG MAIN HEADER -->
         @if ($highlightedBlog)
-        <section class="max-w-5xl mx-auto mb-4 mt-10 px-8 py-8">
+        <section class="max-w mb-4 mt-4">
             <a href="{{ route('blog.detail', $highlightedBlog->slug) }}"
                 class="group block relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition duration-500">
                 <img
@@ -62,11 +62,11 @@
         <!-- BLOG MAIN HEADER -->
 
         <!-- BLOG CTA (BRING IT TO SUBMIT FORM IDEA ON BOTTOM) -->
-        <section class="max-w-5xl mx-auto text-center md:text-left mt-4">
-            <div class="bg-palette-3 text-white rounded-2xl shadow-md flex flex-col md:flex-row items-center justify-between gap-6 px-10 py-10">
+        <section class="max-w-5xl mx-auto text-center md:text-left">
+            <div class="bg-palette-3 text-white rounded-2xl shadow-md flex flex-col md:flex-row items-center justify-between gap-6 px-4 py-4">
                 <!-- Left: Text -->
                 <div class="flex-1">
-                    <h3 class="text-2xl md:text-3xl font-semibold mb-3">Got something to share?</h3>
+                    <h3 class="text-2xs md:text-2xl font-semibold mb-3">Got something to share?</h3>
                     <p class="text-gray-100 text-sm md:text-base">
                         Submit your own blog and inspire others with your story.
                     </p>
