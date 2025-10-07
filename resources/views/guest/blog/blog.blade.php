@@ -45,7 +45,7 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 
                 <div class="absolute bottom-0 left-0 p-8 text-white">
-                    <h2 class="text-3xl font-semibold mb-2 group-hover:underline">
+                    <h2 class="text-3xl font-semibold mb-2 group-hover:underline"> 
                         {{ $highlightedBlog->title }}
                     </h2>
                     <p class="text-sm text-gray-200 mb-2">
