@@ -129,7 +129,7 @@
                     <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-4 h-4">
                     <span>{{ $event->event_date->translatedFormat('d F Y') }}</span>
                 </div>
-                <p class="text-xs text-gray-600 pb-14">
+                <p class="text-xs text-wrap text-gray-600 pb-14">
                     {{ Str::limit($event->description, 100) }}
                 </p>
             </div>
