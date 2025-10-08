@@ -28,6 +28,7 @@ class DataDiriController extends Controller
             'telepon' => ['required', 'regex:/^[0-9]{10,12}$/'],
             'riwayat_penyakit' => 'nullable|string',
             'foto' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            // dd($request->file('foto'))
         ], [
             'email.regex' => 'Email harus menggunakan domain .com',
             'required' => 'Field ini wajib diisi',

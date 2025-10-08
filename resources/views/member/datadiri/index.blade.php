@@ -103,11 +103,8 @@
 
                             {{-- Kolom kanan (foto) --}}
                             <div class="flex flex-col gap-6 items-start w-full">
-                                <label for="fotoInput"
-                                    class="border rounded px-3 py-2 w-full h-11 flex items-center cursor-pointer bg-[#7B4B36] hover:bg-[#5e3929] text-white justify-center">
-                                    Tambah Foto
-                                </label>
-                                <input type="file" name="foto" id="fotoInput" class="hidden" accept="image/*">
+                                <label for="fotoInput">Upload Foto</label>
+                                <input type="file" name="foto" id="fotoInput" accept="image/*">
                                 <img id="previewImage"
                                     src="{{ $pendaftar?->registrant_picture
                                         ? asset('storage/' . $pendaftar->registrant_picture)
@@ -118,6 +115,7 @@
                                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                                 @enderror
                             </div>
+
                         </div>
                         {{-- Tombol --}}
                         <div class="flex gap-8 mt-8">
@@ -137,9 +135,9 @@
         </div>
     </div>
     <!--
-                        <footer class="text-center text-sm text-gray-500 mt-16 py-6">
-                            powered by greencomunitionsurabaya & himse.telkomsurabaya
-                        </footer> -->
+                                <footer class="text-center text-sm text-gray-500 mt-16 py-6">
+                                    powered by greencomunitionsurabaya & himse.telkomsurabaya
+                                </footer> -->
 
     {{-- Script Preview Foto --}}
     <script>
