@@ -72,10 +72,12 @@
                                 </div>
 
                                 <div>
-                                    <input type="number" name="usia" placeholder="Usia"
-                                        value="{{ old('usia', $pendaftar?->usia) }}"
-                                        class="border rounded px-3 py-2 w-full h-11 @error('usia') border-red-500 @enderror">
-                                    @error('usia')
+                                    <label for="date_of_birth" class="block text-sm font-medium text-gray-700">Tanggal
+                                        Lahir</label>
+                                    <input type="date" name="date_of_birth" id="date_of_birth"
+                                        value="{{ old('date_of_birth', $pendaftar?->date_of_birth) }}"
+                                        class="border rounded px-3 py-2 w-full h-11 @error('date_of_birth') border-red-500 @enderror">
+                                    @error('date_of_birth')
                                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                                     @enderror
                                 </div>
@@ -135,9 +137,9 @@
         </div>
     </div>
     <!--
-                    <footer class="text-center text-sm text-gray-500 mt-16 py-6">
-                        powered by greencomunitionsurabaya & himse.telkomsurabaya
-                    </footer> -->
+                        <footer class="text-center text-sm text-gray-500 mt-16 py-6">
+                            powered by greencomunitionsurabaya & himse.telkomsurabaya
+                        </footer> -->
 
     {{-- Script Preview Foto --}}
     <script>

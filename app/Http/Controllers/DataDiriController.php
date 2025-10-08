@@ -24,7 +24,7 @@ class DataDiriController extends Controller
             'nama' => 'required|string|max:255',
             'email' => ['required', 'email', 'max:255', 'regex:/\.com$/i'],
             'asal_instansi' => 'required|string|max:255',
-            'usia' => 'required|integer|min:1',
+            'date_of_birth' => 'required|date|before:today',
             'telepon' => ['required', 'regex:/^[0-9]{10,12}$/'],
             'riwayat_penyakit' => 'nullable|string',
             'foto' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
@@ -33,7 +33,7 @@ class DataDiriController extends Controller
             'required' => 'Field ini wajib diisi',
         ]);
 
-        $dateOfBirth = now()->subYears($request->usia)->startOfYear()->toDateString();
+        $dateOfBirth = $request->date_of_birth;
         $userId = Auth::id();
 
         // Check user if already has data
