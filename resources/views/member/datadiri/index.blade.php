@@ -40,16 +40,17 @@
                         {{-- Nama & Email --}}
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div>
-                                <input type="text" name="nama" placeholder="Nama Lengkap"
+                                <label for="nama" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
+                                <input type="text" name="nama" placeholder="Enter your full name"
                                     value="{{ old('nama', $pendaftar?->nama_lengkap) }}"
                                     class="border rounded px-3 py-2 w-full h-11 @error('nama') border-red-500 @enderror">
                                 @error('nama')
                                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                                 @enderror
                             </div>
-
                             <div>
-                                <input type="email" name="email" placeholder="Email"
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                                <input type="email" name="email" placeholder="Enter your valid email"
                                     value="{{ old('email', $pendaftar?->email) }}"
                                     class="border rounded px-3 py-2 w-full h-11 @error('email') border-red-500 @enderror">
                                 @error('email')
@@ -57,20 +58,18 @@
                                 @enderror
                             </div>
                         </div>
-
-                        {{-- Asal Instansi + Usia + Telepon + Penyakit --}}
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                             <div class="md:col-span-2 space-y-8">
-
                                 <div>
-                                    <input type="text" name="asal_instansi" placeholder="Asal Instansi"
+                                    <label for="asal_instansi" class="block text-sm font-medium text-gray-700">Asal
+                                        Instansi</label>
+                                    <input type="text" name="asal_instansi" placeholder="Enter your institution"
                                         value="{{ old('asal_instansi', $pendaftar?->asal_instansi) }}"
                                         class="border rounded px-3 py-2 w-full h-11 @error('asal_instansi') border-red-500 @enderror">
                                     @error('asal_instansi')
                                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                                     @enderror
                                 </div>
-
                                 <div>
                                     <label for="date_of_birth" class="block text-sm font-medium text-gray-700">Tanggal
                                         Lahir</label>
@@ -81,18 +80,20 @@
                                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                                     @enderror
                                 </div>
-
                                 <div>
-                                    <input type="text" name="telepon" placeholder="No. Telepon"
+                                    <label for="telepon" class="block text-sm font-medium text-gray-700">No.
+                                        Telepon</label>
+                                    <input type="text" name="telepon" placeholder="08123456789"
                                         value="{{ old('telepon', $pendaftar?->no_telepon) }}"
                                         class="border rounded px-3 py-2 w-full h-11 @error('telepon') border-red-500 @enderror">
                                     @error('telepon')
                                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                                     @enderror
                                 </div>
-
                                 <div>
-                                    <input type="text" name="riwayat_penyakit" placeholder="Riwayat Penyakit"
+                                    <label for="riwayat_penyakit" class="block text-sm font-medium text-gray-700">Riwayat
+                                        Penyakit</label>
+                                    <input type="text" name="riwayat_penyakit" placeholder="Enter your medical history"
                                         value="{{ old('riwayat_penyakit', $pendaftar?->riwayat_penyakit) }}"
                                         class="border rounded px-3 py-2 w-full h-11 @error('riwayat_penyakit') border-red-500 @enderror">
                                     @error('riwayat_penyakit')
@@ -100,10 +101,8 @@
                                     @enderror
                                 </div>
                             </div>
-
-                            {{-- Kolom kanan (foto) --}}
                             <div class="flex flex-col gap-6 items-start w-full">
-                                <label for="fotoInput">Upload Foto</label>
+                                <label for="fotoInput" class="block text-sm font-medium text-gray-700">Upload Foto</label>
                                 <input type="file" name="foto" id="fotoInput" accept="image/*">
                                 <img id="previewImage"
                                     src="{{ $pendaftar?->registrant_picture
@@ -115,9 +114,7 @@
                                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                                 @enderror
                             </div>
-
                         </div>
-                        {{-- Tombol --}}
                         <div class="flex gap-8 mt-8">
                             <button type="submit"
                                 class="bg-[#7B4B36] hover:bg-[#5e3929] text-white px-6 py-2 rounded">Simpan</button>
@@ -128,18 +125,9 @@
                     </div>
                 </div>
             </form>
-
-
-
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">@csrf</form>
         </div>
     </div>
-    <!--
-                                <footer class="text-center text-sm text-gray-500 mt-16 py-6">
-                                    powered by greencomunitionsurabaya & himse.telkomsurabaya
-                                </footer> -->
-
-    {{-- Script Preview Foto --}}
     <script>
         document.getElementById('fotoInput').addEventListener('change', function(event) {
             const reader = new FileReader();
