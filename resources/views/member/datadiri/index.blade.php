@@ -31,7 +31,7 @@
 
 
             {{-- Kolom Kanan: Form --}}
-            <form action="{{ route('datadiri.store') }}" method="POST" enctype="multipart/form-data" class="w-full">
+            <form action="{{ route('member.datadiri.save') }}" method="POST" enctype="multipart/form-data" class="w-full">
                 @csrf
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -135,9 +135,9 @@
         </div>
     </div>
     <!--
-                <footer class="text-center text-sm text-gray-500 mt-16 py-6">
-                    powered by greencomunitionsurabaya & himse.telkomsurabaya
-                </footer> -->
+                    <footer class="text-center text-sm text-gray-500 mt-16 py-6">
+                        powered by greencomunitionsurabaya & himse.telkomsurabaya
+                    </footer> -->
 
     {{-- Script Preview Foto --}}
     <script>
