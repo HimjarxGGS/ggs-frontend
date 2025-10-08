@@ -93,7 +93,7 @@
 
                                 <div>
                                     <input type="text" name="riwayat_penyakit" placeholder="Riwayat Penyakit"
-                                        value="{{ old('riwayat_penyakit', $pendaftar?->riwayat_penyakiti) }}"
+                                        value="{{ old('riwayat_penyakit', $pendaftar?->riwayat_penyakit) }}"
                                         class="border rounded px-3 py-2 w-full h-11 @error('riwayat_penyakit') border-red-500 @enderror">
                                     @error('riwayat_penyakit')
                                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
