@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Storage;
 
 class DataDiriController extends Controller
 {
+    // public function index()
+    // {
+    //     $pendaftar = Pendaftar::where('user_id', Auth::id())->first();
+    //     return view('member.datadiri.index', compact('pendaftar'));
+    // }
+
     public function index()
     {
         $pendaftar = Pendaftar::where('user_id', Auth::id())->first();
@@ -57,9 +63,10 @@ class DataDiriController extends Controller
             'registrant_picture' => $picturePath,
         ]);
 
-        return view('member.layouts.succes', [
-            'message' => 'Data diri berhasil disimpan!'
-        ]);
+        // return view('member.layouts.succes', [
+        //     'message' => 'Data diri berhasil disimpan!'
+        // ]);
+        return redirect()->route('member.datadiri.index')->with('success', 'Data diri berhasil diperbarui!');
     }
 
 

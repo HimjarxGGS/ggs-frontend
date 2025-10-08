@@ -40,7 +40,8 @@
                         {{-- Nama & Email --}}
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div>
-                                <input type="text" name="nama" placeholder="Nama Lengkap" value="{{ old('nama') }}"
+                                <input type="text" name="nama" placeholder="Nama Lengkap"
+                                    value="{{ old('nama', $pendaftar?->nama_lengkap) }}"
                                     class="border rounded px-3 py-2 w-full h-11 @error('nama') border-red-500 @enderror">
                                 @error('nama')
                                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
@@ -48,7 +49,8 @@
                             </div>
 
                             <div>
-                                <input type="email" name="email" placeholder="Email" value="{{ old('email') }}"
+                                <input type="email" name="email" placeholder="Email"
+                                    value="{{ old('email', $pendaftar?->email) }}"
                                     class="border rounded px-3 py-2 w-full h-11 @error('email') border-red-500 @enderror">
                                 @error('email')
                                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
@@ -62,7 +64,7 @@
 
                                 <div>
                                     <input type="text" name="asal_instansi" placeholder="Asal Instansi"
-                                        value="{{ old('asal_instansi') }}"
+                                        value="{{ old('asal_instansi', $pendaftar?->asal_instansi) }}"
                                         class="border rounded px-3 py-2 w-full h-11 @error('asal_instansi') border-red-500 @enderror">
                                     @error('asal_instansi')
                                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
@@ -70,7 +72,8 @@
                                 </div>
 
                                 <div>
-                                    <input type="number" name="usia" placeholder="Usia" value="{{ old('usia') }}"
+                                    <input type="number" name="usia" placeholder="Usia"
+                                        value="{{ old('usia', $pendaftar?->usia) }}"
                                         class="border rounded px-3 py-2 w-full h-11 @error('usia') border-red-500 @enderror">
                                     @error('usia')
                                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
@@ -79,7 +82,7 @@
 
                                 <div>
                                     <input type="text" name="telepon" placeholder="No. Telepon"
-                                        value="{{ old('telepon') }}"
+                                        value="{{ old('telepon', $pendaftar?->no_telepon) }}"
                                         class="border rounded px-3 py-2 w-full h-11 @error('telepon') border-red-500 @enderror">
                                     @error('telepon')
                                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
@@ -88,7 +91,7 @@
 
                                 <div>
                                     <input type="text" name="riwayat_penyakit" placeholder="Riwayat Penyakit"
-                                        value="{{ old('riwayat_penyakit') }}"
+                                        value="{{ old('riwayat_penyakit', $pendaftar?->riwayat_penyakiti) }}"
                                         class="border rounded px-3 py-2 w-full h-11 @error('riwayat_penyakit') border-red-500 @enderror">
                                     @error('riwayat_penyakit')
                                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
@@ -103,27 +106,17 @@
                                     Tambah Foto
                                 </label>
                                 <input type="file" name="foto" id="fotoInput" class="hidden" accept="image/*">
-
-                                <img id="previewImage" src="{{ asset('images/default-photo.png') }}" alt="Preview"
-                                    class="rounded shadow object-cover
-        w-full
-        sm:w-[400px]
-        md:w-[500px]
-        lg:w-[600px]
-        max-h-[400px]
-        object-cover
-        mt-2
-        ml-0
-        sm:ml-4
-        z-10
-        overflow-hidden">
-
+                                <img id="previewImage"
+                                    src="{{ $pendaftar?->registrant_picture
+                                        ? asset('storage/' . $pendaftar->registrant_picture)
+                                        : asset('images/default-photo.png') }}"
+                                    alt="Preview"
+                                    class="rounded shadow object-cover w-full sm:w-[400px] md:w-[500px] lg:w-[600px] max-h-[400px] object-cover mt-2 ml-0 sm:ml-4 z-10 overflow-hidden">
                                 @error('foto')
                                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                                 @enderror
                             </div>
                         </div>
-
                         {{-- Tombol --}}
                         <div class="flex gap-8 mt-8">
                             <button type="submit"
@@ -142,9 +135,9 @@
         </div>
     </div>
     <!--
-    <footer class="text-center text-sm text-gray-500 mt-16 py-6">
-        powered by greencomunitionsurabaya & himse.telkomsurabaya
-    </footer> -->
+                <footer class="text-center text-sm text-gray-500 mt-16 py-6">
+                    powered by greencomunitionsurabaya & himse.telkomsurabaya
+                </footer> -->
 
     {{-- Script Preview Foto --}}
     <script>
