@@ -48,17 +48,6 @@ class AuthController extends Controller
             'role' => 'member',
         ]);
 
-        Pendaftar::create([
-            'user_id' => $user->id,
-            'no_telepon' => $request->notelfon,
-            'email' => $email,
-            'nama_lengkap' => null,
-            'date_of_birth' => null,
-            'asal_instansi' => null,
-            'riwayat_penyakit' => null,
-            'registrant_picture' => null,
-        ]);
-
         return redirect()->route('login')->with('success', 'Registrasi berhasil! Silakan login.');
     }
 
