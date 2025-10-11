@@ -54,7 +54,7 @@
 @media (max-width: 768px) {
   .animate-infinite-scroll,
   .animate-infinite-scroll-reverse {
-    animation-duration: 8s; 
+    animation-duration: 5s; 
   }
 }
 

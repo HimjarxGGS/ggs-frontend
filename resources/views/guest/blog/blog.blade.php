@@ -45,29 +45,28 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 
                 <div class="absolute bottom-0 left-0 p-8 text-white">
-                    <h2 class="text-3xl font-semibold mb-2 group-hover:underline"> 
+                    <h2 class="text-3xl font-bold mb-2"> 
                         {{ $highlightedBlog->title }}
                     </h2>
-                    <p class="text-sm text-gray-200 mb-2">
+                    <p class="text-sm text-gray-300 mb-2">
                         {{ $highlightedBlog->author }} · {{ \Carbon\Carbon::parse($highlightedBlog->published_at)->format('d M Y') }}
                     </p>
-                    <p class="text-gray-100 max-w-2xl">
+                    <p class="text-gray-200 max-w-2xl text-md md:text-sm leading-relaxed">
                         {{ \Illuminate\Support\Str::limit(strip_tags($highlightedBlog->content), 150, '...') }}
                     </p>
                 </div>
             </a>
         </section>
         @endif
-
         <!-- BLOG MAIN HEADER -->
 
         <!-- BLOG CTA (BRING IT TO SUBMIT FORM IDEA ON BOTTOM) -->
         <section class="max-w-5xl mx-auto text-center md:text-left">
-            <div class="bg-palette-3 text-white rounded-2xl shadow-md flex flex-col md:flex-row items-center justify-between gap-6 px-4 py-4">
+            <div class="bg-palette-3 text-white rounded-2xl shadow-md flex flex-col md:flex-row items-center justify-between gap-4 px-4 py-8">
                 <!-- Left: Text -->
                 <div class="flex-1">
-                    <h3 class="text-2xs md:text-2xl font-semibold mb-3">Got something to share?</h3>
-                    <p class="text-gray-100 text-sm md:text-base">
+                    <h3 class="text-3xl md:text-2xl font-semibold mb-1 md:ml-7">Got something to share?</h3>
+                    <p class="text-palette-4 text-sm md:text-base md:ml-7">
                         Submit your own blog and inspire others with your story.
                     </p>
                 </div>
@@ -77,15 +76,12 @@
                     <button
                         onclick="document.getElementById('submitBlogForm').scrollIntoView({ behavior: 'smooth' })"
                         class="bg-white text-palette-3 font-semibold px-8 py-3 rounded-full 
-                       hover:bg-gray-100 transition duration-300 shadow-md hover:shadow-lg">
+                       hover:bg-gray-100 transition duration-300 shadow-md hover:shadow-lg md:mr-12">
                         Submit Your Idea
                     </button>
                 </div>
             </div>
         </section>
-
-
-        <!-- BLOG CTA (BRING IT TO SUBMIT FORM IDEA ON BOTTOM) -->
 
         {{-- Blog List --}}
         <div class="space-y-10">
@@ -188,7 +184,8 @@
 
         {{-- Submit Blog Form (opsional, bisa kamu simpan kalau memang ada di figma) --}}
         <div id="submitBlogForm" class="mt-12 bg-white shadow-md rounded-lg p-10">
-            <h2 class="text-4xl font-semibold mb-2">Submit your blog!</h2>
+            <h2 class="text-4xl font-semibold mb-2">Submit your Idea</h2>
+            <p class="text-gray-500 text-sm mb-7">Submit your own blog and inspire others with your story.</p>
             <p class="text-gray-500 text-sm mb-7">Required fields are marked *</p>
             <form class="space-y-4 max-w-xl">
                 <div>

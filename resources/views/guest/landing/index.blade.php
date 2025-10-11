@@ -18,23 +18,23 @@
     </p>
 
     <!-- button mobile -->
-    <div class="mt-6 md:hidden">
+    <!-- <div class="mt-6 md:hidden">
       <a href="/event">
         <button class="bg-palette-5 hover:bg-palette-1 text-white font-extralight py-2 px-14 rounded-3xl ease-in-out transition duration-200 flex items-center gap-2">
           <span class="text-sm">View Event</span>
         </button>
       </a>
     </div>
-  </div>
+  </div> -->
 
   <!-- button Desktop -->
-  <div class="hidden lg:flex items-center mt-6 ml-20">
+  <!-- <div class="hidden lg:flex items-center mt-6 ml-20">
     <a href="/event">
       <button class="bg-palette-5 text-white font-normal py-2 px-20 rounded-3xl flex items-center gap-2 ease-in-out transition duration-300 hover:shadow-lg hover:shadow-gray-600">
         <span>View Event</span>
       </button>
     </a>
-  </div>
+  </div> -->
 </section>
 
 <!-- end Hero Section -->
