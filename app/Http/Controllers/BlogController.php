@@ -66,6 +66,7 @@ class BlogController extends Controller
         ]);
         $adminEmail = env('MAIL_TO_ADMIN');
         Mail::to($adminEmail)->send(new BlogSubmission($validatedData));
+        // dd($validatedData);
         return back()->with('success', 'Thank you! Your blog has been submitted successfully.');
     }
 }

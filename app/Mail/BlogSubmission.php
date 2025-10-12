@@ -8,6 +8,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Mail\Mailables\Address; 
 
 class BlogSubmission extends Mailable
 {
@@ -40,7 +41,7 @@ class BlogSubmission extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'emails.blog_submission',
         );
     }
 
@@ -57,6 +58,7 @@ class BlogSubmission extends Mailable
     public function build()
     {
         return $this->from('faridfarhan444@gmail.com', 'Blog Submission')
-            ->subject('New Blog Post Submission!');
+            ->subject('New Blog Post Submission!')
+            ->view('emails.blog_submission');
     }
 }
