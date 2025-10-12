@@ -28,6 +28,9 @@ class AuthController extends Controller
             'username' => 'required|string|max:255|unique:users,username',
             'password' => 'required|string|min:6',
         ], [
+            'email.required' => 'Email harus diisi.',
+            'email.email' => 'Email tidak valid.',
+            'email.unique' => 'Email sudah terdaftar.',
             'notelfon.required' => 'No. Telepon harus diisi.',
             'notelfon.numeric' => 'No. Telepon harus angka.',
             'notelfon.digits_between' => 'No. Telepon harus 10-13 digit.',
@@ -38,12 +41,10 @@ class AuthController extends Controller
             'password.min' => 'Password minimal 6 karakter.',
         ]);
 
-        $email = $request->username . '@ggs.com';
-
         $user = User::create([
             'name' => $request->username, 
             'username' => $request->username,
-            'email' => $email,
+            'email' => $request->email,
             'password' => Hash::make($request->password),
             'role' => 'member',
         ]);
