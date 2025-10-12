@@ -19,10 +19,11 @@ class BlogController extends Controller
         return view('guest.blog.blog', compact('blogs', 'highlightedBlog'));
     }
 
-    public function detailBlog(string $slug){
+    public function detailBlog(string $slug)
+    {
         $blog = Blog::query()
-        ->select('id', 'title', 'published_at', 'author', 'img', 'slug', 'content')
-        ->where('slug', $slug)->firstOrFail();
+            ->select('id', 'title', 'published_at', 'author', 'img', 'slug', 'content')
+            ->where('slug', $slug)->firstOrFail();
 
         return view('guest.blog.detail', compact('blog'));
     }
@@ -35,8 +36,8 @@ class BlogController extends Controller
             ->select('id', 'title', 'published_at', 'author', 'img', 'slug', 'content')
             ->where(function ($q) use ($search) {
                 $q->where('title', 'like', "%{$search}%")
-                  ->orWhere('content', 'like', "%{$search}%")
-                  ->orWhere('author', 'like', "%{$search}%");
+                    ->orWhere('content', 'like', "%{$search}%")
+                    ->orWhere('author', 'like', "%{$search}%");
             })
             ->orderByDesc('published_at')
             ->paginate(6)
@@ -52,4 +53,14 @@ class BlogController extends Controller
 
     //     return view('blog.detail', compact('blog'));
     // }
+
+    public function store(Request $request)
+    {
+        $validatedData = $request->validate([
+            'email'   => 'required|email',
+            'subject' => 'required|min:5|max:255',
+            'content' => 'required|min:20',
+        ]);
+        return back()->with('success', 'Thank you! Your blog has been submitted successfully.');
+    }
 }
