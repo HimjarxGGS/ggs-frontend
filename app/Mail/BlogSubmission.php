@@ -12,17 +12,20 @@ use Illuminate\Queue\SerializesModels;
 class BlogSubmission extends Mailable
 {
     use Queueable, SerializesModels;
+    public $data;
 
     /**
      * Create a new message instance.
+     * @return void
      */
-    public function __construct()
+    public function __construct($data)
     {
-        //
+        $this->data = $data;
     }
 
     /**
      * Get the message envelope.
+     *  @return $this
      */
     public function envelope(): Envelope
     {
@@ -49,5 +52,11 @@ class BlogSubmission extends Mailable
     public function attachments(): array
     {
         return [];
+    }
+
+    public function build()
+    {
+        return $this->from('faridfarhan444@gmail.com', 'Blog Submission')
+            ->subject('New Blog Post Submission!');
     }
 }

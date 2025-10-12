@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Blog;
+use Illuminate\Support\Facades\Mail;;
+
+use App\Mail\BlogSubmission;
 
 class BlogController extends Controller
 {
@@ -61,6 +64,8 @@ class BlogController extends Controller
             'subject' => 'required|min:5|max:255',
             'content' => 'required|min:20',
         ]);
+        $adminEmail = env('MAIL_TO_ADMIN');
+        Mail::to($adminEmail)->send(new BlogSubmission($validatedData));
         return back()->with('success', 'Thank you! Your blog has been submitted successfully.');
     }
 }
