@@ -8,15 +8,17 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Mail\Mailables\Address; 
+use Illuminate\Mail\Mailables\Address;
 
 class BlogSubmission extends Mailable
 {
     use Queueable, SerializesModels;
+
     public $data;
 
     /**
      * Create a new message instance.
+     *
      * @return void
      */
     public function __construct($data)
@@ -26,12 +28,17 @@ class BlogSubmission extends Mailable
 
     /**
      * Get the message envelope.
-     *  @return $this
      */
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Blog Submission',
+            from: new Address(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME')),
+            replyTo: [
+                new Address($this->data['email']),
+            ],
+
+            // Subjek email
+            subject: 'New Blog Post Submission!',
         );
     }
 
@@ -53,12 +60,5 @@ class BlogSubmission extends Mailable
     public function attachments(): array
     {
         return [];
-    }
-
-    public function build()
-    {
-        return $this->from('faridfarhan444@gmail.com', 'Blog Submission')
-            ->subject('New Blog Post Submission!')
-            ->view('emails.blog_submission');
     }
 }
