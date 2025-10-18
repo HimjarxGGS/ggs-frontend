@@ -85,20 +85,5 @@
            </div>
        </div>
    </div>
-
-   <!-- contact pers -->
-        <div class="flex flex-col md:flex-row gap-3 mt-6 md:justify-center">
-            <a href="" target="_blank"
-            class="px-6 md:px-20 py-2 border border-palette-2 text-palette-4 rounded-3xl 
-                    hover:bg-green-50 font-medium text-center transition ease-in-out duration-200">
-                Contact Person 1
-            </a>
-
-            <a href="" target="_blank"
-            class="px-6 md:px-20 py-2 border border-palette-2 text-palette-4 rounded-3xl
-                    hover:bg-green-50 font-medium text-center transition ease-in-out duration-200">
-                Contact Person 2
-            </a>
-        </div>
 </div>
 @endsection
