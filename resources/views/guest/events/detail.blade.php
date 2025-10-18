@@ -3,7 +3,7 @@
 @section('title', 'Detail Event - ' . $event->name)
 
 @section('content')
-<div class="max-w-6xl mx-auto px-4 mt-40 font-geist">
+<div class="max-w-6xl mx-auto px-4 mt-20 font-geist">
 
     <!-- header -->
     <div class="mb-8 text-center md:text-left">

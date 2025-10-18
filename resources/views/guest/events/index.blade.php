@@ -158,7 +158,7 @@
     <section class="bg-[#F5F5F9] py-12 mt-10">
         <div class="max-w-7xl mx-auto px-4 md:px-8 text-center">
             <!-- Heading -->
-            <h2 class="text-2xl md:text-3xl font-bold text-palette-2 mb-10">
+            <h2 class="text-xl md:text-3xl font-bold text-palette-2 mb-10">
                 Dampak Green Generation Surabaya
             </h2>
 
@@ -225,7 +225,7 @@
                                         class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Kanye West">
                                     <div>
                                         <h3 class="text-lg font-semibold text-gray-800">Aghif</h3>
-                                        <p class="text-palette-4 text-md"> ... </p>
+                                        <p class="text-palette-4 text-md">Student</p>
                                     </div>
                                 </div>
                                 <p class="leading-normal text-gray-700 text-md"> Bertumbuh bersama GGSBY memberikan saya
@@ -245,8 +245,8 @@
                                     <img src="{{ asset('images/testimoni_chery.png') }}" alt="Chery"
                                         class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook">
                                     <div>
-                                        <h3 class="text-lg font-semibold text-gray-800">cheryyy</h3>
-                                        <p class="text-palette-4 text-md">CEO of Apple</p>
+                                        <h3 class="text-lg font-semibold text-gray-800">Cheryyy</h3>
+                                        <p class="text-palette-4 text-md">-</p>
                                     </div>
                                 </div>
                                 <p class="leading-normal text-gray-700 text-md">sejak bergabung dengan GGSBY saya semakin
@@ -270,8 +270,8 @@
                                         alt="Firda" class="w-12 h-12 bg-center bg-cover border rounded-full"
                                         alt="Parag Agrawal">
                                     <div>
-                                        <h3 class="text-lg font-semibold text-gray-800">FIRDA</h3>
-                                        <p class="text-palette-4 text-md">CEO of Twitter</p>
+                                        <h3 class="text-lg font-semibold text-gray-800">Firda</h3>
+                                        <p class="text-palette-4 text-md">Student</p>
                                     </div>
                                 </div>
                                 <p class="leading-normal text-gray-700 text-md">Dengan bergabung bersama GGSBY membuat saya

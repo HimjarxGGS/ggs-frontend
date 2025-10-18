@@ -221,14 +221,14 @@
 <!-- Section text start -->
 <section class="w-full px-6 md:px-12 mb-10">
   <div class="max-w-full mx-auto text-left">
-    <h1 class="text-3xl md:text-7xl font-bold text-black leading-tight text-center">
+    <h1 class="text-xl md:text-7xl font-bold text-black leading-tight text-center">
       <!-- Change Begins with You(th)<br/> -->
       Building a <span class="text-palette-2">Greener World</span><br/>
       One Step at a Time.
     </h1>
 
-    <p class="text-gray-400 font-light text-sm md:text-base mt-7 text-center">
-      Green Generation empowers youth to lead,
+    <p class="text-gray-400 font-light text-xs md:text-base mt-7 text-center">
+      Green Generation empowers youth to <br>lead,
       innovate, and act for the environment.
     </p>
   </div>
