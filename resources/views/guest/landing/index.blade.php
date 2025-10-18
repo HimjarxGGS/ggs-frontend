@@ -122,7 +122,7 @@
                 <h2 class="text-5xl font-bold text-palette-5">
                     our <span class="font-bold">Partners</span>
                 </h2>
-                <p class="text-gray-500">Green Generation Surabaya test</p>
+                <p class="text-gray-500">Green Generation Surabaya</p>
                 
             </div>
             <div class="hidden lg:block w-80 h-0.5 bg-gray-300"></div>
