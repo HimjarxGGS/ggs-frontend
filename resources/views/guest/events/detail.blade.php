@@ -65,24 +65,8 @@
                             <p class="text-wrap">
                                 {!! $event->description !!}
                             </p>
-
-
                         </div>
                     </div>
-                </div>
-
-                <!-- cta -->
-                <div class="p-4 border rounded-xl shadow-md flex justify-center gap-4 mt-6">
-                    <!-- button daftar -->
-                    <a href="{{ route('event.registration', $event->id) }}"
-                        class="px-5 md:px-6 py-3 bg-palette-5 text-white rounded-2xl shadow-md hover:bg-gray-500 transition duration-300 ease-in-out md:text-lg text-sm">
-                        Daftar Sekarang
-                    </a>
-                    <!-- button contact person -->
-                    <a href="https://wa.me/{{ $event->contact_person ?? '628123456789' }}"
-                        class="px-5 md:px-6 py-3 border border-black text-black rounded-2xl shadow-md hover:bg-gray-200 transition duration-300 ease-in-out md:text-lg text-sm">
-                        Contact Person
-                    </a>
                 </div>
             </div>
         </div>
@@ -90,7 +74,6 @@
         @if ($event->after_movie_url)
             <section id="aftermovie" class="mt-12 md:mt-20">
                 <h2 class="text-2xl md:text-3xl font-bold text-center mb-6">After Movie</h2>
-
                 <div class="flex justify-center">
                     <div class="w-full max-w-4xl aspect-video overflow-hidden rounded-lg shadow-lg">
                         <iframe class="w-full h-full" src="{{ $event->getEmbedAfterMovieURL() }}" title="After Movie"
