@@ -235,9 +235,5 @@
 
     </section>
 
-    <!-- section partner -->
-<section class="px-6">
-</section>
-
     </div>
 @endsection
