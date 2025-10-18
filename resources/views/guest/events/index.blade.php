@@ -221,7 +221,7 @@
                             </div>
                             <div class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
                                 <div class="flex items-center space-x-4">
-                                    <img src="https://pbs.twimg.com/profile_images/1276461929934942210/cqNhNk6v_400x400.jpg"
+                                    <img src="{{ asset('images/testimoni_aghif.png') }}" alt="Aghif"
                                         class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Kanye West">
                                     <div>
                                         <h3 class="text-lg font-semibold text-gray-800">Aghif</h3>
@@ -241,8 +241,8 @@
                                 class="absolute transition rounded-3xl opacity-25 -inset-1 bg-gradient-to-r from-palette-4 to-palette-2 blur duration-400 group-hover:opacity-100 group-hover:duration-500">
                             </div>
                             <div class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
-                                <div class="flex items-center space-x-4"><img
-                                        src="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg"
+                                <div class="flex items-center space-x-4">
+                                    <img src="{{ asset('images/testimoni_chery.png') }}" alt="Chery"
                                         class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook">
                                     <div>
                                         <h3 class="text-lg font-semibold text-gray-800">cheryyy</h3>
@@ -266,9 +266,9 @@
                                 class="absolute transition rounded-3xl opacity-25 -inset-1 bg-gradient-to-r from-palette-4 to-palette-2 blur duration-400 group-hover:opacity-100 group-hover:duration-500">
                             </div>
                             <div class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
-                                <div class="flex items-center space-x-4"><img
-                                        src="https://pbs.twimg.com/profile_images/1375285353146327052/y6jeByyD_400x400.jpg"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal">
+                                <div class="flex items-center space-x-4"><img src="{{ asset('images/testimoni_firda.png') }}"
+                                        alt="Firda" class="w-12 h-12 bg-center bg-cover border rounded-full"
+                                        alt="Parag Agrawal">
                                     <div>
                                         <h3 class="text-lg font-semibold text-gray-800">FIRDA</h3>
                                         <p class="text-palette-4 text-md">CEO of Twitter</p>
