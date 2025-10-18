@@ -67,8 +67,8 @@ class EventController extends Controller
 
     public function show($id)
     {
-        $event = Event::findOrFail($id);
-
+        $event = Event::with('dokumentasi')->findOrFail($id);
+        // dd($event);
         $moreEvents = Event::where('id', '!=', $event->id)
             ->where('status', 'active')
             ->where('event_date', '>=', Carbon::today())

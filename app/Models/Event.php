@@ -12,6 +12,9 @@ class Event extends Model
 
     protected $table = 'events';
 
+
+    protected $primaryKey = 'id';
+
     protected $fillable = [
         'name',
         'description',
@@ -29,6 +32,11 @@ class Event extends Model
         'event_date' => 'date',
         'need_registrant_picture' => 'boolean',
     ];
+
+    public function dokumentasi()
+    {
+        return $this->hasMany(\App\Models\DokumentasiEvent::class);
+    }
 
     public function getEventDescription()
     {

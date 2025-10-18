@@ -129,7 +129,7 @@
     <section id="dokumentasi" class="mt-12 md:mt-20">
         <h2 class="text-2xl md:text-3xl font-bold text-center mb-6">Dokumentasi Kegiatan</h2>
         <div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 overflow-hidden md:overflow-visible">
-            @forelse($event->documentation ?? [] as $doc)
+            @forelse($event->dokumentasi ?? [] as $doc)
             <img src="{{ asset('storage/'.$doc) }}"
                 alt="Dokumentasi"
                 class="w-full md:w-64 rounded-2xl shadow-md">
