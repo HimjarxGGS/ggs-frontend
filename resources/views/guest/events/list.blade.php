@@ -74,7 +74,7 @@
 
                 <!-- status -->
                 <span
-                    class="absolute top-7 left-7 {{ $event->status === 'active' ? 'bg-green-500' : 'bg-orange-400' }} text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    class="absolute top-7 left-7 {{ $event->status === 'active' ? 'bg-green-500' : 'bg-orange-500' }} text-white text-xs font-semibold px-3 py-1 rounded-full">
                     {{ ucfirst($event->status) }}
                 </span>
             </div>
@@ -93,7 +93,7 @@
                     </div>
                     <!-- deskripsi -->
                     <p class="text-xs text-gray-600 line-clamp-3">
-                        {{ Str::limit($event->description, 120) }}
+                        {!! Str::limit($event->description, 120) !!}
                     </p>
                 </div>
             </div>
