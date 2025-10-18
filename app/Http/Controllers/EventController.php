@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Event;
+use Carbon\Carbon;
 
 class EventController extends Controller
 {
@@ -11,7 +12,8 @@ class EventController extends Controller
     {
 
         $upcoming = Event::where('status', 'active')
-            ->orderBy('event_date', 'asc')
+            ->where('event_date', '>=', Carbon::today())
+            ->orderBy('event_date', 'asc') 
             ->take(3)
             ->get();
 
