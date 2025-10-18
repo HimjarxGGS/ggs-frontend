@@ -42,7 +42,7 @@
 
     <!-- Footer Text -->
     <div class="text-center border-t pt-6 text-sm text-gray-600 px-4">
-      <p class="mb-1">© GREEN GENERATION 2025</p>
+      <p class="mb-1">© GREEN GENERATION SURABAYA | 2025</p>
       <p class="text-xs">Green Generation is a Independent Organizations<br>
         Working on the #Environment in Indonesia. Let’s Create <br> Generation with Environmental Culture <br>
         “It’s Easy to be Green”🍃
