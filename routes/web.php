@@ -10,6 +10,7 @@ use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataDiriController;
 use App\Http\Controllers\MemberEventRegisterController;
+use App\Http\Controllers\GuestEventRegisterController;
 
 // Auth Routes
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
@@ -35,8 +36,11 @@ Route::get('/event/finished', [EventController::class, 'finished'])->name('event
 
 // Registrasi Event untuk Guest - PERBAIKAN DI SINI
 Route::get('/event/registrasi-event/{id}', [EventController::class, 'showRegistration'])->name('event.registration');
-Route::post('/event/registrasi-event/{id}', [EventController::class, 'processRegistration'])->name('event.registration.submit');
+// Route::post('/event/registrasi-event/{id}', [EventController::class, 'processRegistration'])->name('event.registration.submit');
 Route::view('/event/success-registrasi', 'guest.events.success')->name('event.registration.success');
+Route::post('/guest/events/register', [GuestEventRegisterController::class, 'store'])
+    ->name('guest.register');
+
 
 // Route untuk Member (Login Required)
 Route::middleware('auth')->group(function () {

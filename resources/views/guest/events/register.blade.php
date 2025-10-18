@@ -53,9 +53,9 @@
                         </div>
                     </div>
 
-                    <form action="{{ route('event.registration.submit', $event->id) }}" method="POST"
-                        enctype="multipart/form-data" class="space-y-4">
-                        @csrf
+                   <form action="{{ route('guest.register') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
+    @csrf
+    <input type="hidden" name="event_id" value="{{ $event->id }}">
 
                         <!-- email -->
                         <div class="mb-4">
@@ -68,7 +68,7 @@
                         <div class="mb-4">
                             <label for="nama" class="block mb-2 text-sm font-medium text-gray-900 ml-4">Nama
                                 Lengkap</label>
-                            <input type="text" id="nama" name="nama" placeholder="Enter your name" required
+                            <input type="text" id="nama" name="nama_lengkap" placeholder="Enter your name" required
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-palette-2 focus:border-palette-2 block w-full p-2.5 transition ease-in-out duration-300 pl-5">
                         </div>
 
@@ -76,23 +76,24 @@
                         <div class="mb-4">
                             <label for="instansi" class="block mb-2 text-sm font-medium text-gray-900 ml-4">Asal
                                 Instansi</label>
-                            <input type="text" id="instansi" name="instansi" placeholder="Enter your institution"
+                            <input type="text" id="instansi" name="asal_instansi" placeholder="Enter your institution"
                                 required
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-palette-2 focus:border-palette-2 block w-full p-2.5 transition ease-in-out duration-300 pl-5">
                         </div>
 
-                        <!-- usia -->
-                        <div class="mb-4">
-                            <label for="usia" class="block mb-2 text-sm font-medium text-gray-900 ml-4">Usia</label>
-                            <input type="number" id="usia" name="usia" placeholder="Enter your age" required
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-palette-2 focus:border-palette-2 block w-full p-2.5 transition ease-in-out duration-300 pl-5">
-                        </div>
+                        <!-- tanggal lahir -->
+<div class="mb-4">
+    <label for="date_of_birth" class="block mb-2 text-sm font-medium text-gray-900 ml-4">Tanggal Lahir</label>
+    <input type="date" id="date_of_birth" name="date_of_birth" required
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-palette-2 focus:border-palette-2 block w-full p-2.5 transition ease-in-out duration-300 pl-5">
+</div>
+
 
                         <!-- telepon -->
                         <div class="mb-4">
                             <label for="telepon" class="block mb-2 text-sm font-medium text-gray-900 ml-4">No.
                                 Telepon</label>
-                            <input type="text" id="telepon" name="telepon" placeholder="Enter your phone number"
+                            <input type="text" id="telepon" name="no_telepon" placeholder="Enter your phone number"
                                 required
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-palette-2 focus:border-palette-2 block w-full p-2.5 transition ease-in-out duration-300 pl-5">
                         </div>
@@ -101,7 +102,7 @@
                         <div class="mb-4">
                             <label for="penyakit" class="block mb-2 text-sm font-medium text-gray-900 ml-4">Riwayat
                                 Penyakit</label>
-                            <input type="text" id="penyakit" name="penyakit" placeholder="Optional"
+                            <input type="text" id="penyakit" name="riwayat_penyakit" placeholder="Optional"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-palette-2 focus:border-palette-2 block w-full p-2.5 transition ease-in-out duration-300 pl-5">
                         </div>
 
@@ -124,7 +125,7 @@
                                         </p>
                                         <p class="text-xs text-gray-500">PNG or JPG</p>
                                     </div>
-                                    <input id="poster" name="poster" type="file" class="hidden" required />
+                                    <input id="poster" name="bukti_share" type="file" class="hidden" required />
                                 </label>
                             </div>
                         </div>
@@ -148,7 +149,7 @@
                                             drop</p>
                                         <p class="text-xs text-gray-500">PNG or JPG</p>
                                     </div>
-                                    <input id="pembayaran" name="pembayaran" type="file" class="hidden" required />
+                                    <input id="pembayaran" name="bukti_payment" type="file" class="hidden" required />
                                 </label>
                             </div>
                         </div>
@@ -172,7 +173,7 @@
                                             drop</p>
                                         <p class="text-xs text-gray-500">PNG or JPG</p>
                                     </div>
-                                    <input id="foto" name="foto" type="file" class="hidden" required />
+                                    <input id="foto" name="registrant_picture" type="file" class="hidden" required />
                                 </label>
                             </div>
                         </div>
@@ -182,12 +183,10 @@
                             <p class="text-sm font-medium text-gray-700 mb-1 ml-4">Bersedia hadir pada hari H?</p>
                             <div class="flex items-center gap-4 ml-4">
                                 <label class="flex items-center gap-1 cursor-pointer">
-                                    <input type="radio" name="hadir" value="ya" checked required>
-                                    Hadir
+                                   <input type="radio" name="kesediaan_hadir" value="1" checked required> Hadir
                                 </label>
                                 <label class="flex items-center gap-1 cursor-pointer">
-                                    <input type="radio" name="hadir" value="tidak" required>
-                                    Tidak Hadir
+                                    <input type="radio" name="kesediaan_hadir" value="0" required> Tidak Hadir
                                 </label>
                             </div>
                         </div>
@@ -197,12 +196,10 @@
                             <p class="text-sm font-medium text-gray-700 mb-1 ml-4">Bersedia mengikuti tata tertib?</p>
                             <div class="flex items-center gap-4 ml-4">
                                 <label class="flex items-center gap-1 cursor-pointer">
-                                    <input type="radio" name="tata_tertib" value="ya" checked required>
-                                    Ya, Saya Bersedia
+                                    <input type="radio" name="kesediaan_menaati_aturan" value="1" checked required> Ya
                                 </label>
                                 <label class="flex items-center gap-1 cursor-pointer">
-                                    <input type="radio" name="tata_tertib" value="tidak" required>
-                                    Tidak
+                                    <input type="radio" name="kesediaan_menaati_aturan" value="0" required> Tidak
                                 </label>
                             </div>
                         </div>
@@ -213,17 +210,17 @@
                             <div class="ml-2">
                                 <!-- BSI -->
                                 <label class="flex items-center gap-2 p-2 cursor-pointer">
-                                    <input type="radio" name="pembayaran_via" value="bsi" required>
+                                    <input type="radio" name="opsi_payment" value="bsi" required> BSI
                                     <span>BSI 726741218 a.n Nanda Aliefira</span>
                                 </label>
                                 <!-- OVO -->
                                 <label class="flex items-center gap-2 p-2 cursor-pointer">
-                                    <input type="radio" name="pembayaran_via" value="ovo" required>
+                                   <input type="radio" name="opsi_payment" value="ovo" required> OVO
                                     <span>OVO 085784246763 a.n Nanda Aliefira</span>
                                 </label>
                                 <!-- GOPAY -->
                                 <label class="flex items-center gap-2 p-2 cursor-pointer">
-                                    <input type="radio" name="pembayaran_via" value="gopay" required>
+                                   <input type="radio" name="opsi_payment" value="gopay" required> GOPAY
                                     <span>GOPAY 085784246763 a.n Nanda Aliefira</span>
                                 </label>
                             </div>
