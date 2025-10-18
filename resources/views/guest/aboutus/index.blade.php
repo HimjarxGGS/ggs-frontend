@@ -1,6 +1,6 @@
 @extends('guest.layouts.app')
 
-@section('title', 'About us - Green Generation Surabaya')
+@section('title', 'Green Generation Surabaya')
 
 @section('content')
 <!-- start hero Section -->
@@ -458,7 +458,7 @@
 </section>
 <!-- section timeline end -->
 
-<!-- section principal start -->
+<!-- section principal and FaQ start -->
 <section class="bg-gray-50 py-10 px-6">
   <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center lg:items-start gap-10">
 
@@ -522,7 +522,7 @@
     <div class="lg:w-1/2 space-y-4" x-data>
       
       <!-- accordion 1 -->
-      <div class="border-b pb-4" x-data="{ open: false }" data-aos="zoom-out-down"  data-aos-delay="0" data-aos-duration="800">
+      <div class="border-b pb-4" x-data="{ open: false }">
         <button @click="open = !open" class="flex justify-between w-full text-left text-sm md:text-base font-medium text-gray-800">
           What is Green Generation?
           <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -535,7 +535,7 @@
       </div>
 
       <!-- accordion 2 -->
-      <div class="border-b pb-4" x-data="{ open: false }" data-aos="zoom-out-down" data-aos-delay="500" data-aos-duration="800">
+      <div class="border-b pb-4" x-data="{ open: false }">
         <button @click="open = !open" class="flex justify-between w-full text-left text-sm md:text-base font-medium text-gray-800">
           How to join event Green Generation Surabaya?
           <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -548,7 +548,7 @@
       </div>
 
       <!-- accordion 3 -->
-      <div class="border-b pb-4" x-data="{ open: false }" data-aos="zoom-out-down" data-aos-delay="1000" data-aos-duration="800">
+      <div class="border-b pb-4" x-data="{ open: false }">
         <button @click="open = !open" class="flex justify-between w-full text-left text-sm md:text-base font-medium text-gray-800">
           How do I know if my registration is successful?
           <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -567,30 +567,55 @@
 
 <section class="px-6">
 
-  <div class="flex flex-col lg:flex-row md:items-center justify-center gap-10">
-    <div class="text-left lg:text-left">
-      <h2 class="text-5xl font-bold text-palette-5">
-        our <span class="font-bold">Partners</span>
-      </h2>
-      <p class="text-gray-500">Green Generation Surabaya</p>
+    <div class="flex flex-col lg:flex-row md:items-center justify-center gap-10">
+        <div class="text-left lg:text-left">
+            <h2 class="text-5xl font-bold text-palette-5">
+                our <span class="font-bold">Partners</span>
+            </h2>
+            <p class="text-gray-500">Green Generation Surabaya</p>
+            </div>
+        <div class="hidden lg:block w-80 h-0.5 bg-gray-300"></div>
     </div>
-    <div class="hidden lg:block w-80 h-0.5 bg-gray-300"></div>
-  </div>
 
   <!-- logo partner -->
-  <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-7 gap-y-8 px-4 max-w-6xl mx-auto mt-14">
-      <img  src="{{ asset('images/Logo.png') }}" alt="" class="h-24"/>
-      <img  src="{{ asset('images/cnn.png') }}" alt="" class="h-20"/>
-      <img  src="{{ asset('images/Logo.png') }}" alt="" class="h-24"/>
-      <img  src="{{ asset('images/Logo.png') }}" alt="" class="h-24"/>
-      <img  src="{{ asset('images/Logo.png') }}" alt="" class="h-24"/>
-      <img  src="{{ asset('images/Logo.png') }}" alt="" class="h-24"/>
-      <img  src="{{ asset('images/Logo.png') }}" alt="" class="h-24"/>
-      <img  src="{{ asset('images/Logo.png') }}" alt="" class="h-24"/>
-      <img  src="{{ asset('images/Logo.png') }}" alt="" class="h-24"/>
-      <img  src="{{ asset('images/Logo.png') }}" alt="" class="h-24"/>
-      <!-- <img  src="" alt="" class="bg-gray-300 rounded-md h-20 flex items-center justify-center text-sm"/> -->
-  </div>
+    <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-8 gap-y-10 max-w-6xl mx-auto mt-14 place-items-center">
+       <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="0" data-aos-duration="700">
+         <img src="{{ asset('images/aisec.png') }}" alt="AIESEC" class="max-h-24 object-contain" />
+       </div>
+       <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="700">
+         <img src="{{ asset('images/americancorner.png') }}" alt="American Corner" class="max-h-24 object-contain" />
+       </div>
+        <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="200" data-aos-duration="700">
+            <img src="{{ asset('images/gojek.png') }}" alt="Gojek" class="max-h-24 object-contain" />
+        </div>
+        <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="300" data-aos-duration="700">
+            <img src="{{ asset('images/kahf.png') }}" alt="Kahf" class="max-h-24 object-contain" />
+        </div>
+        <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="400" data-aos-duration="700">
+            <img src="{{ asset('images/komdigi.png') }}" alt="Komdigi" class="max-h-24 object-contain" />
+        </div>
+        <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="500" data-aos-duration="700">
+            <img src="{{ asset('images/komunitasnarasijatim.png') }}" alt="Komunitas Narasi Jatim" class="max-h-24 object-contain" />
+        </div>
+        <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="600" data-aos-duration="700">
+            <img src="{{ asset('images/noovoleum.png') }}" alt="Noovoleum" class="max-h-24 object-contain" />
+        </div>
+        <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="700" data-aos-duration="700">
+            <img src="{{ asset('images/hi.png') }}" alt="Human Initiative" class="max-h-24 object-contain" />
+        </div>
+        <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="800" data-aos-duration="700">
+            <img src="{{ asset('images/pepelingasihindonesia.png') }}" alt="Pepelingasih Indonesia" class="max-h-24 object-contain" />
+        </div>
+        <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="900" data-aos-duration="700">
+            <img src="{{ asset('images/uwk.png') }}" alt="UWK" class="max-h-20 object-contain" />
+        </div>
+        <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="1000" data-aos-duration="700">
+            <img src="{{ asset('images/tus.png') }}" alt="TUS" class="max-h-24 object-contain" />
+        </div>
+        <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="1100" data-aos-duration="700">
+            <img src="{{ asset('images/fpci.png') }}" alt="FPCI" class="max-h-24 object-contain" />
+        </div>
+    </div>
 </section>
 
 @endsection

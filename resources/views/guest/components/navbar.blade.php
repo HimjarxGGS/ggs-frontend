@@ -17,7 +17,7 @@
 
         <!-- desktop menu -->
         <div class="hidden lg:flex flex-1 justify-center gap-x-10 items-center">
-            <a href="/about" class="nav-link text-gray-500 font-semibold hover:text-palette-5 transition-transform duration-300 transform hover:scale-[1.3]">Home</a>
+            <a href="/" class="nav-link text-gray-500 font-semibold hover:text-palette-5 transition-transform duration-300 transform hover:scale-[1.3]">Home</a>
             <a href="/event" class="nav-link text-gray-500 font-semibold hover:text-palette-5 transition-transform duration-300 transform hover:scale-[1.3]">Event</a>
             <a href="/blog" class="nav-link text-gray-500 font-semibold hover:text-palette-5 transition-transform duration-300 transform hover:scale-[1.3]">Blog</a>
         </div>
@@ -33,7 +33,7 @@
 
     <!-- mobile menu -->
     <div id="mobileMenu" class="hidden lg:hidden top-[113px] w-[85%] left-1/2 -translate-x-1/2 rounded-3xl backdrop-blur-3xl shadow-md py-7 text-center z-[99] fixed">
-        <a href="/about" class="nav-link block py-4 text-gray-500 font-semibold hover:text-[#5e3929] transition duration-200">Home</a>
+        <a href="/" class="nav-link block py-4 text-gray-500 font-semibold hover:text-[#5e3929] transition duration-200">Home</a>
         <a href="/event" class="nav-link block py-4 text-gray-500 font-semibold hover:text-[#5e3929] transition duration-200">Event</a>
         <a href="/blog" class="nav-link block py-4 text-gray-500 font-semibold hover:text-[#5e3929] transition duration-200">Blog</a>
         

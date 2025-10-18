@@ -24,8 +24,8 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
 
-Route::get('/', [LandingController::class, 'index'])->name('landing.index');
-Route::get('/about', [AboutController::class, 'index'])->name('about');
+// Route::get('/', [LandingController::class, 'index'])->name('landing.index');
+Route::get('/', [AboutController::class, 'index'])->name('landing.index');
 
 //route blog
 // Route::view('/blog', 'guest.blog.blog')->name('blog.index');

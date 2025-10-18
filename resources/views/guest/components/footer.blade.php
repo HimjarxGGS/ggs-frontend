@@ -11,7 +11,7 @@
         <div>
           <h4 class="font-semibold mb-2">Organizations</h4>
           <ul class="space-y-1 text-sm text-gray-600">
-            <li><a href="/about" class="hover:text-[#5e3929] transition duration-300">Home</a></li>
+            <li><a href="/" class="hover:text-[#5e3929] transition duration-300">Home</a></li>
             <li><a href="/event" class="hover:text-[#5e3929] transition duration-300">Event</a></li>
           </ul>
         </div>
