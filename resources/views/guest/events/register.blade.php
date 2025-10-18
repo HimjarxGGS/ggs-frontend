@@ -240,11 +240,6 @@
                         *Daftar Member supaya data tersimpan untuk event selanjutnya dan dapat melihat history pendaftaran!
                         <a href="{{ route('register') }}" class="text-blue-500 hover:underline">Daftar disini</a>
                     </p>
-
-                    <a href="https://wa.me/{{ $event->contact_person ?? '628123456789' }}"
-                        class="block text-center bg-gray-200 text-gray-800 rounded-3xl py-3 hover:bg-gray-300 transition">
-                        Contact Person
-                    </a>
                 </div>
             </div>
         </section>
