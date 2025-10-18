@@ -7,83 +7,70 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HistoryController;
-use App\Http\Controllers\DashboardController; 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataDiriController;
 use App\Http\Controllers\MemberEventRegisterController;
+use App\Http\Controllers\GuestEventRegisterController;
 
-
-
-// Route::get('/', function () {
-//     return view('landing.index');
-// });
-
-// Route::get('/', [LandingController::class, 'index']);
-
+// Auth Routes
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
 
-Route::get('/', [LandingController::class, 'index'])->name('landing.index');
-Route::get('/about', [AboutController::class, 'index'])->name('about');
+// Landing Page
+Route::get('/', [AboutController::class, 'index'])->name('landing.index');
 
-//route blog
-// Route::view('/blog', 'guest.blog.blog')->name('blog.index');
-Route::view('/blog/detailblog', 'guest.blog.detail')->name('blog.detail');
-
+// Blog Routes
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/search', [BlogController::class, 'search'])->name('blog.search');
 Route::get('/blog/{slug}', [BlogController::class, 'detailBlog'])->name('blog.detail');
+Route::post('/submit-blog', [BlogController::class, 'store']);
 
-//route event 
-Route::get ('/event', [EventController::class, 'index'])->name('events.index');
-Route::get('/event/list-event',[EventController::class, 'list'])->name('guest.events.list');
+// Event Routes untuk Guest
+Route::get('/event', [EventController::class, 'index'])->name('events.index');
+Route::get('/event/list-event', [EventController::class, 'list'])->name('guest.events.list');
 Route::get('/events/{id}', [EventController::class, 'show'])->name('events.show');
-
 Route::get('/event/upcoming', [EventController::class, 'upcoming'])->name('events.upcoming');
 Route::get('/event/finished', [EventController::class, 'finished'])->name('events.finished');
 
- Route::view('/event/registrasi-event','guest.events.register');
- Route::view('/event/success-registrasi','guest.events.success');
+// Registrasi Event untuk Guest - PERBAIKAN DI SINI
+Route::get('/event/registrasi-event/{id}', [EventController::class, 'showRegistration'])->name('event.registration');
+// Route::post('/event/registrasi-event/{id}', [EventController::class, 'processRegistration'])->name('event.registration.submit');
+Route::view('/event/success-registrasi', 'guest.events.success')->name('event.registration.success');
+Route::post('/guest/events/register', [GuestEventRegisterController::class, 'store'])
+    ->name('guest.register');
 
-// route member
+
+// Route untuk Member (Login Required)
 Route::middleware('auth')->group(function () {
-Route::get('/dashboard-member', [DashboardController::class, 'index'])
-     ->name('member.dashboard.index');
+    Route::get('/dashboard-member', [DashboardController::class, 'index'])
+        ->name('member.dashboard.index');
 
-     // detail event untuk member
+    // Detail event untuk member
     Route::get('/dashboard-member/events/{id}', [DashboardController::class, 'showMember'])
         ->name('member.events.show');
-   
-    Route::get('/event/registrasi-event/{id}', [DashboardController::class, 'register'])->name('dashboard.register');
 
-    Route::middleware('auth')->group(function () {
-    Route::post('/event/{eventId}/register/member', [MemberEventRegisterController::class, 'store'])
-        ->name('member.dashboard.register');});
+    // Registrasi event untuk member - GUNAKAN NAME YANG BERBEDA
+    Route::get('/member/event/registrasi-event/{id}', [DashboardController::class, 'register'])->name('member.event.registration');
+    Route::post('/member/event/{eventId}/register', [MemberEventRegisterController::class, 'store'])
+        ->name('member.event.registration.submit');
 
-// halaman success setelah registrasi
-Route::view('/event/success', 'member.dashboard.successEvent')->name('member.dashboard.successEvent');
+    // Halaman success setelah registrasi
+    Route::view('/event/success', 'member.dashboard.successEvent')->name('member.dashboard.successEvent');
 
-
-   // History event
+    // History event
     Route::get('/riwayat-pendaftaran', [HistoryController::class, 'index'])->name('history.index');
     Route::get('/riwayat-pendaftaran/{id}', [HistoryController::class, 'show'])->name('history.show');
 
-    // Route::view('/data-diri', 'member.profile.index')->name('member.profile.index');
-    
+    // Data Diri
+    Route::get('/data-diri', [DataDiriController::class, 'index'])->name('member.datadiri.index');
+    Route::post('/data-diri', [DataDiriController::class, 'storeOrUpdate'])->name('member.datadiri.save');
 });
-// Menampilkan form Data Diri
-Route::get('/data-diri', [DataDiriController::class, 'index'])->name('member.datadiri.index');
-// Simpan Data Diri
-Route::post('/data-diri/store', [DataDiriController::class, 'store'])->name('datadiri.store');
-// Update Data Diri
-Route::post('/data-diri/update/{id}', [DataDiriController::class, 'update'])->name('datadiri.update');
 
+// Success page (bisa diakses tanpa auth)
 Route::get('/data-diri/success', function () {
     return view('member.layouts.succes');
 })->name('layouts.success');
-
-
-
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

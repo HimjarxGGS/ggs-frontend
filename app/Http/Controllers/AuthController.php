@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
-use App\Models\Pendaftar; // ← Tambahkan ini
+use App\Models\Pendaftar;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
@@ -28,6 +28,9 @@ class AuthController extends Controller
             'username' => 'required|string|max:255|unique:users,username',
             'password' => 'required|string|min:6',
         ], [
+            'email.required' => 'Email harus diisi.',
+            'email.email' => 'Email tidak valid.',
+            'email.unique' => 'Email sudah terdaftar.',
             'notelfon.required' => 'No. Telepon harus diisi.',
             'notelfon.numeric' => 'No. Telepon harus angka.',
             'notelfon.digits_between' => 'No. Telepon harus 10-13 digit.',
@@ -38,25 +41,12 @@ class AuthController extends Controller
             'password.min' => 'Password minimal 6 karakter.',
         ]);
 
-        $email = $request->username . '@ggs.com';
-
         $user = User::create([
             'name' => $request->username, 
             'username' => $request->username,
-            'email' => $email,
+            'email' => $request->email,
             'password' => Hash::make($request->password),
             'role' => 'member',
-        ]);
-
-        Pendaftar::create([
-            'user_id' => $user->id,
-            'no_telepon' => $request->notelfon,
-            'email' => $email,
-            'nama_lengkap' => null,
-            'date_of_birth' => null,
-            'asal_instansi' => null,
-            'riwayat_penyakit' => null,
-            'registrant_picture' => null,
         ]);
 
         return redirect()->route('login')->with('success', 'Registrasi berhasil! Silakan login.');
@@ -94,7 +84,7 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     {
-        auth()->logout();
+        Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 

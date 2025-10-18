@@ -1,23 +1,42 @@
 @extends('guest.layouts.app')
 
-@section('title', 'About us - Green Generation Surabaya')
+@section('title', 'Green Generation Surabaya')
 
 @section('content')
 <!-- start hero Section -->
-<section class="w-full px-6 md:px-12 py-28">
-  <div class="max-w-full mx-auto text-left ml-0 md:ml-28 mt-28">
-    <h1 class="text-3xl md:text-6xl font-extralight text-black leading-tight">
+<section class="w-full px-4 md:px-8 py-28">
+  <div class="max-w-full mx-auto text-left ml-0 lg:ml-28 mt-28">
+    <h1 class="text-4xl md:text-6xl font-extralight text-black leading-tight">
       Change Begins with <span class="font-semibold text-palette-2">You(th)</span>
     </h1>
 
     <p class="text-xs md:text-sm mt-5 pl-1">
-      <span class="font-bold text-palette-3">Green Generation</span> is a Independent Organizations Working on the #Environment in Indonesia. 
+      <span class="font-bold text-palette-3">Green Generation</span> is a Independent Organizations Working on the #Environment in Indonesia.
     </p>
+
+    <!-- button mobile -->
+    <div class="mt-6 md:hidden">
+      <a href="/event">
+        <button class="bg-palette-3 hover:bg-palette-1 text-white font-extralight py-2 px-14 rounded-3xl ease-in-out transition duration-200 flex items-center gap-2">
+          <span class="text-sm">View Event</span>
+        </button>
+      </a>
+    </div>
+  </div>
+
+  <!-- button Desktop -->
+  <div class="hidden lg:flex items-center mt-6 lg:ml-28">
+    <a href="/event">
+      <button class="bg-palette-3 text-white font-normal py-2 px-20 rounded-3xl flex items-center gap-2 ease-in-out transition duration-300 hover:shadow-lg hover:shadow-black">
+        <span>View Event</span>
+      </button>
+    </a>
+  </div>
 </section>
 <!-- section hero end -->
 
 <!-- section foto start -->
-<section id="our-showcase" class="w-full mx-auto px-[20px] py-20">
+<section id="our-showcase" class="w-full mx-auto px-[20px] py-16">
   <div class="w-full overflow-x-hidden">
     <div class="flex gap-5 py-5 whitespace-nowrap animate-infinite-scroll">
     
@@ -106,6 +125,7 @@
     </div>
   </div>
 
+
 <!-- Baris scroll kiri ke kanan -->
 <div class="w-full overflow-x-hidden">
   <div class="flex gap-5 py-5 whitespace-nowrap animate-infinite-scroll-reverse">
@@ -192,10 +212,28 @@
           </div>
         </div>
       </div>
+    </div>
   </div>
- </div>
+ 
 </section>
 <!-- section foto end -->
+
+<!-- Section text start -->
+<section class="w-full px-6 md:px-12 mb-10">
+  <div class="max-w-full mx-auto text-left">
+    <h1 class="text-xl md:text-7xl font-bold text-black leading-tight text-center">
+      <!-- Change Begins with You(th)<br/> -->
+      Building a <span class="text-palette-2">Greener World</span><br/>
+      One Step at a Time.
+    </h1>
+
+    <p class="text-gray-400 font-light text-xs md:text-base mt-7 text-center">
+      Green Generation empowers youth to <br>lead,
+      innovate, and act for the environment.
+    </p>
+  </div>
+</section>
+<!-- Section text end -->
 
 <!-- section timeline start -->
 <section class="w-full px-6 py-20 max-w-7xl mx-auto">
@@ -225,8 +263,8 @@
 
           <!-- foto -->
           <div class="flex items-start gap-4 mt-4">
-            <a href="{{ asset('dokum/ggberaksi1.jpg') }}" target="_blank">
-              <img src="{{ asset('dokum/ggberaksi1.jpg') }}" 
+            <a href="{{ asset('dokum/ggberaksi1.JPG') }}" target="_blank">
+              <img src="{{ asset('dokum/ggberaksi1.JPG') }}" 
                   class="rounded-3xl w-56 max-w-sm" 
                   loading="lazy"
                   alt="GG Beraksi" 
@@ -237,8 +275,8 @@
             </a>
 
             <div class="hidden sm:flex flex-row gap-4">
-              <a href="{{ asset('dokum/ggberaksi3.jpg') }}" target="_blank">
-                <img src="{{ asset('dokum/ggberaksi3.jpg') }}" 
+              <a href="{{ asset('dokum/ggberaksi3.JPG') }}" target="_blank">
+                <img src="{{ asset('dokum/ggberaksi3.JPG') }}" 
                     loading="lazy"
                     class="rounded-3xl w-56 max-w-sm" 
                     alt="GG Beraksi 2" 
@@ -247,8 +285,8 @@
                     data-aos-duration="800"
                 >
               </a>
-              <a href="{{ asset('dokum/ggberaksi4.jpg') }}" target="_blank">
-                <img src="{{ asset('dokum/ggberaksi4.jpg') }}" 
+              <a href="{{ asset('dokum/ggberaksi4.JPG') }}" target="_blank">
+                <img src="{{ asset('dokum/ggberaksi4.JPG') }}" 
                     loading="lazy"
                     class="rounded-3xl w-56 max-w-sm" 
                     alt="GG Beraksi 3" 
@@ -275,8 +313,8 @@
           <!-- foto -->
           <div class="flex items-start gap-4 mt-4">
             
-              <a href="{{ asset('dokum/trashformerpart1-1.jpg') }}" target="_blank">
-                <img src="{{ asset('dokum/trashformerpart1-1.jpg') }}" 
+              <a href="{{ asset('dokum/trashformerpart1-1.JPG') }}" target="_blank">
+                <img src="{{ asset('dokum/trashformerpart1-1.JPG') }}" 
                     loading="lazy"
                     class="rounded-3xl w-56 max-w-sm" 
                     alt="trashformer" 
@@ -287,8 +325,8 @@
               </a>
 
               <div class="hidden sm:flex flex-row gap-4">
-              <a href="{{ asset('dokum/trashformerpart2-1.jpg') }}" target="_blank">
-                  <img src="{{ asset('dokum/trashformerpart2-1.jpg') }}" 
+              <a href="{{ asset('dokum/trashformerpart2-1.JPG') }}" target="_blank">
+                  <img src="{{ asset('dokum/trashformerpart2-1.JPG') }}" 
                       class="rounded-3xl w-56 max-w-sm" 
                       loading="lazy"
                       alt="trashformer 2" 
@@ -298,8 +336,8 @@
                   >
               </a>
                       
-              <a href="{{ asset('dokum/trashformerpart2-2.jpg') }}" target="_blank">
-                  <img src="{{ asset('dokum/trashformerpart2-2.jpg') }}" 
+              <a href="{{ asset('dokum/trashformerpart2-2.JPG') }}" target="_blank">
+                  <img src="{{ asset('dokum/trashformerpart2-2.JPG') }}" 
                       class="rounded-3xl w-56 max-w-sm" 
                       loading="lazy"
                       alt="trashformer 3" 
@@ -326,8 +364,8 @@
             <!-- foto -->
             <div class="flex items-start gap-4 mt-4">
               
-                <a href="{{ asset('dokum/growave1.jpg') }}" target="_blank">
-                  <img src="{{ asset('dokum/growave1.jpg') }}" 
+                <a href="{{ asset('dokum/growave1.JPG') }}" target="_blank">
+                  <img src="{{ asset('dokum/growave1.JPG') }}" 
                       class="rounded-3xl w-56 max-w-sm" 
                       loading="lazy"
                       alt="Growave1" 
@@ -339,8 +377,8 @@
 
                 <div class="hidden sm:flex flex-row gap-4">
 
-                <a href="{{ asset('dokum/growave2.jpg') }}" target="_blank">
-                    <img src="{{ asset('dokum/growave2.jpg') }}" 
+                <a href="{{ asset('dokum/growave2.JPG') }}" target="_blank">
+                    <img src="{{ asset('dokum/growave2.JPG') }}" 
                         class="rounded-3xl w-56 max-w-sm"
                         loading="lazy" 
                         alt="Growave2" 
@@ -350,8 +388,8 @@
                       >
                 </a>
 
-                <a href="{{ asset('dokum/growave3.jpg') }}" target="_blank">
-                    <img src="{{ asset('dokum/growave3.jpg') }}" 
+                <a href="{{ asset('dokum/growave3.JPG') }}" target="_blank">
+                    <img src="{{ asset('dokum/growave3.JPG') }}" 
                         class="rounded-3xl w-56 max-w-sm" 
                         loading="lazy"
                         alt="Growave3" 
@@ -378,8 +416,8 @@
             <!-- foto -->
             <div class="flex items-start gap-4 mt-4">
               
-              <a href="{{ asset('dokum/greenovation_batch1_2.jpg') }}" target="_blank">
-                <img src="{{ asset('dokum/greenovation_batch1_2.jpg') }}" 
+              <a href="{{ asset('dokum/greenovation_batch1_2.JPG') }}" target="_blank">
+                <img src="{{ asset('dokum/greenovation_batch1_2.JPG') }}" 
                     class="rounded-3xl w-56 max-w-sm"
                     loading="lazy" 
                     alt="Greenovation1" 
@@ -390,8 +428,8 @@
               </a>
 
               <div class="hidden sm:flex flex-row gap-4">
-              <a href="{{ asset('dokum/greenovation_batch1_1.jpg') }}" target="_blank">
-                  <img src="{{ asset('dokum/greenovation_batch1_1.jpg') }}" 
+              <a href="{{ asset('dokum/greenovation_batch1_1.JPG') }}" target="_blank">
+                  <img src="{{ asset('dokum/greenovation_batch1_1.JPG') }}" 
                       class="rounded-3xl w-56 max-w-sm" 
                       loading="lazy"
                       alt="Greenovation2" 
@@ -401,8 +439,8 @@
                       >
               </a>
 
-              <a href="{{ asset('dokum/greenovation_batch3_3.jpg') }}" target="_blank">
-                  <img src="{{ asset('dokum/greenovation_batch3_3.jpg') }}" 
+              <a href="{{ asset('dokum/greenovation_batch3_3.JPG') }}" target="_blank">
+                  <img src="{{ asset('dokum/greenovation_batch3_3.JPG') }}" 
                       class="rounded-3xl w-64 max-w-sm" 
                       loading="lazy"
                       alt="Greenovation3" 
@@ -420,7 +458,7 @@
 </section>
 <!-- section timeline end -->
 
-<!-- section principal start -->
+<!-- section principal and FaQ start -->
 <section class="bg-gray-50 py-10 px-6">
   <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center lg:items-start gap-10">
 
@@ -484,7 +522,7 @@
     <div class="lg:w-1/2 space-y-4" x-data>
       
       <!-- accordion 1 -->
-      <div class="border-b pb-4" x-data="{ open: false }" data-aos="zoom-out-down"  data-aos-delay="0" data-aos-duration="800">
+      <div class="border-b pb-4" x-data="{ open: false }">
         <button @click="open = !open" class="flex justify-between w-full text-left text-sm md:text-base font-medium text-gray-800">
           What is Green Generation?
           <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -497,7 +535,7 @@
       </div>
 
       <!-- accordion 2 -->
-      <div class="border-b pb-4" x-data="{ open: false }" data-aos="zoom-out-down" data-aos-delay="500" data-aos-duration="800">
+      <div class="border-b pb-4" x-data="{ open: false }">
         <button @click="open = !open" class="flex justify-between w-full text-left text-sm md:text-base font-medium text-gray-800">
           How to join event Green Generation Surabaya?
           <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -510,7 +548,7 @@
       </div>
 
       <!-- accordion 3 -->
-      <div class="border-b pb-4" x-data="{ open: false }" data-aos="zoom-out-down" data-aos-delay="1000" data-aos-duration="800">
+      <div class="border-b pb-4" x-data="{ open: false }">
         <button @click="open = !open" class="flex justify-between w-full text-left text-sm md:text-base font-medium text-gray-800">
           How do I know if my registration is successful?
           <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -525,6 +563,59 @@
     </div>
 
   </div>
+</section>
+
+<section class="px-6">
+
+    <div class="flex flex-col lg:flex-row md:items-center justify-center gap-10">
+        <div class="text-left lg:text-left">
+            <h2 class="text-5xl font-bold text-palette-5">
+                our <span class="font-bold">Partners</span>
+            </h2>
+            <p class="text-gray-500">Green Generation Surabaya</p>
+            </div>
+        <div class="hidden lg:block w-80 h-0.5 bg-gray-300"></div>
+    </div>
+
+  <!-- logo partner -->
+    <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-8 gap-y-10 max-w-6xl mx-auto mt-14 place-items-center">
+       <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="0" data-aos-duration="700">
+         <img src="{{ asset('images/aisec.png') }}" alt="AIESEC" class="max-h-24 object-contain" />
+       </div>
+       <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="700">
+         <img src="{{ asset('images/americancorner.png') }}" alt="American Corner" class="max-h-24 object-contain" />
+       </div>
+        <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="200" data-aos-duration="700">
+            <img src="{{ asset('images/gojek.png') }}" alt="Gojek" class="max-h-24 object-contain" />
+        </div>
+        <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="300" data-aos-duration="700">
+            <img src="{{ asset('images/kahf.png') }}" alt="Kahf" class="max-h-24 object-contain" />
+        </div>
+        <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="400" data-aos-duration="700">
+            <img src="{{ asset('images/komdigi.png') }}" alt="Komdigi" class="max-h-24 object-contain" />
+        </div>
+        <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="500" data-aos-duration="700">
+            <img src="{{ asset('images/komunitasnarasijatim.png') }}" alt="Komunitas Narasi Jatim" class="max-h-24 object-contain" />
+        </div>
+        <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="600" data-aos-duration="700">
+            <img src="{{ asset('images/noovoleum.png') }}" alt="Noovoleum" class="max-h-24 object-contain" />
+        </div>
+        <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="700" data-aos-duration="700">
+            <img src="{{ asset('images/hi.png') }}" alt="Human Initiative" class="max-h-24 object-contain" />
+        </div>
+        <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="800" data-aos-duration="700">
+            <img src="{{ asset('images/pepelingasihindonesia.png') }}" alt="Pepelingasih Indonesia" class="max-h-24 object-contain" />
+        </div>
+        <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="900" data-aos-duration="700">
+            <img src="{{ asset('images/uwk.png') }}" alt="UWK" class="max-h-20 object-contain" />
+        </div>
+        <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="1000" data-aos-duration="700">
+            <img src="{{ asset('images/tus.png') }}" alt="TUS" class="max-h-24 object-contain" />
+        </div>
+        <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="1100" data-aos-duration="700">
+            <img src="{{ asset('images/fpci.png') }}" alt="FPCI" class="max-h-24 object-contain" />
+        </div>
+    </div>
 </section>
 
 @endsection

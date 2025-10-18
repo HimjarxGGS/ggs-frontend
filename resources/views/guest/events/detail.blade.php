@@ -3,23 +3,24 @@
 @section('title', 'Detail Event - ' . $event->name)
 
 @section('content')
-<div class="max-w-6xl mx-auto px-4 mt-40 font-geist">
+    <div class="max-w-6xl mx-auto px-4 mt-20 font-geist">
 
-    <!-- header -->
-    <div class="mb-8 text-center md:text-left">
-        <h1 class="text-2xl md:text-3xl font-bold text-gray-800">
-            {{ $event->name }}
-        </h1>
-        <p class="text-gray-600 text-sm md:text-base">Green Generation Surabaya</p>
+        <!-- header -->
+        <div class="mb-8 text-center md:text-left">
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-800">
+                {{ $event->name }}
+            </h1>
+            <p class="text-gray-600 text-sm md:text-base">Green Generation Surabaya</p>
 
-        <span class="inline-block mt-3 text-xs md:text-sm font-semibold px-10 py-1 rounded-full
-            {{ ($event->status == 'upcoming' ? 'bg-orange-500 text-white' : 'bg-green-500 text-white') }}">
-            {{ ucfirst($event->status) }}
-        </span>
-    </div>
+            <span
+                class="inline-block mt-3 text-xs md:text-sm font-semibold px-10 py-1 rounded-full
+            {{ $event->status == 'upcoming' ? 'bg-orange-500 text-white' : 'bg-green-500 text-white' }}">
+                {{ ucfirst($event->status) }}
+            </span>
+        </div>
 
-    <!-- poster & detail -->
-    <div class="grid md:grid-cols-2 gap-6 items-start">
+        <!-- poster & detail -->
+        <div class="grid md:grid-cols-2 gap-6 items-start">
 
         <!-- poster -->
         <div class="bg-transparent">
@@ -29,61 +30,79 @@
 
         </div>
 
-        <div class="space-y-4">
+            <div class="space-y-4">
 
-            <!-- card 1, jadwal dan lokasi -->
-            <div class="p-4 border rounded-xl shadow-md bg-white text-sm ring-1 ring-palette-1 space-y-3">
-                <!-- jadwal -->
-                <div class="flex items-center gap-3">
-                    <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-5 h-5">
-                    <div>
-                        <h3 class="text-gray-500">Jadwal Event</h3>
-                        <p class="text-lg text-black font-semibold">
-                            {{ \Carbon\Carbon::parse($event->event_date)->translatedFormat('d F Y') }}
-                        </p>
-                    </div>
-                </div>
-
-                <!-- lokasi -->
-                <div class="flex items-center gap-3">
-                    <img src="{{ asset('icons/location.svg') }}" alt="Location" class="w-5 h-5">
-                    <div>
-                        <h3 class="text-gray-500">Lokasi</h3>
-                        <p class="text-lg text-black font-semibold">
-                            {{ $event->location ?? 'Lokasi belum ditentukan' }}
-                        </p>
-                    </div>
+        <!-- card 1, jadwal dan lokasi -->
+        <div class="p-4 border rounded-xl shadow-md bg-white text-sm ring-1 ring-palette-1 space-y-3">
+            <!-- jadwal -->
+            <div class="flex items-center gap-3">
+                <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-5 h-5">
+                <div>
+                    <h3 class="text-gray-500">Jadwal Event</h3>
+                    <p class="text-lg text-black font-semibold">
+                        {{ \Carbon\Carbon::parse($event->event_date)->translatedFormat('d F Y, H:i') }}
+                    </p>
                 </div>
             </div>
 
-            <!-- desc -->
-            <div class="p-4 border rounded-xl shadow-md ring-palette-1 ring-1">
-                <div class="flex items-start gap-3">
-                    <img src="{{ asset('icons/desc.svg') }}" alt="Description" class="w-5 h-5 mt-1">
-                    <div>
-                        <h3 class="text-sm text-gray-500">Deskripsi</h3>
+                        <!-- lokasi -->
+                        <div class="flex items-center gap-3">
+                            <img src="{{ asset('icons/location.svg') }}" alt="Location" class="w-5 h-5">
+                            <div>
+                                <h3 class="text-gray-500">Lokasi</h3>
+                                <p class="text-lg text-black font-semibold">
+                                    {{ $event->location ?? 'Lokasi belum ditentukan' }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
-                        {!! $event->getEventDescription() !!}
+                <!-- desc -->
+                <div class="p-4 border rounded-xl shadow-md ring-palette-1 ring-1">
+                    <div class="flex items-start gap-3">
+                        <img src="{{ asset('icons/desc.svg') }}" alt="Description" class="w-5 h-5 mt-1">
+                        <div>
+                            <h3 class="text-sm text-gray-500">Deskripsi</h3>
+                            <p class="text-wrap">
+                                {!! $event->description !!}
+                            </p>
 
+
+                        </div>
+                    </div>
+                </div>
+
+                    <!-- cta -->
+                    <div class="p-4 border rounded-xl shadow-md flex justify-center gap-4 mt-6">
+                        <!-- button daftar -->
+                        <a href="{{ route('event.registration', $event->id) }}"
+                                class="px-5 md:px-6 py-3 bg-palette-5 text-white rounded-2xl shadow-md hover:bg-gray-500 transition duration-300 ease-in-out md:text-lg text-sm">
+                                Daftar Sekarang
+                        </a>
+                        <!-- button contact person -->
+                        <a href="https://wa.me/{{ $event->contact_person ?? '628123456789' }}"
+                                class="px-5 md:px-6 py-3 border border-black text-black rounded-2xl shadow-md hover:bg-gray-200 transition duration-300 ease-in-out md:text-lg text-sm">
+                                Contact Person
+                        </a>
                     </div>
                 </div>
             </div>
+        <!-- After Movie -->
+        @if ($event->after_movie_url)
+            <section id="aftermovie" class="mt-12 md:mt-20">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-6">After Movie</h2>
 
-            <!-- cta -->
-            <div class="p-4 border rounded-xl shadow-md flex justify-center gap-4 mt-6">
-                <!-- button daftar -->
-                <a href="{{ $event->registration_link ?? '#' }}"
-                    class="px-5 md:px-6 py-3 bg-palette-5 text-white rounded-2xl shadow-md hover:bg-gray-500 transition duration-300 ease-in-out md:text-lg text-sm">
-                    Daftar Sekarang
-                </a>
-                <!-- button contact person -->
-                <a href="https://wa.me/{{ $event->contact_person ?? '628123456789' }}"
-                    class="px-5 md:px-6 py-3 border border-black text-black rounded-2xl shadow-md hover:bg-gray-200 transition duration-300 ease-in-out md:text-lg text-sm">
-                    Contact Person
-                </a>
-            </div>
-        </div>
-    </div>
+                <div class="flex justify-center">
+                    <div class="w-full max-w-4xl aspect-video overflow-hidden rounded-lg shadow-lg">
+                        <iframe class="w-full h-full" src="{{ $event->getEmbedAfterMovieURL() }}" title="After Movie"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+        @endif
     <!-- After Movie -->
     @if($event->after_movie_url)
     <section id="aftermovie" class="mt-12 md:mt-20">
@@ -137,12 +156,12 @@
                             alt="Event Cover"
                             class="w-full h-52 object-cover">
 
-                        <!-- status -->
-                        <span
-                            class="absolute top-7 left-7 {{ $event->status === 'active' ? 'bg-green-500' : 'bg-gray-400' }} text-white text-xs font-semibold px-3 py-1 rounded-full">
-                            {{ ucfirst($event->status) }}
-                        </span>
-                    </div>
+                            <!-- status -->
+                            <span
+                                class="absolute top-7 left-7 {{ $event->status === 'active' ? 'bg-green-500' : 'bg-gray-400' }} text-white text-xs font-semibold px-3 py-1 rounded-full">
+                                {{ ucfirst($event->status) }}
+                            </span>
+                        </div>
 
                     <!-- konten -->
                     <div class="p-4 flex flex-col justify-between flex-1">
