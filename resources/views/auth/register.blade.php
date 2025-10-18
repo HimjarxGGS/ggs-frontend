@@ -39,14 +39,14 @@
             @endif
 
             <!-- @if ($errors->any())
-        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded relative">
+<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded relative">
           <ul class="list-disc pl-4 text-sm">
             @foreach ($errors->all() as $error)
 <li>{{ $error }}</li>
 @endforeach
           </ul>
         </div>
-      @endif -->
+@endif -->
 
             <div>
                 <h2 class="text-xl font-bold text-slate-800 text-left">Register Page</h2>
@@ -54,7 +54,7 @@
             </div>
 
 
-             <div class="w-full space-y-1 pt-5">
+            <div class="w-full space-y-1 pt-5">
                 <label for="email" class="text-sm text-slate-800 font-semibold">
                     Email
                 </label>
@@ -127,7 +127,7 @@
 
     <!-- footer -->
     <footer class="text-center text-xs text-slate-400 mt-10">
-        powered by <br> greencomunitionsurabaya & himse.telkomsurabaya
+        powered by <br> greengnrsby & himse.telkomsurabaya
     </footer>
 
 </body>
