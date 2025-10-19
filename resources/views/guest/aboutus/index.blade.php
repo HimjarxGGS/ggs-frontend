@@ -2,25 +2,6 @@
 
 @section('title', 'Green Generation Surabaya')
 
-@php
-$photosRow = [
-['src' => 'dokum/ggberaksi1.JPG', 'label' => 'GG-Beraksi', 'event_id' => -1],
-['src' => 'dokum/ggberaksi2.JPG', 'label' => 'GG-Beraksi', 'event_id' => -1],
-['src' => 'dokum/ggberaksi3.JPG', 'label' => 'GG-Beraksi', 'event_id' => -1],
-['src' => 'dokum/ggberaksi4.JPG', 'label' => 'GG-Beraksi','event_id' => -1],
-['src' => 'dokum/greenovation_batch1_1.JPG', 'label' => 'Greenovation', 'event_id' => -1],
-['src' => 'dokum/greenovation_batch1_2.JPG', 'label' => 'Greenovation','event_id' => -1],
-['src' => 'dokum/growave1.JPG', 'label' => 'Growave', 'event_id' => -1],
-['src' => 'dokum/trashformerpart1-1.JPG', 'label' => 'Trashformer Part 1', 'event_id' => -1],
-['src' => 'dokum/trashformerpart1-2.JPG', 'label' => 'Trashformer Part 1', 'event_id' => -1],
-['src' => 'dokum/trashformerpart1-3.JPG', 'label' => 'Trashformer Part 1', 'event_id' => -1],
-['src' => 'dokum/trashformerpart2-1.JPG', 'label' => 'Trashformer Part 2', 'event_id' => -1],
-['src' => 'dokum/trashformerpart2-2.JPG', 'label' => 'Trashformer Part 2', 'event_id' => -1],
-['src' => 'dokum/trashformerpart2-3.JPG', 'label' => 'Trashformer Part 2', 'event_id' => -1],
-];
-
-@endphp
-
 
 @section('content')
 <!-- start hero Section -->
@@ -59,8 +40,8 @@ $photosRow = [
 <section id="our-showcase" class="w-full mx-auto px-[20px] py-16">
   <div class="w-full overflow-x-hidden">
     <div class="flex gap-5 py-5 whitespace-nowrap animate-infinite-scroll">
-      @php($photos = $photosRow)
-      @includeWhen(isset($photos), 'guest.aboutus.gallery-row', ['photos' => $photos])
+      <!-- @php($photos = $photosRow) -->
+      @includeWhen(isset($photos), 'guest.aboutus.gallery-row', ['photos' => $photosRow])
     </div>
   </div>
 
