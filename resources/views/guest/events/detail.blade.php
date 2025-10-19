@@ -87,7 +87,7 @@
                     <button
                         id="openCertificateModal"
                         class="px-5 md:px-6 py-3 bg-palette-5 text-white rounded-2xl shadow-md hover:bg-green-500 transition duration-300 ease-in-out md:text-lg text-sm">
-                        Cek Sertifikat
+                        Sertifikat
                     </button>
                 </section>
                 @endif
@@ -204,7 +204,7 @@
 
 </div>
 
-<div id="certificateModal" class="fixed flex inset-0 bg-black/60 z-[9999] hidden justify-center items-center transform scale-95 opacity-0 transition-all duration-300">
+<div id="certificateModal" class="fixed  w-screen h-screen  bg-black flex inset-0 hidden z-[9999] justify-center items-center transform scale-100 opacity-0 transition-all duration-300">
     <div class="bg-white rounded-2xl shadow-lg p-6 w-96 relative">
         <div class="flex justify-end">
             <button id="closeCertificateModal" class="relative top-0 right-0 ">
@@ -212,9 +212,9 @@
             </button>
         </div>
 
-        <h2 class="text-xl font-semibold">Check Your Certificate</h2>
+        <h2 class="text-xl font-semibold">Cek Sertifikatmu</h2>
 
-        <p class="text-sm text-gray-500 mb-4">Enter your registered email to access the certificate.</p>
+        <p class="text-sm text-gray-500 mb-4">Masukkan email yang terdaftar di event ini untuk mengakses sertifikat.</p>
 
         <form id="certificateForm" class="space-y-3">
             <input
@@ -229,7 +229,7 @@
             <button
                 type="submit"
                 class="w-full bg-palette-5 text-white py-2 rounded-lg hover:bg-gray-600 transition duration-300">
-                Check Certificate
+                Periksa
             </button>
         </form>
 
@@ -255,18 +255,18 @@
             setTimeout(() => {
                 modal.classList.add('flex');
                 modal.style.opacity = '1';
-                modalBox.classList.remove('scale-95', 'opacity-0');
-                modalBox.classList.add('scale-100', 'opacity-100');
+                modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+                
             }, 10);
         }
 
         function hideModal() {
             modal.classList.add('hidden');
             modal.style.opacity = '0';
-            modalBox.classList.add('scale-95', 'opacity-0');
             setTimeout(() => {
                 modal.classList.add('hidden');
                 modal.classList.remove('flex');
+                modal.classList.remove('backdrop-brightness-50');
             }, 250);
         }
 
@@ -281,7 +281,7 @@
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             resultBox.classList.remove('hidden');
-            resultBox.innerHTML = '<p class="text-gray-500">Checking...</p>';
+            resultBox.innerHTML = '<p class="text-gray-500">Memeriksa...</p>';
 
             const email = document.getElementById('certEmail').value;
 
@@ -305,13 +305,13 @@
 
                 if (response.ok && data.valid) {
                     resultBox.innerHTML = `
-                    <p class="text-green-600 mb-3">Email verified! 🎉</p>
+                    <p class="text-green-600 mb-3">Email kamu terdaftar! 🎉</p>
                     <a href="${data.certificate_url}" target="_blank" 
-                       class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">
-                       View Certificate
+                       class="w-full bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                       Lihat Sertifikat
                     </a>`;
                 } else {
-                    resultBox.innerHTML = `<p class="text-red-500">${data.message || 'Email not found for this event.'}</p>`;
+                    resultBox.innerHTML = `<p class="text-red-500">${data.message || 'Email tidak ditemukan untuk event ini.'}</p>`;
                 }
             } catch (err) {
                 resultBox.innerHTML = `<p class="text-red-500">Something went wrong. Try again later.</p>`;

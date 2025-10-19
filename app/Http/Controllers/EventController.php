@@ -101,11 +101,10 @@ class EventController extends Controller
         ]);
 
         $event = Event::find($request->event_id);
-        // dd($event);
         if (!$event || !$event->sertif_url) {
             return response()->json([
                 'valid' => false,
-                'message' =>  $event->id
+                'message' =>  "Sertifikat belum tersedia"
             ], 404);
         }
 
@@ -119,7 +118,7 @@ class EventController extends Controller
         if (!$emailExists) {
             return response()->json([
                 'valid' => false,
-                'message' => 'Email not found for this event.'
+                'message' => 'Email tidak ditemukan untuk event ini.'
             ], 404);
         }
 
