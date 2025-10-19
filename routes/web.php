@@ -40,6 +40,7 @@ Route::get('/event/registrasi-event/{id}', [EventController::class, 'showRegistr
 Route::view('/event/success-registrasi', 'guest.events.success')->name('event.registration.success');
 Route::post('/guest/events/register', [GuestEventRegisterController::class, 'store'])
     ->name('guest.register');
+Route::post('/event/check-certificate', [EventController::class, 'checkCertificate'])->name('certificate.check');
 
 
 // Route untuk Member (Login Required)
