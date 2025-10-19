@@ -25,7 +25,7 @@ Route::get('/', [AboutController::class, 'index'])->name('landing.index');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/search', [BlogController::class, 'search'])->name('blog.search');
 Route::get('/blog/{slug}', [BlogController::class, 'detailBlog'])->name('blog.detail');
-Route::post('/submit-blog', [BlogController::class, 'store']);
+Route::post('/submit-blog', [BlogController::class, 'store'])->name('blog.submit');
 
 // Event Routes untuk Guest
 Route::get('/event', [EventController::class, 'index'])->name('events.index');
@@ -40,6 +40,7 @@ Route::get('/event/registrasi-event/{id}', [EventController::class, 'showRegistr
 Route::view('/event/success-registrasi', 'guest.events.success')->name('event.registration.success');
 Route::post('/guest/events/register', [GuestEventRegisterController::class, 'store'])
     ->name('guest.register');
+Route::post('/event/check-certificate', [EventController::class, 'checkCertificate'])->name('certificate.check');
 
 
 // Route untuk Member (Login Required)

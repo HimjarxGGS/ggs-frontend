@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Event;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class EventController extends Controller
 {
@@ -68,7 +69,7 @@ class EventController extends Controller
     public function show($id)
     {
         $event = Event::with('dokumentasi')->findOrFail($id);
-        // dd($event);
+        
         $moreEvents = Event::where('id', '!=', $event->id)
             ->where('status', 'active')
             ->where('event_date', '>=', Carbon::today())
@@ -91,6 +92,44 @@ class EventController extends Controller
 
         return view('guest.events.register', compact('event'));
     }
+
+    public function checkCertificate(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'event_id' => 'required|integer',
+        ]);
+
+        $event = Event::find($request->event_id);
+        // dd($event);
+        if (!$event || !$event->sertif_url) {
+            return response()->json([
+                'valid' => false,
+                'message' =>  $event->id
+            ], 404);
+        }
+
+        // Check if email exists in related pendaftars table
+        $emailExists = DB::table('pendaftar_events')
+            ->join('pendaftars', 'pendaftars.id', '=', 'pendaftar_events.pendaftar_id')
+            ->where('pendaftar_events.event_id', $event->id)
+            ->where('pendaftars.email', $request->email)
+            ->exists();
+
+        if (!$emailExists) {
+            return response()->json([
+                'valid' => false,
+                'message' => 'Email not found for this event.'
+            ], 404);
+        }
+
+        // Email found, return certificate link
+        return response()->json([
+            'valid' => true,
+            'certificate_url' => $event->sertif_url
+        ]);
+    }
+
 
     // Method untuk memproses registrasi guest
     public function processRegistration(Request $request, $id)
