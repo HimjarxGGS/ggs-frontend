@@ -25,7 +25,7 @@ Route::get('/', [AboutController::class, 'index'])->name('landing.index');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/search', [BlogController::class, 'search'])->name('blog.search');
 Route::get('/blog/{slug}', [BlogController::class, 'detailBlog'])->name('blog.detail');
-Route::post('/submit-blog', [BlogController::class, 'store']);
+Route::post('/submit-blog', [BlogController::class, 'store'])->name('blog.submit');
 
 // Event Routes untuk Guest
 Route::get('/event', [EventController::class, 'index'])->name('events.index');
