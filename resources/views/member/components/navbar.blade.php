@@ -2,8 +2,10 @@
 <header class="flex justify-center">
    <nav class="fixed left-1/2 -translate-x-1/2 w-[95%] max-w-7xl rounded-full px-14 py-3 flex items-center justify-between lg:px-20 z-[100] transition-all duration-300 mt-8">
         <!-- logo -->
-        <div class="flex items-center">
-            <img src="{{ asset('images/Logo.png') }}" alt="Logo" class="h-14 w-auto pt-2" />
+       <div class="flex items-center">
+            <a href="/">
+                <img src="{{ asset('images/Logo.png') }}" alt="Logo" class="h-14 w-auto pt-2" />
+            </a>
         </div>
 
         <!-- hamburger -->

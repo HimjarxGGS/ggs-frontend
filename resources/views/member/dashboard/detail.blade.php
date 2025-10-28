@@ -13,7 +13,7 @@
         <p class="text-gray-600 text-sm md:text-base">Green Generation Surabaya</p>
 
         <span class="inline-block mt-3 text-xs md:text-sm font-semibold px-10 py-1 rounded-full
-            {{ ($event->status == 'upcoming' ? 'bg-orange-500 text-white' : 'bg-green-500 text-white') }}">
+            {{ ($event->status == 'upcoming' ? 'bg-green-500 text-white' : 'bg-orange-500 text-white') }}">
             {{ ucfirst($event->status) }}
         </span>
     </div>

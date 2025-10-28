@@ -3,10 +3,10 @@
 @section('title', 'Detail Event - ' . $event->name)
 
 @section('content')
-<div class="max-w-6xl mx-auto px-4 mt-20 font-geist">
+<div class="max-w-6xl mx-auto px-4 font-geist">
 
     <!-- header -->
-    <div class="mb-8 text-center md:text-left">
+    <div class="mb-8 text-center md:text-left mt-40">
         <h1 class="text-2xl md:text-3xl font-bold text-gray-800">
             {{ $event->name }}
         </h1>
@@ -14,7 +14,7 @@
 
         <span
             class="inline-block mt-3 text-xs md:text-sm font-semibold px-10 py-1 rounded-full
-            {{ $event->status == 'upcoming' ? 'bg-orange-500 text-white' : 'bg-green-500 text-white' }}">
+            {{ $event->status == 'upcoming' ? 'bg-green-500 text-white' : 'bg-orange-500 text-white' }}">
             {{ ucfirst($event->status) }}
         </span>
     </div>
