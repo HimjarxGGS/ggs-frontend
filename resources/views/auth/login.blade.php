@@ -73,14 +73,14 @@
 
             <!-- login button -->
             <button type="submit"
-                class="w-full bg-[#9b5d3c] hover:bg-[#874c2c] text-white font-semibold py-2 rounded-full transition mt-10">
+                class="w-full bg-palette-3 hover:bg-[#874c2c] text-white font-semibold py-2 rounded-full transition duration-300 ease-in-out mt-10">
                 Login
             </button>
 
             <!-- Link to Register -->
             <p class="text-sm text-slate-600 text-center">
                 Tidak memiliki akun?
-                <a href="{{ route('register') }}" class="text-[#9b5d3c] hover:underline">
+                <a href="{{ route('register') }}" class="text-palette-3 hover:underline">
                     Daftar Akun
                 </a>
             </p>

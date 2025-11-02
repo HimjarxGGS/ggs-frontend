@@ -69,7 +69,7 @@
             </div>
 
             <!-- No.Telepon -->
-            <div class="w-full space-y-1 pt-5">
+            <div class="w-full space-y-1">
                 <label for="notelfon" class="text-sm text-slate-800 font-semibold">
                     No.Telepon
                 </label>
@@ -114,13 +114,13 @@
 
             <!-- Submit -->
             <button type="submit"
-                class="w-full bg-[#9b5d3c] hover:bg-[#874c2c] text-white font-semibold py-2 rounded-3xl transition">
+                class="w-full bg-palette-3 hover:bg-[#874c2c] text-white font-semibold py-2 rounded-3xl transition duration-300 ease-in-out ">
                 Registrasi
             </button>
 
             <!-- Link ke login -->
             <p class="text-sm text-slate-600 text-center">
-                Memiliki akun member? <a href="{{ route('login') }}" class="text-[#9b5d3c]">Login</a>
+                Memiliki akun member? <a href="{{ route('login') }}" class="text-palette-3 hover:underline">Login</a>
             </p>
         </form>
     </div>

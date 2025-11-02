@@ -28,7 +28,7 @@
         <div class="hidden lg:flex items-center">
             <form action="{{ route('logout') }}" method="POST">
              @csrf
-              <button class="bg-palette-5 text-white font-light py-2 px-10 rounded-full hover:bg-[#5e3929] transition duration-300">
+              <button class="bg-palette-3 text-white font-bold py-2 px-10 rounded-full hover:bg-gray-500 transition duration-300">
                 Logout
               </button>
              </form>
@@ -45,7 +45,7 @@
         <div class="mt-6">
           <form action="{{ route('logout') }}" method="POST">
              @csrf
-            <button class="w-72 bg-palette-5 hover:bg-[#5e3929] text-white font-light py-2 rounded-3xl transition duration-200">
+            <button class="w-72 bg-palette-3text-white font-bold py-2 rounded-3xl transition duration-200">
                 logout
             </button>
           </form>
