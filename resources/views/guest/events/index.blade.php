@@ -238,7 +238,7 @@
                             <div class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
                                 <div class="flex items-center space-x-4">
                                     <img src="{{ asset('images/testimoni_aghif.png') }}" alt="Aghif"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Kanye West">
+                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Aghif">
                                     <div>
                                         <h3 class="text-lg font-semibold text-gray-800">Aghif</h3>
                                         <p class="text-palette-4 text-md">Executive Board</p>
@@ -258,11 +258,11 @@
                             </div>
                             <div class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
                                 <div class="flex items-center space-x-4"><img
-                                        src="{{ asset('images/testimoni_rifky.jpeg') }}" alt="Firda"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal">
+                                        src="{{ asset('images/testimoni_rifky.jpeg') }}" alt="Rifki"
+                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Rifki">
                                     <div>
                                         <h3 class="text-lg font-semibold text-gray-800">Rifky</h3>
-                                        {{-- <p class="text-palette-4 text-md">Public Relation</p> --}}
+                                        <p class="text-palette-4 text-md">Public Relation</p>
                                     </div>
                                 </div>
                                 <p class="leading-normal text-gray-700 text-md">⁠Kegiatan yang diberikan menarik, cocok sekali sebagai motivasi untuk bisa berubah menjadi lebih baik.</p>
@@ -277,8 +277,8 @@
                             </div>
                             <div class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
                                 <div class="flex items-center space-x-4">
-                                    <img src="{{ asset('images/testimoni_evan.jpeg') }}" alt="Aghif"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Kanye West">
+                                    <img src="{{ asset('images/testimoni_evan.jpeg') }}" alt="Evan"
+                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Evan">
                                     <div>
                                         <h3 class="text-lg font-semibold text-gray-800">Evan</h3>
                                         <p class="text-palette-4 text-md">Public Relation</p>
@@ -320,7 +320,7 @@
                             <div class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
                                 <div class="flex items-center space-x-4"><img
                                         src="{{ asset('images/testimoni_firda.png') }}" alt="Firda"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal">
+                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Firda">
                                     <div>
                                         <h3 class="text-lg font-semibold text-gray-800">Firda</h3>
                                         <p class="text-palette-4 text-md">Creative</p>
@@ -343,7 +343,7 @@
                             <div class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
                                 <div class="flex items-center space-x-4">
                                     <img src="{{ asset('images/testimoni_chery.png') }}" alt="Chery"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook">
+                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Chery">
                                     <div>
                                         <h3 class="text-lg font-semibold text-gray-800">Cheryyy</h3>
                                         <p class="text-palette-4 text-md">Project Development</p>
@@ -363,8 +363,8 @@
                             </div>
                             <div class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
                                 <div class="flex items-center space-x-4"><img
-                                        src="{{ asset('images/testimoni_hanst.jpeg') }}" alt="Firda"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal">
+                                        src="{{ asset('images/testimoni_hanst.jpeg') }}" alt="Hanst"
+                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Hanst">
                                     <div>
                                         <h3 class="text-lg font-semibold text-gray-800">Hanst</h3>
                                         <p class="text-palette-4 text-md">Public Relation</p>
@@ -381,8 +381,8 @@
                             </div>
                             <div class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
                                 <div class="flex items-center space-x-4">
-                                    <img src="{{ asset('images/testimoni_satria.jpeg') }}" alt="Chery"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook">
+                                    <img src="{{ asset('images/testimoni_satria.jpeg') }}" alt="Satria"
+                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Satria">
                                     <div>
                                         <h3 class="text-lg font-semibold text-gray-800">Satria</h3>
                                         <p class="text-palette-4 text-md">Public Relation</p>
@@ -393,6 +393,7 @@
                         </div>
                     </li>
                 </ul>
+                
             </div>
         </div>
     </section>
