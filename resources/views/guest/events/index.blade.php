@@ -269,6 +269,26 @@
                             </div>
                         </div>
                     </li>
+
+                    <li class="text-sm leading-6">
+                        <div class="relative group" data-aos="zoom-in-right">
+                            <div
+                                class="absolute transition rounded-3xl opacity-25 -inset-1 bg-gradient-to-r from-palette-4 to-palette-2 blur duration-400 group-hover:opacity-100 group-hover:duration-500">
+                            </div>
+                            <div class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
+                                <div class="flex items-center space-x-4">
+                                    <img src="{{ asset('images/testimoni_evan.jpeg') }}" alt="Aghif"
+                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Kanye West">
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-gray-800">Evan</h3>
+                                        <p class="text-palette-4 text-md">Public Relation</p>
+                                    </div>
+                                </div>
+                                <p class="leading-normal text-gray-700 text-md"> ⁠Kitnya bagus bgt, acaranya josjis, outstanding 🤭 </p>
+                            </div>
+                        </div>
+                    </li>
+
                 </ul>
 
                 <!-- line 2 -->
@@ -354,10 +374,25 @@
                             </div>
                         </div>
                     </li>
-
-                    
-
-
+                    <li class="text-sm leading-6">
+                        <div class="relative group" data-aos="zoom-in" data-aos-delay="200">
+                            <div
+                                class="absolute transition rounded-3xl opacity-25 -inset-1 bg-gradient-to-r from-palette-4 to-palette-2 blur duration-400 group-hover:opacity-100 group-hover:duration-500">
+                            </div>
+                            <div class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
+                                <div class="flex items-center space-x-4">
+                                    <img src="{{ asset('images/testimoni_satria.jpeg') }}" alt="Chery"
+                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook">
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-gray-800">Satria</h3>
+                                        <p class="text-palette-4 text-md">Public Relation</p>
+                                    </div>
+                                </div>
+                                <p class="leading-normal text-gray-700 text-md">Pemandunya ramah-ramah </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
