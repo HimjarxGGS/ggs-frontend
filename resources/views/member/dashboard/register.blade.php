@@ -133,7 +133,7 @@
                     <a href="/register" class="text-blue-500 hover:underline">Daftar disini</a>
                 </p>
 
-                <a href="https://wa.me/628123456789" 
+                <a href="https://wa.me/6281216132795" 
                    class="block text-center bg-gray-200 text-gray-800 rounded-3xl py-3 hover:bg-gray-300 transition">
                     Contact Person
                 </a>
