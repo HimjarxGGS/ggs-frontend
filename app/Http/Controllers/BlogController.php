@@ -28,7 +28,15 @@ class BlogController extends Controller
             ->select('id', 'title', 'published_at', 'author', 'img', 'slug', 'content')
             ->where('slug', $slug)->firstOrFail();
 
-        return view('guest.blog.detail', compact('blog'));
+            // ambil 4 blog lain (exclude current)
+        $otherBlogs = Blog::query()
+            ->select('id', 'title', 'published_at', 'author', 'img', 'slug', 'content')
+            ->where('id', '!=', $blog->id)
+            ->orderByDesc('published_at')
+            ->take(4)
+            ->get();
+
+        return view('guest.blog.detail', compact('blog', 'otherBlogs'));
     }
 
     public function search(Request $request)
@@ -69,4 +77,6 @@ class BlogController extends Controller
         // dd($validatedData);
         return back()->with('success', 'Thank you! Your blog has been submitted successfully.');
     }
+
+    
 }

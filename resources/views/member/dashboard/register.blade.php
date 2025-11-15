@@ -32,7 +32,8 @@
 
             <!-- form registrasi -->
             <div class="space-y-5">
-                <form action="{{ route('member.dashboard.register', $event->id) }}" method="POST" enctype="multipart/form-data" class="space-y-4">
+                <form action="{{ route('member.event.registration.submit', ['eventId' => $event->id]) }}" method="POST" enctype="multipart/form-data">
+
                     @csrf
 
                     <!-- hadir -->

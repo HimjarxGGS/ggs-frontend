@@ -13,7 +13,7 @@
         <p class="text-gray-600 text-sm md:text-base">Green Generation Surabaya</p>
 
         <span class="inline-block mt-3 text-xs md:text-sm font-semibold px-10 py-1 rounded-full
-            {{ ($event->status == 'upcoming' ? 'bg-orange-500 text-white' : 'bg-green-500 text-white') }}">
+            {{ ($event->status == 'upcoming' ? 'bg-green-500 text-white' : 'bg-orange-500 text-white') }}">
             {{ ucfirst($event->status) }}
         </span>
     </div>
@@ -71,7 +71,8 @@
         <!-- cta -->
         <div class="p-4 border rounded-xl shadow-md flex justify-center gap-4 mt-6">
             <!-- button daftar -->
-           <a href="{{ route('dashboard.register', ['id' => $event->id]) }}"
+           <a href="{{ route('member.event.registration', ['id' => $event->id]) }}"
+
             class="px-5 md:px-6 py-3 bg-palette-5 text-white rounded-2xl shadow-md hover:bg-gray-500 transition duration-300 ease-in-out md:text-lg text-sm">
             Daftar Sekarang
             </a>

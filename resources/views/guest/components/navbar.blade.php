@@ -3,7 +3,9 @@
    <nav class="fixed left-1/2 -translate-x-1/2 w-[95%] max-w-7xl rounded-full px-14 py-3 flex items-center justify-between lg:px-20 z-[100] transition-all duration-300 md:mt-8 mt-5">
         <!-- logo -->
         <div class="flex items-center">
-            <img src="{{ asset('images/Logo.png') }}" alt="Logo" class="h-14 w-auto pt-2" />
+            <a href="/">
+                <img src="{{ asset('images/Logo.png') }}" alt="Logo" class="h-14 w-auto pt-2" />
+            </a>
         </div>
 
         <!-- hamburger -->
@@ -23,12 +25,20 @@
         </div>
 
         <div class="hidden lg:flex items-center">
-            <a href="/login">
-              <button class="bg-palette-3 text-white font-light py-2 px-10 rounded-full hover:bg-gray-500 transition duration-300">
-                Sign in
-              </button>
-            </a>
-        </div>
+              @auth
+                  <a href="{{ route('member.dashboard.index') }}">
+                      <button class="bg-palette-3 text-white font-semibold py-2 px-10 rounded-full hover:bg-gray-500 transition duration-300">
+                          Dashboard
+                      </button>
+                  </a>
+              @else
+                  <a href="{{ route('login') }}">
+                      <button class="bg-palette-3 text-white font-semibold py-2 px-10 rounded-full hover:bg-gray-500 transition duration-300">
+                          Sign in
+                      </button>
+                  </a>
+              @endauth
+          </div>
     </nav>
 
     <!-- mobile menu -->
@@ -37,12 +47,20 @@
         <a href="/event" class="nav-link block py-4 text-gray-500 font-semibold hover:text-[#5e3929] transition duration-200">Event</a>
         <a href="/blog" class="nav-link block py-4 text-gray-500 font-semibold hover:text-[#5e3929] transition duration-200">Blog</a>
         
-        <div class="mt-6">
-          <a href="/login">
-            <button class="w-72 bg-palette-3 hover:bg-[#5e3929] text-white font-light py-2 rounded-3xl transition duration-200">
-                Sign in
-            </button>
-          </a>
-        </div>
+       <div class="mt-6">
+          @auth
+            <a href="{{ route('member.dashboard.index') }}">
+                <button class="w-72 bg-palette-3 text-white font-semibold py-2 px-10 rounded-full hover:bg-gray-500 transition duration-300">
+                    Dashboard
+                </button>
+            </a>
+          @else
+            <a href="{{ route('login') }}">
+                <button class="w-72 bg-palette-3 text-white font-semibold py-2 px-10 rounded-full hover:bg-gray-500 transition duration-300">
+                    Sign in
+                </button>
+            </a>
+          @endauth
+      </div>
     </div>
 </header>

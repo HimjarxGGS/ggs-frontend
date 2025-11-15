@@ -57,8 +57,17 @@
     </section>
 
     <!-- upcoming event start -->
-    <div class="flex justify-items-center max-w-7xl mx-auto">
-        <div class="mt-32 mb-12 px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="flex flex-col items-center max-w-7xl mx-auto mt-32 mb-12 px-4">
+        <!-- section title -->
+        <div class="text-center mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-black">Upcoming Event</h2>
+            <p class="text-gray-500 text-xs md:text-base mt-1.5">
+                Don't miss out on the exciting events from <span class="block md:hidden"></span><span class="hidden md:inline"></span> Green Generation Surabaya!</span> 
+            </p>
+        </div>
+
+        <!-- grid list event -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
             @forelse ($upcoming as $i => $event)
                 <a href="{{ route('events.show', $event->id) }}" class="block group {{ $i >= 1 ? 'hidden sm:block' : '' }}">
                     <div
@@ -92,65 +101,73 @@
                     </div>
                 </a>
             @empty
-                <p class="col-span-3 text-center text-gray-500 py-10">
-                    Belum ada event terbaru.
+                <p class="col-span-3 text-gray-500 py-10 text-center">
+                    No upcoming events yet.
                 </p>
             @endforelse
         </div>
     </div>
 
-
     <div class="text-center mt-6">
         <a href="{{ route('events.upcoming') }}"
-            class="inline-block bg-palette-2 text-white px-6 py-2 rounded-xl 
-              hover:bg-palette-3 transition ease-in-out duration-300 hover:shadow-lg">
-            Lihat Semua Upcoming Event
+            class="inline-block bg-palette-3 text-white px-6 py-2 rounded-xl 
+              hover:bg-palette-2 transition ease-in-out duration-300 hover:shadow-lg">
+            See All Upcoming Events
         </a>
     </div>
     <!-- upcoming event end -->
 
     <!-- succesfull event start -->
-    <div
-        class="max-w-7xl mx-auto mt-14 mb-12 px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
-        @forelse ($finished as $i => $event)
+    <section class="max-w-7xl mx-auto px-4 mt-20">
+        <!-- judul -->
+        <div class="text-center mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Successful Event</h2>
+            <p class="text-gray-500 mt-1.5 text-xs md:text-base">The successful events organized by <span class="block md:hidden"></span><span class="hidden md:inline"></span>Green Generation Surabaya.</p>
+        </div>
+
+        <!-- list event -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+            @forelse ($finished as $i => $event)
             <a href="{{ route('events.show', $event->id) }}" class="block group {{ $i >= 1 ? 'hidden sm:block' : '' }}">
                 <div
-                    class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500">
-                    <div class="relative">
-                        <img src="{{ $event->poster ? asset('storage/' . $event->poster) : asset('images/gambar-event.png') }}"
-                            alt="Event Cover" class="w-full h-52 object-cover">
-                        <span
-                            class="absolute top-7 left-7 bg-orange-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                            Finished
-                        </span>
+                class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500">
+                <div class="relative">
+                    <img src="{{ $event->poster ? asset('storage/' . $event->poster) : asset('images/gambar-event.png') }}"
+                    alt="Event Cover" class="w-full h-52 object-cover">
+                    <span
+                    class="absolute top-7 left-7 bg-orange-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    Finished
+                    </span>
+                </div>
+                <div class="p-4 space-y-2">
+                    <h3 class="text-lg font-semibold">{{ $event->name }}</h3>
+                    <p class="text-gray-500 text-xs">Green Generation Surabaya</p>
+                    <div class="flex items-center text-xs text-gray-500 gap-2">
+                        <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-4 h-4">
+                        <span>{{ $event->event_date->translatedFormat('d F Y') }}</span>
                     </div>
-                    <div class="p-4 space-y-2">
-                        <h3 class="text-lg font-semibold">{{ $event->name }}</h3>
-                        <p class="text-gray-500 text-xs">Green Generation Surabaya</p>
-                        <div class="flex items-center text-xs text-gray-500 gap-2">
-                            <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-4 h-4">
-                            <span>{{ $event->event_date->translatedFormat('d F Y') }}</span>
-                        </div>
-                        <p class="text-xs text-wrap text-gray-600">
-                            {!! Str::limit($event->description, 100) !!}
-                        </p>
-                    </div>
+                    <p class="text-xs text-wrap text-gray-600">
+                        {!! Str::limit($event->description, 100) !!}
+                    </p>
+                </div>
                 </div>
             </a>
-        @empty
+            @empty
             <p class="col-span-3 text-center text-gray-500 py-10">
-                Belum ada event yang selesai.
+                No events have been completed yet.
             </p>
-        @endforelse
-    </div>
+            @endforelse
+        </div>
 
-    <div class="text-center mt-6">
-        <a href="{{ route('events.finished') }}"
-            class="inline-block bg-palette-2 text-white px-6 py-2 rounded-xl 
-              hover:bg-palette-3 transition ease-in-out duration-300 hover:shadow-lg">
-            Lihat Semua Successful Event
-        </a>
-    </div>
+        <!-- view all event successfully -->
+        <div class="text-center mt-6">
+            <a href="{{ route('events.finished') }}"
+            class="inline-block bg-palette-3 text-white px-6 py-2 rounded-xl 
+                hover:bg-palette-2 transition ease-in-out duration-300 hover:shadow-lg">
+                See All Successful Events
+            </a>
+        </div>
+    </section>
     <!-- succesfull event end -->
 
     <!-- start section dampak -->

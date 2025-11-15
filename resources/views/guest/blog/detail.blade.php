@@ -1,5 +1,7 @@
 @extends('guest.layouts.app')
 
+@section('title', 'Detail Blog - ' . $blog->title)
+
 @section('content')
 <div class="min-h-screen flex flex-col">
 
@@ -32,78 +34,163 @@
         </div>
 
         {{-- Blog Content --}}
-        <div class="text-palette-2 leading-relaxed space-y-4">
-            <!-- {!! nl2br(e($blog->content)) !!} -->
-            {!! $blog->content !!}
-        </div>
+        <article class="blog-content text-palette-2 leading-relaxed space-y-4 break-words whitespace-normal max-w-none text-justify">
+            {{-- sanitize: izinkan tag teks & gambar tapi hapus input / form --}}
+            {!! strip_tags($blog->content, '<p><a><em><ul><ol><li><br><h1><h2><h3><img><blockquote><figure><figcaption><pre><code>') !!}
+        </article>
 
-        {{-- Related Posts Section (dummy dulu) --}}
-        <div class="mt-16">
-            <h2 class="text-2xl font-semibold mb-6">Related</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                @for ($i = 0; $i < 4; $i++)
-                    <div class="space-y-2">
-                    <img
-                        src="{{ asset('images/blog.png') }}"
-                        alt="Related Blog Image"
-                        class="w-full h-32 md:h-40 object-cover rounded-lg">
-                    <h3 class="text-sm font-semibold leading-tight text-palette-3">
-                        Related Blog {{ $i+1 }}
-                    </h3>
-                    <p class="text-xs text-gray-500">
-                        {{ now()->format('d M Y') }}<br>
-                        Dummy Author
-                    </p>
-            </div>
-            @endfor
-        </div>
-</div>
-
-<!-- {{-- Comment Section (dummy) --}}
-<div class="mt-16 bg-white shadow-md rounded-2xl p-20">
-    <h2 class="text-4xl font-semibold mb-2">Submit Comment</h2>
-    <p class="text-gray-500 text-sm mb-4">Your email address will not be published. Required fields are marked *</p>
-    <form class="space-y-4 max-w-xl mt-10">
-        <div>
-            <input type="email" placeholder="Enter email*"
-                class="w-80 border px-4 py-2 rounded 
-                                  focus:outline-none focus:ring focus:ring-palette-4 text-sm transition duration-300">
-        </div>
-        <div>
-            <input type="text" placeholder="Enter name*"
-                class="w-80 border px-4 py-2 rounded 
-                                  focus:outline-none focus:ring focus:ring-palette-4 text-sm transition duration-300">
-        </div>
-        <div>
-            <textarea placeholder="Enter comment*"
-                class="w-full border px-4 py-2 rounded 
-                                     focus:outline-none focus:ring focus:ring-palette-4 h-28 text-sm transition duration-300"></textarea>
-        </div>
-        <button type="submit"
-            class=" bg-palette-2 text-white px-40 py-2 rounded-xl hover:bg-palette-2 transition ease-in-out duration-300 hover:shadow-lg hover:shadow-gray-600">
-            Submit
-        </button>
-    </form>
-</div> -->
-</section>
-
-{{-- Our Partners (dummy) --}}
-<section class="pt-24 px-6">
-    <div class="flex flex-col lg:flex-row md:items-center justify-center gap-10">
-        <div class="text-left lg:text-left">
-            <h2 class="text-5xl font-bold text-palette-5">
-                our <span class="font-bold">Partners</span>
+        <section class="mt-16">
+            <h2 class="text-2xl md:text-3xl font-bold text-black mb-6 text-left">
+              Related Post
             </h2>
-            <p class="text-gray-500">Lorem Ipsum</p>
-        </div>
-        <div class="hidden lg:block w-80 h-0.5 bg-gray-300"></div>
-    </div>
 
-    <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-7 gap-y-8 px-4 max-w-6xl mx-auto mt-14">
-        <img src="{{ asset('images/Logo.png') }}" alt="" class="h-24" />
-        <img src="{{ asset('images/cnn.png') }}" alt="" class="h-20" />
-        <img src="{{ asset('images/Logo.png') }}" alt="" class="h-24" />
-    </div>
-</section>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                  @forelse($otherBlogs as $i => $item)
+                      <div class="{{ $i >= 1 ? 'hidden sm:block' : '' }} space-y-2">
+                          <a href="{{ route('blog.detail', $item->slug ?? '#') }}" class="block">
+                              <img 
+                                  src="{{ $item->img ? asset('storage/'.$item->img) : asset('images/blog.png') }}"
+                                  alt="Blog Thumbnail" 
+                                  class="w-full h-32 md:h-40 object-cover rounded-lg"
+                              >
+                              <h3 class="text-sm font-semibold leading-tight text-palette-3 mt-2">
+                                  {{ Str::limit($item->title ?? 'Blog '.($i+1), 60) }}
+                              </h3>
+                              <p class="text-xs text-gray-500">
+                                  {{ optional($item)->published_at 
+                                      ? \Carbon\Carbon::parse($item->published_at)->format('d M Y') 
+                                      : now()->format('d M Y') }}
+                                  <br>
+                                  {{ $item->author ?? 'Unknown Author' }}
+                              </p>
+                          </a>
+                      </div>
+                  @empty
+                      <p class="col-span-3 text-center text-gray-500 py-10">
+                          Belum ada blog lain untuk ditampilkan.
+                      </p>
+                  @endforelse
+            </div>
+          </div>
+        </section>
+
+      
+       {{-- Blog Submission Section --}}
+      <section class="py-16 px-5 bg-white">
+        <div class="max-w-4xl mx-auto bg-palette-3 shadow-md rounded-3xl p-10">
+            <h2 class="md:text-4xl font-semibold mb-2 text-palette-1 text-2xl md:text-left text-center">Submit your Idea</h2>
+            <p class="text-gray-300 md:text-sm text-xs md:text-left text-center mb-7">Submit your own blog and inspire others with your story.</p>
+
+            {{-- Success Message --}}
+            @if (session('success'))
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        document.getElementById('submitBlogForm')?.scrollIntoView({ behavior: 'smooth' });
+                        setTimeout(() => document.getElementById('successBanner')?.remove(), 7000);
+                    });
+                </script>
+                <div id="successBanner" class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" role="alert">
+                    <strong class="font-bold">Success!</strong>
+                    <span class="block sm:inline">{{ session('success') }}</span>
+                </div>
+            @endif
+
+            {{-- Error Message --}}
+            @if ($errors->any())
+                <div id="errorBanner" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+                    <strong class="font-bold">Oops! Ada yang perlu diperbaiki.</strong>
+                    <ul class="list-disc list-inside">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+            {{-- Form --}}
+            <form action="{{route('blog.submit')}}" method="POST" class="space-y-4 max-w-xl mx-auto md:mx-0" id="submitBlogForm">
+                @csrf
+                <div>
+                    <label for="email" class="block mb-2 text-sm font-medium text-palette-1">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Use your valid email" required
+                          value="{{ old('email') }}"
+                          class="w-full px-7 py-2 rounded-2xl focus:outline-none focus:ring focus:ring-palette-4 text-sm transition duration-300 bg-palette-1 text-palette-2">
+                </div>
+
+                <div>
+                    <label for="subject" class="block mb-2 text-sm font-medium text-palette-1">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="Enter the blog title" required
+                          value="{{ old('subject') }}"
+                          class="w-full px-7 py-2 focus:outline-none focus:ring focus:ring-palette-4 text-sm rounded-2xl transition duration-300 bg-palette-1 text-palette-2">
+                </div>
+
+                <div>
+                    <label for="content" class="block mb-2 text-sm font-medium text-palette-1">Blog Content</label>
+                    <textarea id="content" name="content" placeholder="Enter blog content here ..." required
+                              class="w-full px-7 py-5 rounded-2xl focus:outline-none focus:ring focus:ring-palette-4 h-36 text-sm transition duration-300 bg-palette-1 text-palette-2">{{ old('content') }}</textarea>
+                </div>
+
+                <button type="submit"
+                        class="bg-palette-4 text-white w-full py-2 rounded-full transition-transform duration-500 transform hover:scale-[1.02] hover:shadow-lg hover:border-gray-300">
+                    Submit
+                </button>
+            </form>
+        </div>
+      </section>
+
+      <!-- our partner -->
+      <section class="px-6">
+
+        <div class="flex flex-col lg:flex-row md:items-center justify-center gap-10">
+          <div class="text-left lg:text-left">
+            <h2 class="text-5xl font-bold text-palette-5">
+              our <span class="font-bold">Partners</span>
+            </h2>
+            <p class="text-gray-500">Green Generation Surabaya</p>
+          </div>
+          <div class="hidden lg:block w-80 h-0.5 bg-gray-300"></div>
+        </div>
+
+        <!-- logo partner -->
+        <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-8 gap-y-10 max-w-6xl mx-auto mt-14 place-items-center">
+          <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="0" data-aos-duration="700">
+            <img src="{{ asset('images/aisec.png') }}" alt="AIESEC" class="max-h-24 object-contain" />
+          </div>
+          <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="700">
+            <img src="{{ asset('images/americancorner.png') }}" alt="American Corner" class="max-h-24 object-contain" />
+          </div>
+          <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="200" data-aos-duration="700">
+            <img src="{{ asset('images/gojek.png') }}" alt="Gojek" class="max-h-24 object-contain" />
+          </div>
+          <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="300" data-aos-duration="700">
+            <img src="{{ asset('images/kahf.png') }}" alt="Kahf" class="max-h-24 object-contain" />
+          </div>
+          <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="400" data-aos-duration="700">
+            <img src="{{ asset('images/komdigi.png') }}" alt="Komdigi" class="max-h-24 object-contain" />
+          </div>
+          <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="500" data-aos-duration="700">
+            <img src="{{ asset('images/komunitasnarasijatim.png') }}" alt="Komunitas Narasi Jatim" class="max-h-24 object-contain" />
+          </div>
+          <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="600" data-aos-duration="700">
+            <img src="{{ asset('images/noovoleum.png') }}" alt="Noovoleum" class="max-h-24 object-contain" />
+          </div>
+          <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="700" data-aos-duration="700">
+            <img src="{{ asset('images/hi.png') }}" alt="Human Initiative" class="max-h-24 object-contain" />
+          </div>
+          <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="800" data-aos-duration="700">
+            <img src="{{ asset('images/pepelingasihindonesia.png') }}" alt="Pepelingasih Indonesia" class="max-h-24 object-contain" />
+          </div>
+          <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="900" data-aos-duration="700">
+            <img src="{{ asset('images/uwk.png') }}" alt="UWK" class="max-h-20 object-contain" />
+          </div>
+          <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="1000" data-aos-duration="700">
+            <img src="{{ asset('images/tus.png') }}" alt="TUS" class="max-h-24 object-contain" />
+          </div>
+          <div class="flex justify-center items-center h-24" data-aos="zoom-in-up" data-aos-delay="1100" data-aos-duration="700">
+            <img src="{{ asset('images/fpci.png') }}" alt="FPCI" class="max-h-24 object-contain" />
+          </div>
+        </div>
+      </section>
+
 </div>
 @endsection

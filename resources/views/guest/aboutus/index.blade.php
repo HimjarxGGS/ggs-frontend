@@ -18,7 +18,7 @@
     <!-- button mobile -->
     <div class="mt-6 md:hidden">
       <a href="/event">
-        <button class="bg-palette-3 hover:bg-palette-1 text-white font-extralight py-2 px-14 rounded-3xl ease-in-out transition duration-200 flex items-center gap-2">
+        <button class="bg-palette-3 text-white font-bold py-2 px-14 rounded-3xl ease-in-out transition duration-200 flex items-center gap-2">
           <span class="text-sm">View Event</span>
         </button>
       </a>
@@ -28,7 +28,7 @@
   <!-- button Desktop -->
   <div class="hidden lg:flex items-center mt-6 lg:ml-28">
     <a href="/event">
-      <button class="bg-palette-3 text-white font-normal py-2 px-20 rounded-3xl flex items-center gap-2 ease-in-out transition duration-300 hover:shadow-lg hover:shadow-black">
+      <button class="bg-palette-3 text-white font-bold py-2 px-20 rounded-3xl flex items-center gap-2 ease-in-out transition duration-300 hover:shadow-lg hover:shadow-black">
         <span>View Event</span>
       </button>
     </a>
@@ -96,9 +96,9 @@
               <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
             </svg>
           </span>
-          <h3 class="text-xl font-bold text-gray-900" data-aos="fade-left">GG Beraksi</h3>
-          <time class="block mb-4 text-sm text-gray-500" data-aos="fade-left">Released on Januari, 2025</time>
-          <p class="mb-3 text-sm text-gray-600" data-aos="fade-left">Grow Action for Volunteer Engagement in Taman Absari Surabaya</p>
+          <h3 class="text-xl font-bold text-gray-900">GG Beraksi</h3>
+          <time class="block mb-4 text-sm text-gray-500">Released on Januari, 2025</time>
+          <p class="mb-3 text-sm text-gray-600">Grow Action for Volunteer Engagement in Taman Absari Surabaya</p>
 
           <!-- foto -->
           <div class="flex items-start gap-4 mt-4">
@@ -107,9 +107,7 @@
                 class="rounded-3xl w-56 max-w-sm"
                 loading="lazy"
                 alt="GG Beraksi"
-                data-aos="fade-left"
-                data-aos-delay="0"
-                data-aos-duration="800">
+              >
             </a>
 
             <div class="hidden sm:flex flex-row gap-4">
@@ -118,18 +116,14 @@
                   loading="lazy"
                   class="rounded-3xl w-56 max-w-sm"
                   alt="GG Beraksi 2"
-                  data-aos="fade-left"
-                  data-aos-delay="500"
-                  data-aos-duration="800">
+                >
               </a>
               <a href="{{ asset('dokum/ggberaksi4.JPG') }}" target="_blank">
                 <img src="{{ asset('dokum/ggberaksi4.JPG') }}"
                   loading="lazy"
                   class="rounded-3xl w-56 max-w-sm"
                   alt="GG Beraksi 3"
-                  data-aos="fade-left"
-                  data-aos-delay="1000"
-                  data-aos-duration="800">
+                >
               </a>
             </div>
           </div>
@@ -142,9 +136,9 @@
               <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
             </svg>
           </span>
-          <h3 class="text-xl font-bold text-gray-900" data-aos="fade-left">Trashformer</h3>
-          <time class="block mb-4 text-sm text-gray-500" data-aos="fade-left">Released on Februari, 2025</time>
-          <p class="mb-3 text-sm text-gray-600" data-aos="fade-left">An environmental movement to transform waste into something more meaningful.</p>
+          <h3 class="text-xl font-bold text-gray-900">Trashformer</h3>
+          <time class="block mb-4 text-sm text-gray-500">Released on Februari, 2025</time>
+          <p class="mb-3 text-sm text-gray-600">An environmental movement to transform waste into something more meaningful.</p>
 
           <!-- foto -->
           <div class="flex items-start gap-4 mt-4">
@@ -154,9 +148,7 @@
                 loading="lazy"
                 class="rounded-3xl w-56 max-w-sm"
                 alt="trashformer"
-                data-aos="fade-left"
-                data-aos-delay="0"
-                data-aos-duration="800">
+              >
             </a>
 
             <div class="hidden sm:flex flex-row gap-4">
@@ -165,9 +157,7 @@
                   class="rounded-3xl w-56 max-w-sm"
                   loading="lazy"
                   alt="trashformer 2"
-                  data-aos="fade-left"
-                  data-aos-delay="500"
-                  data-aos-duration="800">
+                >
               </a>
 
               <a href="{{ asset('dokum/trashformerpart2-2.JPG') }}" target="_blank">
@@ -175,9 +165,7 @@
                   class="rounded-3xl w-56 max-w-sm"
                   loading="lazy"
                   alt="trashformer 3"
-                  data-aos="fade-left"
-                  data-aos-delay="1000"
-                  data-aos-duration="800">
+                >
               </a>
             </div>
           </div>
@@ -190,9 +178,9 @@
               <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
             </svg>
           </span>
-          <h3 class="text-xl font-semibold text-gray-900" data-aos="fade-left">Growave</h3>
-          <time class="block mb-4 text-sm text-gray-500" data-aos="fade-left">Released on Juni, 2025</time>
-          <p class="mb-3 text-sm text-gray-600" data-aos="fade-left">Volunteer Engagement in Mangrove Planting</p>
+          <h3 class="text-xl font-semibold text-gray-900">Growave</h3>
+          <time class="block mb-4 text-sm text-gray-500">Released on Juni, 2025</time>
+          <p class="mb-3 text-sm text-gray-600">Volunteer Engagement in Mangrove Planting</p>
 
           <!-- foto -->
           <div class="flex items-start gap-4 mt-4">
@@ -202,9 +190,7 @@
                 class="rounded-3xl w-56 max-w-sm"
                 loading="lazy"
                 alt="Growave1"
-                data-aos="fade-left"
-                data-aos-delay="0"
-                data-aos-duration="800">
+              >
             </a>
 
             <div class="hidden sm:flex flex-row gap-4">
@@ -214,19 +200,15 @@
                   class="rounded-3xl w-56 max-w-sm"
                   loading="lazy"
                   alt="Growave2"
-                  data-aos="fade-left"
-                  data-aos-delay="500"
-                  data-aos-duration="800">
+                >
               </a>
 
-              <a href="{{ asset('dokum/growave3.JPG') }}" target="_blank">
+              <a href="{{ asset('dokum/growave3.JPG') }}">
                 <img src="{{ asset('dokum/growave3.JPG') }}"
                   class="rounded-3xl w-56 max-w-sm"
                   loading="lazy"
                   alt="Growave3"
-                  data-aos="fade-left"
-                  data-aos-delay="1000"
-                  data-aos-duration="800">
+                >
               </a>
             </div>
           </div>
@@ -239,9 +221,9 @@
               <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
             </svg>
           </span>
-          <h3 class="text-xl font-semibold text-gray-900" data-aos="fade-left">Greenovation</h3>
-          <time class="block mb-4 text-sm text-gray-500" data-aos="fade-left">Released on Juni, 2025</time>
-          <p class="mb-3 text-sm text-gray-600" data-aos="fade-left">Grow Action for Volunteer Engagement in Mangrove Planting</p>
+          <h3 class="text-xl font-semibold text-gray-900">Greenovation</h3>
+          <time class="block mb-4 text-sm text-gray-500">Released on Juni, 2025</time>
+          <p class="mb-3 text-sm text-gray-600" >Grow Action for Volunteer Engagement in Mangrove Planting</p>
 
           <!-- foto -->
           <div class="flex items-start gap-4 mt-4">
@@ -251,9 +233,7 @@
                 class="rounded-3xl w-56 max-w-sm"
                 loading="lazy"
                 alt="Greenovation1"
-                data-aos="fade-left"
-                data-aos-delay="0"
-                data-aos-duration="800">
+              >
             </a>
 
             <div class="hidden sm:flex flex-row gap-4">
@@ -262,9 +242,7 @@
                   class="rounded-3xl w-56 max-w-sm"
                   loading="lazy"
                   alt="Greenovation2"
-                  data-aos="fade-left"
-                  data-aos-delay="500"
-                  data-aos-duration="800">
+                  >
               </a>
 
               <a href="{{ asset('dokum/greenovation_batch3_3.JPG') }}" target="_blank">
@@ -272,9 +250,7 @@
                   class="rounded-3xl w-64 max-w-sm"
                   loading="lazy"
                   alt="Greenovation3"
-                  data-aos="fade-left"
-                  data-aos-delay="1000"
-                  data-aos-duration="800">
+                >
               </a>
             </div>
           </div>

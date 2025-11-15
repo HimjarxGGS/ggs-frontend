@@ -2,8 +2,10 @@
 <header class="flex justify-center">
    <nav class="fixed left-1/2 -translate-x-1/2 w-[95%] max-w-7xl rounded-full px-14 py-3 flex items-center justify-between lg:px-20 z-[100] transition-all duration-300 mt-8">
         <!-- logo -->
-        <div class="flex items-center">
-            <img src="{{ asset('images/Logo.png') }}" alt="Logo" class="h-14 w-auto pt-2" />
+       <div class="flex items-center">
+            <a href="/">
+                <img src="{{ asset('images/Logo.png') }}" alt="Logo" class="h-14 w-auto pt-2" />
+            </a>
         </div>
 
         <!-- hamburger -->
@@ -26,7 +28,7 @@
         <div class="hidden lg:flex items-center">
             <form action="{{ route('logout') }}" method="POST">
              @csrf
-              <button class="bg-palette-5 text-white font-light py-2 px-10 rounded-full hover:bg-[#5e3929] transition duration-300">
+              <button class="bg-palette-3 text-white font-bold py-2 px-10 rounded-full hover:bg-gray-500 transition duration-300">
                 Logout
               </button>
              </form>
@@ -43,7 +45,7 @@
         <div class="mt-6">
           <form action="{{ route('logout') }}" method="POST">
              @csrf
-            <button class="w-72 bg-palette-5 hover:bg-[#5e3929] text-white font-light py-2 rounded-3xl transition duration-200">
+            <button class="w-72 bg-palette-3text-white font-bold py-2 rounded-3xl transition duration-200">
                 logout
             </button>
           </form>
