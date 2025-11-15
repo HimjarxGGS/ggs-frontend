@@ -127,7 +127,7 @@
                     <!-- bukti pembayaran -->
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2 ml-4">Bukti Pembayaran</label>
-                        <div class="flex items-center justify-center w-full">
+                        <div id="dropPembayaran" class="flex items-center justify-center w-full">
                             <label for="pembayaran" class="flex flex-col items-center justify-center w-full h-52 md:h-32 border-2 border-gray-300 border-dashed rounded-3xl cursor-pointer bg-gray-50 hover:bg-gray-300 transition ease-in-out duration-300">
                                 <div class="flex flex-col items-center justify-center pt-5 pb-6">
                                     <svg class="w-8 h-8 mb-4 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
@@ -165,4 +165,39 @@
     </section>
     <!-- section registrasi end -->
 </div>
+
+{{-- @push('scripts') --}}
+<script>
+function previewImage(inputId, previewContainerId) {
+    const fileInput = document.getElementById(inputId);
+    const previewContainer = document.getElementById(previewContainerId);
+
+    fileInput.addEventListener('change', function (e) {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+
+        reader.onload = function (event) {
+            const img = document.createElement('img');
+            img.src = event.target.result;
+            img.className = "w-full h-52 md:h-32 object-contain rounded-3xl border-2 border-gray-300";
+
+            // Hapus gambar lama jika ada
+            const oldImg = previewContainer.querySelector("img");
+            if (oldImg) oldImg.remove();
+
+            previewContainer.appendChild(img);
+        };
+
+        reader.readAsDataURL(file);
+    });
+}
+
+previewImage('poster', 'dropPoster');
+previewImage('pembayaran', 'dropPembayaran');
+</script>
+{{-- @endpush --}}
+
+
 @endsection
