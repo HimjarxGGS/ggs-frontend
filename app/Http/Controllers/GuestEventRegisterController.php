@@ -72,6 +72,8 @@ class GuestEventRegisterController extends Controller
             'kesediaan_menaati_aturan' => $validated['kesediaan_menaati_aturan'],
         ]);
 
-        return back()->with('success', 'Registrasi berhasil!');
+      
+        return redirect()->route('event.registration.success');
+
     }
 }
