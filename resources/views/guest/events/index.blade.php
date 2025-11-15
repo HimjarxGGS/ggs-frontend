@@ -241,7 +241,7 @@
                                         class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Kanye West">
                                     <div>
                                         <h3 class="text-lg font-semibold text-gray-800">Aghif</h3>
-                                        <p class="text-palette-4 text-md">Student</p>
+                                        <p class="text-palette-4 text-md">Executive Board</p>
                                     </div>
                                 </div>
                                 <p class="leading-normal text-gray-700 text-md"> Bertumbuh bersama GGSBY memberikan saya
@@ -262,7 +262,7 @@
                                         class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook">
                                     <div>
                                         <h3 class="text-lg font-semibold text-gray-800">Cheryyy</h3>
-                                        <p class="text-palette-4 text-md">-</p>
+                                        <p class="text-palette-4 text-md">Project Development</p>
                                     </div>
                                 </div>
                                 <p class="leading-normal text-gray-700 text-md">sejak bergabung dengan GGSBY saya semakin
@@ -287,7 +287,7 @@
                                         class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal">
                                     <div>
                                         <h3 class="text-lg font-semibold text-gray-800">Firda</h3>
-                                        <p class="text-palette-4 text-md">Student</p>
+                                        <p class="text-palette-4 text-md">Creative</p>
                                     </div>
                                 </div>
                                 <p class="leading-normal text-gray-700 text-md">Dengan bergabung bersama GGSBY membuat saya
