@@ -43,6 +43,7 @@ Route::post('/guest/events/register', [GuestEventRegisterController::class, 'sto
 Route::post('/event/check-certificate', [EventController::class, 'checkCertificate'])->name('certificate.check');
 
 
+
 // Route untuk Member (Login Required)
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard-member', [DashboardController::class, 'index'])

@@ -18,29 +18,27 @@ class HistoryController extends Controller
         $pendaftar = Pendaftar::where('user_id', $user->id)->first();
 
         if (!$pendaftar) {
-            // Jika user belum punya data pendaftar, return empty
-            $histories = collect();
-        } else {
-            // Query pendaftaran event oleh user ini
-            $query = PendaftarEvent::with(['event', 'pendaftar'])
-                ->where('pendaftar_id', $pendaftar->id);
+    // Buat paginator kosong
+    $histories = PendaftarEvent::where('id', null)->paginate(5);
+} else {
+    $query = PendaftarEvent::with(['event', 'pendaftar'])
+        ->where('pendaftar_id', $pendaftar->id);
 
-            // Filter status
-            if ($request->filled('status')) {
-                $query->where('status', $request->status);
-            }
+    if ($request->filled('status')) {
+        $query->where('status', $request->status);
+    }
 
-            // Filter tanggal event
-            if ($request->filled('tanggal')) {
-                $query->whereHas('event', function ($q) use ($request) {
-                    $q->whereDate('event_date', $request->tanggal);
-                });
-            }
+    if ($request->filled('tanggal')) {
+        $query->whereHas('event', function ($q) use ($request) {
+            $q->whereDate('event_date', $request->tanggal);
+        });
+    }
 
-            $histories = $query->orderBy('created_at', 'desc')
-                ->paginate(5)
-                ->appends($request->query());
-        }
+    $histories = $query->orderBy('created_at', 'desc')
+        ->paginate(5)
+        ->appends($request->query());
+}
+
 
         return view('member.history.index', compact('histories'));
     }
