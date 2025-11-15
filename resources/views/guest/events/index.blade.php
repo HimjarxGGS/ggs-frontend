@@ -295,6 +295,7 @@
                             </div>
                         </div>
                     </li>
+
                     <li class="text-sm leading-6">
                         <div class="relative group" data-aos="zoom-in" data-aos-delay="300">
                             <div
@@ -302,7 +303,7 @@
                             </div>
                             <div class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
                                 <div class="flex items-center space-x-4"><img
-                                        src="https://pbs.twimg.com/profile_images/1375285353146327052/y6jeByyD_400x400.jpg"
+                                        src="{{ asset('images/testimoni_firda.png') }}" alt="Firda"
                                         class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal">
                                     <div>
                                         <h3 class="text-lg font-semibold text-gray-800">Parag Agrawal</h3>
@@ -326,11 +327,11 @@
                             </div>
                             <div class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
                                 <div class="flex items-center space-x-4"><img
-                                        src="https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Satya Nadella">
+                                        src="{{ asset('images/testimoni_firda.png') }}" alt="Firda"
+                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal">
                                     <div>
-                                        <h3 class="text-lg font-semibold text-gray-800">Satya Nadella</h3>
-                                        <p class="text-palette-4 text-md">CEO of Microsoft</p>
+                                        <h3 class="text-lg font-semibold text-gray-800">Rifky</h3>
+                                        <p class="text-palette-4 text-md">Public Relation</p>
                                     </div>
                                 </div>
                                 <p class="leading-normal text-gray-700 text-md">Tortor dignissim convallis aenean et.</p>
@@ -344,17 +345,21 @@
                             </div>
                             <div class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
                                 <div class="flex items-center space-x-4"><img
-                                        src="https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Satya Nadella">
+                                        src="{{ asset('images/testimoni_firda.png') }}" alt="Firda"
+                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal">
                                     <div>
-                                        <h3 class="text-lg font-semibold text-gray-800">Satya Nadella</h3>
-                                        <p class="text-palette-4 text-md">CEO of Microsoft</p>
+                                        <h3 class="text-lg font-semibold text-gray-800">Radindra</h3>
+                                        <p class="text-palette-4 text-md">Public Relation</p>
                                     </div>
                                 </div>
                                 <p class="leading-normal text-gray-700 text-md">Tortor dignissim convallis aenean et.</p>
                             </div>
                         </div>
                     </li>
+
+                    
+
+
             </div>
         </div>
     </section>
