@@ -18,7 +18,7 @@ class GuestEventRegisterController extends Controller
             'date_of_birth' => 'required|date',
             'email' => 'required|email',
             'asal_instansi' => 'nullable|string|max:255',
-            'no_telepon' => 'nullable|string|max:20',
+            'no_telepon' => 'nullable|digits_between:10,12',
             'riwayat_penyakit' => 'nullable|string',
             'registrant_picture' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
 

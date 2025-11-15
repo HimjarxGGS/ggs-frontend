@@ -96,6 +96,9 @@
                             <input type="text" id="telepon" name="no_telepon" placeholder="Enter your phone number"
                                 required
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-palette-2 focus:border-palette-2 block w-full p-2.5 transition ease-in-out duration-300 pl-5">
+                                 @error('no_telepon')
+        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+    @enderror
                         </div>
 
                         <!-- riwayat penyakit -->
