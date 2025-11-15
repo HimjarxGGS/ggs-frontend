@@ -40,7 +40,7 @@
                         </a>
 
                         <!-- Button Contact Person -->
-                        <a href="https://wa.me/628123456789"
+                        <a href="https://wa.me/6281216132795"
                             class="w-full md:w-52 px-6 py-3 rounded-full border border-gray-300 flex items-center justify-center gap-2 text-gray-800 font-medium hover:bg-gray-100 transition text-sm md:text-base">
                             <img src="{{ asset('icons/contact.svg') }}" alt="Icon" class="w-4 h-4">
                             Contact Person
