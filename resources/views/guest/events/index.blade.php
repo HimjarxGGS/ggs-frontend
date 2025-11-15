@@ -252,6 +252,70 @@
                     </li>
 
                     <li class="text-sm leading-6">
+                        <div class="relative group" data-aos="zoom-in-left" data-aos-delay="250">
+                            <div
+                                class="absolute transition rounded-3xl opacity-25 -inset-1 bg-gradient-to-r from-palette-4 to-palette-2 blur duration-400 group-hover:opacity-100 group-hover:duration-500">
+                            </div>
+                            <div class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
+                                <div class="flex items-center space-x-4"><img
+                                        src="{{ asset('images/testimoni_rifky.jpeg') }}" alt="Firda"
+                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal">
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-gray-800">Rifky</h3>
+                                        {{-- <p class="text-palette-4 text-md">Public Relation</p> --}}
+                                    </div>
+                                </div>
+                                <p class="leading-normal text-gray-700 text-md">⁠Kegiatan yang diberikan menarik, cocok sekali sebagai motivasi untuk bisa berubah menjadi lebih baik.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- line 2 -->
+                <ul class="hidden space-y-8 sm:block">
+                    <li class="text-sm leading-6">
+                        <div class="relative group" data-aos="zoom-in" data-aos-delay="300">
+                            <div
+                                class="absolute transition rounded-3xl opacity-25 -inset-1 bg-gradient-to-r from-palette-4 to-palette-2 blur duration-400 group-hover:opacity-100 group-hover:duration-500">
+                            </div>
+                            <div class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
+                                <div class="flex items-center space-x-4"><img
+                                        src="{{ asset('images/testimoni_radindra.jpeg') }}" alt="Radindra"
+                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Radindra">
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-gray-800">Radindra</h3>
+                                        <p class="text-palette-4 text-md">Public Relation</p>
+                                    </div>
+                                </div>
+                                <p class="leading-normal text-gray-700 text-md">GGS mengajari saya menanam kaktus ⭐⭐⭐⭐⭐</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="text-sm leading-6">
+                        <div class="relative group" data-aos="zoom-in" data-aos-delay="200">
+                            <div
+                                class="absolute transition rounded-3xl opacity-25 -inset-1 bg-gradient-to-r from-palette-4 to-palette-2 blur duration-400 group-hover:opacity-100 group-hover:duration-500">
+                            </div>
+                            <div class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
+                                <div class="flex items-center space-x-4"><img
+                                        src="{{ asset('images/testimoni_firda.png') }}" alt="Firda"
+                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal">
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-gray-800">Firda</h3>
+                                        <p class="text-palette-4 text-md">Creative</p>
+                                    </div>
+                                </div>
+                                <p class="leading-normal text-gray-700 text-md">Dengan bergabung bersama GGSBY membuat saya
+                                    lebih membuka mata tentang pentingnya menjaga lingkungan dengan hal kecil sekalipun</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- line 3 -->
+                <ul class="hidden space-y-8 lg:block">
+                    <li class="text-sm leading-6">
                         <div class="relative group" data-aos="zoom-in" data-aos-delay="200">
                             <div
                                 class="absolute transition rounded-3xl opacity-25 -inset-1 bg-gradient-to-r from-palette-4 to-palette-2 blur duration-400 group-hover:opacity-100 group-hover:duration-500">
@@ -272,72 +336,6 @@
                             </div>
                         </div>
                     </li>
-                </ul>
-
-                <!-- line 2 -->
-                <ul class="hidden space-y-8 sm:block">
-                    <li class="text-sm leading-6">
-                        <div class="relative group" data-aos="zoom-in" data-aos-delay="200">
-                            <div
-                                class="absolute transition rounded-3xl opacity-25 -inset-1 bg-gradient-to-r from-palette-4 to-palette-2 blur duration-400 group-hover:opacity-100 group-hover:duration-500">
-                            </div>
-                            <div class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
-                                <div class="flex items-center space-x-4"><img
-                                        src="{{ asset('images/testimoni_firda.png') }}" alt="Firda"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal">
-                                    <div>
-                                        <h3 class="text-lg font-semibold text-gray-800">Firda</h3>
-                                        <p class="text-palette-4 text-md">Creative</p>
-                                    </div>
-                                </div>
-                                <p class="leading-normal text-gray-700 text-md">Dengan bergabung bersama GGSBY membuat saya
-                                    lebih membuka mata tentang pentingnya menjaga lingkungan dengan hal kecil sekalipun</p>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="text-sm leading-6">
-                        <div class="relative group" data-aos="zoom-in" data-aos-delay="300">
-                            <div
-                                class="absolute transition rounded-3xl opacity-25 -inset-1 bg-gradient-to-r from-palette-4 to-palette-2 blur duration-400 group-hover:opacity-100 group-hover:duration-500">
-                            </div>
-                            <div class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
-                                <div class="flex items-center space-x-4"><img
-                                        src="{{ asset('images/testimoni_firda.png') }}" alt="Firda"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal">
-                                    <div>
-                                        <h3 class="text-lg font-semibold text-gray-800">Parag Agrawal</h3>
-                                        <p class="text-palette-4 text-md">CEO of Twitter</p>
-                                    </div>
-                                </div>
-                                <p class="leading-normal text-gray-700 text-md">Enim neque volutpat ac tincidunt vitae
-                                    semper. Mattis aliquam faucibus purus in massa tempor. Neque vitae tempus quam
-                                    pellentesque nec. Turpis cursus in hac habitasse platea dictumst.</p>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-
-                <!-- line 3 -->
-                <ul class="hidden space-y-8 lg:block">
-                    <li class="text-sm leading-6">
-                        <div class="relative group" data-aos="zoom-in-left" data-aos-delay="250">
-                            <div
-                                class="absolute transition rounded-3xl opacity-25 -inset-1 bg-gradient-to-r from-palette-4 to-palette-2 blur duration-400 group-hover:opacity-100 group-hover:duration-500">
-                            </div>
-                            <div class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
-                                <div class="flex items-center space-x-4"><img
-                                        src="{{ asset('images/testimoni_firda.png') }}" alt="Firda"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal">
-                                    <div>
-                                        <h3 class="text-lg font-semibold text-gray-800">Rifky</h3>
-                                        <p class="text-palette-4 text-md">Public Relation</p>
-                                    </div>
-                                </div>
-                                <p class="leading-normal text-gray-700 text-md">Tortor dignissim convallis aenean et.</p>
-                            </div>
-                        </div>
-                    </li>
                     <li class="text-sm leading-6">
                         <div class="relative group" data-aos="zoom-in-left" data-aos-delay="350">
                             <div
@@ -345,14 +343,14 @@
                             </div>
                             <div class="relative p-6 space-y-6 leading-none rounded-3xl bg-white ring-1 ring-gray-200">
                                 <div class="flex items-center space-x-4"><img
-                                        src="{{ asset('images/testimoni_firda.png') }}" alt="Firda"
+                                        src="{{ asset('images/testimoni_hanst.jpeg') }}" alt="Firda"
                                         class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal">
                                     <div>
-                                        <h3 class="text-lg font-semibold text-gray-800">Radindra</h3>
+                                        <h3 class="text-lg font-semibold text-gray-800">Hanst</h3>
                                         <p class="text-palette-4 text-md">Public Relation</p>
                                     </div>
                                 </div>
-                                <p class="leading-normal text-gray-700 text-md">Tortor dignissim convallis aenean et.</p>
+                                <p class="leading-normal text-gray-700 text-md"> bisa jadi agent of change dengan mengikuti kegiatan bersih bersih di GGS 💚</p>
                             </div>
                         </div>
                     </li>
