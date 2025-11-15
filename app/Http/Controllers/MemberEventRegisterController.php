@@ -27,6 +27,14 @@ class MemberEventRegisterController extends Controller
         return redirect()->back()->with('error', 'Lengkapi data diri terlebih dahulu sebelum mendaftar event.');
     }
 
+    if (PendaftarEvent::where('event_id', $eventId)
+    ->where('pendaftar_id', $pendaftar->id)
+    ->exists()) 
+    {
+        return back()->with('error', 'Anda sudah mendaftar event ini.');
+    }
+
+
     PendaftarEvent::create([
         'event_id' => $eventId,
         'pendaftar_id' => $pendaftar->id,
