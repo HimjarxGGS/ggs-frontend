@@ -21,8 +21,10 @@
                <span class="absolute -top-3 left-3 bg-white px-5 text-base font-semibold">
                    Status
                </span>
-               <p class="text-center md:text-left {{ $history->status == 'pending' ? 'text-yellow-600 font-bold' : 'text-green-600 font-bold' }}">
-                   {{ ucfirst($history->status) }}
+               <p class="text-center md:text-left {{ $pendaftaranEvent->status
+ == 'pending' ? 'text-yellow-600 font-bold' : 'text-green-600 font-bold' }}">
+                   {{ ucfirst($pendaftaranEvent->status) }}
+
                </p>
            </div>
 
@@ -31,7 +33,8 @@
                <span class="absolute -top-3 left-3 bg-white px-5 text-base font-semibold">
                    Event
                </span>
-               <p class="font-semibold text-palette-3">{{ $history->name }}</p>
+               <p class="font-semibold text-palette-3">{{ $event->name }}
+</p>
            </div>
 
            <!-- personal data -->
