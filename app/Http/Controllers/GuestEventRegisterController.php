@@ -45,6 +45,10 @@ class GuestEventRegisterController extends Controller
         'date_of_birth.date'            => 'Format tanggal lahir tidak valid.',
         'date_of_birth.before_or_equal' => 'Umur minimal yang diperbolehkan adalah 15 tahun.',
         'date_of_birth.after_or_equal'  => 'Umur maksimal yang diperbolehkan adalah 100 tahun.',
+
+        'no_telepon.digits_between' => 'Nomor telepon harus terdiri dari 10 hingga 12 digit.',
+        
+
     ]);
 
 
