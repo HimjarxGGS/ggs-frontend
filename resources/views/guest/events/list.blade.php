@@ -114,7 +114,7 @@
 
     <!-- Pagination -->
     <div class="mt-10 flex justify-center">
-        {{ $events->links() }}
+        {{ $events->appends(request()->input())->links() }}
     </div>
 </section>
 @endsection
