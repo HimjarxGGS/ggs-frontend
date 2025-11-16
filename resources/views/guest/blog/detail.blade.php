@@ -36,7 +36,17 @@
         {{-- Blog Content --}}
         <article class="blog-content text-palette-2 leading-relaxed space-y-4 break-words whitespace-normal max-w-none text-justify">
             {{-- sanitize: izinkan tag teks & gambar tapi hapus input / form --}}
-            {!! strip_tags($blog->content, '<p><a><em><ul><ol><li><br><h1><h2><h3><img><blockquote><figure><figcaption><pre><code>') !!}
+            {!! strip_tags($blog->content, '<p><a><em>
+                        <ul>
+                            <ol>
+                                <li><br>
+                                    <h1>
+                                        <h2>
+                                            <h3><img>
+                                                <blockquote>
+                                                    <figure>
+                                                        <figcaption>
+                                                            <pre><code>') !!}
         </article>
 
         <section class="mt-16">
@@ -76,66 +86,99 @@
 
       
        {{-- Blog Submission Section --}}
-      <section class="py-16 px-5 bg-white">
-        <div class="max-w-4xl mx-auto bg-palette-3 shadow-md rounded-3xl p-10">
-            <h2 class="md:text-4xl font-semibold mb-2 text-palette-1 text-2xl md:text-left text-center">Submit your Idea</h2>
-            <p class="text-gray-300 md:text-sm text-xs md:text-left text-center mb-7">Submit your own blog and inspire others with your story.</p>
+        <section class="max-w-5xl mx-auto py-16 px-5">
+            <div id="submitBlogForm"
+                class="bg-palette-3 shadow-md rounded-3xl p-10 w-full mx-auto">
+                <!-- class="bg-palette-3 shadow-md rounded-3xl p-10 flex-auto flex-col md:flex-row gap-10 w-full justify-center"> -->
+                <h2 class="md:text-4xl font-semibold mb-2 text-white text-xl md:text-left text-center">Submit your Idea</h2>
+                <p class="text-gray-300 md:text-sm text-sm md:text-left text-center mb-7">Submit your own blog and inspire others with your story.</p>
 
-            {{-- Success Message --}}
-            @if (session('success'))
+                @if (session('success'))
+
+                <!-- {{-- Auto-scroll script --}} -->
                 <script>
-                    document.addEventListener('DOMContentLoaded', () => {
-                        document.getElementById('submitBlogForm')?.scrollIntoView({ behavior: 'smooth' });
-                        setTimeout(() => document.getElementById('successBanner')?.remove(), 7000);
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const target = document.getElementById('submitBlogForm');
+                        if (target) target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
                     });
+                    setTimeout(() => {
+                        const banner = document.getElementById('successBanner');
+                        if (banner) banner.style.display = 'none';
+                    }, 7000);
                 </script>
-                <div id="successBanner" class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" role="alert">
+                <!-- Show pop up notification -->
+                
+                <div
+                    id="successBanner"
+                    class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4"
+                    role="alert">
                     <strong class="font-bold">Success!</strong>
                     <span class="block sm:inline">{{ session('success') }}</span>
                 </div>
-            @endif
+                @endif
 
-            {{-- Error Message --}}
-            @if ($errors->any())
-                <div id="errorBanner" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+                @if ($errors->any())
+                <!-- {{-- Auto-scroll script --}} -->
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const target = document.getElementById('submitBlogForm');
+                        if (target) target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    });
+                    setTimeout(() => {
+                        const banner = document.getElementById('successBanner');
+                        if (banner) banner.style.display = 'none';
+                    }, 7000);
+                </script>
+                <div id="errorBanner"
+                    class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4"
+                    role="alert">
                     <strong class="font-bold">Oops! Ada yang perlu diperbaiki.</strong>
                     <ul class="list-disc list-inside">
                         @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
+                        <li>{{ $error }}</li>
                         @endforeach
                     </ul>
                 </div>
-            @endif
+                @endif
 
-            {{-- Form --}}
-            <form action="{{route('blog.submit')}}" method="POST" class="space-y-4 max-w-xl mx-auto md:mx-0" id="submitBlogForm">
-                @csrf
-                <div>
-                    <label for="email" class="block mb-2 text-sm font-medium text-palette-1">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Use your valid email" required
-                          value="{{ old('email') }}"
-                          class="w-full px-7 py-2 rounded-2xl focus:outline-none focus:ring focus:ring-palette-4 text-sm transition duration-300 bg-palette-1 text-palette-2">
-                </div>
+                <form action="{{route('blog.submit')}}" method="POST" class="space-y-4 w-full">
+                    @csrf
 
-                <div>
-                    <label for="subject" class="block mb-2 text-sm font-medium text-palette-1">Subject</label>
-                    <input type="text" id="subject" name="subject" placeholder="Enter the blog title" required
-                          value="{{ old('subject') }}"
-                          class="w-full px-7 py-2 focus:outline-none focus:ring focus:ring-palette-4 text-sm rounded-2xl transition duration-300 bg-palette-1 text-palette-2">
-                </div>
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-white">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your usual email works fine" required
+                            value="{{ old('email') }}"
+                            class="w-full text-md px-3 py-3 rounded-xl focus:outline-none focus:ring focus:ring-palette-4 transition duration-300 bg-white text-palette-2">
+                    </div>
 
-                <div>
-                    <label for="content" class="block mb-2 text-sm font-medium text-palette-1">Blog Content</label>
-                    <textarea id="content" name="content" placeholder="Enter blog content here ..." required
-                              class="w-full px-7 py-5 rounded-2xl focus:outline-none focus:ring focus:ring-palette-4 h-36 text-sm transition duration-300 bg-palette-1 text-palette-2">{{ old('content') }}</textarea>
-                </div>
+                    <div>
+                        <label for="subject" class="block mb-2 text-sm font-medium text-white">Subject - Blog Title</label>
+                        <input type="text" id="subject" name="subject" placeholder="A title that feels right to you" required
+                            value="{{ old('subject') }}"
+                            class="w-full text-md px-3 py-3 rounded-xl focus:outline-none focus:ring focus:ring-palette-4 transition duration-300 bg-white text-palette-2">
+                    </div>
 
-                <button type="submit"
-                        class="bg-palette-4 text-white w-full py-2 rounded-full transition-transform duration-500 transform hover:scale-[1.02] hover:shadow-lg hover:border-gray-300">
-                    Submit
-                </button>
-            </form>
-        </div>
-      </section>
+                    <div>
+                        <label for="content" class="block mb-2 text-sm font-medium text-white">Share your thoughts</label>
+                        <textarea id="content" name="content"
+                            placeholder="Share your thoughts here"
+                            required
+                            rows="7"
+                            value="{{ old('content') }}"
+                            class="w-full text-md px-3 py-3 rounded-xl focus:outline-none focus:ring focus:ring-palette-4 transition duration-300 bg-white text-palette-2">{{ old('content') }}</textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="bg-white text-pallete-3 w-full py-3 rounded-full font-medium transition-transform duration-500 transform hover:scale-[1.02] hover:shadow-lg hover:border-gray-300">
+                        Share My Thoughts and Idea
+                    </button>
+                </form>
+            </div>
+        </section>
+
 </div>
 @endsection

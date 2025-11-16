@@ -319,7 +319,7 @@
                         <textarea id="content" name="content"
                             placeholder="Share your thoughts here"
                             required
-                            rows="10"
+                            rows="7"
                             value="{{ old('content') }}"
                             class="w-full text-md px-3 py-3 rounded-xl focus:outline-none focus:ring focus:ring-palette-4 transition duration-300 bg-white text-palette-2">{{ old('content') }}</textarea>
                     </div>
