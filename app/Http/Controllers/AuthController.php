@@ -24,17 +24,17 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $request->validate([
-            'notelfon' => 'required|numeric|digits_between:10,13|unique:pendaftars,no_telepon',
+            // 'notelfon' => 'required|numeric|digits_between:10,13|unique:pendaftars,no_telepon',
             'username' => 'required|string|max:255|unique:users,username',
             'password' => 'required|string|min:6',
         ], [
             'email.required' => 'Email harus diisi.',
             'email.email' => 'Email tidak valid.',
             'email.unique' => 'Email sudah terdaftar.',
-            'notelfon.required' => 'No. Telepon harus diisi.',
-            'notelfon.numeric' => 'No. Telepon harus angka.',
-            'notelfon.digits_between' => 'No. Telepon harus 10-13 digit.',
-            'notelfon.unique' => 'No. Telepon sudah terdaftar.',
+            // 'notelfon.required' => 'No. Telepon harus diisi.',
+            // 'notelfon.numeric' => 'No. Telepon harus angka.',
+            // 'notelfon.digits_between' => 'No. Telepon harus 10-13 digit.',
+            // 'notelfon.unique' => 'No. Telepon sudah terdaftar.',
             'username.required' => 'Username harus diisi.',
             'username.unique' => 'Username sudah digunakan.',
             'password.required' => 'Password harus diisi.',

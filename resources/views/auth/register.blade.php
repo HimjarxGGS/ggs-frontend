@@ -69,7 +69,7 @@
             </div>
 
             <!-- No.Telepon -->
-            <div class="w-full space-y-1">
+            {{-- <div class="w-full space-y-1">
                 <label for="notelfon" class="text-sm text-slate-800 font-semibold">
                     No.Telepon
                 </label>
@@ -81,7 +81,7 @@
                 @error('notelfon')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
-            </div>
+            </div> --}}
 
             <!-- Username -->
             <div class="w-full space-y-1">

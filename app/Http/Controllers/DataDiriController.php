@@ -19,35 +19,30 @@ class DataDiriController extends Controller
 
     public function storeOrUpdate(Request $request)
     {
-        // Validasi create & update
+        // Validasi input
         $request->validate([
             'nama' => 'required|string|max:255',
-            'email' => ['required', 'email', 'max:255', 'regex:/\.com$/i'],
             'asal_instansi' => 'required|string|max:255',
-            $request->validate([
-                'date_of_birth' => 'required|date|before_or_equal:-15 years|after_or_equal:-100 years',
-            ], [
-                'date_of_birth.before_or_equal' => 'Umur minimal 15 tahun.',
-                'date_of_birth.after_or_equal' => 'Umur maksimal 100 tahun.',
-            ]),
+
+            'date_of_birth' => 'required|date|before_or_equal:-15 years|after_or_equal:-100 years',
             'telepon' => ['required', 'regex:/^[0-9]{10,12}$/'],
+
             'riwayat_penyakit' => 'nullable|string',
             'foto' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
-            // dd($request->file('foto'))
         ], [
-            'email.regex' => 'Email harus menggunakan domain .com',
-            'required' => 'Field ini wajib diisi',
+            'date_of_birth.before_or_equal' => 'Umur minimal 15 tahun.',
+            'date_of_birth.after_or_equal' => 'Umur maksimal 100 tahun.',
+            'required' => 'Field ini wajib diisi.',
         ]);
 
-        $dateOfBirth = $request->date_of_birth;
-        $userId = Auth::id();
+        $user = Auth::user();
+        $pendaftar = Pendaftar::where('user_id', $user->id)->first();
 
-        // Check user if already has data
-        $pendaftar = Pendaftar::where('user_id', $userId)->first();
-
+        // Handle foto
         if ($request->hasFile('foto')) {
             $picturePath = $request->file('foto')->store('pendaftars', 'public');
 
+            // Hapus foto lama
             if ($pendaftar && $pendaftar->registrant_picture) {
                 Storage::disk('public')->delete($pendaftar->registrant_picture);
             }
@@ -55,23 +50,25 @@ class DataDiriController extends Controller
             $picturePath = $pendaftar->registrant_picture ?? null;
         }
 
+        // Data yang disimpan
         $data = [
-            'user_id' => $userId,
+            'user_id' => $user->id,
             'nama_lengkap' => $request->nama,
-            'date_of_birth' => $dateOfBirth,
-            'email' => $request->email,
+            'date_of_birth' => $request->date_of_birth,
             'asal_instansi' => $request->asal_instansi,
             'no_telepon' => $request->telepon,
             'riwayat_penyakit' => $request->riwayat_penyakit,
             'registrant_picture' => $picturePath,
+
+            // Email otomatis ambil dari tabel users
+            'email' => $user->email,
         ];
 
+        // Simpan / update
         if ($pendaftar) {
-            // Update existing record
             $pendaftar->update($data);
             $message = 'Data diri berhasil diperbarui!';
         } else {
-            // make new record
             Pendaftar::create($data);
             $message = 'Data diri berhasil disimpan!';
         }
