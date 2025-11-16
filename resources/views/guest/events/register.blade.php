@@ -247,7 +247,7 @@
 
                 <p class="text-sm text-gray-600">
                     *Daftar Member supaya data tersimpan untuk event selanjutnya dan dapat melihat history pendaftaran!
-                    <a href="{{ route('register') }}" class="text-blue-500 hover:underline">Daftar disini</a>
+                    <a href="{{ route('register') }}" class="text-palette-3 hover:underline"><b>Daftar disini</b></a>
                 </p>
             </div>
         </div>
