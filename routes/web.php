@@ -41,6 +41,8 @@ Route::view('/event/success-registrasi', 'guest.events.success')->name('event.re
 Route::post('/guest/events/register', [GuestEventRegisterController::class, 'store'])
     ->name('guest.register');
 Route::post('/event/check-certificate', [EventController::class, 'checkCertificate'])->name('certificate.check');
+Route::get('/events', [EventController::class, 'list'])->name('events.list');
+
 
 
 

@@ -12,9 +12,9 @@ class GuestEventRegisterController extends Controller
 {
    public function store(Request $request)
 {
-    // Hitung batas umur
-    $maxAgeDate = now()->subYears(15)->toDateString();     // minimal umur 15
-    $minAgeDate = now()->subYears(100)->toDateString();    // maksimal umur 100
+    
+    $maxAgeDate = now()->subYears(15)->toDateString();     
+    $minAgeDate = now()->subYears(100)->toDateString();    
 
     $validated = $request->validate([
         'user_id' => 'nullable|integer',
@@ -47,7 +47,7 @@ class GuestEventRegisterController extends Controller
         'date_of_birth.after_or_equal'  => 'Umur maksimal yang diperbolehkan adalah 100 tahun.',
 
         'no_telepon.digits_between' => 'Nomor telepon harus terdiri dari 10 hingga 12 digit.',
-        
+
 
     ]);
 

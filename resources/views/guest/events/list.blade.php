@@ -15,13 +15,19 @@
     <!-- Search + Filter -->
     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
         <!-- Search -->
-        <div class="relative w-96 md:w-1/2 ml-10 lg:ml-0">
-            <input type="text" placeholder="Search Event"
-                class="w-full border rounded-full px-8 py-2 focus:outline-none focus:ring-2 focus:ring-palette-4 transition duration-300">
-            <button class="absolute right-7 top-2.5">
-                <img src="{{ asset('icons/search.svg') }}" alt="Search" class="w-5 h-5">
-            </button>
-        </div>
+       <form action="{{ route('events.list') }}" method="GET" class="relative w-96 md:w-1/2 ml-10 lg:ml-0">
+    <input 
+        type="text" 
+        name="search" 
+        value="{{ request('search') }}" 
+        placeholder="Search Event"
+        class="w-full border rounded-full px-8 py-2 focus:outline-none focus:ring-2 focus:ring-palette-4 transition duration-300">
+    
+    <button type="submit" class="absolute right-7 top-2.5">
+        <img src="{{ asset('icons/search.svg') }}" alt="Search" class="w-5 h-5">
+    </button>
+        </form>
+
 
         <!-- Dropdown -->
         <div x-data="{ open: false, selected: 'Event Terbaru' }" class="w-96 md:w-1/4 relative ml-10 lg:ml-0">
