@@ -261,7 +261,7 @@
                     }, 7000);
                 </script>
                 <!-- Show pop up notification -->
-
+                
                 <div
                     id="successBanner"
                     class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4"
@@ -321,13 +321,12 @@
                             required
                             rows="10"
                             value="{{ old('content') }}"
-                            class="w-full text-md px-3 py-3 rounded-xl focus:outline-none focus:ring focus:ring-palette-4 transition duration-300 bg-white text-palette-2">
-                        {{ old('content') }}</textarea>
+                            class="w-full text-md px-3 py-3 rounded-xl focus:outline-none focus:ring focus:ring-palette-4 transition duration-300 bg-white text-palette-2">{{ old('content') }}</textarea>
                     </div>
 
                     <button type="submit"
                         class="bg-white text-pallete-3 w-full py-3 rounded-full font-medium transition-transform duration-500 transform hover:scale-[1.02] hover:shadow-lg hover:border-gray-300">
-                        Submit
+                        Share My Thoughts and Idea
                     </button>
                 </form>
             </div>
