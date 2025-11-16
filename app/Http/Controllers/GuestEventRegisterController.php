@@ -38,16 +38,16 @@ class GuestEventRegisterController extends Controller
         }
 
         // Simpan ke tabel pendaftars
-       $pendaftar = Pendaftar::create([
-    'user_id' => $validated['user_id'] ?? null,
-    'nama_lengkap' => $validated['nama_lengkap'],
-    'date_of_birth' => $validated['date_of_birth'],
-    'email' => $validated['email'],
-    'asal_instansi' => $validated['asal_instansi'] ?? null,
-    'no_telepon' => $validated['no_telepon'] ?? null,
-    'riwayat_penyakit' => $validated['riwayat_penyakit'] ?? null,
-    'registrant_picture' => $validated['registrant_picture'] ?? null,
-]);
+        $pendaftar = Pendaftar::create([
+            'user_id' => $validated['user_id'] ?? null,
+            'nama_lengkap' => $validated['nama_lengkap'],
+            'date_of_birth' => $validated['date_of_birth'],
+            'email' => $validated['email'],
+            'asal_instansi' => $validated['asal_instansi'] ?? null,
+            'no_telepon' => $validated['no_telepon'] ?? null,
+            'riwayat_penyakit' => $validated['riwayat_penyakit'] ?? null,
+            'registrant_picture' => $validated['registrant_picture'] ?? null,
+        ]);
 
 
         // Upload bukti_payment & bukti_share
@@ -72,8 +72,7 @@ class GuestEventRegisterController extends Controller
             'kesediaan_menaati_aturan' => $validated['kesediaan_menaati_aturan'],
         ]);
 
-      
-        return redirect()->route('event.registration.success');
 
+        return redirect()->route('event.registration.success');
     }
 }
