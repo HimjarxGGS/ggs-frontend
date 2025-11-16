@@ -6,30 +6,47 @@ use App\Models\Pendaftar;
 use App\Models\PendaftarEvent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class GuestEventRegisterController extends Controller
 {
-    public function store(Request $request)
-    {
-        // Validasi input
-        $validated = $request->validate([
-            'user_id' => 'nullable|integer', // jika terkait user
-            'nama_lengkap' => 'required|string|max:255',
-            'date_of_birth' => 'required|date',
-            'email' => 'required|email',
-            'asal_instansi' => 'nullable|string|max:255',
-            'no_telepon' => 'nullable|digits_between:10,12',
-            'riwayat_penyakit' => 'nullable|string',
-            'registrant_picture' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+   public function store(Request $request)
+{
+    // Hitung batas umur
+    $maxAgeDate = now()->subYears(15)->toDateString();     // minimal umur 15
+    $minAgeDate = now()->subYears(100)->toDateString();    // maksimal umur 100
 
-            'event_id' => 'required|integer',
-            'status' => 'nullable|string',
-            'bukti_payment' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
-            'opsi_payment' => 'nullable|string',
-            'bukti_share' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
-            'kesediaan_hadir' => 'required|boolean',
-            'kesediaan_menaati_aturan' => 'required|boolean',
-        ]);
+    $validated = $request->validate([
+        'user_id' => 'nullable|integer',
+        'nama_lengkap' => 'required|string|max:255',
+
+        'date_of_birth' => [
+            'required',
+            'date',
+            'before_or_equal:' . $maxAgeDate,
+            'after_or_equal:' . $minAgeDate,
+        ],
+
+        'email' => 'required|email',
+        'asal_instansi' => 'nullable|string|max:255',
+        'no_telepon' => 'nullable|digits_between:10,12',
+        'riwayat_penyakit' => 'nullable|string',
+        'registrant_picture' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+
+        'event_id' => 'required|integer',
+        'status' => 'nullable|string',
+        'bukti_payment' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+        'opsi_payment' => 'nullable|string',
+        'bukti_share' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+        'kesediaan_hadir' => 'required|boolean',
+        'kesediaan_menaati_aturan' => 'required|boolean',
+    ], [
+        'date_of_birth.required'        => 'Tanggal lahir wajib diisi.',
+        'date_of_birth.date'            => 'Format tanggal lahir tidak valid.',
+        'date_of_birth.before_or_equal' => 'Umur minimal yang diperbolehkan adalah 15 tahun.',
+        'date_of_birth.after_or_equal'  => 'Umur maksimal yang diperbolehkan adalah 100 tahun.',
+    ]);
+
 
         // Upload registrant_picture
         if ($request->hasFile('registrant_picture')) {
