@@ -12,6 +12,7 @@
 </head>
 
 <body>
+  
   <!-- navbar -->
   @include('member.components.navbar')
 
@@ -26,6 +27,7 @@
   <script>
     AOS.init();
   </script>
+
 </body>
 
 </html>
