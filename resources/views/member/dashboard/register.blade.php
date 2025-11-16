@@ -176,8 +176,8 @@
                     </form>
 
                     <p class="text-sm text-gray-600">
-                        *Daftar Member supaya data tersimpan untuk event selanjutnya dan dapat melihat history pendaftaran!
-                        <a href="/register" class="text-blue-500 hover:underline">Daftar disini</a>
+                        *Pastikan Data Diri Sudah Terisi 
+                        <a href="/data-diri" class="text-blue-500 hover:underline">Lihat Data Diri</a>
                     </p>
 
                     <a href="https://wa.me/6281216132795"
