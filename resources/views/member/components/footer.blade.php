@@ -14,16 +14,7 @@
         </a>
       </div>
 
-      <!-- organizations -->
-      <div class="w-full md:w-auto">
-        <h3 class="text-palette-1 font-semibold mb-2 text-sm md:text-base">Organizations</h3>
-        <ul class="mt-2 md:mt-12 space-y-1 text-sm md:text-sm">
-          <li><a href="/dashboard-member" class="hover:text-white transition duration-300 ease-in-out">Dashboard</a></li>
-          <li><a href="/riwayat-pendaftaran" class="hover:text-white transition duration-300 ease-in-out">History</a></li>
-          <li><a href="/data-dir" class="hover:text-white transition duration-300 ease-in-out">Data Diri</a></li>
-        </ul>
-      </div>
-
+     
       <!-- social dan info -->
       <div class="w-full md:max-w-sm">
         <div class="flex items-center gap-4 md:gap-5 mb-4 md:mb-6">
@@ -42,6 +33,16 @@
             <svg class="w-4 h-4 md:w-6 md:h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="gray" d="M12.438 2.017C13.53 2 14.613 2.008 15.696 2c.067 1.275.525 2.575 1.459 3.475c.933.925 2.25 1.35 3.533 1.492v3.358c-1.2-.042-2.408-.292-3.5-.808c-.475-.217-.917-.492-1.35-.775c-.008 2.433.008 4.866-.017 7.291a6.36 6.36 0 0 1-1.125 3.283c-1.091 1.6-2.983 2.642-4.924 2.675c-1.192.067-2.384-.258-3.4-.858c-1.684-.992-2.867-2.808-3.042-4.758a16 16 0 0 1-.008-1.242c.15-1.583.933-3.1 2.15-4.133c1.383-1.2 3.316-1.775 5.125-1.433c.016 1.233-.034 2.466-.034 3.7c-.825-.267-1.791-.192-2.516.308a2.9 2.9 0 0 0-1.134 1.458c-.175.425-.125.892-.116 1.342c.2 1.366 1.516 2.516 2.916 2.392c.934-.009 1.825-.55 2.309-1.342c.158-.275.333-.559.341-.884c.084-1.491.05-2.975.059-4.466c.008-3.358-.009-6.708.016-10.058"/></svg>
           </a>
         </div>
+
+         <!-- organizations -->
+      <div class="w-full md:w-auto">
+        <h3 class="text-palette-1 font-semibold mb-2 text-sm md:text-base">Organizations</h3>
+        <ul class="mt-2 md:mt-12 space-y-1 text-sm md:text-sm">
+          <li><a href="/dashboard-member" class="hover:text-white transition duration-300 ease-in-out">Dashboard</a></li>
+          <li><a href="/riwayat-pendaftaran" class="hover:text-white transition duration-300 ease-in-out">History</a></li>
+          <li><a href="/data-dir" class="hover:text-white transition duration-300 ease-in-out">Data Diri</a></li>
+        </ul>
+      </div>
 
         <p class="text-xs md:text-sm leading-relaxed text-gray-300 mt-2 md:mt-14 pr-4 md:pr-0 max-w-[320px] md:max-w-full">
           © GREEN GENERATION 2025 <br class="md:block hidden">
