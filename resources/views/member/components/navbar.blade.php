@@ -62,7 +62,7 @@
         <div class="hidden lg:flex items-center">
             <form action="{{ route('logout') }}" method="POST">
              @csrf
-              <button class=" bg-red-900 text-white font-bold py-2 px-10 rounded-full hover:bg-gray-500 transition duration-300">
+              <button class=" bg-red-700 text-white font-bold py-2 px-10 rounded-full hover:bg-red-900 transition duration-300">
                 Logout
               </button>
              </form>

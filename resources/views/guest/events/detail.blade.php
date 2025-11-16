@@ -288,7 +288,7 @@
                     resultBox.innerHTML = `
                     <p class="text-green-600 mb-3">Email kamu terdaftar! 🎉</p>
                     <a href="${data.certificate_url}" target="_blank" 
-                       class="w-full bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                       class="w-full bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-palette-3 transition">
                        Lihat Sertifikat
                     </a>`;
                 } else {

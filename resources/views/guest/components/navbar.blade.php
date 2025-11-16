@@ -61,13 +61,13 @@
         <div class="hidden lg:flex items-center">
             @auth
             <a href="{{ route('member.dashboard.index') }}">
-                <button class="bg-palette-3 text-white font-semibold py-2 px-10 rounded-full hover:bg-gray-500 transition duration-300">
+                <button class="bg-palette-3 text-white font-semibold py-2 px-10 rounded-full hover:bg-palette-2 transition duration-300">
                     Dashboard
                 </button>
             </a>
             @else
             <a href="{{ route('login') }}">
-                <button class="bg-palette-3 text-white font-semibold py-2 px-10 rounded-full hover:bg-gray-500 transition duration-300">
+                <button class="bg-palette-3 text-white font-semibold py-2 px-10 rounded-full hover:bg-palette-2 transition duration-300">
                     Sign in
                 </button>
             </a>
@@ -85,13 +85,13 @@
             <div class="mt-6">
                 @auth
                 <a href="{{ route('member.dashboard.index') }}">
-                    <button class="w-72 bg-palette-3 text-white font-semibold py-2 px-10 rounded-full hover:bg-gray-500 transition duration-300">
+                    <button class="w-72 bg-palette-3 text-white font-semibold py-2 px-10 rounded-full hover:bg-palette-2 transition duration-300">
                         Dashboard
                     </button>
                 </a>
                 @else
                 <a href="{{ route('login') }}">
-                    <button class="w-72 bg-palette-3 text-white font-semibold py-2 px-10 rounded-full hover:bg-gray-500 transition duration-300">
+                    <button class="w-72 bg-palette-3 text-white font-semibold py-2 px-10 rounded-full hover:bg-palette-2 transition duration-300">
                         Sign in
                     </button>
                 </a>

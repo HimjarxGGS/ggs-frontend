@@ -47,12 +47,12 @@
                     <li>
                         <button
                             @click="selected = 'Event Terbaru'; open = false"
-                            class="block w-full text-left px-4 py-2 hover:bg-gray-100">Event Terbaru</button>
+                            class="block w-full text-left px-4 py-2 hover:text-white hover:bg-palette-3">Event Terbaru</button>
                     </li>
                     <li>
                         <button
                             @click="selected = 'Event Terlama'; open = false"
-                            class="block w-full text-left px-4 py-2 hover:bg-gray-100">Event Terlama</button>
+                            class="block w-full text-left px-4 py-2 hover:text-white hover:bg-palette-3">Event Terlama</button>
                     </li>
                 </ul>
             </div>

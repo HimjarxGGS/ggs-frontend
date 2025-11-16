@@ -170,14 +170,14 @@
 
                         <!-- tombol registrasi -->
                         <button type="submit"
-                            class="w-full bg-palette-5 text-white py-3 rounded-3xl font-semibold hover:bg-brown-600 transition duration-300 hover:bg-[#8b5339]">
+                            class="w-full bg-palette-5 text-white py-3 rounded-3xl font-semibold transition duration-300 hover:bg-palette-2">
                             Registrasi Event {{ $event->name }}
                         </button>
                     </form>
 
                     <p class="text-sm text-gray-600">
-                        *Pastikan Data Diri Sudah Terisi 
-                        <a href="/data-diri" class="text-blue-500 hover:underline">Lihat Data Diri</a>
+                        *Pastikan Data Diri Sudah Terisi! 
+                        <a href="/data-diri" class="text-palette-3 hover:underline"> <b> Lihat Data Diri Disini </b></a>
                     </p>
 
                     <!-- <a href="https://wa.me/6281216132795"
