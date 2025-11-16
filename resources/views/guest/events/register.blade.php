@@ -3,10 +3,9 @@
 @section('title', 'Registrasi Event - ' . $event->name)
 
 @section('content')
-<div class="max-w-6xl mx-auto px-4 mt-20">
-
+<div class="max-w-6xl mx-auto px-4">
     <!-- section header start -->
-    <section class="mb-8 text-center md:text-left">
+    <section class="mb-8 text-center md:text-left mt-40">
         <h1 class="text-2xl md:text-3xl font-bold text-gray-800">
             {{ $event->name }}
         </h1>
