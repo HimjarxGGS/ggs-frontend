@@ -62,7 +62,7 @@
         <div class="hidden lg:flex items-center">
             <form action="{{ route('logout') }}" method="POST">
              @csrf
-              <button class="bg-palette-3 text-white font-bold py-2 px-10 rounded-full hover:bg-gray-500 transition duration-300">
+              <button class=" bg-red-900 text-white font-bold py-2 px-10 rounded-full hover:bg-gray-500 transition duration-300">
                 Logout
               </button>
              </form>
@@ -72,14 +72,14 @@
     <!-- mobile menu -->
     <div id="mobileMenu" class="hidden lg:hidden top-[113px] w-[85%] left-1/2 -translate-x-1/2 rounded-3xl backdrop-blur-3xl shadow-md py-7 text-center z-[99] fixed">
         <!-- <a href="/" class="nav-link block py-4 text-gray-500 font-semibold hover:text-[#5e3929] transition duration-200">Home</a> -->
-        <a href="/dashboard-member" class="nav-link block py-4 text-gray-500 font-semibold hover:text-[#5e3929] transition duration-200">Dashboard</a>
-        <a href="/riwayat-pendaftaran" class="nav-link block py-4 text-gray-500 font-semibold hover:text-[#5e3929] transition duration-200">History</a>
-        <a href="/data-diri" class="nav-link block py-4 text-gray-500 font-semibold hover:text-[#5e3929] transition duration-200">Data Diri</a>
+        <a href="/dashboard-member" class="nav-link block py-4 text-gray-500 font-semibold hover:text-palette-5 transition-transform duration-300 transform hover:scale-[1.3]">Dashboard</a>
+        <a href="/riwayat-pendaftaran" class="nav-link block py-4 text-gray-500 font-semibold  hover:text-palette-5 transition-transform duration-300 transform hover:scale-[1.3]">History</a>
+        <a href="/data-diri" class="nav-link block py-4 text-gray-500 font-semibold hover:text-palette-5 transition-transform duration-300 transform hover:scale-[1.3]">Data Diri</a>
         
         <div class="mt-6">
           <form action="{{ route('logout') }}" method="POST">
              @csrf
-            <button class="w-72 bg-palette-3text-white font-bold py-2 rounded-3xl transition duration-200">
+            <button class="w-72 bg-red-900 text-white font-bold py-2 rounded-3xl transition duration-200">
                 logout
             </button>
           </form>
