@@ -76,7 +76,8 @@
             <div class="p-4 border rounded-xl shadow-md flex justify-center gap-4 mt-6">
                 <!-- button daftar -->
                 @if($event->status == "active")
-                <a href="{{ route('event.registration', $event->id) }}"
+                
+                <a href="{{ auth()->user() ? route('member.event.registration', ['id' => $event->id]) :  route('event.registration', $event->id) }}"
                     class="px-5 md:px-6 py-3 flex bg-palette-5 text-white rounded-2xl shadow-md hover:bg-palette-3 transition duration-300 ease-in-out md:text-lg text-sm">
                     Daftar Sekarang
                 </a>

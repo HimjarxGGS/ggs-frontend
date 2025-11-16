@@ -60,7 +60,7 @@
     </div>
 
     <!-- Card Grid -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
     @forelse ($events as $event)
     <a href="{{ route('events.show', ['id' => $event->id]) }}" class="block group w-full">
         <div

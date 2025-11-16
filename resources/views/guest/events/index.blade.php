@@ -67,14 +67,14 @@
         </div>
 
         <!-- grid list event -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
             @forelse ($upcoming as $i => $event)
-                <a href="{{ route('events.show', $event->id) }}" class="block group {{ $i >= 1 ? 'hidden sm:block' : '' }}">
+                <a href="{{ route('events.show', $event->id) }}" class="block group w-full {{ $i >= 1 ? 'hidden sm:block' : '' }}">
                     <div
                         class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500 flex flex-col h-full">
                         <div class="relative">
                             <img src="{{ $event->poster ? asset('storage/' . $event->poster) : asset('images/gambar-event.png') }}"
-                                alt="Event Cover" class=" h-52 object-cover">
+                                alt="Event Cover" class="w-full h-52 object-cover">
 
                             <span
                                 class="absolute top-7 left-7 bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full">

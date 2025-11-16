@@ -76,7 +76,7 @@
 
         <!-- event list -->
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
             @forelse ($events as $event)
             <a href="{{ route('member.events.show', $event->id) }}" class="block group w-full sm:w-auto">
                 <div class="flex flex-col bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500 h-full ">
