@@ -58,25 +58,73 @@
     </div>
 
     <!-- Column 3: Reach Us Form -->
-    <div>
-      <h3 class="text-white font-semibold text-xl mb-4">Reach Us</h3>
-      <form action="{{ route('contact.store') }}" method="POST" class="space-y-3">
-        @csrf
-    <input type="email" name="email" placeholder="Your email" required
-        class="bg-white text-palette-2 text-sm rounded-md py-2.5 px-4 w-full">
-    
-    <input type="text" name="name" placeholder="Your name" required
-        class="bg-white text-palette-2 text-sm rounded-md py-2.5 px-4 w-full">
-    
-    <textarea name="message" rows="5" placeholder="What you want to say" required
-        class="bg-white text-palette-2 text-sm rounded-md py-2.5 px-4 w-full"></textarea>
-    
-    <button type="submit"
-        class="bg-white text-palette-3 py-2.5 w-full rounded-md hover:shadow-md hover:brightness-110 transition">
-        Submit
-    </button>
-    </form>
+<div>
+    <h3 class="text-white font-semibold text-xl mb-4">Reach Us</h3>
+
+    {{-- allert --}}
+@if(session('success'))
+<div class="fixed top-4 right-4 z-50 bg-green-700 text-white px-6 py-3 rounded-lg shadow-lg animate-toast">
+    <div class="flex items-center gap-2">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span>{{ session('success') }}</span>
     </div>
+</div>
+@endif
+
+@if(session('error'))
+<div class="fixed top-4 right-4 z-50 bg-red-700 text-white px-6 py-3 rounded-lg shadow-lg animate-toast">
+    <div class="flex items-center gap-2">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span>{{ session('error') }}</span>
+    </div>
+</div>
+@endif
+
+@if($errors->any())
+<div class="fixed top-4 right-4 z-50 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg animate-toast">
+    <div class="flex items-center gap-2">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span>Please check your input and try again.</span>
+    </div>
+</div>
+@endif
+
+<style>
+    .animate-toast {
+        animation: toast 3s ease-in-out forwards;
+    }
+    
+    @keyframes toast {
+        0% { transform: translateX(100%); opacity: 0; }
+        10% { transform: translateX(0); opacity: 1; }
+        90% { transform: translateX(0); opacity: 1; }
+        100% { transform: translateX(100%); opacity: 0; }
+    }
+</style>
+
+    <form action="{{ route('contact.store') }}" method="POST" class="space-y-3">
+        @csrf
+        <input type="email" name="email" placeholder="Your email" required
+            class="bg-white text-palette-2 text-sm rounded-md py-2.5 px-4 w-full">
+        
+        <input type="text" name="name" placeholder="Your name" required
+            class="bg-white text-palette-2 text-sm rounded-md py-2.5 px-4 w-full">
+        
+        <textarea name="message" rows="5" placeholder="What you want to say" required
+            class="bg-white text-palette-2 text-sm rounded-md py-2.5 px-4 w-full"></textarea>
+        
+        <button type="submit"
+            class="bg-white text-palette-3 py-2.5 w-full rounded-md hover:shadow-md hover:brightness-110 transition">
+            Submit
+        </button>
+    </form>
+</div>
 
   </div>
 </footer>
