@@ -82,3 +82,9 @@ Route::get('/data-diri/success', function () {
 })->name('layouts.success');
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// Test session route
+Route::get('/test-session', function() {
+    session()->put('test', 'Session is working!');
+    return redirect('/')->with('success', 'Test session message!');
+});
