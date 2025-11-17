@@ -24,9 +24,9 @@ class ContactFormMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME')),
+            from: new Address('ggsmail@faridfarhan.my.id', 'Green Generation Surabaya'),
             replyTo: [
-                new Address($this->data['email']),
+                new Address($this->data['email'], $this->data['name']),
             ],
             subject: '📧 New Contact Form - Green Generation',
         );
@@ -36,6 +36,7 @@ class ContactFormMail extends Mailable
     {
         return new Content(
             view: 'emails.contact_form',
+            with: ['data' => $this->data],
         );
     }
 
