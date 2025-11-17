@@ -24,13 +24,13 @@ class DataDiriController extends Controller
             'nama' => 'required|string|max:255',
             'asal_instansi' => 'required|string|max:255',
 
-            'date_of_birth' => 'required|date|before_or_equal:-15 years|after_or_equal:-100 years',
+            'date_of_birth' => 'required|date|before_or_equal:-10 years|after_or_equal:-100 years',
             'telepon' => ['required', 'regex:/^[0-9]{10,12}$/'],
 
             'riwayat_penyakit' => 'nullable|string',
             'foto' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ], [
-            'date_of_birth.before_or_equal' => 'Umur minimal 15 tahun.',
+            'date_of_birth.before_or_equal' => 'Umur minimal 10 tahun.',
             'date_of_birth.after_or_equal' => 'Umur maksimal 100 tahun.',
             'required' => 'Field ini wajib diisi.',
         ]);
