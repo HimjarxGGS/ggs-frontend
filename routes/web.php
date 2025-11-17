@@ -11,6 +11,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataDiriController;
 use App\Http\Controllers\MemberEventRegisterController;
 use App\Http\Controllers\GuestEventRegisterController;
+use App\Http\Controllers\ContactController;
 
 // Auth Routes
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
@@ -20,6 +21,9 @@ Route::post('/register', [AuthController::class, 'register']);
 
 // Landing Page
 Route::get('/', [AboutController::class, 'index'])->name('landing.index');
+
+// reach us
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
 // Blog Routes
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');

@@ -60,22 +60,21 @@
     <!-- Column 3: Reach Us Form -->
     <div>
       <h3 class="text-white font-semibold text-xl mb-4">Reach Us</h3>
-
-      <form action="#" class="space-y-3">
-        <input type="email" placeholder="Your email"
-          class="bg-white text-palette-2 text-sm rounded-md py-2.5 px-4 w-full">
-
-        <input type="text" placeholder="Your name"
-          class="bg-white text-palette-2 text-sm rounded-md py-2.5 px-4 w-full">
-
-        <textarea rows="5" placeholder="What you want to say"
-          class="bg-white text-palette-2 text-sm rounded-md py-2.5 px-4 w-full"></textarea>
-
-        <button type="submit"
-          class="bg-white text-palette-3 py-2.5 w-full rounded-md hover:shadow-md hover:brightness-110 transition">
-          Submit
-        </button>
-      </form>
+      <form action="{{ route('contact.store') }}" method="POST" class="space-y-3">
+    <input type="email" name="email" placeholder="Your email" required
+        class="bg-white text-palette-2 text-sm rounded-md py-2.5 px-4 w-full">
+    
+    <input type="text" name="name" placeholder="Your name" required
+        class="bg-white text-palette-2 text-sm rounded-md py-2.5 px-4 w-full">
+    
+    <textarea name="message" rows="5" placeholder="What you want to say" required
+        class="bg-white text-palette-2 text-sm rounded-md py-2.5 px-4 w-full"></textarea>
+    
+    <button type="submit"
+        class="bg-white text-palette-3 py-2.5 w-full rounded-md hover:shadow-md hover:brightness-110 transition">
+        Submit
+    </button>
+    </form>
     </div>
 
   </div>
