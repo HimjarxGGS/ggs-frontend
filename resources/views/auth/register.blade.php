@@ -114,7 +114,7 @@
 
             <!-- Submit -->
             <button type="submit"
-                class="w-full bg-palette-3 hover:bg-[#874c2c] text-white font-semibold py-2 rounded-3xl transition duration-300 ease-in-out ">
+                class="w-full bg-palette-3 hover:bg-palette-2 text-white font-semibold py-2 rounded-3xl transition duration-300 ease-in-out ">
                 Registrasi
             </button>
 

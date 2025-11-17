@@ -69,7 +69,7 @@
         <!-- grid list event -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
             @forelse ($upcoming as $i => $event)
-                <a href="{{ route('events.show', $event->id) }}" class="block group {{ $i >= 1 ? 'hidden sm:block' : '' }}">
+                <a href="{{ route('events.show', $event->id) }}" class="block group w-full {{ $i >= 1 ? 'hidden sm:block' : '' }}">
                     <div
                         class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500 flex flex-col h-full">
                         <div class="relative">

@@ -58,13 +58,27 @@ class EventController extends Controller
         );
     }
 
-    public function list()
-    {
-        $events = Event::orderBy('event_date', 'desc')
-            ->paginate(9);
+    public function list(Request $request)
+{
+    $query = Event::query();
 
-        return view('guest.events.list', compact('events'));
+    
+    if ($request->filled('search')) {
+        $search = $request->search;
+        $query->where(function ($q) use ($search) {
+            $q->where('name', 'like', "%{$search}%")
+              ->orWhere('description', 'like', "%{$search}%");
+        });
     }
+
+    $events = $query->orderBy('event_date', 'desc')->paginate(9);
+
+    return view('guest.events.list', [
+        'events' => $events,
+        'search' => $request->search, 
+    ]);
+}
+
 
     public function show($id)
     {

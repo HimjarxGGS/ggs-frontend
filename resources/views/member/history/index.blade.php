@@ -120,7 +120,7 @@
                     @else
                         <p class="text-lg font-medium mb-2">Belum ada history event</p>
                         <p class="text-sm mb-4">Anda belum mendaftar event apapun</p>
-                        <a href="{{ route('events.index') }}"
+                        <a href="{{ route('member.dashboard.index') }}"
                             class="inline-block bg-[#A56B46] text-white px-6 py-2 rounded-3xl hover:bg-[#8a5738] transition text-sm">
                             Daftar Event Sekarang
                         </a>

@@ -40,7 +40,7 @@
                     <div>
                         <h3 class="text-gray-500">Jadwal Event</h3>
                         <p class="text-lg text-black font-semibold">
-                            {{ \Carbon\Carbon::parse($event->event_date)->translatedFormat('d F Y, H:i') }}
+                            {{ \Carbon\Carbon::parse($event->event_date)->translatedFormat('d F Y') }}
                         </p>
                     </div>
                 </div>
@@ -76,8 +76,9 @@
             <div class="p-4 border rounded-xl shadow-md flex justify-center gap-4 mt-6">
                 <!-- button daftar -->
                 @if($event->status == "active")
-                <a href="{{ route('event.registration', $event->id) }}"
-                    class="px-5 md:px-6 py-3 flex bg-palette-5 text-white rounded-2xl shadow-md hover:bg-green-500 transition duration-300 ease-in-out md:text-lg text-sm">
+                
+                <a href="{{ auth()->user() ? route('member.event.registration', ['id' => $event->id]) :  route('event.registration', $event->id) }}"
+                    class="px-5 md:px-6 py-3 flex bg-palette-5 text-white rounded-2xl shadow-md hover:bg-palette-3 transition duration-300 ease-in-out md:text-lg text-sm">
                     Daftar Sekarang
                 </a>
                 @endif
@@ -86,7 +87,7 @@
                 <section id="certificate" class="text-center">
                     <button
                         id="openCertificateModal"
-                        class="px-5 md:px-6 py-3 bg-palette-5 text-white rounded-2xl shadow-md hover:bg-green-500 transition duration-300 ease-in-out md:text-lg text-sm">
+                        class="px-5 md:px-6 py-3 bg-palette-5 text-white rounded-2xl shadow-md hover:bg-palette-3 transition duration-300 ease-in-out md:text-lg text-sm">
                         Sertifikat
                     </button>
                 </section>
@@ -114,26 +115,7 @@
         </div>
     </section>
     @endif
-    <!-- After Movie -->
-    @if($event->after_movie_url)
-    <section id="aftermovie" class="mt-12 md:mt-20">
-        <h2 class="text-2xl md:text-3xl font-bold text-center mb-6">After Movie</h2>
-
-        <div class="flex justify-center">
-            <div class="w-full max-w-4xl aspect-video overflow-hidden rounded-lg shadow-lg">
-                <iframe
-                    class="w-full h-full"
-                    src="{{ $event->getEmbedAfterMovieURL() }}"
-                    title="After Movie"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </div>
-    </section>
-    @endif
+  
 
     <!-- dokumentasi -->
     @if($event->status == "finished")
@@ -228,7 +210,7 @@
 
             <button
                 type="submit"
-                class="w-full bg-palette-5 text-white py-2 rounded-lg hover:bg-gray-600 transition duration-300">
+                class="w-full bg-palette-5 text-white py-2 rounded-lg hover:bg-palette-3 transition duration-300">
                 Periksa
             </button>
         </form>
@@ -236,7 +218,6 @@
         <div id="certResult" class="mt-4 text-center hidden"></div>
     </div>
 </div>
-
 
 
 <script>
@@ -307,7 +288,7 @@
                     resultBox.innerHTML = `
                     <p class="text-green-600 mb-3">Email kamu terdaftar! 🎉</p>
                     <a href="${data.certificate_url}" target="_blank" 
-                       class="w-full bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                       class="w-full bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-palette-3 transition">
                        Lihat Sertifikat
                     </a>`;
                 } else {

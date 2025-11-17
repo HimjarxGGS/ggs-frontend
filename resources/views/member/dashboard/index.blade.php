@@ -76,10 +76,10 @@
 
         <!-- event list -->
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
             @forelse ($events as $event)
             <a href="{{ route('member.events.show', $event->id) }}" class="block group w-full sm:w-auto">
-                <div class="flex flex-col bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500 ">
+                <div class="flex flex-col bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500 h-full ">
                     <div class="relative">
                         <!-- cover -->
                         <img src="{{ asset($event->cover ?? 'images/gambar-event.png') }}"
@@ -87,11 +87,12 @@
                             class="w-full h-52 object-cover">
 
                         <!-- status -->
-                         <span
+                        <span
                             class="absolute top-7 left-7 {{ $event->status === 'active' ? 'bg-green-500' : 'bg-orange-500' }} text-white text-xs font-semibold px-3 py-1 rounded-full">
                             {{ ucfirst($event->status) }}
                         </span>
                     </div>
+
                     <div class="p-4 flex flex-col justify-between flex-1">
                         <div class="space-y-2">
                             <!-- judul -->
@@ -104,7 +105,7 @@
                                 <span>{{ \Carbon\Carbon::parse($event->event_date)->translatedFormat('d F Y') }}</span>
                             </div>
                             <!-- deskripsi -->
-                            <p class="text-xs text-wrap text-gray-600 line-clamp-3">
+                            <p class="text-xs text-wrap text-gray-600 line-clamp-1">
                                 {!! Str::limit($event->description, 100) !!}
                             </p>
                         </div>

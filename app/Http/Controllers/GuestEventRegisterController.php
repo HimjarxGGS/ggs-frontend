@@ -6,30 +6,51 @@ use App\Models\Pendaftar;
 use App\Models\PendaftarEvent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class GuestEventRegisterController extends Controller
 {
-    public function store(Request $request)
-    {
-        // Validasi input
-        $validated = $request->validate([
-            'user_id' => 'nullable|integer', // jika terkait user
-            'nama_lengkap' => 'required|string|max:255',
-            'date_of_birth' => 'required|date',
-            'email' => 'required|email',
-            'asal_instansi' => 'nullable|string|max:255',
-            'no_telepon' => 'nullable|digits_between:10,12',
-            'riwayat_penyakit' => 'nullable|string',
-            'registrant_picture' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+   public function store(Request $request)
+{
+    
+    $maxAgeDate = now()->subYears(15)->toDateString();     
+    $minAgeDate = now()->subYears(100)->toDateString();    
 
-            'event_id' => 'required|integer',
-            'status' => 'nullable|string',
-            'bukti_payment' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
-            'opsi_payment' => 'nullable|string',
-            'bukti_share' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
-            'kesediaan_hadir' => 'required|boolean',
-            'kesediaan_menaati_aturan' => 'required|boolean',
-        ]);
+    $validated = $request->validate([
+        'user_id' => 'nullable|integer',
+        'nama_lengkap' => 'required|string|max:255',
+
+        'date_of_birth' => [
+            'required',
+            'date',
+            'before_or_equal:' . $maxAgeDate,
+            'after_or_equal:' . $minAgeDate,
+        ],
+
+        'email' => 'required|email',
+        'asal_instansi' => 'nullable|string|max:255',
+        'no_telepon' => 'nullable|digits_between:10,12',
+        'riwayat_penyakit' => 'nullable|string',
+        'registrant_picture' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+
+        'event_id' => 'required|integer',
+        'status' => 'nullable|string',
+        'bukti_payment' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+        'opsi_payment' => 'nullable|string',
+        'bukti_share' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+        'kesediaan_hadir' => 'required|boolean',
+        'kesediaan_menaati_aturan' => 'required|boolean',
+    ], [
+        'date_of_birth.required'        => 'Tanggal lahir wajib diisi.',
+        'date_of_birth.date'            => 'Format tanggal lahir tidak valid.',
+        'date_of_birth.before_or_equal' => 'Umur minimal yang diperbolehkan adalah 15 tahun.',
+        'date_of_birth.after_or_equal'  => 'Umur maksimal yang diperbolehkan adalah 100 tahun.',
+
+        'no_telepon.digits_between' => 'Nomor telepon harus terdiri dari 10 hingga 12 digit.',
+
+
+    ]);
+
 
         // Upload registrant_picture
         if ($request->hasFile('registrant_picture')) {
@@ -38,16 +59,16 @@ class GuestEventRegisterController extends Controller
         }
 
         // Simpan ke tabel pendaftars
-       $pendaftar = Pendaftar::create([
-    'user_id' => $validated['user_id'] ?? null,
-    'nama_lengkap' => $validated['nama_lengkap'],
-    'date_of_birth' => $validated['date_of_birth'],
-    'email' => $validated['email'],
-    'asal_instansi' => $validated['asal_instansi'] ?? null,
-    'no_telepon' => $validated['no_telepon'] ?? null,
-    'riwayat_penyakit' => $validated['riwayat_penyakit'] ?? null,
-    'registrant_picture' => $validated['registrant_picture'] ?? null,
-]);
+        $pendaftar = Pendaftar::create([
+            'user_id' => $validated['user_id'] ?? null,
+            'nama_lengkap' => $validated['nama_lengkap'],
+            'date_of_birth' => $validated['date_of_birth'],
+            'email' => $validated['email'],
+            'asal_instansi' => $validated['asal_instansi'] ?? null,
+            'no_telepon' => $validated['no_telepon'] ?? null,
+            'riwayat_penyakit' => $validated['riwayat_penyakit'] ?? null,
+            'registrant_picture' => $validated['registrant_picture'] ?? null,
+        ]);
 
 
         // Upload bukti_payment & bukti_share
@@ -72,8 +93,7 @@ class GuestEventRegisterController extends Controller
             'kesediaan_menaati_aturan' => $validated['kesediaan_menaati_aturan'],
         ]);
 
-      
-        return redirect()->route('event.registration.success');
 
+        return redirect()->route('event.registration.success');
     }
 }

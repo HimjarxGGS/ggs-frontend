@@ -42,7 +42,7 @@ class BlogController extends Controller
     public function search(Request $request)
     {
         $search = $request->input('search');
-
+        $highlightedBlog = Blog::latest('published_at')->first();
         $blogs = Blog::query()
             ->select('id', 'title', 'published_at', 'author', 'img', 'slug', 'content')
             ->where(function ($q) use ($search) {
@@ -54,7 +54,7 @@ class BlogController extends Controller
             ->paginate(6)
             ->withQueryString();
 
-        return view('guest.blog.blog', compact('blogs'));
+        return view('guest.blog.blog', compact('blogs', 'highlightedBlog'));
     }
     // public function showDetail($slug)
     // {
