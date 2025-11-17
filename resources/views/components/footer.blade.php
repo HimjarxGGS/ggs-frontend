@@ -61,6 +61,7 @@
     <div>
       <h3 class="text-white font-semibold text-xl mb-4">Reach Us</h3>
       <form action="{{ route('contact.store') }}" method="POST" class="space-y-3">
+        @csrf
     <input type="email" name="email" placeholder="Your email" required
         class="bg-white text-palette-2 text-sm rounded-md py-2.5 px-4 w-full">
     
