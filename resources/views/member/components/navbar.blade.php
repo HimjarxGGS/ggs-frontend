@@ -38,7 +38,7 @@
         <!-- logo -->
        <div class="flex items-center">
             <a href="/">
-                <img src="{{ asset('images/Logo.png') }}" alt="Logo" class="h-14 w-auto pt-2" />
+                <img src="{{ asset('images/logo.png') }}" alt="Logo" class="h-14 w-auto pt-2" />
             </a>
         </div>
 
