@@ -17,7 +17,7 @@ class ContactController extends Controller
         ]);
 
         try {
-            Mail::to('ggsmail@faridfarhan.my.id')
+            Mail::to('MAIL_TO_ADMIN')
                 ->send(new ContactFormMail([
                     'name' => $request->name,
                     'email' => $request->email,
