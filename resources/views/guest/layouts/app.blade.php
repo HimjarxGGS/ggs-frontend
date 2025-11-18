@@ -18,33 +18,31 @@
 <body>
     <!-- navbar -->
     @include('guest.components.navbar')
-    <div class="mt-20">
+    <!-- flash message -->
+    <div class="relative z-[200] mt-[150px]">
+
         @if (session('success'))
-            <div
-                class="max-w-lg mx-auto mt-4 px-4 py-3 rounded-lg bg-green-700 text-white shadow-md flex justify-between items-center">
+            <div class="relative z-[200] max-w-lg mx-auto mt-4 px-4 py-3 rounded-lg bg-green-700 text-white shadow-md flex justify-between items-center">
                 <span>{{ session('success') }}</span>
                 <button onclick="this.parentElement.remove()" class="font-bold ml-4">×</button>
             </div>
         @endif
 
         @if (session('error'))
-            <div
-                class="max-w-lg mx-auto mt-4 px-4 py-3 rounded-lg bg-red-700 text-white shadow-md flex justify-between items-center">
+            <div class="relative z-[200] max-w-lg mx-auto mt-4 px-4 py-3 rounded-lg bg-red-700 text-white shadow-md flex justify-between items-center">
                 <span>{{ session('error') }}</span>
                 <button onclick="this.parentElement.remove()" class="font-bold ml-4">×</button>
             </div>
         @endif
 
         @if (session('info'))
-            <div
-                class="max-w-lg mx-auto mt-4 px-4 py-3 rounded-lg bg-blue-700 text-white shadow-md flex justify-between items-center">
+            <div class="relative z-[200] max-w-lg mx-auto mt-4 px-4 py-3 rounded-lg bg-blue-700 text-white shadow-md flex justify-between items-center">
                 <span>{{ session('info') }}</span>
                 <button onclick="this.parentElement.remove()" class="font-bold ml-4">×</button>
             </div>
         @endif
 
     </div>
-
 
     <!-- content  -->
     @yield('content')
