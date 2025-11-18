@@ -17,7 +17,7 @@ class ContactController extends Controller
         ]);
 
         try {
-            Mail::to('MAIL_TO_ADMIN')
+            Mail::to(config('mail.to_admin'))
                 ->send(new ContactFormMail([
                     'name' => $request->name,
                     'email' => $request->email,
@@ -25,7 +25,6 @@ class ContactController extends Controller
                 ]));
 
             return back()->with('success', 'Thank you for your message! We will get back to you soon.');
-
         } catch (\Exception $e) {
 
             return back()->with('error', 'Sorry, there was an error sending your message. Please try again later.');

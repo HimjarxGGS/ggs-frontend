@@ -28,7 +28,7 @@ class BlogController extends Controller
             ->select('id', 'title', 'published_at', 'author', 'img', 'slug', 'content')
             ->where('slug', $slug)->firstOrFail();
 
-            // ambil 4 blog lain (exclude current)
+        // ambil 4 blog lain (exclude current)
         $otherBlogs = Blog::query()
             ->select('id', 'title', 'published_at', 'author', 'img', 'slug', 'content')
             ->where('id', '!=', $blog->id)
@@ -72,11 +72,10 @@ class BlogController extends Controller
             'subject' => 'required|min:5|max:255',
             'content' => 'required|min:20',
         ]);
-        $adminEmail = env('MAIL_TO_ADMIN');
+        
+        $adminEmail = config('mail.to_admin');
         Mail::to($adminEmail)->send(new BlogSubmission($validatedData));
-        // dd($validatedData);
+
         return back()->with('success', 'Thank you! Your blog has been submitted successfully.');
     }
-
-    
 }
