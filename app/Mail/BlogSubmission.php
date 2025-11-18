@@ -16,47 +16,35 @@ class BlogSubmission extends Mailable
 
     public $data;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
     public function __construct($data)
     {
         $this->data = $data;
     }
 
-    /**
-     * Get the message envelope.
-     */
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME')),
+            from: new Address(
+                config('mail.from.address'),
+                config('mail.from.name')
+            ),
+
             replyTo: [
                 new Address($this->data['email']),
             ],
 
-            // Subjek email
             subject: 'New Blog Post Submission!',
         );
     }
 
-    /**
-     * Get the message content definition.
-     */
     public function content(): Content
     {
         return new Content(
             view: 'emails.blog_submission',
+            with: ['data' => $this->data]
         );
     }
 
-    /**
-     * Get the attachments for the message.
-     *
-     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
-     */
     public function attachments(): array
     {
         return [];
