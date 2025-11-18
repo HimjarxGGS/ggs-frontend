@@ -19,32 +19,32 @@
     <!-- navbar -->
     @include('guest.components.navbar')
     <div class="mt-20">
-
-        {{-- Flash Messages (Tailwind + Alpine) --}}
         @if (session('success'))
-            <div x-data="{ show: true }" x-init="setTimeout(() => show = false, 3000)" x-show="show" x-transition
+            <div
                 class="max-w-lg mx-auto mt-4 px-4 py-3 rounded-lg bg-green-700 text-white shadow-md flex justify-between items-center">
                 <span>{{ session('success') }}</span>
-                <button @click="show = false" class="text-white font-bold ml-4">×</button>
+                <button onclick="this.parentElement.remove()" class="font-bold ml-4">×</button>
             </div>
         @endif
 
         @if (session('error'))
-            <div x-data="{ show: true }" x-init="setTimeout(() => show = false, 3000)" x-show="show" x-transition
+            <div
                 class="max-w-lg mx-auto mt-4 px-4 py-3 rounded-lg bg-red-700 text-white shadow-md flex justify-between items-center">
                 <span>{{ session('error') }}</span>
-                <button @click="show = false" class="text-white font-bold ml-4">×</button>
+                <button onclick="this.parentElement.remove()" class="font-bold ml-4">×</button>
             </div>
         @endif
 
         @if (session('info'))
-            <div x-data="{ show: true }" x-init="setTimeout(() => show = false, 3000)" x-show="show" x-transition
-                class="max-w-lg mx-auto mt-4 px-4 py-3 rounded-lg bg-blue-7000 text-white shadow-md flex justify-between items-center">
+            <div
+                class="max-w-lg mx-auto mt-4 px-4 py-3 rounded-lg bg-blue-700 text-white shadow-md flex justify-between items-center">
                 <span>{{ session('info') }}</span>
-                <button @click="show = false" class="text-white font-bold ml-4">×</button>
+                <button onclick="this.parentElement.remove()" class="font-bold ml-4">×</button>
             </div>
         @endif
+
     </div>
+
 
     <!-- content  -->
     @yield('content')
