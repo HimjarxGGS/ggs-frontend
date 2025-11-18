@@ -16,43 +16,54 @@
 </head>
 
 <body>
-    <!-- flash message -->
-    <div class="relative z-[200] mt-[150px]">
+    @include('guest.components.navbar')
 
+    @yield('content')
+
+    @include('components.footer')
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
         @if (session('success'))
-            <div
-                class="relative z-[200] max-w-lg mx-auto mt-4 px-4 py-3 rounded-lg bg-green-700 text-white shadow-md flex justify-between items-center">
-                <span>{{ session('success') }}</span>
-                <button onclick="this.parentElement.remove()" class="font-bold ml-4">×</button>
-            </div>
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                text: "{{ session('success') }}",
+                toast: true,           
+                position: 'top-end',   
+                showConfirmButton: false, 
+                timer: 3000,
+                timerProgressBar: true
+            })
         @endif
 
         @if (session('error'))
-            <div
-                class="relative z-[200] max-w-lg mx-auto mt-4 px-4 py-3 rounded-lg bg-red-700 text-white shadow-md flex justify-between items-center">
-                <span>{{ session('error') }}</span>
-                <button onclick="this.parentElement.remove()" class="font-bold ml-4">×</button>
-            </div>
+            Swal.fire({
+                icon: 'error',
+                title: 'Terjadi Kesalahan!',
+                text: "{{ session('error') }}",
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true
+            })
         @endif
 
         @if (session('info'))
-            <div
-                class="relative z-[200] max-w-lg mx-auto mt-4 px-4 py-3 rounded-lg bg-blue-700 text-white shadow-md flex justify-between items-center">
-                <span>{{ session('info') }}</span>
-                <button onclick="this.parentElement.remove()" class="font-bold ml-4">×</button>
-            </div>
+            Swal.fire({
+                icon: 'info',
+                title: 'Informasi',
+                text: "{{ session('info') }}",
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true
+            })
         @endif
-    </div>
+    </script>
     
-    <!-- navbar -->
-    @include('guest.components.navbar')
-
-    <!-- content  -->
-    @yield('content')
-
-    <!-- footer -->
-    @include('components.footer')
-
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
