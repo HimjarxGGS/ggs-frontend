@@ -68,11 +68,10 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'email'   => 'required|email',
+            'email' => 'required|email:rfc,dns',
             'subject' => 'required|min:5|max:255',
             'content' => 'required|min:20',
         ]);
-        
         $adminEmail = config('mail.to_admin');
         Mail::to($adminEmail)->send(new BlogSubmission($validatedData));
 
