@@ -100,4 +100,5 @@ return [
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
+    'to_admin' => env('MAIL_TO_ADMIN'),
 ];
