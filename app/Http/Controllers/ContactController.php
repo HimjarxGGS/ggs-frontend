@@ -16,6 +16,22 @@ class ContactController extends Controller
             'message' => 'required|string|min:10|max:1000'
         ]);
 
+        $allowedDomains = [
+            'gmail.com',
+            'outlook.com',
+            'hotmail.com',
+            'yahoo.com',
+            'icloud.com',
+            'protonmail.com',
+        ];
+
+        $emailDomain = strtolower(substr(strrchr($request->email, "@"), 1));
+        if (!in_array($emailDomain, $allowedDomains)) {
+            return back()->withErrors([
+                'email' => 'Only trusted email providers like Gmail, Outlook, Yahoo, iCloud, and Protonmail are allowed.'
+            ])->withInput();
+        }
+
         try {
             Mail::to(config('mail.to_admin'))
                 ->send(new ContactFormMail([

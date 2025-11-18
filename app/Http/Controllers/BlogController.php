@@ -72,6 +72,24 @@ class BlogController extends Controller
             'subject' => 'required|min:5|max:255',
             'content' => 'required|min:20',
         ]);
+
+        $allowedDomains = [
+            'gmail.com',
+            'outlook.com',
+            'hotmail.com',
+            'yahoo.com',
+            'icloud.com',
+            'protonmail.com',
+        ];
+
+        $emailDomain = strtolower(substr(strrchr($validatedData['email'], "@"), 1));
+
+        if (!in_array($emailDomain, $allowedDomains)) {
+            return back()->withErrors([
+                'email' => 'Only trusted email providers like Gmail, Outlook, Yahoo, iCloud, and Protonmail are allowed.'
+            ])->withInput();
+        }
+
         $adminEmail = config('mail.to_admin');
         Mail::to($adminEmail)->send(new BlogSubmission($validatedData));
 
