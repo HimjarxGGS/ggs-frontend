@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const dropPoster = document.getElementById("dropPoster");
     const fileInput = document.getElementById("poster");
 
-    dropPoster.addEventListener("click", () => fileInput.click());
+    // dropPoster.addEventListener("click", () => fileInput.click());
 
     dropPoster.addEventListener("dragover", (e) => {
         e.preventDefault();

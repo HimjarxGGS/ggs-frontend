@@ -81,16 +81,16 @@
                     </div>
 
                     <!-- tanggal lahir -->
-                   <div class="mb-4">
-                         <label for="date_of_birth" class="block mb-2 text-sm font-medium text-gray-900 ml-4">
+                    <div class="mb-4">
+                        <label for="date_of_birth" class="block mb-2 text-sm font-medium text-gray-900 ml-4">
                             Tanggal Lahir </label>
                         <input type="date" id="date_of_birth" name="date_of_birth" required
-                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-palette-2 focus:border-palette-2 block w-full p-2.5 transition ease-in-out duration-300 pl-5">
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-palette-2 focus:border-palette-2 block w-full p-2.5 transition ease-in-out duration-300 pl-5">
 
-                       @error('date_of_birth')
+                        @error('date_of_birth')
                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-                         @enderror
-                        </div>
+                        @enderror
+                    </div>
 
 
 
@@ -116,7 +116,7 @@
 
                     <!-- bukti share poster -->
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2 ml-4">Bukti Share Poster</label>
+                        <label   class="block text-sm font-medium text-gray-700 mb-2 ml-4">Bukti Share Poster</label>
                         <div id="dropPoster" class="flex items-center justify-center w-full">
                             <label for="poster"
                                 class="flex flex-col items-center justify-center w-full h-52 md:h-32 border-2 border-gray-300 border-dashed rounded-3xl cursor-pointer bg-gray-50 hover:bg-gray-300 transition ease-in-out duration-300">
@@ -198,8 +198,8 @@
                                         fill="none" viewBox="0 0 20 16">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                             stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5
-                                5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5
-                                5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                                    5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5
+                                    5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
                                     </svg>
                                     <p class="mb-2 text-sm text-gray-500"><span
                                             class="font-semibold text-palette-2">Click to upload</span> or drag and
@@ -223,8 +223,8 @@
                                         fill="none" viewBox="0 0 20 16">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                             stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5
-                                5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5
-                                5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                                    5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5
+                                    5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
                                     </svg>
                                     <p class="mb-2 text-sm text-gray-500"><span
                                             class="font-semibold text-palette-2">Click to upload</span> or drag and

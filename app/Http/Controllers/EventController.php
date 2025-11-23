@@ -12,7 +12,7 @@ class EventController extends Controller
     public function index()
     {
         $upcoming = Event::where('status', 'active')
-            ->where('event_date', '>=', Carbon::today())
+            // ->where('event_date', '>=', Carbon::today()) 
             ->orderBy('event_date', 'asc')
             ->take(3)
             ->get();
@@ -28,7 +28,7 @@ class EventController extends Controller
     public function upcoming()
     {
         $events = Event::where('status', 'active')
-            ->where('event_date', '>=', Carbon::today())
+            // ->where('event_date', '>=', Carbon::today())
             ->orderBy('event_date', 'asc')
             ->paginate(6);
 
@@ -99,10 +99,10 @@ class EventController extends Controller
     {
         $event = Event::findOrFail($id);
 
-        // Validasi event
-        if ($event->status !== 'active' || $event->event_date < Carbon::today()) {
-            abort(404, 'Event tidak tersedia untuk registrasi');
-        }
+        // // Validasi event
+        // if ($event->status !== 'active' || $event->event_date < Carbon::today()) {
+        //     abort(404, 'Event tidak tersedia untuk registrasi');
+        // }
 
         return view('guest.events.register', compact('event'));
     }
