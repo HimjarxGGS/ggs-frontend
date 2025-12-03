@@ -96,7 +96,7 @@
                 </div>
             @endif
 
-            @if ($errors->any())
+            {{-- @if ($errors->any())
                 <div
                     class="fixed top-4 right-4 z-50 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg animate-toast">
                     <div class="flex items-center gap-2">
@@ -136,7 +136,7 @@
                         opacity: 0;
                     }
                 }
-            </style>
+            </style> --}}
 
             <form action="{{ route('contact.store') }}" method="POST" class="space-y-3">
                 @csrf
