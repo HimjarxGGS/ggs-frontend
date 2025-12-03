@@ -93,10 +93,10 @@
                 <h2 class="md:text-4xl font-semibold mb-2 text-white text-xl md:text-left text-center">Submit your Idea</h2>
                 <p class="text-gray-300 md:text-sm text-sm md:text-left text-center mb-7">Submit your own blog and inspire others with your story.</p>
 
-                @if (session('success'))
+                {{-- @if (session('success')) --}}
 
                 <!-- {{-- Auto-scroll script --}} -->
-                <script>
+                {{-- <script>
                     document.addEventListener('DOMContentLoaded', function() {
                         const target = document.getElementById('submitBlogForm');
                         if (target) target.scrollIntoView({
@@ -116,12 +116,12 @@
                     role="alert">
                     <strong class="font-bold">Success!</strong>
                     <span class="block sm:inline">{{ session('success') }}</span>
-                </div>
-                @endif
+                </div> --}}
+                {{-- @endif --}}
 
-                @if ($errors->any())
+                {{-- @if ($errors->any()) --}}
                 <!-- {{-- Auto-scroll script --}} -->
-                <script>
+                {{-- <script>
                     document.addEventListener('DOMContentLoaded', function() {
                         const target = document.getElementById('submitBlogForm');
                         if (target) target.scrollIntoView({
@@ -142,8 +142,8 @@
                         <li>{{ $error }}</li>
                         @endforeach
                     </ul>
-                </div>
-                @endif
+                </div> --}}
+                {{-- @endif --}}
 
                 <form action="{{route('blog.submit')}}" method="POST" class="space-y-4 w-full">
                     @csrf
