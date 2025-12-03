@@ -86,24 +86,9 @@
                             $extension = pathinfo($pendaftaranEvent->bukti_payment, PATHINFO_EXTENSION);
                             $isPdf = strtolower($extension) === 'pdf';
                         @endphp
-
-                        @if ($isPdf)
-                            <!-- Jika PDF -->
-                            <a href="{{ asset('storage/' . $pendaftaranEvent->bukti_payment) }}" target="_blank"
-                                class="flex flex-col items-center justify-center p-6 bg-red-50 rounded-lg border-2 border-red-200 hover:bg-red-100 transition">
-                                <svg class="w-12 h-12 mb-2 text-red-600" fill="currentColor" viewBox="0 0 20 20">
-                                    <path
-                                        d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" />
-                                </svg>
-                                <span class="text-sm font-medium text-red-700">Lihat PDF</span>
-                            </a>
-                        @else
-                            <!-- Jika gambar -->
-                            <img src="{{ asset('storage/' . $pendaftaranEvent->bukti_payment) }}" alt="Bukti Pembayaran"
-                                class="w-full rounded shadow">
-                        @endif
+                        <img src="{{ asset('storage/' . $pendaftaranEvent->bukti_payment) }}" alt="Bukti Pembayaran"
+                            class="w-full rounded shadow">
                     @else
-                        <!-- Jika belum upload -->
                         <div class="flex items-center justify-center h-40 bg-gray-100 rounded">
                             <p class="text-sm text-gray-500">Belum ada bukti pembayaran</p>
                         </div>
