@@ -7,16 +7,6 @@
 
 <div class="container mx-auto px-4 py-10 mb-24 mt-24"> {{-- mt-24 kasih jarak dari navbar --}}
 
-    @if (session('success'))
-    <div class="mb-4 text-green-600">{{ session('success') }}</div>
-    @endif
-
-    @if (session('error'))
-    <div class="mb-6 p-4 m-4 rounded-xl bg-red-100 text-red-700 border border-red-300">
-        {{ session('error') }}
-    </div>
-    @endif
-
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 
