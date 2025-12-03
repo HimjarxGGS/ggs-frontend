@@ -21,7 +21,7 @@
         <!-- section header end -->
 
         {{-- alert error submit --}}
-        @if (session('success'))
+        {{-- @if (session('success'))
             <div class="mb-6 p-4 rounded-xl bg-green-100 text-green-700 border border-green-300">
                 {{ session('success') }}
             </div>
@@ -41,7 +41,7 @@
                     @endforeach
                 </ul>
             </div>
-        @endif
+        @endif --}}
 
         <!-- section registrasi start -->
         <section class="my-10">
