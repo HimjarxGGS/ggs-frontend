@@ -262,39 +262,6 @@
                 </script>
                 <!-- Show pop up notification -->
                 
-                <div
-                    id="successBanner"
-                    class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4"
-                    role="alert">
-                    <strong class="font-bold">Success!</strong>
-                    <span class="block sm:inline">{{ session('success') }}</span>
-                </div>
-                @endif
-
-                @if ($errors->any())
-                <!-- {{-- Auto-scroll script --}} -->
-                <script>
-                    document.addEventListener('DOMContentLoaded', function() {
-                        const target = document.getElementById('submitBlogForm');
-                        if (target) target.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    });
-                    setTimeout(() => {
-                        const banner = document.getElementById('successBanner');
-                        if (banner) banner.style.display = 'none';
-                    }, 7000);
-                </script>
-                <div id="errorBanner"
-                    class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4"
-                    role="alert">
-                    <strong class="font-bold">Oops! Ada yang perlu diperbaiki.</strong>
-                    <ul class="list-disc list-inside">
-                        @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
                 @endif
 
                 <form action="{{route('blog.submit')}}" method="POST" class="space-y-4 w-full">
