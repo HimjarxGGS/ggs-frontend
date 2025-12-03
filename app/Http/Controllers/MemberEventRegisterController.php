@@ -11,8 +11,8 @@ class MemberEventRegisterController extends Controller
     public function store(Request $request, $eventId)
     {
         $request->validate([
-            'bukti_share' => 'required|file|mimes:jpg,png,jpeg,pdf|max:2048',
-            'bukti_payment' => 'required|file|mimes:jpg,png,jpeg,pdf|max:2048',
+            'bukti_share' => 'required|file|mimes:jpg,png,jpeg|max:2048',
+            'bukti_payment' => 'required|file|mimes:jpg,png,jpeg|max:2048',
             'pembayaran_via' => 'required|string',
             'hadir' => 'required|in:ya,tidak',
             'tata_tertib' => 'required|in:ya,tidak',
