@@ -18,8 +18,8 @@ class MemberEventRegisterController extends Controller
             'tata_tertib' => 'required|in:ya,tidak',
         ]);
 
-        $buktiSharePath = $request->file('bukti_share')->store('bukti_share');
-        $buktiPaymentPath = $request->file('bukti_payment')->store('bukti_payment');
+        $buktiSharePath = $request->file('bukti_share')->store('bukti_share', 'public');
+        $buktiPaymentPath = $request->file('bukti_payment')->store('bukti_payment', 'public');
 
         $pendaftar = Auth::user()->pendaftar;
 
@@ -33,7 +33,6 @@ class MemberEventRegisterController extends Controller
         ) {
             return back()->with('error', 'Anda sudah mendaftar event ini.');
         }
-
 
         PendaftarEvent::create([
             'event_id' => $eventId,
