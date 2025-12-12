@@ -4,12 +4,12 @@
         <!-- Column 1: Logo + Description -->
         <div>
             <a href="/" class="inline-block">
-                <img src="{{ asset('images/logo.png') }}" alt="Green Generation Logo" class="h-50 w-50 md:w-24" />
+                <img src="{{ asset('images/logo.png') }}" alt="Youth For Earth Surabaya" class="h-50 w-50 md:w-24" />
             </a>
 
             <p class="text-md leading-relaxed mt-2">
-                © GREEN GENERATION 2025 <br>
-                Green Generation is an Independent Organization working on #Environment in Indonesia. Let’s create a
+                © Youth For Earth Surabaya 2025 <br>
+                Youth For Earth Surabaya is an Independent Organization working on #Environment in Indonesia. Let’s create a
                 generation with environmental culture. <br>“It’s Easy to be Green” 🍃
             </p>
         </div>

@@ -1,6 +1,6 @@
 @extends('guest.layouts.app')
 
-@section('title', 'Event - Green Generation Surabaya')
+@section('title', 'Event - Youth For Earth Surabaya')
 
 @section('content')
     <section class="relative w-full h-[80vh] flex items-center justify-center font-geist">
@@ -62,7 +62,7 @@
         <div class="text-center mb-10">
             <h2 class="text-2xl md:text-3xl font-bold text-black">Upcoming Event</h2>
             <p class="text-gray-500 text-xs md:text-base mt-1.5">
-                Don't miss out on the exciting events from <span class="block md:hidden"></span><span class="hidden md:inline"></span> Green Generation Surabaya!</span> 
+                Don't miss out on the exciting events from <span class="block md:hidden"></span><span class="hidden md:inline"></span> Youth For Earth Surabaya!</span> 
             </p>
         </div>
 
@@ -86,7 +86,7 @@
                                 <!-- judul -->
                                 <h3 class="text-lg font-semibold line-clamp-2">{{ $event->name }}</h3>
                                 <!-- default penerbit -->
-                                <p class="text-gray-500 text-xs">Green Generation Surabaya</p>
+                                <p class="text-gray-500 text-xs">Youth For Earth Surabaya</p>
                                 <!-- tanggal event -->
                                 <div class="flex items-center text-xs text-gray-400 gap-2">
                                     <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-4 h-4">
@@ -122,7 +122,7 @@
         <!-- judul -->
         <div class="text-center mb-10">
             <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Successful Event</h2>
-            <p class="text-gray-500 mt-1.5 text-xs md:text-base">The successful events organized by <span class="block md:hidden"></span><span class="hidden md:inline"></span>Green Generation Surabaya.</p>
+            <p class="text-gray-500 mt-1.5 text-xs md:text-base">The successful events organized by <span class="block md:hidden"></span><span class="hidden md:inline"></span>Youth For Earth Surabaya.</p>
         </div>
 
         <!-- list event -->
@@ -141,7 +141,7 @@
                 </div>
                 <div class="p-4 space-y-2">
                     <h3 class="text-lg font-semibold">{{ $event->name }}</h3>
-                    <p class="text-gray-500 text-xs">Green Generation Surabaya</p>
+                    <p class="text-gray-500 text-xs">Youth For Earth Surabaya</p>
                     <div class="flex items-center text-xs text-gray-500 gap-2">
                         <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-4 h-4">
                         <span>{{ $event->event_date->translatedFormat('d F Y') }}</span>
@@ -175,7 +175,7 @@
         <div class="max-w-7xl mx-auto px-4 md:px-8 text-center">
             <!-- Heading -->
             <h2 class="text-xl md:text-3xl font-bold text-palette-2 mb-10">
-                Dampak Green Generation Surabaya
+                Dampak Youth For Earth Surabaya
             </h2>
 
             <!-- Cards -->
@@ -219,7 +219,7 @@
                         Testimoni
                     </div>
                     <h1 class="text-3xl font-semibold text-black md:text-center md:text-4xl mt-3">
-                        Green Generation Surabaya
+                        Youth For Earth Surabaya
                     </h1>
                     <p class="text-base text-gray-500 md:text-center md:text-lg mt-3">
                         Pengalaman dan testimoni mereka yang tumbuh bersama GGSBY untuk menjaga lingkungan.

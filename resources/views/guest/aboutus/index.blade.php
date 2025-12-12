@@ -1,6 +1,6 @@
 @extends('guest.layouts.app')
 
-@section('title', 'Green Generation Surabaya')
+@section('title', 'Youth For Earth Surabaya')
 
 
 @section('content')
@@ -12,7 +12,7 @@
     </h1>
 
     <p class="text-xs md:text-sm mt-5 pl-1">
-      <span class="font-bold text-palette-3">Green Generation</span> is a Independent Organizations Working on the #Environment in Indonesia.
+      <span class="font-bold text-palette-3">Youth For Earth Surabaya</span> is a Independent Organizations Working on the #Environment in Indonesia.
     </p>
 
     <!-- button mobile -->
@@ -67,7 +67,7 @@
     </h1>
 
     <p class="text-gray-400 font-light text-xs md:text-base mt-7 text-center">
-      Green Generation empowers youth to <br>lead,
+      Youth For Earth Surabaya empowers youth to <br>lead,
       innovate, and act for the environment.
     </p>
   </div>
@@ -81,7 +81,7 @@
     <!-- nama section -->
     <div class="lg:w-1/3">
       <h2 class="text-3xl font-bold">Journey</h2>
-      <p class="text-palette-4 text-base">Green Generation Surabaya</p>
+      <p class="text-palette-4 text-base">Youth For Earth Surabaya</p>
     </div>
 
     <!-- timeline -->
@@ -327,20 +327,20 @@
       <!-- accordion 1 -->
       <div class="border-b pb-4" x-data="{ open: false }">
         <button @click="open = !open" class="flex justify-between w-full text-left text-sm md:text-base font-medium text-gray-800">
-          What is Green Generation?
+          What is Youth For Earth Surabaya?
           <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
         <div x-show="open" x-transition class="mt-3 text-gray-600 text-sm">
-          Green Generation is a youth initiative that promotes sustainable living and environmental awareness through real-world action.
+          Youth For Earth Surabaya is a youth initiative that promotes sustainable living and environmental awareness through real-world action.
         </div>
       </div>
 
       <!-- accordion 2 -->
       <div class="border-b pb-4" x-data="{ open: false }">
         <button @click="open = !open" class="flex justify-between w-full text-left text-sm md:text-base font-medium text-gray-800">
-          How to join event Green Generation Surabaya?
+          How to join event Youth For Earth Surabaya?
           <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
@@ -375,7 +375,7 @@
       <h2 class="text-5xl font-bold text-palette-5">
         our <span class="font-bold">Partners</span>
       </h2>
-      <p class="text-gray-500">Green Generation Surabaya</p>
+      <p class="text-gray-500">Youth For Earth Surabaya</p>
     </div>
     <div class="hidden lg:block w-80 h-0.5 bg-gray-300"></div>
   </div>
