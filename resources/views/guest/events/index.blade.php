@@ -71,7 +71,7 @@
             @forelse ($upcoming as $i => $event)
                 <a href="{{ route('events.show', $event->id) }}" class="block group w-full {{ $i >= 1 ? 'hidden sm:block' : '' }}">
                     <div
-                        class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500 flex flex-col h-full">
+                        class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-500 ease-in-out transition duration-500 flex flex-col h-full">
                         <div class="relative">
                             <img src="{{ $event->poster ? asset('storage/' . $event->poster) : asset('images/gambar-event.png') }}"
                                 alt="Event Cover" class="w-full h-52 object-cover">
@@ -111,7 +111,7 @@
     <div class="text-center mt-6">
         <a href="{{ route('events.upcoming') }}"
             class="inline-block bg-palette-3 text-white px-6 py-2 rounded-xl 
-              hover:bg-palette-2 transition ease-in-out duration-300 hover:shadow-lg">
+              hover:bg-palette-2 transition ease-in-out duration-300 hover:shadow-lg font-semibold">
             See All Upcoming Events
         </a>
     </div>
@@ -163,7 +163,7 @@
         <div class="text-center mt-6">
             <a href="{{ route('events.finished') }}"
             class="inline-block bg-palette-3 text-white px-6 py-2 rounded-xl 
-                hover:bg-palette-2 transition ease-in-out duration-300 hover:shadow-lg">
+                hover:bg-palette-2 transition ease-in-out duration-300 hover:shadow-lg font-semibold">
                 See All Successful Events
             </a>
         </div>
@@ -221,8 +221,8 @@
                     <h1 class="text-3xl font-semibold text-black md:text-center md:text-4xl mt-3">
                         Youth For Earth Surabaya
                     </h1>
-                    <p class="text-base text-gray-500 md:text-center md:text-lg mt-3">
-                        Pengalaman dan testimoni mereka yang tumbuh bersama GGSBY untuk menjaga lingkungan.
+                    <p class="text-sm text-gray-500 md:text-center md:text-base mt-3">
+                        Pengalaman dan testimoni mereka yang tumbuh bersama Youth For Earth SBY untuk menjaga lingkungan.
                     </p>
                 </div>
             </div>
@@ -244,7 +244,7 @@
                                         <p class="text-palette-4 text-md">Executive Board</p>
                                     </div>
                                 </div>
-                                <p class="leading-normal text-gray-700 text-md"> Bertumbuh bersama GGSBY memberikan saya
+                                <p class="leading-normal text-gray-700 text-md"> Bertumbuh bersama Youth For Earth SBY memberikan saya
                                     kesadaran bahwa pentingnya kita dalam mencintai, merawat dan menjaga lingkungan sekitar,
                                     demi kelanyakan atau kenyamanan lingkungan yang berkelanjutan </p>
                             </div>
@@ -307,7 +307,7 @@
                                         <p class="text-palette-4 text-md">Public Relation</p>
                                     </div>
                                 </div>
-                                <p class="leading-normal text-gray-700 text-md">GGS mengajari saya menanam kaktus ⭐⭐⭐⭐⭐</p>
+                                <p class="leading-normal text-gray-700 text-md">Youth For Earth SBY mengajari saya menanam kaktus ⭐⭐⭐⭐⭐</p>
                             </div>
                         </div>
                     </li>
@@ -326,7 +326,7 @@
                                         <p class="text-palette-4 text-md">Creative</p>
                                     </div>
                                 </div>
-                                <p class="leading-normal text-gray-700 text-md">Dengan bergabung bersama GGSBY membuat saya
+                                <p class="leading-normal text-gray-700 text-md">Dengan bergabung bersama Youth For Earth SBY membuat saya
                                     lebih membuka mata tentang pentingnya menjaga lingkungan dengan hal kecil sekalipun</p>
                             </div>
                         </div>
@@ -349,7 +349,7 @@
                                         <p class="text-palette-4 text-md">Project Development</p>
                                     </div>
                                 </div>
-                                <p class="leading-normal text-gray-700 text-md">sejak bergabung dengan GGSBY saya semakin
+                                <p class="leading-normal text-gray-700 text-md">sejak bergabung dengan Youth For Earth SBY saya semakin
                                     percaya bahwa langkah kecil bisa menciptakan dampak besar. Bersama teman-teman di sini,
                                     saya belajar bahwa kepedulian terhadap lingkungan bukan hanya wacana, tetapi aksi nyata.
                                     jdii, ayooo kita jadikan Surabaya lebih hijau dengan tindakan kita hari ini🥳</p>
@@ -370,7 +370,7 @@
                                         <p class="text-palette-4 text-md">Public Relation</p>
                                     </div>
                                 </div>
-                                <p class="leading-normal text-gray-700 text-md"> bisa jadi agent of change dengan mengikuti kegiatan bersih bersih di GGS 💚</p>
+                                <p class="leading-normal text-gray-700 text-md"> bisa jadi agent of change dengan mengikuti kegiatan bersih bersih di Youth For Earth SBY 💚</p>
                             </div>
                         </div>
                     </li>

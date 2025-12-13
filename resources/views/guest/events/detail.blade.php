@@ -6,35 +6,36 @@
 <div class="max-w-6xl mx-auto px-4 font-geist">
 
     <!-- header -->
-    <div class="mb-8 text-center md:text-left mt-40">
-        <h1 class="text-2xl md:text-3xl font-bold text-gray-800">
-            {{ $event->name }}
-        </h1>
-        <p class="text-gray-600 text-sm md:text-base">Green Generation Surabaya</p>
+    <section id="event-header" class="mb-8 mt-32">
+        <div class="text-center md:text-left">
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-800">
+                {{ $event->name }}
+            </h1>
+            <p class="text-gray-600 text-sm md:text-base">Youth for Earth Surabaya</p>
 
-        <span
-            class="inline-block mt-3 text-xs md:text-sm font-semibold px-10 py-1 rounded-full
-            {{ $event->status == 'upcoming' ? 'bg-green-500 text-white' : 'bg-orange-500 text-white' }}">
-            {{ ucfirst($event->status) }}
-        </span>
-    </div>
+            <span
+                class="inline-block mt-3 text-xs md:text-sm font-semibold px-10 py-1 rounded-full
+            {{ $event->status == 'upcoming' ? 'bg-orange-500 text-white' : ' bg-green-500 text-white' }}">
+                {{ ucfirst($event->status) }}
+            </span>
+        </div>
+    </section>
 
     <!-- poster & detail -->
-    <div class="grid md:grid-cols-2 gap-6 items-start">
+    <section id="event-content" class="grid md:grid-cols-2 gap-6 items-start">
 
         <!-- poster -->
         <div class="bg-transparent">
             <img src="{{ $event->poster ? asset('storage/'.$event->poster) : asset('images/posterggs.png') }}"
                 alt="Poster Event"
                 class="w-full h-auto max-h-[900px] object-contain rounded-lg bg-transparent">
-
         </div>
 
+        <!-- detail -->
         <div class="space-y-4">
 
-            <!-- card 1, jadwal dan lokasi -->
+            <!-- card jadwal & lokasi -->
             <div class="p-4 border rounded-xl shadow-md bg-white text-sm ring-1 ring-palette-1 space-y-3">
-                <!-- jadwal -->
                 <div class="flex items-center gap-3">
                     <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-5 h-5">
                     <div>
@@ -45,7 +46,6 @@
                     </div>
                 </div>
 
-                <!-- lokasi -->
                 <div class="flex items-center gap-3">
                     <img src="{{ asset('icons/location.svg') }}" alt="Location" class="w-5 h-5">
                     <div>
@@ -66,8 +66,6 @@
                         <p class="text-wrap">
                             {!! $event->description !!}
                         </p>
-
-
                     </div>
                 </div>
             </div>
@@ -76,13 +74,12 @@
             <div class="p-4 border rounded-xl shadow-md flex justify-center gap-4 mt-6">
                 <!-- button daftar -->
                 @if($event->status == "active")
-                
                 <a href="{{ auth()->user() ? route('member.event.registration', ['id' => $event->id]) :  route('event.registration', $event->id) }}"
                     class="px-5 md:px-6 py-3 flex bg-palette-5 text-white rounded-2xl shadow-md hover:bg-palette-3 transition duration-300 ease-in-out md:text-lg text-sm">
                     Daftar Sekarang
                 </a>
                 @endif
-                <!-- button contact person -->
+
                 @if($event->status == "finished" || $event->sertif_url)
                 <section id="certificate" class="text-center">
                     <button
@@ -92,13 +89,10 @@
                     </button>
                 </section>
                 @endif
-                <!-- <a href="https://wa.me/{{ $event->contact_person ?? '628123456789' }}"
-                    class="px-5 md:px-6 py-3 border border-black text-black rounded-2xl shadow-md hover:bg-gray-200 transition duration-300 ease-in-out md:text-lg text-sm">
-                    Contact Person
-                </a> -->
             </div>
         </div>
-    </div>
+    </section>
+
     <!-- After Movie -->
     @if ($event->after_movie_url)
     <section id="aftermovie" class="mt-12 md:mt-20">
@@ -115,7 +109,6 @@
         </div>
     </section>
     @endif
-  
 
     <!-- dokumentasi -->
     @if($event->status == "finished")
@@ -132,8 +125,8 @@
         </div>
     </section>
     @endif
-    <!-- more event -->
 
+    <!-- more event -->
     <section id="more-events" class="mt-16">
         <h2 class="text-2xl md:text-3xl font-bold text-left mb-8">More Events</h2>
 
@@ -183,42 +176,45 @@
             @endforelse
         </div>
     </section>
-
 </div>
 
-<div id="certificateModal" class="fixed  w-screen h-screen  bg-black flex inset-0 hidden z-[9999] justify-center items-center transform scale-100 opacity-0 transition-all duration-300">
-    <div class="bg-white rounded-2xl shadow-lg p-6 w-96 relative">
-        <div class="flex justify-end">
-            <button id="closeCertificateModal" class="relative top-0 right-0 ">
-                <h1>x</h1>
-            </button>
+<section id="certificate-modal">
+    <div id="certificateModal"
+        class="fixed w-screen h-screen bg-black flex inset-0 hidden z-[9999] justify-center items-center transform scale-100 opacity-0 transition-all duration-300">
+
+        <div class="bg-white rounded-2xl shadow-lg p-6 w-96 relative">
+            <div class="flex justify-end">
+                <button id="closeCertificateModal" class="relative top-0 right-0">
+                    <h1>x</h1>
+                </button>
+            </div>
+
+            <h2 class="text-xl font-semibold">Cek Sertifikatmu</h2>
+
+            <p class="text-sm text-gray-500 mb-4">
+                Masukkan email yang terdaftar di event ini untuk mengakses sertifikat.
+            </p>
+
+            <form id="certificateForm" class="space-y-3">
+                <input
+                    type="email"
+                    id="certEmail"
+                    name="email"
+                    required
+                    placeholder="Enter your email"
+                    class="w-full border px-4 py-2 rounded-lg focus:ring focus:ring-palette-4 text-sm">
+
+                <button
+                    type="submit"
+                    class="w-full bg-palette-5 text-white py-2 rounded-lg hover:bg-palette-3 transition duration-300">
+                    Periksa
+                </button>
+            </form>
+
+            <div id="certResult" class="mt-4 text-center hidden"></div>
         </div>
-
-        <h2 class="text-xl font-semibold">Cek Sertifikatmu</h2>
-
-        <p class="text-sm text-gray-500 mb-4">Masukkan email yang terdaftar di event ini untuk mengakses sertifikat.</p>
-
-        <form id="certificateForm" class="space-y-3">
-            <input
-                type="email"
-                id="certEmail"
-                name="email"
-                required
-                placeholder="Enter your email"
-                class="w-full border px-4 py-2 rounded-lg focus:ring focus:ring-palette-4 text-sm">
-
-
-            <button
-                type="submit"
-                class="w-full bg-palette-5 text-white py-2 rounded-lg hover:bg-palette-3 transition duration-300">
-                Periksa
-            </button>
-        </form>
-
-        <div id="certResult" class="mt-4 text-center hidden"></div>
     </div>
-</div>
-
+</section>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -237,7 +233,7 @@
                 modal.classList.add('flex');
                 modal.style.opacity = '1';
                 modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-                
+
             }, 10);
         }
 

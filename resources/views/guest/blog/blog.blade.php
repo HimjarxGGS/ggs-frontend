@@ -55,15 +55,15 @@
         <section class="mx-auto text-center md:text-left">
             <div class="bg-palette-3 text-white rounded-2xl shadow-md flex flex-col md:flex-row items-center justify-between md:px-10 py-4">
                 <div class="flex-1">
-                    <h3 class="text-3xl md:text-2xl font-semibold">Got something to share?</h3>
-                    <p class="text-sm text-yellow-50 pt-2 md:pt-0.5">
+                    <h3 class="text-xl md:text-2xl font-semibold">Got something to share?</h3>
+                    <p class="text-xs text-palette-1 pt-2 md:pt-0.5">
                         Submit your own blog and inspire <span class="block md:hidden"><span class="hidden md:inline"></span>others with your story.
                     </p>
                 </div>
-                <div class="flex justify-center md:justify-end w-full md:w-auto md:pt-0 sm:pt-3">
+                <div class="flex justify-center md:justify-end w-full md:w-auto md:pt-0 sm:pt-3 md:mt-0 mt-6">
                     <button
                         onclick="document.getElementById('submitBlogForm').scrollIntoView({ behavior: 'smooth' })"
-                        class="bg-white text-palette-3 font-semibold px-8 py-3 rounded-full 
+                        class="bg-palette-1 text-palette-2 font-semibold px-8 py-3 rounded-full 
                        hover:bg-yellow-50 transition duration-300 shadow-md hover:shadow-lg">
                         Submit Your Idea
                     </button>
@@ -223,7 +223,7 @@
                     </div>
 
                     <button type="submit"
-                        class="bg-white text-pallete-3 w-full py-3 rounded-full font-medium transition-transform duration-500 transform hover:scale-[1.02] hover:shadow-lg hover:border-gray-300">
+                        class="bg-palette-1 text-palette-2 text-sm md:text-lg w-full py-3 rounded-full font-bold transition-transform duration-500 transform hover:scale-[1.02] hover:shadow-lg hover:border-gray-300">
                         Share My Thoughts and Idea
                     </button>
                 </form>

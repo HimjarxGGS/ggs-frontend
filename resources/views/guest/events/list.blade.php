@@ -3,35 +3,35 @@
 @section('title', 'List Event - Green Generation Surabaya')
 
 @section('content')
-<section class="px-4 md:px-12 lg:px-20 py-10 mt-28">
+<section class="px-4 md:px-12 lg:px-20">
     <!-- Header Section -->
-    <div class="mb-10">
+    <div class="mb-10 mt-28">
         <h1 class="text-2xl md:text-3xl font-bold text-black text-center">List Event</h1>
-        <p class="text-sm md:text-base text-gray-600 text-center">
-            Seluruh event yang ada pada Green Generation Surabaya
+        <p class="text-xs md:text-base text-gray-600 text-center">
+            Seluruh event Youth For Earth Surabaya
         </p>
     </div>
 
     <!-- Search + Filter -->
-    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
         <!-- Search -->
-       <form action="{{ route('events.list') }}" method="GET" class="relative w-96 md:w-1/2 ml-10 lg:ml-0">
-    <input 
-        type="text" 
-        name="search" 
-        value="{{ request('search') }}" 
-        placeholder="Search Event"
-        class="w-full border rounded-full px-8 py-2 focus:outline-none focus:ring-2 focus:ring-palette-4 transition duration-300">
-    
-    <button type="submit" class="absolute right-7 top-2.5">
-        <img src="{{ asset('icons/search.svg') }}" alt="Search" class="w-5 h-5">
-    </button>
+        <form action="{{ route('events.list') }}" method="GET" class="relative w-80 md:w-1/2">
+            <input
+                type="text"
+                name="search"
+                value="{{ request('search') }}"
+                placeholder="Search Event"
+                class="w-full border rounded-full px-8 py-2 focus:outline-none focus:ring-2 focus:ring-palette-4 transition duration-300">
+
+            <button type="submit" class="absolute right-7 top-2.5">
+                <img src="{{ asset('icons/search.svg') }}" alt="Search" class="w-5 h-5">
+            </button>
         </form>
 
 
         <!-- Dropdown -->
-        <div x-data="{ open: false, selected: 'Event Terbaru' }" class="w-96 md:w-1/4 relative ml-10 lg:ml-0">
-            <label for="sort" class="block text-sm text-gray-600 mb-1">Urut Berdasarkan:</label>
+        <div x-data="{ open: false, selected: 'Event Terbaru' }" class="w-80 md:w-1/4 relative">
+            <label for="sort" class="block text-sm text-gray-600 mb-1 pl-6 mt-2 md:mt-0">Urut Berdasarkan:</label>
 
             <!-- Trigger button -->
             <button
@@ -66,51 +66,51 @@
     </div>
 
     <!-- Card Grid -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-    @forelse ($events as $event)
-    <a href="{{ route('events.show', ['id' => $event->id]) }}" class="block group w-full">
-        <div
-            class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500 flex flex-col h-full">
-            
-            <!-- cover -->
-            <div class="relative">
-                <img src="{{ $event->cover ? asset('storage/'.$event->cover) : asset('images/posterggs.png') }}"
-                    alt="Event Cover"
-                    class="w-full h-52 object-cover">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+        @forelse ($events as $event)
+        <a href="{{ route('events.show', ['id' => $event->id]) }}" class="block group w-full">
+            <div
+                class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500 flex flex-col h-full">
 
-                <!-- status -->
-                <span
-                    class="absolute top-7 left-7 {{ $event->status === 'active' ? 'bg-green-500' : 'bg-orange-500' }} text-white text-xs font-semibold px-3 py-1 rounded-full">
-                    {{ ucfirst($event->status) }}
-                </span>
-            </div>
+                <!-- cover -->
+                <div class="relative">
+                    <img src="{{ $event->cover ? asset('storage/'.$event->cover) : asset('images/posterggs.png') }}"
+                        alt="Event Cover"
+                        class="w-full h-52 object-cover">
 
-            <!-- konten -->
-            <div class="p-4 flex flex-col justify-between flex-1">
-                <div class="space-y-2">
-                    <!-- judul -->
-                    <h3 class="text-lg font-semibold line-clamp-2">{{ $event->name }}</h3>
-                    <!-- default penerbit -->
-                    <p class="text-gray-500 text-xs">Green Generation Surabaya</p>
-                    <!-- tanggal event -->
-                    <div class="flex items-center text-xs text-gray-400 gap-2">
-                        <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-4 h-4">
-                        <span>{{ \Carbon\Carbon::parse($event->event_date)->translatedFormat('d F Y') }}</span>
+                    <!-- status -->
+                    <span
+                        class="absolute top-7 left-7 {{ $event->status === 'active' ? 'bg-green-500' : 'bg-orange-500' }} text-white text-xs font-semibold px-3 py-1 rounded-full">
+                        {{ ucfirst($event->status) }}
+                    </span>
+                </div>
+
+                <!-- konten -->
+                <div class="p-4 flex flex-col justify-between flex-1">
+                    <div class="space-y-2">
+                        <!-- judul -->
+                        <h3 class="text-lg font-semibold line-clamp-2">{{ $event->name }}</h3>
+                        <!-- default penerbit -->
+                        <p class="text-gray-500 text-xs">Youth For Earth Surabaya</p>
+                        <!-- tanggal event -->
+                        <div class="flex items-center text-xs text-gray-400 gap-2">
+                            <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-4 h-4">
+                            <span>{{ \Carbon\Carbon::parse($event->event_date)->translatedFormat('d F Y') }}</span>
+                        </div>
+                        <!-- deskripsi -->
+                        <p class="text-xs text-gray-600 line-clamp-3">
+                            {!! Str::limit($event->description, 120) !!}
+                        </p>
                     </div>
-                    <!-- deskripsi -->
-                    <p class="text-xs text-gray-600 line-clamp-3">
-                        {!! Str::limit($event->description, 120) !!}
-                    </p>
                 </div>
             </div>
-        </div>
-    </a>
-    @empty
-    <p class="col-span-3 text-center text-gray-500 py-10">
-        Belum ada event.
-    </p>
-    @endforelse
-</div>
+        </a>
+        @empty
+        <p class="col-span-3 text-center text-gray-500 py-10">
+            Belum ada event.
+        </p>
+        @endforelse
+    </div>
 
     <!-- Pagination -->
     <div class="mt-10 flex justify-center">

@@ -91,7 +91,7 @@
                 class="bg-palette-3 shadow-md rounded-3xl p-10 w-full mx-auto">
                 <!-- class="bg-palette-3 shadow-md rounded-3xl p-10 flex-auto flex-col md:flex-row gap-10 w-full justify-center"> -->
                 <h2 class="md:text-4xl font-semibold mb-2 text-white text-xl md:text-left text-center">Submit your Idea</h2>
-                <p class="text-gray-300 md:text-sm text-sm md:text-left text-center mb-7">Submit your own blog and inspire others with your story.</p>
+                <p class="text-gray-400 md:text-sm text-sm md:text-left text-center mb-7">Submit your own blog and inspire others with your story.</p>
 
                 {{-- @if (session('success')) --}}
 
@@ -173,7 +173,7 @@
                     </div>
 
                     <button type="submit"
-                        class="bg-white text-pallete-3 w-full py-3 rounded-full font-medium transition-transform duration-500 transform hover:scale-[1.02] hover:shadow-lg hover:border-gray-300">
+                        class="bg-palette-1 text-palette-2 text-sm md:text-lg w-full py-3 rounded-full font-medium transition-transform duration-500 transform hover:scale-[1.02] hover:shadow-lg hover:border-gray-300">
                         Share My Thoughts and Idea
                     </button>
                 </form>

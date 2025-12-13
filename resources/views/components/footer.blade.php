@@ -1,13 +1,13 @@
-<footer class="bg-palette-3 text-gray-300 rounded-t-[40px] px-8 md:px-12 py-4 md:py-16 mt-10 w-full">
+<footer class="bg-palette-3 text-gray-300 rounded-t-[45px] px-8 md:px-12 py-4 md:py-16 mt-10 w-full">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
 
         <!-- Column 1: Logo + Description -->
         <div>
             <a href="/" class="inline-block">
-                <img src="{{ asset('images/logo.png') }}" alt="Youth For Earth Surabaya" class="h-50 w-50 md:w-24" />
+                <img src="{{ asset('images/logo.png') }}" alt="Youth For Earth Surabaya" class="h-28 w-auto pt-6" />
             </a>
 
-            <p class="text-md leading-relaxed mt-2">
+            <p class="text-sm leading-relaxed mt-2 md:w-72">
                 © Youth For Earth Surabaya 2025 <br>
                 Youth For Earth Surabaya is an Independent Organization working on #Environment in Indonesia. Let’s create a
                 generation with environmental culture. <br>“It’s Easy to be Green” 🍃
@@ -15,12 +15,12 @@
         </div>
 
         <!-- Column 2: Quick Nav + Socials -->
-        <div class="flex md:flex-col gap-5 md:gap-5 items-start">
+        <div class="flex md:flex-col gap-5 md:gap-5 items-start pt-5">
 
             <!-- Quick Nav -->
-            <div>
-                <h3 class="text-white font-normal text-xl mb-3">Organization</h3>
-                <ul class="space-y-2 text-md">
+            <div class="pl-0 md:pl-16">
+                <h3 class="text-white font-semibold text-xl mb-3">Organization</h3>
+                <ul class="space-y-1 text-md">
                     <li><a href="/" class="hover:text-white transition-transform hover:scale-[1.02]">About us</a>
                     </li>
                     <li><a href="/event" class="hover:text-white transition-transform hover:scale-[1.02]">Event</a>
@@ -30,9 +30,9 @@
             </div>
 
             <!-- Socials -->
-            <div>
-                <h3 class="text-white font-normal text-xl mb-3">Socials</h3>
-                <div class="flex items-center gap-2 text-xl">
+            <div class="pl-0 md:pl-16">
+                <h3 class="text-white font-semibold text-xl mb-3">Socials</h3>
+                <div class="flex items-center md:gap-3 gap-2 text-xl">
 
                     <a href="https://www.instagram.com/greengnrsby/" class="hover:text-white text-gray-400 transition">
                         <svg class="w-4 h-4 md:w-6 md:h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
@@ -64,7 +64,7 @@
         </div>
 
         <!-- Column 3: Reach Us Form -->
-        <div>
+        <div class="pt-5">
             <h3 class="text-white font-semibold text-xl mb-4">Reach Us</h3>
 
             {{-- allert --}}
@@ -150,7 +150,7 @@
                     class="bg-white text-palette-2 text-sm rounded-md py-2.5 px-4 w-full"></textarea>
 
                 <button type="submit"
-                    class="bg-white text-palette-3 py-2.5 w-full rounded-md hover:shadow-md hover:brightness-110 transition">
+                    class="bg-palette-1 text-palette-5 font-semibold py-2.5 w-full rounded-md hover:shadow-md hover:brightness-110 transition">
                     Submit
                 </button>
             </form>
