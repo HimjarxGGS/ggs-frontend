@@ -6,7 +6,7 @@
 <div class="max-w-6xl mx-auto px-4 font-geist">
 
     <!-- header -->
-    <section id="event-header" class="mb-8 mt-32">
+    <section id="event-header" class="mb-8 pt-32">
         <div class="text-center md:text-left">
             <h1 class="text-2xl md:text-3xl font-bold text-gray-800">
                 {{ $event->name }}
@@ -75,7 +75,7 @@
                 <!-- button daftar -->
                 @if($event->status == "active")
                 <a href="{{ auth()->user() ? route('member.event.registration', ['id' => $event->id]) :  route('event.registration', $event->id) }}"
-                    class="px-5 md:px-6 py-3 flex bg-palette-5 text-white rounded-2xl shadow-md hover:bg-palette-3 transition duration-300 ease-in-out md:text-lg text-sm">
+                    class="px-5 md:px-6 py-3 flex bg-palette-3 text-white rounded-2xl shadow-md hover:bg-palette-5 transition duration-300 ease-in-out md:text-lg text-sm">
                     Daftar Sekarang
                 </a>
                 @endif
@@ -84,7 +84,7 @@
                 <section id="certificate" class="text-center">
                     <button
                         id="openCertificateModal"
-                        class="px-5 md:px-6 py-3 bg-palette-5 text-white rounded-2xl shadow-md hover:bg-palette-3 transition duration-300 ease-in-out md:text-lg text-sm">
+                        class="px-5 md:px-6 py-3 bg-palette-3 text-white rounded-2xl shadow-md hover:bg-palette-5 transition duration-300 ease-in-out md:text-lg text-sm">
                         Sertifikat
                     </button>
                 </section>

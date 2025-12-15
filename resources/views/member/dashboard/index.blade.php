@@ -1,12 +1,12 @@
 @extends('member.layouts.app')
 
-@section('title', 'Dashboard Member - Green Generation Surabaya')
+@section('title', 'Dashboard Member - Youth for Earth Surabaya')
 
 @section('content')
-<div class="container mx-auto px-4 py-10">
+<div class="container mx-auto px-4">
 
     <!-- hero -->
-    <div class="flex flex-col md:flex-row md:justify-center md:items-center md:space-x-40 mb-12 mt-28 text-left md:text-left">
+    <div class="flex flex-col md:flex-row md:justify-center md:items-center md:space-x-40 mb-12 pt-32 text-left md:text-left">
         <div class="order-1 md:order-none mb-6 md:mb-0">
             <h2 class="text-lg sm:text-xl md:text-2xl">
                 Hi, <em class="text-palette-3 font-semibold">{{ $users->username }}!</em>

@@ -111,7 +111,7 @@
     <div class="text-center mt-6">
         <a href="{{ route('events.upcoming') }}"
             class="inline-block bg-palette-3 text-white px-6 py-2 rounded-xl 
-              hover:bg-palette-2 transition ease-in-out duration-300 hover:shadow-lg font-semibold">
+              hover:bg-palette-2 transition ease-in-out duration-300 hover:shadow-lg font-semibold hover:font-medium">
             See All Upcoming Events
         </a>
     </div>
@@ -163,7 +163,7 @@
         <div class="text-center mt-6">
             <a href="{{ route('events.finished') }}"
             class="inline-block bg-palette-3 text-white px-6 py-2 rounded-xl 
-                hover:bg-palette-2 transition ease-in-out duration-300 hover:shadow-lg font-semibold">
+                hover:bg-palette-2 transition ease-in-out duration-300 hover:shadow-lg font-semibold hover:font-medium">
                 See All Successful Events
             </a>
         </div>

@@ -5,7 +5,7 @@
 @section('content')
 <section class="px-4 md:px-12 lg:px-20">
     <!-- Header Section -->
-    <div class="mb-10 mt-28">
+    <div class="mb-10 pt-28">
         <h1 class="text-2xl md:text-3xl font-bold text-black text-center">List Event</h1>
         <p class="text-xs md:text-base text-gray-600 text-center">
             Seluruh event Youth For Earth Surabaya

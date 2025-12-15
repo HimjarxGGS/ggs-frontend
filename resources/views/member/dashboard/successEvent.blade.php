@@ -23,7 +23,7 @@
 
                     <div>
                         <!-- Judul -->
-                        <h2 class="text-xl md:text-3xl font-bold text-gray-900 mb-2">
+                        <h2 class="text-lg md:text-3xl font-bold text-gray-900">
                         Congrats! Registrasi event berhasil.
                         </h2>
                         <!-- Sub text -->
@@ -35,14 +35,14 @@
                         <div class="flex flex-col md:flex-row gap-3 md:gap-4 justify-center md:justify-start md:mt-0 mt-20">
                         <!-- Button Event -->
                         <a href="/dashboard-member" 
-                            class="w-full md:w-52 px-6 py-3 rounded-full bg-[#A16446] text-white font-medium hover:bg-[#8b5339] transition text-sm md:text-base text-center">
+                            class="w-full md:w-52 px-6 py-3 rounded-full bg-palette-3 text-white hover:bg-palette-2 hover:font-medium font-semibold transition text-sm md:text-base text-center">
                             Event Lainnya
                         </a>
 
                         <!-- Button Contact Person -->
                         <a href="https://wa.me/6281216132795"
                             class="w-full md:w-52 px-6 py-3 rounded-full border border-gray-300 flex items-center justify-center gap-2 text-gray-800 font-medium hover:bg-gray-100 transition text-sm md:text-base">
-                            <img src="{{ asset('icons/contact.svg') }}" alt="Icon" class="w-4 h-4">
+                            <img src="{{ asset('icons/person.svg') }}" alt="Icon" class="w-4 h-4">
                             Contact Person
                         </a>
                     </div>

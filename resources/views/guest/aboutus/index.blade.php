@@ -28,7 +28,7 @@
   <!-- button Desktop -->
   <div class="hidden lg:flex items-center mt-6 lg:ml-28">
     <a href="/event">
-      <button class="bg-palette-3 text-white font-bold py-2 px-20 rounded-3xl flex items-center gap-2 ease-in-out transition duration-300 hover:shadow-lg hover:shadow-black">
+      <button class="bg-palette-3 text-white hover:font-semibold font-bold py-2 px-20 rounded-3xl flex items-center gap-2 ease-in-out transition duration-300 hover:shadow-lg hover:shadow-black">
         <span>View Event</span>
       </button>
     </a>

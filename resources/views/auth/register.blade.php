@@ -13,7 +13,7 @@
 
     <!-- header -->
     <div class="text-center mt-5 px-4">
-        <h1 class="text-2xl md:text-3xl font-bold text-slate-800">Green Generation Surabaya</h1>
+        <h1 class="text-lg md:text-3xl font-bold text-slate-800">Youth for Earth Surabaya</h1>
         <p class="text-xs md:text-sm text-slate-600">
             Welcome to Register Page! Enter valid data.
         </p>
@@ -127,7 +127,7 @@
 
     <!-- footer -->
     <footer class="text-center text-xs text-slate-400 mt-10">
-        powered by <br> greengnrsby & himse.telkomsurabaya
+        powered by youthforearthsby
     </footer>
 
 </body>
