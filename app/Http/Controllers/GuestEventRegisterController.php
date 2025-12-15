@@ -13,8 +13,8 @@ class GuestEventRegisterController extends Controller
    public function store(Request $request)
 {
     
-    $maxAgeDate = now()->subYears(15)->toDateString();     
-    $minAgeDate = now()->subYears(100)->toDateString();    
+    $maxAgeDate = now()->subYears(15)->toDateString();
+    $minAgeDate = now()->subYears(100)->toDateString();
 
     $validated = $request->validate([
         'user_id' => 'nullable|integer',

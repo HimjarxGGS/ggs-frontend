@@ -82,4 +82,35 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("File dropped:", fileInput.files[0]);
         }
     });
+
+    const posterInput = document.getElementById("poster");
+    if (posterInput) {
+        posterInput.addEventListener("change", () => {
+            if (posterInput.files.length > 0) {
+                posterText.textContent =
+                    "Selected: " + posterInput.files[0].name;
+            }
+        });
+    }
+
+    // Bukti Pembayaran
+    document
+        .getElementById("pembayaran")
+        .addEventListener("change", function () {
+            const textEl = document.getElementById("bayarText");
+            if (this.files.length > 0) {
+                textEl.textContent = "Selected: " + this.files[0].name;
+            }
+        });
+
+    // Foto Peserta (jika ada)
+    const fotoInput = document.getElementById("foto");
+    if (fotoInput) {
+        fotoInput.addEventListener("change", function () {
+            const textEl = document.getElementById("fotoText");
+            if (this.files.length > 0) {
+                textEl.textContent = "Selected: " + this.files[0].name;
+            }
+        });
+    }
 });
