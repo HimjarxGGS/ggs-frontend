@@ -95,19 +95,19 @@
 
                     <div>
                         <label class="block mb-2 text-sm font-medium text-white">Email</label>
-                        <input type="email" name="email" required
+                        <input type="email" name="email" required placeholder="Enter valid email"
                             class="w-full px-3 py-3 rounded-xl bg-white text-palette-2 focus:ring focus:ring-palette-4">
                     </div>
 
                     <div>
                         <label class="block mb-2 text-sm font-medium text-white">Subject - Blog Title</label>
-                        <input type="text" name="subject" required
+                        <input type="text" name="subject" required placeholder="Enter Subject"
                             class="w-full px-3 py-3 rounded-xl bg-white text-palette-2 focus:ring focus:ring-palette-4">
                     </div>
 
                     <div>
                         <label class="block mb-2 text-sm font-medium text-white">Share your thoughts</label>
-                        <textarea name="content" rows="7" required
+                        <textarea name="content" rows="7" required placeholder="Enter your blog content"
                             class="w-full px-3 py-3 rounded-xl bg-white text-palette-2 focus:ring focus:ring-palette-4"></textarea>
                     </div>
 
