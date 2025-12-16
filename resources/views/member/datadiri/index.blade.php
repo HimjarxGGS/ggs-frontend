@@ -5,10 +5,10 @@
 @section('content')
 
 
-<div class="container mx-auto px-4 py-10 mb-24 mt-24"> {{-- mt-24 kasih jarak dari navbar --}}
+<div class="container mx-auto px-4 py-10 mb-24">
 
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 pt-28">
 
         {{-- Kolom Kiri: Judul + Ilustrasi --}}
         <div class="flex flex-col items-center justify-start relative">

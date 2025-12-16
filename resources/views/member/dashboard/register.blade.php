@@ -3,15 +3,15 @@
 @section('title', 'Dashboard Member - Green Generation Surabaya')
 
 @section('content')
-    <div class="max-w-6xl mx-auto px-4 mt-28">
+    <div class="max-w-6xl mx-auto px-4">
 
         <!-- section header start -->
-        <section class="mb-8 text-left md:text-left md:pl-10 pl-3">
+        <section class="mb-8 text-left md:text-left md:pl-10 pl-3 pt-32">
             <h1 class="text-xl md:text-3xl font-bold text-gray-800">
                 {{ $event->name }}
             </h1>
 
-            <p class="text-gray-600 text-sm md:text-base">{{ $event->organizer ?? 'Green Generation Surabaya' }}</p>
+            <p class="text-gray-600 text-sm md:text-base">{{ $event->organizer ?? 'Youth for Earth Surabaya' }}</p>
 
             <span
                 class="inline-block mt-3 {{ $event->status == 'upcoming' ? 'bg-orange-500' : 'bg-green-500' }} text-white text-xs md:text-sm font-semibold px-10 py-1 rounded-full">
@@ -125,7 +125,7 @@
                                     <p class="text-sm text-gray-600">
                                         <span class="font-semibold text-palette-2">Click to upload</span> or drag and drop
                                     </p>
-                                    <p class="text-xs text-gray-400">PNG / JPG / JPEG</p>
+                                    <p class="text-xs text-gray-400">PNG / JPG / JPEG <span class="font-semibold">(Max 2MB)</span></p>
                                 </div>
 
                                 <!-- Image Preview -->
@@ -157,7 +157,7 @@
                                     <p class="text-sm text-gray-600">
                                         <span class="font-semibold text-palette-2">Click to upload</span> or drag and drop
                                     </p>
-                                    <p class="text-xs text-gray-400">PNG / JPG / JPEG</p>
+                                    <p class="text-xs text-gray-400">PNG / JPG / JPEG <span class="font-semibold">(Max 2MB)</span></p>
                                 </div>
 
                                 <img id="pembayaranPreview" class="hidden w-full h-full object-contain rounded-2xl" />

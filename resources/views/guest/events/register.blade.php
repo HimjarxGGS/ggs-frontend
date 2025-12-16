@@ -5,7 +5,7 @@
 @section('content')
 <div class="max-w-6xl mx-auto px-4">
     <!-- section header start -->
-    <section class="mb-8 text-center md:text-left mt-40">
+    <section class="mb-8 text-center md:text-left pt-32">
         <h1 class="text-2xl md:text-3xl font-bold text-gray-800">
             {{ $event->name }}
         </h1>
@@ -92,8 +92,6 @@
                         @enderror
                     </div>
 
-
-
                     <!-- telepon -->
                     <div class="mb-4">
                         <label for="telepon" class="block mb-2 text-sm font-medium text-gray-900 ml-4">No.
@@ -116,6 +114,38 @@
 
                     <!-- bukti share poster -->
                     <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2 ml-4">
+                            Bukti Share Poster
+                        </label>
+
+                        <div id="dropPoster" class="flex items-center justify-center w-full">
+                            <label for="poster"
+                                class="flex flex-col items-center justify-center w-full h-52 md:h-32 
+            border-2 border-gray-300 border-dashed rounded-3xl cursor-pointer 
+            bg-gray-50 hover:bg-gray-300 transition ease-in-out duration-300">
+
+                                <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                    <svg class="w-8 h-8 mb-4 text-gray-500" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 20 16">
+                                        <path stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="2"
+                                            d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5
+                        5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5
+                        5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                                    </svg>
+
+                                    <p id="posterText" class="mb-2 text-sm text-gray-500">
+                                        <span class="font-semibold text-palette-2">Click to upload</span> or drag and drop
+                                    </p>
+                                    <p class="text-xs text-gray-500">PNG or JPG<span class="font-semibold">(Max 2MB)</span></p>
+                                </div>
+
+                                <input id="poster" name="bukti_share" type="file" class="hidden" required />
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- <div>
                         <label   class="block text-sm font-medium text-gray-700 mb-2 ml-4">Bukti Share Poster</label>
                         <div id="dropPoster" class="flex items-center justify-center w-full">
                             <label for="poster"
@@ -128,7 +158,7 @@
                                 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5
                                 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
                                     </svg>
-                                    <p class="mb-2 text-sm text-gray-500"><span
+                                    <p id="posterText" class="mb-2 text-sm text-gray-500"><span
                                             class="font-semibold text-palette-2">Click to upload</span> or drag and drop
                                     </p>
                                     <p class="text-xs text-gray-500">PNG or JPG</p>
@@ -136,7 +166,7 @@
                                 <input id="poster" name="bukti_share" type="file" class="hidden" required />
                             </label>
                         </div>
-                    </div>
+                    </div> -->
 
 
                     <!-- hadir -->
@@ -201,10 +231,10 @@
                                     5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5
                                     5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
                                     </svg>
-                                    <p class="mb-2 text-sm text-gray-500"><span
+                                    <p id="bayarText" class="mb-2 text-sm text-gray-500"><span
                                             class="font-semibold text-palette-2">Click to upload</span> or drag and
                                         drop</p>
-                                    <p class="text-xs text-gray-500">PNG or JPG</p>
+                                    <p class="text-xs text-gray-500">PNG or JPG <span class="font-semibold">(Max 2MB)</span></p>
                                 </div>
                                 <input id="pembayaran" name="bukti_payment" type="file" class="hidden" required />
                             </label>
@@ -226,10 +256,10 @@
                                     5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5
                                     5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
                                     </svg>
-                                    <p class="mb-2 text-sm text-gray-500"><span
+                                    <p id="fotoText" class="mb-2 text-sm text-gray-500"><span
                                             class="font-semibold text-palette-2">Click to upload</span> or drag and
                                         drop</p>
-                                    <p class="text-xs text-gray-500">PNG or JPG</p>
+                                    <p class="text-xs text-gray-500">PNG or JPG <span class="font-semibold">(Max 2MB)</span></p>
                                 </div>
                                 <input id="foto" name="registrant_picture" type="file" class="hidden" required />
                             </label>

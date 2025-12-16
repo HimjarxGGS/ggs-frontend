@@ -1,6 +1,6 @@
 @extends('guest.layouts.app')
 
-@section('title', 'Event - Green Generation Surabaya')
+@section('title', 'Event - Youth For Earth Surabaya')
 
 @section('content')
     <section class="relative w-full h-[80vh] flex items-center justify-center font-geist">
@@ -62,7 +62,7 @@
         <div class="text-center mb-10">
             <h2 class="text-2xl md:text-3xl font-bold text-black">Upcoming Event</h2>
             <p class="text-gray-500 text-xs md:text-base mt-1.5">
-                Don't miss out on the exciting events from <span class="block md:hidden"></span><span class="hidden md:inline"></span> Green Generation Surabaya!</span> 
+                Don't miss out on the exciting events from <span class="block md:hidden"></span><span class="hidden md:inline"></span> Youth For Earth Surabaya!</span> 
             </p>
         </div>
 
@@ -71,7 +71,7 @@
             @forelse ($upcoming as $i => $event)
                 <a href="{{ route('events.show', $event->id) }}" class="block group w-full {{ $i >= 1 ? 'hidden sm:block' : '' }}">
                     <div
-                        class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500 flex flex-col h-full">
+                        class="bg-white rounded-3xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-500 ease-in-out transition duration-500 flex flex-col h-full">
                         <div class="relative">
                             <img src="{{ $event->poster ? asset('storage/' . $event->poster) : asset('images/gambar-event.png') }}"
                                 alt="Event Cover" class="w-full h-52 object-cover">
@@ -86,7 +86,7 @@
                                 <!-- judul -->
                                 <h3 class="text-lg font-semibold line-clamp-2">{{ $event->name }}</h3>
                                 <!-- default penerbit -->
-                                <p class="text-gray-500 text-xs">Green Generation Surabaya</p>
+                                <p class="text-gray-500 text-xs">Youth For Earth Surabaya</p>
                                 <!-- tanggal event -->
                                 <div class="flex items-center text-xs text-gray-400 gap-2">
                                     <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-4 h-4">
@@ -111,7 +111,7 @@
     <div class="text-center mt-6">
         <a href="{{ route('events.upcoming') }}"
             class="inline-block bg-palette-3 text-white px-6 py-2 rounded-xl 
-              hover:bg-palette-2 transition ease-in-out duration-300 hover:shadow-lg">
+              hover:bg-palette-2 transition ease-in-out duration-300 hover:shadow-lg font-semibold hover:font-medium">
             See All Upcoming Events
         </a>
     </div>
@@ -122,7 +122,7 @@
         <!-- judul -->
         <div class="text-center mb-10">
             <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Successful Event</h2>
-            <p class="text-gray-500 mt-1.5 text-xs md:text-base">The successful events organized by <span class="block md:hidden"></span><span class="hidden md:inline"></span>Green Generation Surabaya.</p>
+            <p class="text-gray-500 mt-1.5 text-xs md:text-base">The successful events organized by <span class="block md:hidden"></span><span class="hidden md:inline"></span>Youth For Earth Surabaya.</p>
         </div>
 
         <!-- list event -->
@@ -141,7 +141,7 @@
                 </div>
                 <div class="p-4 space-y-2">
                     <h3 class="text-lg font-semibold">{{ $event->name }}</h3>
-                    <p class="text-gray-500 text-xs">Green Generation Surabaya</p>
+                    <p class="text-gray-500 text-xs">Youth For Earth Surabaya</p>
                     <div class="flex items-center text-xs text-gray-500 gap-2">
                         <img src="{{ asset('icons/calender.svg') }}" alt="Calendar" class="w-4 h-4">
                         <span>{{ $event->event_date->translatedFormat('d F Y') }}</span>
@@ -163,7 +163,7 @@
         <div class="text-center mt-6">
             <a href="{{ route('events.finished') }}"
             class="inline-block bg-palette-3 text-white px-6 py-2 rounded-xl 
-                hover:bg-palette-2 transition ease-in-out duration-300 hover:shadow-lg">
+                hover:bg-palette-2 transition ease-in-out duration-300 hover:shadow-lg font-semibold hover:font-medium">
                 See All Successful Events
             </a>
         </div>
@@ -175,7 +175,7 @@
         <div class="max-w-7xl mx-auto px-4 md:px-8 text-center">
             <!-- Heading -->
             <h2 class="text-xl md:text-3xl font-bold text-palette-2 mb-10">
-                Dampak Green Generation Surabaya
+                Dampak Youth For Earth Surabaya
             </h2>
 
             <!-- Cards -->
@@ -219,10 +219,10 @@
                         Testimoni
                     </div>
                     <h1 class="text-3xl font-semibold text-black md:text-center md:text-4xl mt-3">
-                        Green Generation Surabaya
+                        Youth For Earth Surabaya
                     </h1>
-                    <p class="text-base text-gray-500 md:text-center md:text-lg mt-3">
-                        Pengalaman dan testimoni mereka yang tumbuh bersama GGSBY untuk menjaga lingkungan.
+                    <p class="text-sm text-gray-500 md:text-center md:text-base mt-3">
+                        Pengalaman dan testimoni mereka yang tumbuh bersama Youth For Earth SBY untuk menjaga lingkungan.
                     </p>
                 </div>
             </div>
@@ -244,7 +244,7 @@
                                         <p class="text-palette-4 text-md">Executive Board</p>
                                     </div>
                                 </div>
-                                <p class="leading-normal text-gray-700 text-md"> Bertumbuh bersama GGSBY memberikan saya
+                                <p class="leading-normal text-gray-700 text-md"> Bertumbuh bersama Youth For Earth SBY memberikan saya
                                     kesadaran bahwa pentingnya kita dalam mencintai, merawat dan menjaga lingkungan sekitar,
                                     demi kelanyakan atau kenyamanan lingkungan yang berkelanjutan </p>
                             </div>
@@ -307,7 +307,7 @@
                                         <p class="text-palette-4 text-md">Public Relation</p>
                                     </div>
                                 </div>
-                                <p class="leading-normal text-gray-700 text-md">GGS mengajari saya menanam kaktus ⭐⭐⭐⭐⭐</p>
+                                <p class="leading-normal text-gray-700 text-md">Youth For Earth SBY mengajari saya menanam kaktus ⭐⭐⭐⭐⭐</p>
                             </div>
                         </div>
                     </li>
@@ -326,7 +326,7 @@
                                         <p class="text-palette-4 text-md">Creative</p>
                                     </div>
                                 </div>
-                                <p class="leading-normal text-gray-700 text-md">Dengan bergabung bersama GGSBY membuat saya
+                                <p class="leading-normal text-gray-700 text-md">Dengan bergabung bersama Youth For Earth SBY membuat saya
                                     lebih membuka mata tentang pentingnya menjaga lingkungan dengan hal kecil sekalipun</p>
                             </div>
                         </div>
@@ -349,7 +349,7 @@
                                         <p class="text-palette-4 text-md">Project Development</p>
                                     </div>
                                 </div>
-                                <p class="leading-normal text-gray-700 text-md">sejak bergabung dengan GGSBY saya semakin
+                                <p class="leading-normal text-gray-700 text-md">sejak bergabung dengan Youth For Earth SBY saya semakin
                                     percaya bahwa langkah kecil bisa menciptakan dampak besar. Bersama teman-teman di sini,
                                     saya belajar bahwa kepedulian terhadap lingkungan bukan hanya wacana, tetapi aksi nyata.
                                     jdii, ayooo kita jadikan Surabaya lebih hijau dengan tindakan kita hari ini🥳</p>
@@ -370,7 +370,7 @@
                                         <p class="text-palette-4 text-md">Public Relation</p>
                                     </div>
                                 </div>
-                                <p class="leading-normal text-gray-700 text-md"> bisa jadi agent of change dengan mengikuti kegiatan bersih bersih di GGS 💚</p>
+                                <p class="leading-normal text-gray-700 text-md"> bisa jadi agent of change dengan mengikuti kegiatan bersih bersih di Youth For Earth SBY 💚</p>
                             </div>
                         </div>
                     </li>

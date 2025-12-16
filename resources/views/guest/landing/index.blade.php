@@ -1,6 +1,6 @@
 @extends('guest.layouts.app')
 
-@section('title', 'Home - Green Generation Surabaya')
+@section('title', 'Home - Youth For Earth Surabaya')
 
 @section('content')
     <!-- start hero Section -->
@@ -13,7 +13,7 @@
             </h1>
 
             <p class="text-gray-500 text-base md:text-lg mt-7 ">
-                Green Generation empowers youth to lead,<br />
+                Youth For Earth Surabaya empowers youth to lead,<br />
                 innovate, and act for the environment.
             </p>
 
@@ -83,7 +83,7 @@
                         The experience changed my perspective and helped me become more confident.
                     </p>
                     <p class="font-bold text-sm text-palette-4 pt-16">Nanda Aliefira </p>
-                    <p class="text-sm text-gray-500">Chairman Green Generation Surabaya</p>
+                    <p class="text-sm text-gray-500">Chairman Youth For Earth Surabaya</p>
                 </div>
             </div>
             <div
@@ -95,7 +95,7 @@
                         The experience changed my perspective and helped me become more confident.
                     </p>
                     <p class="font-bold text-sm text-palette-4 pt-16">Najma Mei </p>
-                    <p class="text-sm text-gray-500">Vice Chairman Green Generation Surabaya</p>
+                    <p class="text-sm text-gray-500">Vice Chairman Youth For Earth Surabaya</p>
                 </div>
             </div>
             <!-- <div class="flex flex-col md:flex-row bg-white rounded-3xl shadow-lg overflow-hidden w-[350px] md:w-[700px] ease-in-out transition duration-500 hover:shadow-lg hover:shadow-gray-600">
@@ -122,7 +122,7 @@
                 <h2 class="text-5xl font-bold text-palette-5">
                     our <span class="font-bold">Partners</span>
                 </h2>
-                <p class="text-gray-500">Green Generation Surabaya</p>
+                <p class="text-gray-500">Youth For Earth Surabaya</p>
                 
             </div>
             <div class="hidden lg:block w-80 h-0.5 bg-gray-300"></div>

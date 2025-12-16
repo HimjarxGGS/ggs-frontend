@@ -3,7 +3,7 @@
 @section('title', 'History Pendaftaran')
 
 @section('content')
-    <div class="max-w-5xl mx-auto px-4 py-12 mt-20" x-data="{ open: false }">
+    <div class="max-w-5xl mx-auto px-4 pt-32" x-data="{ open: false }">
 
         <h1 class="text-2xl font-semibold text-gray-900 mb-8">History Pendaftaran</h1>
 
