@@ -244,7 +244,7 @@
                     </div>
 
                     <!-- upload foto -->
-                    @if ($event->need_registrant_picture)
+                    @if ($event->need_registrant_picture === 'ya')
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2 ml-4">Upload Foto</label>
                         <div class="flex items-center justify-center w-full">
