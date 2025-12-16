@@ -125,7 +125,7 @@
                                     <p class="text-sm text-gray-600">
                                         <span class="font-semibold text-palette-2">Click to upload</span> or drag and drop
                                     </p>
-                                    <p class="text-xs text-gray-400">PNG / JPG / JPEG</p>
+                                    <p class="text-xs text-gray-400">PNG / JPG / JPEG <span class="font-semibold">(Max 2MB)</span></p>
                                 </div>
 
                                 <!-- Image Preview -->
@@ -157,7 +157,7 @@
                                     <p class="text-sm text-gray-600">
                                         <span class="font-semibold text-palette-2">Click to upload</span> or drag and drop
                                     </p>
-                                    <p class="text-xs text-gray-400">PNG / JPG / JPEG</p>
+                                    <p class="text-xs text-gray-400">PNG / JPG / JPEG <span class="font-semibold">(Max 2MB)</span></p>
                                 </div>
 
                                 <img id="pembayaranPreview" class="hidden w-full h-full object-contain rounded-2xl" />

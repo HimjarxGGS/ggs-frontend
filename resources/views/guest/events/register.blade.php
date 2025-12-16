@@ -92,8 +92,6 @@
                         @enderror
                     </div>
 
-
-
                     <!-- telepon -->
                     <div class="mb-4">
                         <label for="telepon" class="block mb-2 text-sm font-medium text-gray-900 ml-4">No.
@@ -139,7 +137,7 @@
                                     <p id="posterText" class="mb-2 text-sm text-gray-500">
                                         <span class="font-semibold text-palette-2">Click to upload</span> or drag and drop
                                     </p>
-                                    <p class="text-xs text-gray-500">PNG or JPG</p>
+                                    <p class="text-xs text-gray-500">PNG or JPG<span class="font-semibold">(Max 2MB)</span></p>
                                 </div>
 
                                 <input id="poster" name="bukti_share" type="file" class="hidden" required />
@@ -236,7 +234,7 @@
                                     <p id="bayarText" class="mb-2 text-sm text-gray-500"><span
                                             class="font-semibold text-palette-2">Click to upload</span> or drag and
                                         drop</p>
-                                    <p class="text-xs text-gray-500">PNG or JPG</p>
+                                    <p class="text-xs text-gray-500">PNG or JPG <span class="font-semibold">(Max 2MB)</span></p>
                                 </div>
                                 <input id="pembayaran" name="bukti_payment" type="file" class="hidden" required />
                             </label>
@@ -261,7 +259,7 @@
                                     <p id="fotoText" class="mb-2 text-sm text-gray-500"><span
                                             class="font-semibold text-palette-2">Click to upload</span> or drag and
                                         drop</p>
-                                    <p class="text-xs text-gray-500">PNG or JPG</p>
+                                    <p class="text-xs text-gray-500">PNG or JPG <span class="font-semibold">(Max 2MB)</span></p>
                                 </div>
                                 <input id="foto" name="registrant_picture" type="file" class="hidden" required />
                             </label>
