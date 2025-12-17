@@ -82,7 +82,7 @@
                 <div class="flex flex-col bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-gray-600 ease-in-out transition duration-500 h-full ">
                     <div class="relative">
                         <!-- cover -->
-                        <img src="{{ asset($event->cover ?? 'images/gambar-event.png') }}"
+                        <img src="{{ asset("storage/".$event->poster ?? 'images/gambar-event.png') }}"
                             alt="Event Cover"
                             class="w-full h-52 object-cover">
 
